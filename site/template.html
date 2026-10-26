@@ -1,0 +1,1824 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Health Data Dashboard | Population Health Innovation Lab</title>
+<meta name="description" content="Public data on health needs and services in the 17 California counties where PHIL works, alongside PHIL's work with community partners.">
+<link rel="icon" href="assets/phil-mark.png">
+<style>
+html,body{height:100%}body{margin:0;overflow:hidden;background:#ffffff;color:#12365b;font-family:"Avenir Next LT Pro","Avenir Next",Avenir,Arial,Helvetica,sans-serif}
+a{color:#496b9c}a:hover{color:#12365b}
+button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
+.phil-dot{width:44px;height:44px;border:none;border-radius:50%;background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.phil-dot span{display:block;width:14px;height:14px;border-radius:50%;background:#02784d;transition:transform .15s}
+.phil-dot:hover{background:#f3e9d7}
+.phil-dot:hover span{transform:scale(1.3)}
+@media (max-width: 700px){.phil-nav{flex-wrap:nowrap !important;overflow-x:auto;padding-bottom:6px}.phil-nav button,.phil-nav span{flex-shrink:0;white-space:nowrap}.phil-navrow{flex-wrap:nowrap !important}}
+</style>
+<style>.phil-loading{font-family:Arial,sans-serif;padding:40px;color:#12365b}</style>
+</head>
+<body>
+<div id="phil-root"><div class="phil-loading">Loading the Community Health Data Dashboard…</div></div>
+<script type="text/template" id="phil-template">
+<div id="phil-dash-scroll" style="height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; background: #ffffff; color: #12365b; font-family: 'Avenir Next LT Pro', 'Avenir Next', Avenir, Arial, Helvetica, sans-serif">
+<div style="background: #ffffff; border-bottom: 1px solid #dee3e8; padding: 20px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="https://pophealthinnovationlab.org/" style="display: inline-flex; padding: 8px 0"><img src="assets/phil-logo.png" alt="Population Health Innovation Lab, a program of the Public Health Institute" style="height: 56px; width: auto; max-width: 100%; display: block"></a>
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Team Review</span>
+</div>
+</div>
+<header style="background: #12365b; color: #ffffff; padding: 40px 24px 32px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
+<h1 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 40px; line-height: 1.15; font-weight: 700; color: #ffffff">Community Health Data Dashboard</h1>
+<p style="margin: 0; max-width: 820px; font-size: 17px; line-height: 1.5; color: #f3e9d7">Public data on health needs in the California communities PHIL serves, alongside how PHIL and its partners are working to improve health in each community.</p>
+</div>
+</header>
+<nav aria-label="Dashboard sections" style="background: #f3e9d7; border-bottom: 1px solid #dee3e8; padding: 12px 24px">
+<div class="phil-nav" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">Start here</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{tabsHome}}" as="t" hint-placeholder-count="1">
+<button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
+</sc-for>
+</div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">Health topics</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{tabsTopics}}" as="t" hint-placeholder-count="5">
+<button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
+</sc-for>
+</div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">Care and Coverage</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{tabsServices}}" as="t" hint-placeholder-count="2">
+<button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
+</sc-for>
+</div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">More</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{tabsMore}}" as="t" hint-placeholder-count="1">
+<button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
+</sc-for>
+</div></div>
+</div>
+</nav>
+<main style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-direction: column; gap: 48px">
+
+<sc-if value="{{showOverview}}" hint-placeholder-val="{{true}}">
+<section style="display: flex; flex-direction: column; gap: 48px">
+
+<div style="background: #f3e9d7; border-radius: 10px; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-start">
+<img src="assets/fox-welcome.png" alt="PHIL's fox mascot with arms open in welcome" style="height: 140px; width: auto; flex-shrink: 0">
+<div style="flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 30px; line-height: 1.2; color: #039862">About This Dashboard</h2>
+<p style="margin: 0; max-width: 820px; font-size: 16px; line-height: 1.55; color: #12365b">The Community Health Data Dashboard shares public data on health needs and services in the 17 California counties where PHIL works. PHIL built it for the community partners it collaborates with, and for every organization working in these counties, to support local planning, grant writing, program design, and conversations across sectors.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+<div style="background: #ffffff; border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; color: #12365b"><h3 style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">Why These 17 Counties</h3>
+<p style="margin: 0">These are the communities where PHIL partners with community-based organizations, Tribes, health systems, Medi-Cal managed care plans, and county agencies. Together, they build collaboratives, communities of practice, and lasting systems change. PHIL contributes research and evaluation, facilitation, technical assistance, and data. Partners contribute local knowledge and leadership. The dashboard supports that shared work.</p>
+</div>
+<div style="background: #ffffff; border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; color: #12365b"><h3 style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">Connected Through Medi-Cal</h3>
+<p style="margin: 0">Under California Advancing and Innovating Medi-Cal (CalAIM), managed care plans, community-based organizations, clinics, hospitals, county agencies, and Tribes share responsibility for Medi-Cal members' health. The dashboard places county health data beside Medi-Cal coverage, Enhanced Care Management (ECM), and Community Supports data so partners can see needs and services together.</p>
+</div>
+<div style="background: #ffffff; border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5; color: #12365b"><h3 style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">What the Dashboard Covers</h3>
+<p style="margin: 0">Five health topics PHIL focuses on:</p>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 3px">
+<li>Cardiovascular health</li>
+<li>Adverse childhood experiences (ACEs), trauma, and resilience</li>
+<li>Maternal and early childhood behavioral health</li>
+<li>Youth behavioral health</li>
+<li>Substance use and homelessness</li>
+</ul>
+<p style="margin: 0">Care and coverage: access to care, Medi-Cal, Enhanced Care Management (ECM), and Community Supports.</p>
+</div>
+</div>
+<div style="display: none">
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">Who It Is For</h3>
+<ul style="margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.45; color: #12365b">
+<li>Community-based organizations and Tribal partners</li>
+<li>Clinics, hospitals, and Medi-Cal managed care plans</li>
+<li>Enhanced Care Management (ECM) and Community Supports providers</li>
+<li>County public health and behavioral health departments</li>
+<li>Funders and policymakers</li>
+<li>PHIL grantees and collaborative members</li>
+</ul>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">How to Use It</h3>
+<ol style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.45; color: #12365b">
+<li><span style="font-weight: 800">Choose your county.</span> It stays selected on every page.</li>
+<li><span style="font-weight: 800">Review your county at a glance:</span> headline measures compared with the California average or with all California counties.</li>
+<li><span style="font-weight: 800">Open a health topic</span> for county indicators, trends, and PHIL's projects and partnerships on that topic.</li>
+<li><span style="font-weight: 800">Open the Care and Coverage pages</span> for Medi-Cal coverage, access to care, Enhanced Care Management (ECM), and Community Supports in your county.</li>
+<li><span style="font-weight: 800">See how PHIL engages in your community</span> and how to connect.</li>
+<li><span style="font-weight: 800">Open Resources</span> for state dashboards, PHIL reports and toolkits, and the data sources behind this dashboard.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">{{ov.pickTitle}}</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ov.counties}}" as="c" hint-placeholder-count="17">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" aria-label="{{c.aria}}" style="{{c.style}}">{{c.name}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">How to read the colors</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: #3d556e">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #fbd5d2; border: 1px solid #b42318; display: inline-block"></span>Worse than California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #d3f0df; border: 1px solid #02784d; display: inline-block"></span>Better than California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #e8edf2; border: 1px solid #73889e; display: inline-block"></span>No California comparison, or same as the California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 28px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8); display: inline-block"></span>All California counties, lowest to highest</span>
+</div>
+</div>
+</div>
+
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">{{ov.countyLabel}} at a Glance</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d556e">Select a card to open its topic.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<sc-for list="{{ov.snapshot}}" as="k" hint-placeholder-count="6">
+<button type="button" onClick="{{k.pick}}" style="text-align: left; font-family: inherit; color: #12365b; cursor: pointer; background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{k.topic}}</span>
+<span style="font-size: 15px; line-height: 1.35; font-weight: 700">{{k.label}}</span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 34px; font-weight: 700; line-height: 1.1; color: #12365b">{{k.value}}</span>
+<sc-if value="{{k.hasPill}}" hint-placeholder-val="{{true}}"><span style="{{k.pillStyle}}">{{k.pill}}</span></sc-if>
+</span>
+<sc-if value="{{k.isBars}}" hint-placeholder-val="{{true}}">
+<span style="display: flex; flex-direction: column; gap: 6px; width: 100%">
+<sc-for list="{{k.bars}}" as="b" hint-placeholder-count="2">
+<span style="display: grid; grid-template-columns: 96px 1fr 56px; align-items: center; gap: 8px; font-size: 12px">
+<span style="color: #3d556e">{{b.label}}</span>
+<span style="display: block; height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><span style="{{b.style}}"></span></span>
+<span style="text-align: right; font-weight: 800">{{b.value}}</span>
+</span>
+</sc-for>
+</span>
+</sc-if>
+<sc-if value="{{k.isRank}}" hint-placeholder-val="{{false}}">
+<span style="display: flex; flex-direction: column; gap: 4px; width: 100%">
+<span style="position: relative; display: block; height: 26px; margin: 0 10px" aria-hidden="true">
+<span style="position: absolute; left: -6px; right: -6px; top: 9px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8)"></span>
+<sc-for list="{{k.dots}}" as="dt" hint-placeholder-count="58"><span style="{{dt.style}}"></span></sc-for>
+</span>
+<span style="display: flex; justify-content: space-between; font-size: 12px; color: #526c87"><span>{{k.rankLow}}</span><span>{{k.rankHigh}}</span></span>
+</span>
+</sc-if>
+<span style="margin-top: auto; font-size: 12px; color: #526c87">{{k.period}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">What Would You Like to Do?</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<button type="button" onClick="{{ov.goTopics}}" style="text-align: left; border: none; cursor: pointer; font-family: inherit; width: 100%; background: #12365b; color: #ffffff; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 8px; min-height: 140px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 22px; font-weight: 700; color: #ffffff">Explore Health Data by Topic</span>
+<span style="font-size: 15px; line-height: 1.45; color: #f3e9d7">Five health topics, from cardiovascular health to substance use and homelessness, with county data and trends.</span>
+</button>
+<button type="button" onClick="{{ov.goEcm}}" style="text-align: left; border: none; cursor: pointer; font-family: inherit; background: #02784d; color: #ffffff; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 8px; min-height: 140px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 22px; font-weight: 700; color: #ffffff">Care and Coverage</span>
+<span style="font-size: 15px; line-height: 1.45; color: #ffffff">{{ov.ecmLine}}</span>
+</button>
+<button type="button" onClick="{{ov.goPhil}}" style="text-align: left; border: none; cursor: pointer; font-family: inherit; width: 100%; background: #f3e9d7; color: #12365b; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 8px; min-height: 140px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 22px; font-weight: 700; color: #12365b">PHIL in the {{ov.countyLabel}} Community</span>
+<span style="font-size: 15px; line-height: 1.45; color: #12365b">{{ov.philLine}}</span>
+</button>
+</div>
+</div>
+
+</sc-if>
+
+<div id="ov-topics" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 16px; align-items: center">
+<img src="assets/fox-pointing.png" alt="PHIL's fox mascot pointing toward the health topics" style="height: 88px; width: auto; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">Health Topics</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d556e">{{ov.topicsLine}}</p>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<sc-for list="{{topicCards}}" as="c" hint-placeholder-count="5">
+<button type="button" onClick="{{c.pick}}" style="text-align: left; background: #ffffff; border: 1px solid #73889e; border-radius: 8px; padding: 22px; cursor: pointer; display: flex; flex-direction: column; gap: 10px; font-family: inherit; color: #12365b">
+<span style="font-size: 19px; font-weight: 800; line-height: 1.3">{{c.title}}</span>
+<span style="font-size: 14px; color: #3d556e">{{c.count}}</span>
+<sc-if value="{{c.philHere}}" hint-placeholder-val="{{false}}"><span style="align-self: flex-start; display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b">PHIL works on this here</span></sc-if>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div id="ov-care" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">Care and Coverage</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d556e">How people in the county get care through Medi-Cal and the wider health system.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<sc-for list="{{careCards}}" as="c" hint-placeholder-count="2">
+<button type="button" onClick="{{c.pick}}" style="text-align: left; background: #ffffff; border: 1px solid #73889e; border-radius: 8px; padding: 22px; cursor: pointer; display: flex; flex-direction: column; gap: 10px; font-family: inherit; color: #12365b">
+<span style="font-size: 19px; font-weight: 800; line-height: 1.3">{{c.title}}</span>
+<span style="font-size: 14px; color: #3d556e">{{c.count}}</span>
+<sc-if value="{{c.philHere}}" hint-placeholder-val="{{false}}"><span style="align-self: flex-start; display: inline-block; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b">PHIL works on this here</span></sc-if>
+</button>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div id="ov-phil" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; color: #039862">How PHIL Engages in the {{ov.countyLabel}} Community</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d556e">{{ov.philIntro}}</p>
+</div>
+<sc-if value="{{ov.hasPhil}}" hint-placeholder-val="{{true}}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{ov.philWork}}" as="w" hint-placeholder-count="3">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-left: 4px solid #b8d876; border-radius: 8px; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 13px; font-weight: 800; color: #02784d">{{w.years}}</div>
+<div style="font-size: 17px; line-height: 1.35; font-weight: 800; color: #12365b"><sc-if value="{{w.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{w.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{w.name}}</a></sc-if><sc-if value="{{w.noUrl}}" hint-placeholder-val="{{false}}">{{w.name}}</sc-if></div>
+<div style="font-size: 14px; line-height: 1.5; color: #12365b">{{w.role}}</div>
+<div style="font-size: 13px; color: #3d556e">Where: {{w.where}}</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{w.topics}}" as="t" hint-placeholder-count="2">
+<button type="button" onClick="{{t.pick}}" style="min-height: 32px; padding: 4px 10px; border-radius: 999px; border: 1px solid #b8d876; background: #f6faec; color: #12365b; font-family: inherit; font-size: 12px; font-weight: 700; cursor: pointer">{{t.title}}</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #12365b">To connect with PHIL about work in your county, visit <a href="https://pophealthinnovationlab.org/">pophealthinnovationlab.org</a>.</p>
+</div>
+</sc-if>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #039862">How PHIL's Work Connects Across Topics</h2>
+<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #3d556e">Each dot marks a topic a project or partnership works on. Select a dot or a topic name to open that topic.</p>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px; line-height: 1.4">
+<thead>
+<tr style="border-bottom: 2px solid #12365b">
+<th scope="col" style="text-align: left; padding: 8px 12px 8px 0; font-weight: 800">Project or Partnership</th>
+<sc-for list="{{matrixCols}}" as="c" hint-placeholder-count="6">
+<th scope="col" style="padding: 4px; width: 104px; vertical-align: bottom"><button type="button" onClick="{{c.pick}}" style="min-height: 44px; width: 100%; padding: 4px; border: none; background: transparent; color: #12365b; font-family: inherit; font-size: 13px; font-weight: 800; line-height: 1.25; cursor: pointer; text-decoration: underline">{{c.label}}</button></th>
+</sc-for>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{bridges}}" as="b" hint-placeholder-count="8">
+<tr style="border-bottom: 1px solid #dee3e8">
+<th scope="row" style="{{b.nameStyle}}"><sc-if value="{{b.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{b.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{b.name}}</a></sc-if><sc-if value="{{b.noUrl}}" hint-placeholder-val="{{false}}">{{b.name}}</sc-if></th>
+<sc-for list="{{b.cells}}" as="x" hint-placeholder-count="6">
+<td style="text-align: center; padding: 2px 4px">
+<sc-if value="{{x.on}}" hint-placeholder-val="{{true}}">
+<button type="button" class="phil-dot" onClick="{{x.pick}}" aria-label="{{x.label}}" title="{{x.label}}"><span aria-hidden="true"></span></button>
+</sc-if>
+</td>
+</sc-for>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</div>
+
+<section id="ov-plan" aria-labelledby="ov-plan-h" style="position: relative; overflow: hidden; border-radius: 14px; background: linear-gradient(120deg, #02623f 0%, #039862 55%, #30718d 100%); color: #ffffff; padding: 32px 32px 28px; display: flex; flex-direction: column; gap: 20px">
+<div aria-hidden="true" style="position: absolute; right: -60px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: rgba(184, 216, 118, 0.16)"></div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center">
+<img src="assets/fox-pointing.png" alt="PHIL's fox mascot pointing ahead" style="height: 110px; width: auto; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 460px; min-width: 0">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #d9ef9f">Put This Data to Work</div>
+<h2 id="ov-plan-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; line-height: 1.2; color: #ffffff">Planning a Community Health Assessment or Improvement Plan?</h2>
+<p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 1.55; color: #f0faf4">Health departments, hospitals, and community partners use data like this for community health assessments (CHA), community health needs assessments (CHNA), and community health improvement plans (CHIP). PHIL supports teams through each step, and has supported hospital needs assessments, including the Cottage Health CHNA.</p>
+</div>
+</div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">1</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Make sense of the data together</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Data Walks and facilitated sessions with community members and partners.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">2</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Set shared priorities</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Facilitation that brings sectors to agreement on what to act on first.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">3</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Put findings into practice</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Planning, coaching, and data visualization to carry priorities into action.</div></div></div>
+</div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<a href="https://pophealthinnovationlab.org/phil-collective-consultation-form/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #b8d876; color: #12365b; font-size: 15px; font-weight: 800; text-decoration: none">Request a consultation<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#12365b" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<a href="https://pophealthinnovationlab.org/technical-assistance/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">PHIL technical assistance</a>
+<a href="https://pophealthinnovationlab.org/data-walk/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">About Data Walks</a>
+</div>
+</section>
+
+<div style="background: #f3e9d7; border-radius: 10px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 16px; align-items: center">
+<img src="assets/fox-clipboard.png" alt="PHIL's fox mascot reviewing a clipboard" style="height: 72px; width: auto; flex-shrink: 0">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">About the Data</h2>
+</div>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #12365b">
+<li>{{sourceSummary}}</li>
+<li>Every value is published by its data source. PHIL does not calculate its own rates or statewide figures.</li>
+<li>The dashboard compares a county with California only when one dataset publishes both values. Otherwise, it shows the county's rank among California counties or the county value alone.</li>
+<li>"Suppressed" means the publisher withheld a small number to protect privacy. Some publishers report small counties as a combined group, and the dashboard shows those groups as published.</li>
+<li>Each chart shows the years its data covers. The dashboard updates on a regular schedule as publishers release new data.</li>
+</ul>
+<div>
+<button type="button" onClick="{{toggleSources}}" aria-expanded="{{sourcesExpanded}}" style="min-height: 44px; padding: 6px 14px; border-radius: 999px; border: 1px solid #73889e; background: #ffffff; color: #12365b; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer">{{sourcesLabel}}</button>
+</div>
+<sc-if value="{{showSources}}" hint-placeholder-val="{{false}}">
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.5">
+<sc-for list="{{dataSources}}" as="d" hint-placeholder-count="12">
+<li><span style="font-weight: 800">{{d.dataset}}</span>, {{d.publisher}}. {{d.cadence}}.</li>
+</sc-for>
+</ul>
+</sc-if>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{showTopic}}" hint-placeholder-val="{{false}}">
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">{{topic.title}}</h2>
+<p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.5"><span style="font-weight: 800">Population: </span>{{topic.population}}</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">County</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{topic.counties}}" as="c" hint-placeholder-count="17">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" aria-label="{{c.aria}}" style="{{c.style}}"><span style="display: inline-flex; align-items: center; gap: 8px"><sc-if value="{{c.active}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="{{c.markStyle}}"></span></sc-if>{{c.name}}</span></button>
+</sc-for>
+</div>
+<div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #3d556e"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #b8d876; border: 1px solid #02784d; display: inline-block"></span>Counties where PHIL has current work on this topic</div>
+</div>
+
+<sc-if value="{{noCounty}}" hint-placeholder-val="{{false}}">
+<div style="border: 2px dashed #73889e; border-radius: 10px; padding: 28px; font-size: 17px; font-weight: 700; color: #12365b; background: #f8fafb">Choose a county above to see its data.</div>
+</sc-if>
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="background: #12365b; color: #ffffff; border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #b8d876">PHIL's Projects and Partnerships in the {{countyLabel}} Community</div>
+<div style="font-size: 16px; line-height: 1.5; font-weight: 800">{{topic.workHere}}</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
+<img src="assets/fox-magnifier.png" alt="PHIL's fox mascot holding a magnifying glass" style="height: 96px; width: auto; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Data for {{countyLabel}}</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: #3d556e">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #fbd5d2; border: 1px solid #b42318; display: inline-block"></span>Worse than California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #d3f0df; border: 1px solid #02784d; display: inline-block"></span>Better than California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 50%; background: #e8edf2; border: 1px solid #73889e; display: inline-block"></span>No California comparison, or same as the California average</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 28px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8); display: inline-block"></span>All California counties, lowest to highest</span>
+</div>
+</div>
+<button type="button" onClick="{{cmp.toggle}}" aria-expanded="{{cmp.openAttr}}" style="margin-left: auto; align-self: flex-start; min-height: 44px; padding: 8px 16px; border-radius: 999px; border: 1px solid #12365b; background: {{cmp.btnBg}}; color: {{cmp.btnFg}}; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer">{{cmp.toggleLabel}}</button>
+</div>
+<sc-if value="{{cmp.open}}" hint-placeholder-val="{{false}}">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 20px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 22px; color: #12365b">Compare Counties</h4>
+<p style="margin: 0; font-size: 13px; color: #3d556e">Select a column heading to sort. Cells are shaded where the same dataset publishes a California value: light red is worse than the California average, light green is better.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{cmp.sets}}" as="st" hint-placeholder-count="4">
+<button type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" style="{{st.style}}">{{st.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="overflow-x: auto">
+<table style="border-collapse: collapse; font-size: 13px; min-width: 100%">
+<thead>
+<tr>
+<th scope="col" style="position: sticky; left: 0; background: #ffffff; text-align: left; padding: 8px 10px; border-bottom: 2px solid #12365b; color: #12365b; min-width: 130px; z-index: 1">County</th>
+<sc-for list="{{cmp.cols}}" as="col" hint-placeholder-count="6">
+<th scope="col" style="text-align: right; padding: 8px 10px; border-bottom: 2px solid #12365b; vertical-align: bottom; min-width: 120px; max-width: 180px"><button type="button" onClick="{{col.pick}}" title="{{col.title}}" style="width: 100%; text-align: right; padding: 0; border: none; background: transparent; color: #12365b; font-family: inherit; font-size: 12px; font-weight: 800; line-height: 1.3; cursor: pointer">{{col.label}}{{col.arrow}}</button><div style="font-size: 11px; font-weight: 400; color: #526c87">{{col.period}}</div></th>
+</sc-for>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{cmp.rows}}" as="r" hint-placeholder-count="18">
+<tr style="{{r.rowStyle}}">
+<th scope="row" style="{{r.nameStyle}}">{{r.name}}</th>
+<sc-for list="{{r.cells}}" as="cell" hint-placeholder-count="6">
+<td style="{{cell.style}}">{{cell.text}}</td>
+</sc-for>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</div>
+</sc-if>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{topic.indicators}}" as="i" hint-placeholder-count="4">
+<article style="border: 1px solid #dee3e8; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #ffffff">
+<span style="{{i.levelStyle}}">{{i.level}}</span>
+<h4 style="margin: 0; font-size: 18px; line-height: 1.35; font-weight: 800">{{i.name}}</h4>
+<sc-if value="{{i.hasGeo}}" hint-placeholder-val="{{false}}">
+<div style="font-size: 13px; font-weight: 700; color: #30718d">{{i.geo}}</div>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 18px; padding: 4px 0">
+<sc-for list="{{i.charts}}" as="m" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 8px" title="{{m.title}}">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 14px; line-height: 1.35; font-weight: 700; color: #12365b">{{m.label}}</div>
+<div style="font-size: 12px; color: #526c87">{{m.period}}</div>
+</div>
+<sc-if value="{{m.hasPill}}" hint-placeholder-val="{{false}}">
+<span style="{{m.pillStyle}}">{{m.pill}}</span>
+</sc-if>
+<sc-if value="{{m.isBars}}" hint-placeholder-val="{{true}}">
+<sc-for list="{{m.bars}}" as="b" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px"><span style="color: #12365b">{{b.label}}</span><span style="font-weight: 800; color: #12365b; white-space: nowrap">{{b.value}}</span></div>
+<div style="height: 16px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><div style="{{b.barStyle}}"></div></div>
+</div>
+</sc-for>
+</sc-if>
+<sc-if value="{{m.isNumber}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 30px; font-weight: 700; line-height: 1.1; color: #12365b">{{m.big}}</span>
+<span style="font-size: 13px; color: #526c87">{{m.side}}</span>
+</div>
+</sc-if>
+<sc-if value="{{m.isMissing}}" hint-placeholder-val="{{false}}">
+<div style="border: 1px dashed #73889e; border-radius: 4px; padding: 14px; font-size: 13px; line-height: 1.45; color: #526c87">{{m.missing}}</div>
+</sc-if>
+<sc-if value="{{m.hasHp}}" hint-placeholder-val="{{false}}">
+<div style="font-size: 12px; color: #526c87">{{m.hpText}}</div>
+</sc-if>
+<sc-if value="{{m.hasRank}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="position: relative; height: 26px; margin: 0 10px" aria-hidden="true">
+<div style="position: absolute; left: -6px; right: -6px; top: 9px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8)"></div>
+<sc-for list="{{m.dots}}" as="dt" hint-placeholder-count="58">
+<span style="{{dt.style}}"></span>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #526c87"><span>{{m.rankLow}}</span><span>{{m.rankHigh}}</span></div>
+<div style="font-size: 13px; line-height: 1.4; color: #12365b">{{m.rankText}}</div>
+</div>
+</sc-if>
+<sc-if value="{{m.hasTrend}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #30718d">Trend</div>
+<svg viewBox="0 0 320 92" width="100%" height="92" role="img" aria-label="{{m.trendAria}}" style="display: block; overflow: visible">
+<line x1="10" y1="84" x2="310" y2="84" stroke="#dee3e8" stroke-width="1"></line>
+<path d="{{m.caD}}" fill="none" stroke="#4bb1dc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="{{m.coD}}" fill="none" stroke="#02784d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+<circle cx="{{m.lastX}}" cy="{{m.lastY}}" r="4" fill="#02784d"></circle>
+</svg>
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #526c87"><span>{{m.trendStart}}</span><span style="font-weight: 800; color: #12365b">{{m.trendEnd}}</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #526c87">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="display: inline-block; width: 16px; height: 3px; background: #02784d"></span>County</span>
+<sc-if value="{{m.trendHasCa}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="display: inline-block; width: 16px; height: 3px; background: #4bb1dc"></span>California</span></sc-if>
+<span>{{m.trendNote}}</span>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-for>
+<sc-if value="{{i.hasAbout}}" hint-placeholder-val="{{false}}">
+<details style="font-size: 13px; line-height: 1.45; color: #526c87">
+<summary style="cursor: pointer; min-height: 32px; font-weight: 700; color: #496b9c">About this data</summary>
+<p style="margin: 8px 0 0">{{i.about}}</p>
+</details>
+</sc-if>
+</div>
+<div style="font-size: 13px; line-height: 1.45; color: #526c87">Source: {{i.dataset}}, {{i.publisher}}. {{i.cadence}}. {{i.access}}.</div>
+<sc-if value="{{i.hasNote}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 13px; line-height: 1.45; font-style: italic; color: #526c87">{{i.note}}</p>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 16px; align-items: center">
+<img src="{{topic.foxSrc}}" alt="{{topic.foxAlt}}" style="height: 96px; width: auto; flex-shrink: 0">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 22px; color: #30718d">How PHIL and Partners Are Working on This Topic</h3>
+</div>
+<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5">{{topic.intro}}</p>
+<div style="display: flex; align-items: center; gap: 12px; padding-top: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #02784d; display: inline-block; flex-shrink: 0"></span><h4 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #12365b">In {{countyLabel}}</h4><span aria-hidden="true" style="flex: 1; height: 1px; background: #dee3e8"></span></div>
+<sc-if value="{{topic.hasHere}}" hint-placeholder-val="{{true}}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); grid-auto-flow: row dense; gap: 20px; align-items: stretch; padding-top: 4px">
+<sc-for list="{{topic.groupsHere}}" as="g" hint-placeholder-count="3">
+<article style="{{g.cardStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #02784d">{{g.years}}</span>
+<sc-if value="{{g.serves}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b; border-radius: 999px; padding: 3px 10px">{{g.servesText}}</span>
+</sc-if>
+</div>
+<h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 21px; line-height: 1.3; font-weight: 700; color: #12365b"><sc-if value="{{g.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{g.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{g.name}}</a></sc-if><sc-if value="{{g.noUrl}}" hint-placeholder-val="{{false}}">{{g.name}}</sc-if></h4>
+<p style="margin: 0; font-size: 15px; line-height: 1.55">{{g.role}}</p>
+<div style="display: flex; align-items: center; gap: 6px; font-size: 14px; color: #526c87">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#526c87" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+<span>{{g.where}}</span>
+</div>
+<sc-if value="{{g.expanded}}" hint-placeholder-val="{{false}}">
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.5">
+<sc-for list="{{g.activities}}" as="x" hint-placeholder-count="3">
+<li>{{x.text}}</li>
+</sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{g.hasActivities}}" hint-placeholder-val="{{true}}">
+<div>
+<button type="button" onClick="{{g.toggle}}" aria-expanded="{{g.expandedAttr}}" style="min-height: 44px; padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: underline">{{g.toggleLabel}}</button>
+</div>
+</sc-if>
+
+<sc-if value="{{g.hasChildren}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #dee3e8; padding-top: 14px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d">{{g.childLabel}}</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; align-items: start">
+<sc-for list="{{g.children}}" as="c" hint-placeholder-count="2">
+<div style="{{c.cardStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<span style="font-size: 12px; font-weight: 800; color: #02784d">{{c.years}}</span>
+<sc-if value="{{c.serves}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b; border-radius: 999px; padding: 2px 8px">{{c.servesText}}</span>
+</sc-if>
+</div>
+<div style="font-size: 16px; font-weight: 800; line-height: 1.35"><sc-if value="{{c.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{c.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{c.name}}</a></sc-if><sc-if value="{{c.noUrl}}" hint-placeholder-val="{{false}}">{{c.name}}</sc-if></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5">{{c.role}}</p>
+<sc-if value="{{c.expanded}}" hint-placeholder-val="{{false}}">
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5">
+<sc-for list="{{c.activities}}" as="x" hint-placeholder-count="3">
+<li>{{x.text}}</li>
+</sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{c.hasActivities}}" hint-placeholder-val="{{true}}">
+<div>
+<button type="button" onClick="{{c.toggle}}" aria-expanded="{{c.expandedAttr}}" style="min-height: 44px; padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; text-decoration: underline">{{c.toggleLabel}}</button>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{g.hasOther}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-top: 1px solid #dee3e8; padding-top: 12px">
+<span style="font-size: 13px; color: #526c87">Also in</span>
+<sc-for list="{{g.otherTopics}}" as="t" hint-placeholder-count="2">
+<button type="button" onClick="{{t.pick}}" style="min-height: 44px; padding: 4px 12px; border-radius: 999px; border: 1px solid #dee3e8; background: #ffffff; color: #12365b; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer">{{t.title}}</button>
+</sc-for>
+</div>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{topic.noHere}}" hint-placeholder-val="{{false}}">
+<div style="background: #f3e9d7; border-radius: 10px; padding: 18px 22px; font-size: 15px; line-height: 1.55; font-weight: 700; color: #12365b">{{topic.engagedLine}}</div>
+</sc-if>
+<sc-if value="{{topic.hasOther}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; align-items: center; gap: 12px; padding-top: 8px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #73889e; display: inline-block; flex-shrink: 0"></span><h4 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #12365b">In Other Counties</h4><span aria-hidden="true" style="flex: 1; height: 1px; background: #dee3e8"></span></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #526c87">PHIL projects and partnerships on this topic elsewhere in California. Each card names the counties it serves.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); grid-auto-flow: row dense; gap: 20px; align-items: stretch; padding-top: 4px">
+<sc-for list="{{topic.groupsOther}}" as="g" hint-placeholder-count="3">
+<article style="{{g.cardStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #02784d">{{g.years}}</span>
+<sc-if value="{{g.serves}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b; border-radius: 999px; padding: 3px 10px">{{g.servesText}}</span>
+</sc-if>
+</div>
+<h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 21px; line-height: 1.3; font-weight: 700; color: #12365b"><sc-if value="{{g.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{g.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{g.name}}</a></sc-if><sc-if value="{{g.noUrl}}" hint-placeholder-val="{{false}}">{{g.name}}</sc-if></h4>
+<p style="margin: 0; font-size: 15px; line-height: 1.55">{{g.role}}</p>
+<div style="display: flex; align-items: center; gap: 6px; font-size: 14px; color: #526c87">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#526c87" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+<span>{{g.where}}</span>
+</div>
+<sc-if value="{{g.expanded}}" hint-placeholder-val="{{false}}">
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.5">
+<sc-for list="{{g.activities}}" as="x" hint-placeholder-count="3">
+<li>{{x.text}}</li>
+</sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{g.hasActivities}}" hint-placeholder-val="{{true}}">
+<div>
+<button type="button" onClick="{{g.toggle}}" aria-expanded="{{g.expandedAttr}}" style="min-height: 44px; padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: underline">{{g.toggleLabel}}</button>
+</div>
+</sc-if>
+
+<sc-if value="{{g.hasChildren}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 10px; border-top: 1px solid #dee3e8; padding-top: 14px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d">{{g.childLabel}}</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; align-items: start">
+<sc-for list="{{g.children}}" as="c" hint-placeholder-count="2">
+<div style="{{c.cardStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between">
+<span style="font-size: 12px; font-weight: 800; color: #02784d">{{c.years}}</span>
+<sc-if value="{{c.serves}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b; border-radius: 999px; padding: 2px 8px">{{c.servesText}}</span>
+</sc-if>
+</div>
+<div style="font-size: 16px; font-weight: 800; line-height: 1.35"><sc-if value="{{c.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{c.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{c.name}}</a></sc-if><sc-if value="{{c.noUrl}}" hint-placeholder-val="{{false}}">{{c.name}}</sc-if></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5">{{c.role}}</p>
+<sc-if value="{{c.expanded}}" hint-placeholder-val="{{false}}">
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; line-height: 1.5">
+<sc-for list="{{c.activities}}" as="x" hint-placeholder-count="3">
+<li>{{x.text}}</li>
+</sc-for>
+</ul>
+</sc-if>
+<sc-if value="{{c.hasActivities}}" hint-placeholder-val="{{true}}">
+<div>
+<button type="button" onClick="{{c.toggle}}" aria-expanded="{{c.expandedAttr}}" style="min-height: 44px; padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; text-decoration: underline">{{c.toggleLabel}}</button>
+</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{g.hasOther}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center; border-top: 1px solid #dee3e8; padding-top: 12px">
+<span style="font-size: 13px; color: #526c87">Also in</span>
+<sc-for list="{{g.otherTopics}}" as="t" hint-placeholder-count="2">
+<button type="button" onClick="{{t.pick}}" style="min-height: 44px; padding: 4px 12px; border-radius: 999px; border: 1px solid #dee3e8; background: #ffffff; color: #12365b; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer">{{t.title}}</button>
+</sc-for>
+</div>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{topic.hasPast}}" hint-placeholder-val="{{true}}">
+<div style="background: #f3e9d7; border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 4px; margin-top: 12px">
+<h4 style="margin: 0 0 8px; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #30718d">Earlier Work in This Topic</h4>
+<sc-for list="{{topic.past}}" as="p" hint-placeholder-count="3">
+<div style="display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-top: 1px solid #dfd2bc">
+<div style="font-size: 14px; font-weight: 800; color: #02784d; line-height: 1.4">{{p.years}}</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 15px; font-weight: 800; line-height: 1.4"><sc-if value="{{p.hasUrl}}" hint-placeholder-val="{{true}}"><a href="{{p.url}}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{p.name}}</a></sc-if><sc-if value="{{p.noUrl}}" hint-placeholder-val="{{false}}">{{p.name}}</sc-if></div>
+<div style="font-size: 14px; line-height: 1.5">{{p.role}}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{topic.act.has}}" hint-placeholder-val="{{true}}">
+<section aria-labelledby="phil-act-heading" style="border-radius: 14px; overflow: hidden; border: 1px solid #c9d3dc; background: #ffffff; box-shadow: 0 2px 10px rgba(18, 54, 91, 0.06)">
+<div style="position: relative; background: linear-gradient(120deg, #12365b 0%, #1d4a72 55%, #30718d 100%); color: #ffffff; padding: 28px 28px 24px; display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center">
+<div aria-hidden="true" style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(184, 216, 118, 0.14)"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 8px; flex: 1 1 420px; min-width: 0">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #b8d876">Take Action</div>
+<h3 id="phil-act-heading" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; line-height: 1.2; color: #ffffff">How Partners Can Act</h3>
+<p style="margin: 0; max-width: 620px; font-size: 15px; line-height: 1.55; color: #e3eef6">Strategies from national research reviews, California efforts partners can take part in, and a tool for {{countyLabel}}.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 6px">
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; padding: 5px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.28)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #7fd6a8; display: inline-block"></span>{{topic.act.statWorks}}</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; padding: 5px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.28)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #8cc9e4; display: inline-block"></span>{{topic.act.statState}}</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 800; padding: 5px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.28)"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #f2c46d; display: inline-block"></span>1 county tool</span>
+</div>
+</div>
+<button type="button" onClick="{{topic.act.toggle}}" aria-expanded="{{topic.act.expandedAttr}}" aria-controls="phil-act-body" style="position: relative; min-height: 48px; padding: 10px 22px; border-radius: 999px; border: none; background: #b8d876; color: #12365b; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px">{{topic.act.toggleLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#12365b" stroke-width="3" aria-hidden="true" style="transform: {{topic.act.chev}}"><path d="M6 9l6 6 6-6"/></svg></button>
+</div>
+<sc-if value="{{topic.act.open}}" hint-placeholder-val="{{true}}">
+<div id="phil-act-body" style="background: #f6f8fa; padding: 24px 28px 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 24px; align-items: start">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #039862; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+<div><h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #12365b">What Works</h4><div style="font-size: 13px; color: #526c87">Strategies from national research reviews</div></div>
+</div>
+<sc-for list="{{topic.act.works}}" as="w" hint-placeholder-count="3">
+<article style="background: #ffffff; border: 1px solid #dee3e8; border-left: 4px solid #039862; border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<a href="{{w.url}}" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 800; line-height: 1.35; color: #12365b; text-decoration: underline; text-decoration-color: #b8d876; text-underline-offset: 3px">{{w.name}}</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">{{w.desc}}</p>
+<div style="font-size: 12px; color: #526c87">{{w.source}}</div>
+</article>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #30718d; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4"><path d="M3 21h18M5 21V10M19 21V10M9 21v-7h6v7M2 10l10-6 10 6"/></svg></span>
+<div><h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #12365b">Happening in California</h4><div style="font-size: 13px; color: #526c87">State efforts partners can take part in</div></div>
+</div>
+<sc-for list="{{topic.act.state}}" as="w" hint-placeholder-count="2">
+<article style="background: #ffffff; border: 1px solid #dee3e8; border-left: 4px solid #30718d; border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<a href="{{w.url}}" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 800; line-height: 1.35; color: #12365b; text-decoration: underline; text-decoration-color: #8cc9e4; text-underline-offset: 3px">{{w.name}}</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">{{w.desc}}</p>
+</article>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #c98a1b; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+<div><h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #12365b">In {{countyLabel}}</h4><div style="font-size: 13px; color: #526c87">Start with this county tool</div></div>
+</div>
+<article style="background: #fbf4e6; border: 1px solid #ead9b8; border-radius: 10px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 17px; font-weight: 800; line-height: 1.35; color: #12365b">{{topic.act.county.name}}</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">{{topic.act.county.desc}}</p>
+<a href="{{topic.act.county.url}}" target="_blank" rel="noopener" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; background: #12365b; color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none">Open the tool<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+</article>
+<div style="background: #e6f5ec; border: 1px solid #b5dfc6; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 15px; font-weight: 800; line-height: 1.4; color: #02623f">Planning a community health assessment, needs assessment, or improvement plan in {{countyLabel}}?</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">PHIL can help your team make sense of this data with partners, set shared priorities, and put findings into practice.</p>
+<a href="https://pophealthinnovationlab.org/phil-collective-consultation-form/" target="_blank" rel="noopener" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #02623f; text-decoration: underline; text-underline-offset: 3px">Request a consultation with PHIL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#02623f" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+</div>
+<div style="background: #ffffff; border: 1px dashed #c9d3dc; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 14px; line-height: 1.5; color: #24384d">More state and PHIL tools are on the Resources page.</div>
+<button type="button" onClick="{{topic.act.goResources}}" style="align-self: flex-start; min-height: 44px; padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: underline">Go to Resources</button>
+</div>
+</div>
+
+</div>
+<p style="margin: 0; background: #f6f8fa; padding: 8px 28px 22px; font-size: 12px; line-height: 1.5; color: #526c87">Strategies come from What Works for Health by County Health Rankings and Roadmaps, the Community Preventive Services Task Force, and the Centers for Disease Control and Prevention (CDC). PHIL reviews these links each quarter.</p>
+</sc-if>
+</section>
+</sc-if>
+</sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{showEcm}}" hint-placeholder-val="{{false}}">
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Enhanced Care Management (ECM) and Community Supports</h2>
+<p style="margin: 0; max-width: 880px; font-size: 16px; line-height: 1.55">ECM and Community Supports are Medi-Cal benefits under California Advancing and Innovating Medi-Cal (CalAIM). Medi-Cal managed care plans deliver them through contracts with community providers. Choose a county to see which Community Supports each plan offers, how many provider contracts support each service, and how many members each benefit reaches.</p>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">County</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ecm.counties}}" as="c" hint-placeholder-count="17">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="{{c.style}}">{{c.name}}</button>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{noCounty}}" hint-placeholder-val="{{false}}">
+<div style="border: 2px dashed #73889e; border-radius: 10px; padding: 28px; font-size: 17px; font-weight: 700; color: #12365b; background: #f8fafb">Choose a county above to see its data.</div>
+</sc-if>
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="background: #12365b; color: #ffffff; border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #b8d876">PHIL's Medi-Cal Projects and Partnerships in the {{ecm.countyLabel}} Community</div>
+<div style="font-size: 16px; line-height: 1.5; font-weight: 800">{{ecm.philHere}}</div>
+<div style="font-size: 14px; line-height: 1.5; color: #f3e9d7">PHIL facilitates the Providing Access and Transforming Health (PATH) collaboratives, where providers, plans, counties, and Tribes plan ECM and Community Supports together. <button type="button" onClick="{{ecm.goMedi}}" style="padding: 0; border: none; background: transparent; color: #b8d876; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: underline">See PHIL's Medi-Cal work</button></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px">
+<sc-for list="{{ecm.tiles}}" as="k" hint-placeholder-count="4">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-top: 4px solid #02784d; border-radius: 8px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-family: Archer, Georgia, Cambria, serif; font-size: 34px; font-weight: 700; line-height: 1.1; color: #12365b">{{k.value}}</div>
+<div style="font-size: 14px; line-height: 1.4; color: #3d556e">{{k.label}}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">Community Supports Available in {{ecm.countyLabel}}</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">A service is available when a plan has at least one contracted provider for it in the county, {{ecm.contractsAsOf}}, as reported by DHCS. Bars show provider contracts across all plans in the county.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; font-size: 13px; color: #3d556e">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 50%; background: #02784d; display: inline-block"></span>Contracted providers</span>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 50%; background: #dee3e8; display: inline-block"></span>No contracted providers</span>
+</div>
+<div style="overflow-x: auto">
+<table style="border-collapse: collapse; width: 100%; min-width: 720px; font-size: 14px">
+<thead>
+<tr>
+<th scope="col" style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #12365b; color: #12365b">Community Support</th>
+<sc-for list="{{ecm.plans}}" as="p" hint-placeholder-count="2">
+<th scope="col" style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #12365b; color: #12365b; min-width: 150px">{{p.name}}</th>
+</sc-for>
+<th scope="col" style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #12365b; color: #12365b; min-width: 200px">Provider contracts, all plans</th>
+</tr>
+</thead>
+<tbody>
+<sc-for list="{{ecm.services}}" as="s" hint-placeholder-count="14">
+<tr>
+<th scope="row" style="text-align: left; font-weight: 600; padding: 10px 12px; border-bottom: 1px solid #dee3e8; color: #12365b">{{s.name}}</th>
+<sc-for list="{{s.cells}}" as="x" hint-placeholder-count="2">
+<td style="padding: 10px 12px; border-bottom: 1px solid #dee3e8" title="{{x.title}}">
+<span style="display: inline-flex; align-items: center; gap: 8px">
+<span aria-hidden="true" style="{{x.dotStyle}}"></span>
+<span style="{{x.textStyle}}">{{x.text}}</span>
+</span>
+</td>
+</sc-for>
+<td style="padding: 10px 12px; border-bottom: 1px solid #dee3e8" title="{{s.barTitle}}">
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="flex: 1 1 auto; height: 14px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><div style="{{s.barStyle}}"></div></div>
+<span style="min-width: 36px; text-align: right; font-weight: 800; color: #12365b">{{s.total}}</span>
+</div>
+</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+<sc-if value="{{ecm.hasPending}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 13px; color: #3d556e">{{ecm.pendingNote}}</p>
+</sc-if>
+<p style="margin: 0; font-size: 13px; color: #3d556e">Short-Term Post-Hospitalization Housing ends December 31, 2026. A provider contract count reflects contracts between a plan and providers, and one provider can hold contracts for several services.</p>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">Who Is Being Served in {{ecm.countyLabel}}</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">Members who used each Community Support, and members enrolled in ECM by Population of Focus, {{ecm.useQuarter}}. DHCS reports these counts for each health plan. Hover over a bar to see the four most recent quarters.</p>
+</div>
+<sc-if value="{{ecm.useMultiPlan}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">Health plan</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{ecm.usePlans}}" as="p" hint-placeholder-count="2">
+<button type="button" onClick="{{p.pick}}" aria-pressed="{{p.pressed}}" style="{{p.style}}">{{p.name}}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px">
+<sc-for list="{{ecm.useCharts}}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">{{g.title}}</h4>
+<sc-if value="{{g.empty}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 14px; color: #526c87">{{g.emptyText}}</p>
+</sc-if>
+<sc-for list="{{g.rows}}" as="r" hint-placeholder-count="10">
+<div style="display: flex; flex-direction: column; gap: 4px" title="{{r.title}}">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span style="color: #12365b">{{r.label}}</span><span style="{{r.valueStyle}}">{{r.value}}</span></div>
+<div style="height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><div style="{{r.barStyle}}"></div></div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<p style="margin: 0; font-size: 13px; color: #3d556e">"Suppressed" marks a small count DHCS withheld to protect member privacy. A member can use more than one Community Support, and ECM members are counted in each Population of Focus they qualify for.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px">
+<sc-for list="{{ecm.compare}}" as="g" hint-placeholder-count="2">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 22px; color: #12365b">{{g.title}}</h3>
+<p style="margin: 0; font-size: 13px; color: #3d556e">{{g.sub}}</p>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 40px; font-weight: 700; line-height: 1.1; color: #02784d">{{g.big}}</span>
+<span style="font-size: 14px; color: #3d556e">{{g.unit}}</span>
+</div>
+<div style="font-size: 14px; color: #12365b">{{g.side}}</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="position: relative; height: 26px; margin: 0 10px" aria-hidden="true">
+<div style="position: absolute; left: -6px; right: -6px; top: 9px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8)"></div>
+<sc-for list="{{g.dots}}" as="dt" hint-placeholder-count="58"><span style="{{dt.style}}"></span></sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #526c87"><span>{{g.rankLow}}</span><span>{{g.rankHigh}}</span></div>
+<div style="font-size: 13px; color: #12365b">{{g.rankText}}</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #3d556e">{{g.note}}</p>
+</div>
+</sc-for>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">ECM Provider Contracts by Population of Focus in {{ecm.countyLabel}}</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">ECM provider contracts across all plans in the county, {{ecm.pofAsOf}}. A population with no contracts has no ECM provider contracted to serve it in that quarter.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 28px">
+<sc-for list="{{ecm.pofGroups}}" as="g" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">{{g.name}}</h4>
+<sc-for list="{{g.rows}}" as="r" hint-placeholder-count="7">
+<div style="display: flex; flex-direction: column; gap: 4px" title="{{r.title}}">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 14px"><span style="color: #12365b">{{r.label}}</span><span style="font-weight: 800; color: #12365b; white-space: nowrap">{{r.value}}</span></div>
+<div style="height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><div style="{{r.barStyle}}"></div></div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">Members Served by Each Health Plan</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">{{ecm.periodLabel}}. "Suppressed" marks a small count DHCS withheld to protect member privacy.</p>
+</div>
+<div style="overflow-x: auto">
+<table style="border-collapse: collapse; width: 100%; min-width: 760px; font-size: 14px">
+<thead><tr>
+<th scope="col" style="text-align: left; padding: 10px 12px; border-bottom: 2px solid #12365b">Health plan</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Average plan members, {{ecm.periodYear}}</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Enrollment, {{ecm.enrollMonth}}</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Members who used Community Supports</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Community Supports services used per 10,000 members</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Members who received ECM</th>
+<th scope="col" style="text-align: right; padding: 10px 12px; border-bottom: 2px solid #12365b">Share of plan members in ECM</th>
+</tr></thead>
+<tbody>
+<sc-for list="{{ecm.planRows}}" as="r" hint-placeholder-count="2">
+<tr>
+<th scope="row" style="text-align: left; font-weight: 600; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.plan}}</th>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.avg}}</td>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.enroll}}</td>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.csMembers}}</td>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.csRate}}</td>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.ecmMembers}}</td>
+<td style="text-align: right; padding: 10px 12px; border-bottom: 1px solid #dee3e8">{{r.ecmPct}}</td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</div>
+
+<div style="background: #f3e9d7; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; line-height: 1.55">
+<div style="font-weight: 800; font-size: 16px">More ECM and Community Supports Data</div>
+<p style="margin: 0">Longer quarterly trends, member demographics, and statewide totals are in the <a href="https://storymaps.arcgis.com/collections/a07f998dfefa497fbd7613981e4f6117?item=4">DHCS ECM and Community Supports Quarterly Implementation Report</a>.</p>
+<p style="margin: 0">Sources: <a href="https://data.chhs.ca.gov/dataset/ecm-community-support-data-tables-for-quarterly-implementation-report">ECM and Community Supports Data Tables for the Quarterly Implementation Report</a> (Charts 4.5.2, 3.9.1, 3.9.3, 2.5.2, 1.7.1, and 1.7.3), California Department of Health Care Services (DHCS), California Health and Human Services Open Data Portal; <a href="https://www.dhcs.ca.gov/Documents/MCQMD/Community-Supports-Elections-by-MCP-and-County.pdf">CalAIM Community Supports Managed Care Plan Elections</a>, DHCS, updated June 2026. County figures and statewide totals are published by DHCS (Charts 1.5 and 3.7, and the implementation report totals table).</p>
+</div>
+</sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{showResources}}" hint-placeholder-val="{{false}}">
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Resources</h2>
+<p style="margin: 0; max-width: 880px; font-size: 16px; line-height: 1.55">Tools, reports, and data sources that go deeper than this dashboard. {{res.countyLine}}</p>
+</div>
+<sc-for list="{{res.groups}}" as="g" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">{{g.title}}</h3>
+<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #3d556e">{{g.description}}</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px">
+<sc-for list="{{g.items}}" as="r" hint-placeholder-count="4">
+<div style="{{r.cardStyle}}">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<sc-if value="{{r.isLink}}" hint-placeholder-val="{{true}}"><a href="{{r.url}}" target="_blank" rel="noopener" style="font-size: 16px; font-weight: 800; line-height: 1.35; color: #12365b">{{r.title}}</a></sc-if>
+<sc-if value="{{r.isSoon}}" hint-placeholder-val="{{false}}"><span style="font-size: 16px; font-weight: 800; line-height: 1.35; color: #12365b">{{r.title}}</span><span style="display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 800; background: #e8edf2; color: #12365b">Coming soon</span></sc-if>
+<sc-if value="{{r.here}}" hint-placeholder-val="{{false}}"><span style="display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 800; background: #b8d876; color: #12365b">{{r.hereLabel}}</span></sc-if>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #12365b">{{r.description}}</p>
+<sc-if value="{{r.hasCounties}}" hint-placeholder-val="{{false}}"><div style="font-size: 12px; color: #526c87">Counties: {{r.countyList}}</div></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+<div style="background: #f3e9d7; border-radius: 10px; padding: 20px 24px; font-size: 14px; line-height: 1.55; color: #12365b">To suggest a resource for this page, contact PHIL at <a href="https://pophealthinnovationlab.org/contact-us/">pophealthinnovationlab.org/contact-us</a>.</div>
+</section>
+</sc-if>
+
+</main>
+<footer style="background: #f3e9d7; padding: 32px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
+<img src="assets/phil-mark.png" alt="Population Health Innovation Lab mark" style="height: 72px; width: auto; flex-shrink: 0">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5">
+<div style="font-weight: 800">About This Prototype</div>
+<p style="margin: 0">This is a prototype for PHIL team review. All data comes from public sources that update automatically.</p>
+<p style="margin: 0">The Population Health Innovation Lab (PHIL), a program of the Public Health Institute, designs, catalyzes, and accelerates innovative approaches that advance public health, well-being, and equity. <a href="https://pophealthinnovationlab.org/">pophealthinnovationlab.org</a></p>
+</div>
+</div>
+</footer>
+</div>
+</script>
+<script type="text/plain" id="phil-logic">class Component extends DCLogic {
+  renderVals() {
+    var self = this;
+    var s = this.state || {};
+    var tab = s.tab || "overview";
+    var ALL17 = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity","Siskiyou","Los Angeles","San Bernardino","Sonoma","Marin","Sutter","Napa"];
+    var hasCounty = ALL17.indexOf(s.gCounty) >= 0;
+    var gCounty = hasCounty ? s.gCounty : "Lake";
+    var PILL = "display: inline-block; align-self: flex-start; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 800; line-height: 1.4; ";
+    var TONE = { worse: PILL + "background: #fbd5d2; color: #8a1c13; border: 1px solid #f0a49c;", better: PILL + "background: #d3f0df; color: #065f3d; border: 1px solid #8fd1ad;", neutral: PILL + "background: #e8edf2; color: #12365b; border: 1px solid #c9d3dd;" };
+    var MARK = { worse: "#d64545", better: "#02784d", neutral: "#12365b" };
+    function toneFor(dir, w) { if (w === true) return dir > 0 ? "worse" : dir < 0 ? "better" : "neutral"; if (w === false) return dir > 0 ? "better" : dir < 0 ? "worse" : "neutral"; return "neutral"; }
+    function judgeCa(cv, ca, w) {
+      if (typeof cv !== "number" || typeof ca !== "number") return null;
+      var dir = cv > ca ? 1 : cv < ca ? -1 : 0, t = toneFor(dir, w);
+      return { text: dir > 0 ? "Higher than California average" : dir < 0 ? "Lower than California average" : "Same as California average", style: TONE[t], tone: t };
+    }
+    var FIFTH = ["Lowest fifth", "Second lowest fifth", "Middle fifth", "Second highest fifth", "Highest fifth"];
+    function ordinal(n) { var s2 = ["th", "st", "nd", "rd"], v = n % 100; return n + (s2[(v - 20) % 10] || s2[v] || s2[0]); }
+    function rankWords(above, below, n) { return above + 1 <= Math.ceil(n / 2) ? "Ranks " + ordinal(above + 1) + " highest" : "Ranks " + ordinal(below + 1) + " lowest"; }
+    function judgeRank(cv, all, w) {
+      if (typeof cv !== "number" || !all || all.length < 5) return null;
+      var below = all.filter(function (v) { return v < cv; }).length, above = all.filter(function (v) { return v > cv; }).length, n = all.length;
+      var t = "neutral";
+      return { text: rankWords(above, below, n) + " of " + n + " California counties", style: TONE[t], tone: t, below: below, above: above, n: n };
+    }
+    function strip(cv, all, tone) {
+      var lo = all[0], hi = all[all.length - 1], span = (hi - lo) || 1;
+      var dots = all.map(function (v) { return { style: "position: absolute; top: 10px; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #73889e; opacity: 0.55; left: " + ((v - lo) / span * 100).toFixed(2) + "%" }; });
+      if (typeof cv === "number") dots.push({ style: "position: absolute; top: 3px; width: 20px; height: 20px; margin-left: -10px; border-radius: 50%; box-sizing: border-box; border: 3px solid #ffffff; box-shadow: 0 0 0 1px " + MARK[tone || "neutral"] + "; background: " + MARK[tone || "neutral"] + "; left: " + ((cv - lo) / span * 100).toFixed(2) + "%" });
+      return dots;
+    }
+    function countyChips(activeList, base) {
+      return ALL17.map(function (c) {
+        var on = hasCounty && c === gCounty, act = activeList.indexOf(c) >= 0;
+        return { name: c, pressed: on ? "true" : "false", active: act, aria: c + " County" + (act ? ", PHIL has current work here" : ""),
+          markStyle: "width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: #b8d876; border: 1px solid " + (on ? "#ffffff" : "#02784d"),
+          style: base + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"),
+          pick: function () { self.setState({ gCounty: c }); } };
+      });
+    }
+    var MIHA35 = ["Alameda","Butte","Contra Costa","El Dorado","Fresno","Humboldt","Imperial","Kern","Kings","Los Angeles","Madera","Marin","Merced","Monterey","Napa","Orange","Placer","Riverside","Sacramento","San Bernardino","San Diego","San Francisco","San Joaquin","San Luis Obispo","San Mateo","Santa Barbara","Santa Clara","Santa Cruz","Shasta","Solano","Sonoma","Stanislaus","Tulare","Ventura","Yolo"];
+    var MIHA_REGION = { "Lake": "North/Mountain Region", "Sutter": "Greater Sacramento Region", "Mendocino": "North/Mountain Region", "Del Norte": "North/Mountain Region", "Colusa": "North/Mountain Region", "Glenn": "North/Mountain Region", "Tehama": "North/Mountain Region", "Trinity": "North/Mountain Region", "Siskiyou": "North/Mountain Region", "Sierra": "North/Mountain Region" };
+
+    function geoFor(type, county) {
+      if (type === "miha") {
+        if (MIHA35.indexOf(county) >= 0) return "County estimate: " + county + " County";
+        return "Regional estimate: MIHA " + (MIHA_REGION[county] || "region") + ", which includes " + county + " County";
+      }
+      if (type === "coc") return "Continuum of Care that includes " + county + " County";
+      if (type === "state") return "Statewide reference; this dataset has no county breakdown";
+      if (type === "plan") return county + " County, by managed care plan";
+      if (type === "hospital") return "Hospitals located in " + county + " County";
+      if (type === "bhgroup") return (["Colusa","Glenn","Del Norte","Humboldt","Trinity","Tehama","Sutter"].indexOf(county) >= 0 ? "Combined estimate for a group of small counties that includes " + county + " County" : "County estimate: " + county + " County");
+      return "County estimate: " + county + " County";
+    }
+
+    var LVL_BASE = "align-self: flex-start; font-size: 12px; font-weight: 800; letter-spacing: 0.04em; border-radius: 999px; padding: 3px 10px; ";
+    var LEVEL_STYLE = {
+      "Population health outcome": LVL_BASE + "background: #039862; color: #ffffff;",
+      "Risk and prevention": LVL_BASE + "background: #b8d876; color: #12365b;",
+      "Hospital use": LVL_BASE + "background: #12365b; color: #ffffff;",
+      "Health system and access": LVL_BASE + "background: #4bb1dc; color: #12365b;",
+      "Community conditions": LVL_BASE + "background: #f3e9d7; color: #12365b;"
+    };
+    var IND = {
+      hdmort: { name: "Heart Disease Mortality, Adults 35 and Older", dataset: "Heart Disease Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, spatially smoothed", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      strokemort: { name: "Stroke Mortality, Adults 35 and Older", dataset: "Stroke Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, spatially smoothed", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      places: { name: "High Blood Pressure and Coronary Heart Disease Prevalence", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      placesRisk: { name: "Diagnosed Diabetes, Obesity, and Current Smoking", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
+      placesBPmed: { name: "Taking Blood Pressure Medication and Routine Checkups", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
+      pqiCardiac: { name: "Preventable Hospitalizations for Heart Failure and Hypertension", dataset: "Rates of Preventable Hospitalizations for Selected Medical Conditions by County", publisher: "California Department of Health Care Access and Information (HCAI)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
+      hpsaPC: { name: "Primary Care Health Professional Shortage Areas", dataset: "Health Professional Shortage Areas (HPSA) data", publisher: "Health Resources and Services Administration (HRSA)", cadence: "Daily", access: "Stable file download (CSV)", geoType: "county", level: "Health system and access", note: "" },
+      placesSocial: { name: "Food Insecurity and Transportation Barriers", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsPov: { name: "Poverty and Lack of Health Insurance", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      aces: { name: "Adults Reporting One or More Adverse Childhood Experiences (ACEs)", dataset: "Let's Get Healthy California Indicator 04, Behavioral Risk Factor Surveillance System (BRFSS) ACEs module", publisher: "California Department of Public Health (CDPH)", cadence: "Annual", access: "API", geoType: "state", level: "Population health outcome", note: "" },
+      maltx: { name: "Child Maltreatment Allegations, Substantiations, and Foster Care Entries", dataset: "Child Maltreatment Allegation and Substantiation Rates by Ethnic Group", publisher: "California Department of Social Services (CDSS)", cadence: "Periodic extract", access: "API", geoType: "state", level: "Population health outcome", note: "" },
+      placesMH: { name: "Frequent Mental Distress and Depression", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      suicide: { name: "Suicide Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      placesAlc: { name: "Binge Drinking and Current Smoking", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
+      bhwork: { name: "Behavioral Health Hospital Encounters per Behavioral Health Provider License", dataset: "Behavioral Health and Workforce", publisher: "California Department of Health Care Access and Information (HCAI)", cadence: "Annual", access: "API", geoType: "bhgroup", level: "Hospital use", note: "" },
+      hpsaMH: { name: "Mental Health Professional Shortage Areas", dataset: "Health Professional Shortage Areas (HPSA) data", publisher: "Health Resources and Services Administration (HRSA)", cadence: "Daily", access: "Stable file download (CSV)", geoType: "county", level: "Health system and access", note: "" },
+      placesSupport: { name: "Lack of Social and Emotional Support and Loneliness", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsChild: { name: "Children Living in Poverty", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      mihaDep: { name: "Prenatal and Postpartum Depression Symptoms", dataset: "Maternal and Infant Health Assessment (MIHA) Data Snapshots", publisher: "California Department of Public Health (CDPH)", cadence: "Three-year aggregated estimates", access: "Stable file download (CSV)", geoType: "miha", level: "Population health outcome", note: "" },
+      births: { name: "Births to Adolescent Parents, Ages 15 to 19", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      smhs05: { name: "Children Ages 3 to 5 Receiving Specialty Mental Health Services (SMHS)", dataset: "Behavioral Health Program Performance Data: Specialty Mental Health Services (SMHS) for children and youth", publisher: "California Department of Health Care Services (DHCS)", cadence: "Annual, by fiscal year", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      pqiKids: { name: "Preventable Hospitalizations Among Children", dataset: "Rates of Preventable Hospitalizations (Age<18) for Selected Medical Conditions by County", publisher: "California Department of Health Care Access and Information (HCAI)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
+      medicalKids: { name: "Children and Youth with Medicaid or Means-Tested Public Health Coverage", dataset: "American Community Survey (ACS) 5-Year Estimates, Table S2704", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      acsYoung: { name: "Children Under Age 5 Living in Poverty", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      smhsYouth: { name: "Youth Receiving Specialty Mental Health Services (SMHS), up to Age 20", dataset: "Behavioral Health Program Performance Data: Specialty Mental Health Services (SMHS) for children and youth", publisher: "California Department of Health Care Services (DHCS)", cadence: "Annual, by fiscal year", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      cdeAbs: { name: "Chronic Absenteeism Among K-12 Students", dataset: "Chronic Absenteeism Data", publisher: "California Department of Education (CDE)", cadence: "Annual, by school year", access: "Stable file download (CSV)", geoType: "county", level: "Community conditions", note: "" },
+      cdeHomeless: { name: "Students Experiencing Homelessness", dataset: "Homeless Enrollment Data", publisher: "California Department of Education (CDE)", cadence: "Annual, by school year", access: "Stable file download (CSV)", geoType: "county", level: "Community conditions", note: "" },
+      od: { name: "Drug Overdose Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      hdis: { name: "People Receiving Homeless Response Services", dataset: "California System Performance Measures, Homeless Data Integration System (HDIS)", publisher: "California Interagency Council on Homelessness", cadence: "Annual", access: "API", geoType: "coc", level: "Community conditions", note: "" },
+      bhHousing: { name: "Medi-Cal Members Experiencing Homelessness", dataset: "Behavioral Health Public County Profile: Homeless/Housing", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      placesHousing: { name: "Housing Insecurity", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      medical: { name: "Medicaid or Means-Tested Public Health Coverage", dataset: "American Community Survey (ACS) 5-Year Estimates, Table S2704", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      ecm: { name: "Members Receiving Enhanced Care Management (ECM)", dataset: "ECM and Community Supports Quarterly Implementation Report tables", publisher: "California Department of Health Care Services (DHCS)", cadence: "Quarterly", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      pqiAll: { name: "Preventable Hospitalizations, All Conditions", dataset: "Rates of Preventable Hospitalizations for Selected Medical Conditions by County", publisher: "California Department of Health Care Access and Information (HCAI)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
+      edVisits: { name: "Emergency Department Visits by Hospital", dataset: "Hospital Emergency Department: Encounters by Facility", publisher: "California Department of Health Care Access and Information (HCAI)", cadence: "Annual", access: "API", geoType: "hospital", level: "Hospital use", note: "" },
+      placesAccess: { name: "Lack of Health Insurance and Routine Checkups", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
+      chdmort: { name: "Coronary Heart Disease Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      diabmort: { name: "Diabetes Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      infmort: { name: "Infant Mortality", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      lbw: { name: "Low Birthweight", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      prenatal: { name: "First Trimester Prenatal Care", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      firearm: { name: "Firearm Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      homicide: { name: "Homicide Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      mvc: { name: "Motor Vehicle Crash Deaths", dataset: "County Health Status Profiles", publisher: "California Department of Public Health (CDPH)", cadence: "Annual edition, 3-year averages", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      bhPerfAccess: { name: "Follow-Up and Treatment Start After a Behavioral Health Crisis", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      bhPerfServices: { name: "Services for Medi-Cal Members With Significant Behavioral Health Needs", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      bhPerfFoster: { name: "Children and Youth in Foster Care", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      bhPlanServed: { name: "County Behavioral Health Plan: People to Be Served", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      bhPlanCost: { name: "County Behavioral Health Plan: Planned Spending", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      bhPlanAlloc: { name: "County Behavioral Health Plan: How BHSA Funds Are Allocated", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      bhPen: { name: "Medi-Cal Members Receiving County Behavioral Health Services", dataset: "Behavioral Health Public County Profile", publisher: "California Department of Health Care Services (DHCS)", cadence: "Updated as counties report", access: "API", geoType: "county", level: "Health system and access", note: "" },
+      wic: { name: "WIC Participation", dataset: "WIC Participants by County", publisher: "California Department of Public Health (CDPH)", cadence: "Monthly", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      asthmaED: { name: "Asthma Emergency Department Visits", dataset: "Asthma Emergency Department Visit Rates", publisher: "California Department of Public Health (CDPH)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
+      acsHousing: { name: "Housing Cost Burden", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsVehicle: { name: "Households Without a Vehicle", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsBroadband: { name: "Broadband Internet Access", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsDisability: { name: "People With a Disability", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" },
+      acsLanguage: { name: "Limited English Proficiency", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Community conditions", note: "" }
+    };
+
+    var TEN = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity"];
+
+    var WORK_URL = {"h2h": "https://pophealthinnovationlab.org/heart-to-heart-lake-county/", "mbh": "https://pophealthinnovationlab.org/0-5-maternal-behavioral-health-technical-assistance-initiative-mbh-0-5/", "rrih": "https://pophealthinnovationlab.org/northern-aces-collaborative/rural-resilience-innovation-hub/", "cybhi": "https://pophealthinnovationlab.org/nac-cybhi-partnership/", "sor": "https://pophealthinnovationlab.org/northern-aces-collaborative/rural-resilience-innovation-hub/", "cpi": "https://pophealthinnovationlab.org/projects/path/", "threads": "https://pophealthinnovationlab.org/tam/", "nac": "https://pophealthinnovationlab.org/northern-aces-collaborative/", "practice": "https://pophealthinnovationlab.org/practice/", "westsac": "https://pophealthinnovationlab.org/case-study-west-sacramento/", "lbact": "https://pophealthinnovationlab.org/case-study-long-beach/", "pathta": "https://pophealthinnovationlab.org/tam/", "cachi": "https://pophealthinnovationlab.org/projects/aligning-systems-for-health/"};
+    var WORK = {
+      h2h: { name: "Heart-to-Heart Lake County", years: "2026 to 2031", status: "Current", current: true,
+        summary: "Improves heart health and makes cardiac care more equitable in Lake County through the Collaborative for Equity in Cardiac Care, a five-year initiative funded by the Merck Foundation.",
+        counties: ["Lake"], where: "Lake County",
+        activities: [
+          "Community-informed cardiac care needs assessment with group discussions and surveys in English and Spanish",
+          "Local advisory group designed with Native American and Latinx cultural experts, including engagement with Lake County's seven Tribal Councils",
+          "Culturally responsive training framework for community health workers and community health representatives (CHW/Rs)",
+          "Implementation model aligned with California Advancing and Innovating Medi-Cal (CalAIM) and the Pathways Hub"
+        ] },
+      psp: { name: "Cardiac Health Literacy and Patient Safety", years: "2026 to 2028", status: "Current", current: true,
+        counties: ["Lake","Mendocino"], where: "Lake and Mendocino counties",
+        activities: [
+          "Cardiac health literacy curriculum covering warning sign recognition, care navigation, medication management, and provider communication, in English and Spanish",
+          "Delivery through street medicine, the emergency department substance use navigator, shelters, and primary care at Adventist Health Clear Lake",
+          "Community health worker cross-training model that incorporates the California Bridge curriculum",
+          "Expansion to Mendocino County through Adventist Health Mendocino and the Mendocino County street medicine collaborative"
+        ] },
+      mbh: { name: "0-5 Maternal Behavioral Health Technical Assistance Initiative (MBH 0-5)", years: "2026 to 2028", status: "Current", current: true,
+        counties: ["Los Angeles","San Bernardino","Sonoma","Marin","Lake","Sutter"], where: "Los Angeles, San Bernardino, Sonoma, Marin, Lake, and Sutter counties",
+        activities: [
+          "Quarterly learning collaboratives for Casa de Esperanza, Child Parent Institute, Foothill Family Services, North Marin Community Services, Redwood Community Services, and St. John's Community Health",
+          "Individualized quality improvement plans and organizational capacity assessments for each grantee",
+          "Network mapping and landscape analysis covering perinatal care, behavioral health, early childhood systems, and Medi-Cal managed care plans",
+          "Sustainability planning, including billing capacity"
+        ] },
+      rrih: { name: "Rural Resilience Innovation Hub (RRIH)", years: "2023 to present", status: "Current", current: true, parentKey: "nac", parent: "A program of the Northern ACEs Collaborative (NAC)",
+        summary: "A shared space where rural communities across 11 Northern California counties test and spread resilience practices.",
+        counties: TEN.concat(["Siskiyou"]), where: "11 Northern California counties",
+        activities: [
+          "Communities of practice across 11 Northern California counties",
+          "Leads the Opioid and Stimulant Use Prevention Training and supports the NAC + CYBHI partnership for youth behavioral health",
+          "Youth Behavioral Health and Justice Community of Practice, funded by the Office of Youth and Community Restoration (OYCR)",
+          "In-person and virtual convenings for community of practice members"
+        ] },
+      cybhi: { name: "NAC + CYBHI for Youth Behavioral Health", years: "2025 to 2027", status: "Current", current: true, parentKey: "nac", parent: "A program of the Northern ACEs Collaborative (NAC)",
+        counties: TEN, where: "The ten Northern ACEs Collaborative counties",
+        activities: [
+          "Virtual Resource Fair with the Northern ACEs Collaborative",
+          "Open Doors and Safe Spaces trainings for practitioners serving children and youth",
+          "CalAIM Tribal Roundtable in Lake County",
+          "Resource partner collaboration meetings"
+        ] },
+      sor: { name: "Opioid and Stimulant Use Prevention Training", years: "2026 to 2027", status: "Current", current: true, parentKey: "nac", parent: "A program of the Northern ACEs Collaborative (NAC), led by the Rural Resilience Innovation Hub",
+        counties: TEN.concat(["Siskiyou"]), where: "11 Northern California counties",
+        activities: [
+          "Training for community health workers, peer specialists, and Enhanced Care Management and Community Supports staff",
+          "Single Session Consultation and Motivational Interviewing delivered by the University of California, San Francisco Department of Psychiatry",
+          "Open Doors training delivered by Catalyst Center",
+          "Partnership with Two Feathers Native American Family Services and Kno'Qoti Native Wellness"
+        ] },
+      cpi: { name: "PATH Collaborative Planning and Implementation (CPI)", years: "2023 to present", status: "Current", current: true,
+        counties: ["Del Norte","Humboldt","Lake","Marin","Mendocino","Napa","Sonoma"], where: "Northwest Collaborative (Del Norte, Humboldt) and Southwest Collaborative (Lake, Marin, Mendocino, Napa, Sonoma)",
+        activities: [
+          "Monthly Collaborative meetings for Enhanced Care Management (ECM) and Community Supports providers, community-based organizations, clinics, Tribal organizations, county agencies, and managed care plans",
+          "Best practice webinars, memos, and recommendations to the California Department of Health Care Services (DHCS)",
+          "Cross-regional sustainability toolkit for ECM and Community Supports"
+        ] },
+      threads: { name: "PATH TA Marketplace: Sonoma County", years: "2025 to present", status: "Current", current: true,
+        counties: ["Sonoma"], where: "Sonoma County", activities: [] },
+      nac: { name: "Northern ACEs Collaborative (NAC)", years: "2019 to present", status: "Current", current: true,
+        counties: TEN, where: "Ten Northern California counties",
+        activities: [
+          "Annual Rural ACEs Summit convening rural leaders, youth, practitioners, and state partners",
+          "Pre-summit Open Doors training for practitioners serving children and youth"
+        ] },
+      lcdv: { name: "Collaboration to End Domestic Violence", years: "2019 to 2021", current: false },
+      practice: { name: "PRACTICE: Preventing and Responding to ACE-Associated Health Conditions and Toxic Stress in Clinics through Community Engagement", years: "2020 to 2023", current: false },
+      rc: { name: "Resilience Catalysts in Public Health Evaluation", years: "2019 to 2025", current: false },
+      kp: { name: "Family Violence Prevention Conference", years: "2017", current: false },
+      cdc618: { name: "Healthy Heart Community Toolkit with CDC", years: "2019 to 2020", current: false },
+      westsac: { name: "West Sacramento Heart Health Case Study", years: "2018 to 2019", current: false },
+      cachi: { name: "California Accountable Communities for Health Support", years: "2016 to 2023", current: false },
+      lbact: { name: "Long Beach All Children Thrive Case Study", years: "2017", current: false },
+      pathta: { name: "PATH Technical Assistance Marketplace", years: "2023", current: false }
+    };
+
+    var TOPICS = {
+      cardio: {
+        title: "Cardiovascular Health",
+        population: "People living with heart conditions in rural Lake County, including Native American and Latinx communities, people experiencing homelessness, and people with substance use disorders",
+        intro: "PHIL's cardiovascular work in Lake County pairs long-term cardiac care infrastructure with a patient safety intervention, and builds on earlier hypertension and heart disease work with CDC and Accountable Communities for Health.",
+        refs: [
+          ["h2h", "Improves heart health and makes cardiac care more equitable in Lake County. Lake County is one of 11 communities nationwide in the Merck Foundation Collaborative for Equity in Cardiac Care."],
+          ["psp", "Extends cardiac health literacy to people experiencing homelessness and people living with substance use disorders who carry cardiac risk."],
+          ["cdc618", "Supported collaboration among business, public health, healthcare, and community organizations to implement evidence-based strategies from the CDC's 6|18 Initiative to improve hypertension control."],
+          ["westsac", "Engaged and convened residents to decrease disproportionately high rates of heart disease."],
+          ["cachi", "Supported Accountable Communities for Health addressing heart disease, diabetes, and trauma across California sites."]
+        ],
+        indicators: ["hdmort","chdmort","strokemort","diabmort","places","placesRisk","placesBPmed","pqiCardiac","hpsaPC","placesSocial","acsPov"]
+      },
+      aces: {
+        title: "ACEs, Trauma, and Resilience",
+        population: "Children, youth, and families in rural Northern California, and the practitioners who serve them",
+        intro: "PHIL has built rural adverse childhood experiences (ACEs) infrastructure in Northern California since launching the Northern ACEs Collaborative in 2019. Current work carries that infrastructure into youth behavioral health, early childhood, and substance use prevention. PHIL also co-administered ACEs Aware grants that expanded ACE screening and response in primary care clinics statewide.",
+        refs: [
+          ["nac", "Addresses disproportionately high ACE scores and domestic violence in rural Northern California through policy and systems change, and convenes the annual Rural ACEs Summit."],
+          ["rrih", "A shared space where rural communities test and spread resilience practices. RRIH grew out of the Northern ACEs Collaborative and leads the Opioid and Stimulant Use Prevention Training."],
+          ["cybhi", "Connects practitioners in ten Northern California counties to resources from California's Children and Youth Behavioral Health Initiative (CYBHI)."],
+          ["mbh", "Strengthens community-based programs for young children and caregivers and works to reduce the need for out-of-home placements."],
+          ["sor", "Reaches paraprofessionals across 11 Northern California counties with prevention, stigma reduction, and referral training."],
+          ["practice", "An ACEs Aware learning collaborative. PHIL co-administered the third round of ACEs Aware grants with the California Department of Health Care Services and the Office of the California Surgeon General, and led a statewide learning collaborative for 25 clinic teams across 15 California counties to expand and sustain screening and response to ACEs and toxic stress in primary care."],
+          ["lcdv", "Built a multi-county initiative for policy and systems change addressing domestic violence and ACEs."],
+          ["rc", "Evaluated a national collaborative of local health departments using the Community Resilience Framework."],
+          ["kp", "Planned and facilitated a conference to strengthen family violence prevention programs."]
+        ],
+        indicators: ["placesMH","suicide","firearm","homicide","mvc","placesAlc","bhPerfAccess","hpsaMH","placesSupport","acsChild"]
+      },
+      early: {
+        title: "Maternal and Early Childhood Behavioral Health",
+        population: "Young children ages 0 to 5, birthing people, and their caregivers",
+        intro: "PHIL serves as the technical assistance provider to six grantee organizations strengthening behavioral health, developmental milestones, and family well-being in early childhood.",
+        refs: [
+          ["mbh", "Provides technical assistance to six grantee organizations, funded by the Commission for Behavioral Health (CBH)."],
+          ["practice", "Supported primary care clinic teams across California in screening children and families for ACEs and toxic stress and connecting them to care, as part of ACEs Aware."],
+          ["lbact", "Engaged residents in co-creating solutions to gaps in social drivers of health for children ages 0 to 8 and their families."]
+        ],
+        indicators: ["births","prenatal","lbw","infmort","pqiKids","smhs05","bhPerfFoster","wic","medicalKids","hpsaMH","acsYoung"]
+      },
+      youth: {
+        title: "Youth Behavioral Health",
+        population: "Children, youth, and families in rural Northern California, including youth impacted by the justice system",
+        intro: "PHIL elevates local wisdom and cross-sector collaboration to build behavioral health systems that work for youth and families in rural communities.",
+        refs: [
+          ["nac", "Anchors the ten-county regional network that RRIH builds on, and convenes rural leaders, youth, practitioners, and state partners at the annual Rural ACEs Summit."],
+          ["rrih", "Runs the Youth Behavioral Health and Justice Community of Practice across 11 Northern California counties."],
+          ["cybhi", "Serves as regional outreach partner for Children and Youth Behavioral Health Initiative (CYBHI) resources, including Cal-MAP, Safe Spaces, Open Doors, Soluna, BrightLife Kids, Mirror, and Live Beyond."]
+        ],
+        indicators: ["suicide","smhsYouth","bhPerfFoster","asthmaED","hpsaMH","cdeAbs","cdeHomeless","acsChild"]
+      },
+      sub: {
+        title: "Substance Use and Homelessness",
+        population: "Rural paraprofessionals and the communities they serve, people with substance use disorders, and people experiencing homelessness with serious mental illness",
+        intro: "PHIL's substance use work trains the rural workforce, strengthens referral pathways to treatment, and reaches people experiencing homelessness through cardiac, behavioral health, and housing partners.",
+        refs: [
+          ["rrih", "Leads the Opioid and Stimulant Use Prevention Training across its 11 counties."],
+          ["sor", "Trains rural paraprofessionals in opioid, stimulant, and polysubstance prevention and education, and strengthens referral pathways to medication for opioid use disorder (MOUD)."],
+          ["psp", "Includes curriculum content on stimulant-associated cardiomyopathy and reaches patients through the emergency department substance use navigator and street medicine."],
+          ["threads", "Supports cross-sector systems transformation for individuals experiencing homelessness with serious mental illness (SMI) and substance use disorders (SUD) in Sonoma County."]
+        ],
+        indicators: ["od","placesAlc","bhPerfAccess","bhPen","bhHousing","bhPerfServices","hdis","placesHousing","acsHousing"]
+      },
+      medi: {
+        title: "Access to Care",
+        population: "Medi-Cal members with complex health and social needs, and the providers, health plans, and community organizations serving them",
+        intro: "Medi-Cal is how most people in these counties get care. Under California Advancing and Innovating Medi-Cal (CalAIM), PHIL facilitates the Northwest and Southwest Providing Access and Transforming Health (PATH) collaboratives, and its work in every topic connects to Medi-Cal.",
+        refs: [
+          ["cpi", "Facilitates the Northwest and Southwest Collaboratives supporting Enhanced Care Management (ECM) and Community Supports implementation."],
+          ["h2h", "Aligns the Heart-to-Heart implementation model with CalAIM and the Pathways Hub, and assesses provider needs in CalAIM navigation."],
+          ["psp", "Designs community health worker delivery to fit within current workforce roles and CalAIM reimbursement."],
+          ["cybhi", "Hosted a CalAIM Tribal Roundtable in Lake County."],
+          ["sor", "Trains Enhanced Care Management and Community Supports staff."],
+          ["mbh", "Maps Medi-Cal managed care plans in each grantee network and builds grantee billing capacity for sustainability."],
+          ["threads", "Works within Behavioral Health Bridge Housing and CalAIM implementation, supported through the state's PATH Technical Assistance Marketplace."],
+          ["practice", "Supported ACEs Aware, the California Department of Health Care Services initiative that trains and pays Medi-Cal providers to screen for ACEs."],
+          ["pathta", "Provided no-cost technical assistance to California-based organizations through the PATH Technical Assistance Marketplace."]
+        ],
+        indicators: ["placesAccess","pqiAll","medical","ecm","bhPlanAlloc","bhPlanServed","bhPlanCost","hpsaPC","acsVehicle","acsLanguage","acsDisability","acsBroadband","acsPov"]
+      }
+    };
+    var TOPIC_ORDER = ["cardio","aces","early","youth","sub","medi"];
+
+    var topicsOf = {};
+    TOPIC_ORDER.forEach(function (tid) { TOPICS[tid].refs.forEach(function (r) { (topicsOf[r[0]] = topicsOf[r[0]] || []).push(tid); }); });
+    function toTop() { try { var el = document.getElementById("phil-dash-scroll"); if (el) el.scrollTop = 0; } catch (e) {} }
+    function go(tid) { return function () { self.setState({ tab: tid }); toTop(); }; }
+    function scrollToId(id) { return function () { try { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {} }; }
+    function topicCounties(tid) {
+      var set = {};
+      TOPICS[tid].refs.forEach(function (r) { var w = WORK[r[0]]; if (w.current) w.counties.forEach(function (c) { set[c] = true; }); });
+      return Object.keys(set).sort();
+    }
+
+    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "resources", label: "Resources" }]);
+    var tabBase = "min-height: 44px; padding: 7px 12px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; white-space: nowrap; ";
+    var tabs = TAB_DEFS.map(function (t) {
+      var on = t.id === tab;
+      var NAVL = { overview: "Overview", cardio: "Cardiovascular", aces: "ACEs and Trauma", early: "Early Childhood", youth: "Youth Behavioral Health", sub: "Substance Use", medi: "Access to Care", ecmcs: "ECM and Community Supports", resources: "Resources" };
+      return { id: t.id, label: t.label, navLabel: NAVL[t.id] || t.label, pick: go(t.id), current: on ? "page" : "false",
+        style: tabBase + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") };
+    });
+
+    var allSet = {};
+    Object.keys(WORK).forEach(function (k) { var w = WORK[k]; if (w.current) w.counties.forEach(function (c) { allSet[c] = true; }); });
+    var dsMap = {}, dsOrder = [];
+    TOPIC_ORDER.forEach(function (tid) {
+      TOPICS[tid].indicators.forEach(function (k) {
+        var i = IND[k];
+        if (!dsMap[i.dataset]) { dsMap[i.dataset] = { dataset: i.dataset, publisher: i.publisher, cadence: i.cadence, topics: [] }; dsOrder.push(i.dataset); }
+        if (dsMap[i.dataset].topics.indexOf(TOPICS[tid].title) < 0) dsMap[i.dataset].topics.push(TOPICS[tid].title);
+      });
+    });
+    var dataSources = dsOrder.map(function (d) { var x = dsMap[d]; return { dataset: x.dataset, publisher: x.publisher, cadence: x.cadence, topics: x.topics.join("; ") }; });
+    var tiles = [
+      { value: String(dataSources.length), label: "Public datasets, refreshed on each publisher's schedule" },
+      { value: String(Object.keys(allSet).length), label: "California counties with county-level views" },
+      { value: String(TOPIC_ORDER.length), label: "Health topics" }
+    ];
+
+    var topicCardsAll = TOPIC_ORDER.map(function (tid) {
+      var n = topicCounties(tid).length;
+      return { id: tid, title: TOPICS[tid].title, population: TOPICS[tid].population,
+        indicatorList: TOPICS[tid].indicators.length + " indicators: " + TOPICS[tid].indicators.slice(0, 3).map(function (k) { return IND[k].name; }).join("; ") + ", and more",
+        summary: topicCounties(tid).indexOf(gCounty) >= 0 ? "PHIL has current work on this topic in " + gCounty + " County" : "PHIL works on this topic in " + n + (n === 1 ? " other county" : " other counties"),
+        count: TOPICS[tid].indicators.length + " indicators", philHere: hasCounty && topicCounties(tid).indexOf(gCounty) >= 0,
+        philStyle: "font-size: 13px; font-weight: 800; " + (topicCounties(tid).indexOf(gCounty) >= 0 ? "color: #02784d;" : "color: #526c87;"),
+        pick: go(tid) };
+    });
+    var topicCards = topicCardsAll.filter(function (c) { return c.id !== "medi"; });
+    var careCards = topicCardsAll.filter(function (c) { return c.id === "medi"; }).concat([{ id: "ecmcs", title: "ECM and Community Supports", count: "Plan offerings, provider contracts, and members served", philHere: hasCounty && WORK.cpi.counties.indexOf(gCounty) >= 0, pick: go("ecmcs") }]);
+
+    var SHORT_T = { cardio: "Cardiovascular", aces: "ACEs and Trauma", early: "Early Childhood", youth: "Youth Behavioral Health", sub: "Substance Use", medi: "Access to Care" };
+    var matrixCols = TOPIC_ORDER.map(function (tid) { return { label: SHORT_T[tid], pick: go(tid) }; });
+    function bridgeRow(k, isChild) {
+      var w = WORK[k];
+      var ts = topicsOf[k] || [];
+      return { name: w.name, url: WORK_URL[k] || "", hasUrl: !!WORK_URL[k], noUrl: !WORK_URL[k],
+        nameStyle: "text-align: left; padding: 10px 12px 10px " + (isChild ? "28px" : "0") + "; font-weight: " + (isChild ? "600" : "800") + "; font-size: " + (isChild ? "13px" : "14px") + ";",
+        cells: TOPIC_ORDER.map(function (tid) {
+          var on = ts.indexOf(tid) >= 0;
+          return { on: on, label: "Open " + TOPICS[tid].title + " with " + w.name,
+            pick: function () { var nx = Object.assign({}, s.open || {}); nx[tid + ":" + k] = true; self.setState({ tab: tid, open: nx }); toTop(); } };
+        }) };
+    }
+    var bridges = [];
+    var rootOrder = ["nac","h2h","psp","mbh","cpi","threads"];
+    Object.keys(WORK).forEach(function (k) { if (rootOrder.indexOf(k) < 0) rootOrder.push(k); });
+    rootOrder.forEach(function (k) {
+      var w = WORK[k];
+      if (!w.current || w.parentKey) return;
+      var kids = Object.keys(WORK).filter(function (c) { return WORK[c].parentKey === k && WORK[c].current; });
+      if ((topicsOf[k] || []).length > 1 || kids.length) bridges.push(bridgeRow(k, false));
+      kids.forEach(function (c) { bridges.push(bridgeRow(c, true)); });
+    });
+
+    var byCounty = {};
+    TOPIC_ORDER.forEach(function (tid) { topicCounties(tid).forEach(function (c) { (byCounty[c] = byCounty[c] || []).push(TOPICS[tid].title); }); });
+    var ovPicked = s.ovCounty || "Lake";
+    var smallChip = "min-height: 44px; padding: 6px 12px; border-radius: 999px; font-family: inherit; font-size: 13px; font-weight: 800; cursor: pointer; ";
+    var ovCounties = Object.keys(byCounty).sort().map(function (c) {
+      var on = c === ovPicked;
+      return { name: c, pressed: on ? "true" : "false", pick: function () { self.setState({ ovCounty: c }); },
+        style: smallChip + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") };
+    });
+    var srcOpen = !!s.showSources;
+    var pubs = [];
+    dataSources.forEach(function (d) { if (pubs.indexOf(d.publisher) < 0) pubs.push(d.publisher); });
+
+
+    var INDD = __INDD__;
+    var MISS_TEXT = {
+      census: "Not yet loaded in this prototype. The U.S. Census Bureau now requires a free application programming interface (API) key for this data.",
+      cde: "Not yet loaded in this prototype. The California Department of Education file server is not yet on PHIL's allowed domains list.",
+      cdph: "Not yet loaded in this prototype. The California Department of Public Health website has a security certificate error that blocks automated downloads."
+    };
+    function fmtVal(v, u) {
+      if (typeof v !== "number") return v === "suppressed" ? "Suppressed" : "Not published";
+      if (u === "percent") return (Math.round(v * 10) / 10).toFixed(1) + "%";
+      if (u === "count") return Math.round(v).toLocaleString("en-US");
+      if (u === "dollars") return "$" + Math.round(v).toLocaleString("en-US");
+      if (Math.abs(v) >= 1000) return Math.round(v).toLocaleString("en-US");
+      return (Math.round(v * 10) / 10).toFixed(1);
+    }
+    function unitWord(u) { if (u === "percent" || u === "count" || u === "dollars") return ""; if (u.indexOf("score") === 0) return " out of 25"; return " " + u.replace("count of deaths (12 months ending March 2026)", "deaths").replace("rate per ", "per ").replace("encounters per provider license", "per license"); }
+    function chartsFor(key, county) {
+      var d = INDD[key];
+      if (!d) return [];
+      return d.m.map(function (m) { return decorate(one(m), m); });
+      function decorate(b, m) {
+        var cv = m.v[county], u = m.u;
+        b.hasRank = false; b.dots = []; b.rankText = ""; b.rankLow = ""; b.rankHigh = "";
+        b.hasTrend = false; b.coD = ""; b.caD = ""; b.lastX = 0; b.lastY = 0; b.trendStart = ""; b.trendEnd = ""; b.trendAria = ""; b.trendHasCa = false; b.trendNote = "";
+        b.pill = ""; b.pillStyle = ""; b.hasPill = false;
+        var jc = judgeCa(cv, m.ca, m.w);
+        if (jc && b.isBars) { b.hasPill = true; b.pill = jc.text; b.pillStyle = jc.style; }
+        b.hasHp = typeof m.hp === "number"; b.hpText = b.hasHp ? "Healthy People 2030 target" + (m.hpo ? " (" + m.hpo + ")" : "") + ": " + fmtVal(m.hp, u) + (u === "percent" ? "" : unitWord(u)) : "";
+        if (m.all && m.all.length) {
+          var jr = judgeRank(cv, m.all, m.w);
+          b.hasRank = true;
+          b.dots = strip(cv, m.all, jr ? jr.tone : "neutral");
+          if (jr) { b.hasPill = true; b.pill = jr.text; b.pillStyle = jr.style; b.rankText = ""; }
+          b.rankLow = "Lowest: " + fmtVal(m.all[0], u); b.rankHigh = "Highest: " + fmtVal(m.all[m.all.length - 1], u);
+        }
+        if (m.t && m.t.v && m.t.v[county]) {
+          var ser = m.t.v[county], caSer = (u === "count") ? null : m.t.ca;
+          var nums = ser.concat(caSer || []).filter(function (v) { return typeof v === "number"; });
+          if (nums.length > 1) {
+            var tmax = Math.max.apply(null, nums) * 1.1 || 1, n = m.t.p.length;
+            var X = function (i) { return n === 1 ? 160 : 10 + i * (300 / (n - 1)); };
+            var Y = function (v) { return 84 - v / tmax * 74; };
+            var path = function (arr) { var d = "", pen = false; arr.forEach(function (v, i) { if (typeof v === "number") { d += (pen ? " L" : " M") + X(i).toFixed(1) + " " + Y(v).toFixed(1); pen = true; } else pen = false; }); return d.trim(); };
+            b.hasTrend = true; b.coD = path(ser); b.caD = caSer ? path(caSer) : ""; b.trendHasCa = !!caSer;
+            var fi = -1, li = -1; ser.forEach(function (v, i) { if (typeof v === "number") { if (fi < 0) fi = i; li = i; } });
+            if (li >= 0) { b.lastX = X(li); b.lastY = Y(ser[li]); }
+            b.trendStart = fi >= 0 ? m.t.p[fi] + ": " + fmtVal(ser[fi], u) : "";
+            b.trendEnd = li >= 0 ? m.t.p[li] + ": " + fmtVal(ser[li], u) : "";
+            b.trendAria = "Trend for " + county + " County from " + b.trendStart + " to " + b.trendEnd;
+            b.trendNote = ser.some(function (v) { return v === null; }) ? "Gaps mark years with no published data." : "";
+          }
+        }
+        return b;
+      }
+      function one(m) {
+        var cv = m.v[county], ca = m.ca, u = m.u;
+        var allNull = Object.keys(m.v).every(function (k) { return m.v[k] === null; });
+        var base = { label: m.l, period: m.p || "", isBars: false, isNumber: false, isMissing: false, bars: [], big: "", side: "", missing: "", title: m.l };
+        if (allNull && d.miss) { base.isMissing = true; base.missing = MISS_TEXT[d.miss]; return base; }
+        if (allNull && typeof ca === "number") { base.isNumber = true; base.big = fmtVal(ca, u) + (u === "percent" || u === "count" ? "" : unitWord(u)); base.side = "California. No county breakdown is published."; return base; }
+        if (u === "count" || u === "dollars" || u.indexOf("score") === 0 || u.indexOf("count of") === 0) {
+          base.isNumber = true; base.big = fmtVal(cv, u.indexOf("count of") === 0 ? "count" : u) + (typeof cv === "number" && u !== "dollars" ? unitWord(u) : "");
+          base.side = typeof ca === "number" ? "California: " + fmtVal(ca, "count") : "";
+          base.title = m.l + ": " + base.big; return base;
+        }
+        if (typeof ca !== "number") { base.isNumber = true; base.big = fmtVal(cv, u) + (typeof cv === "number" && u !== "percent" ? unitWord(u) : ""); base.side = ""; base.title = m.l + ": " + county + " County " + base.big; return base; }
+        var mx = Math.max(typeof cv === "number" ? cv : 0, typeof ca === "number" ? ca : 0) * 1.1 || 1;
+        var unitTxt = u === "percent" ? "" : unitWord(u);
+        base.isBars = true;
+        base.bars.push({ label: county + " County", value: fmtVal(cv, u) + (typeof cv === "number" ? unitTxt : ""), barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: #02784d; width: " + (typeof cv === "number" ? cv / mx * 100 : 0).toFixed(1) + "%" });
+        if (typeof ca === "number") base.bars.push({ label: "California", value: fmtVal(ca, u) + unitTxt, barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: #4bb1dc; width: " + (ca / mx * 100).toFixed(1) + "%" });
+        base.title = m.l + ": " + county + " County " + fmtVal(cv, u) + (typeof ca === "number" ? ", California " + fmtVal(ca, u) : "");
+        return base;
+      }
+    }
+    function aboutFor(key) {
+      var d = INDD[key]; if (!d) return "";
+      var seen = [], parts = [];
+      d.m.forEach(function (m) { if (m.n && seen.indexOf(m.n) < 0) { seen.push(m.n); parts.push(m.n); } });
+      if (d.g && parts.join(" ").indexOf(d.g) < 0) parts.unshift(d.g);
+      return parts.join(" ");
+    }
+
+    var ACT = __ACT__;
+    function buildAct(tid, county) {
+      var A = (ACT.topics || {})[tid];
+      if (!A) return { has: false, open: false, works: [], state: [], county: { name: "", url: "", desc: "" }, toggle: function () {} };
+      var isOpen = !!(s.actOpen && s.actOpen[tid]);
+      var nW = (A.works || []).length, nS = (A.state || []).length;
+      return {
+        has: true, open: isOpen, expandedAttr: isOpen ? "true" : "false",
+        toggleLabel: isOpen ? "Hide ways to act" : "Show ways to act", chev: isOpen ? "rotate(180deg)" : "none",
+        toggle: function () { var nx = Object.assign({}, s.actOpen || {}); nx[tid] = !isOpen; self.setState({ actOpen: nx }); },
+        statWorks: nW + (nW === 1 ? " proven strategy" : " proven strategies"),
+        statState: nS + (nS === 1 ? " California effort" : " California efforts"),
+        works: (A.works || []).map(function (w) { return { name: w.name, url: w.url, desc: w.desc, source: w.source }; }),
+        state: (A.state || []).map(function (w) { return { name: w.name, url: w.url, desc: w.desc }; }),
+        county: { name: A.county.name, url: A.county.url, desc: String(A.county.desc).split("{county}").join(county) },
+        goResources: function () { self.setState({ tab: "resources" }); toTop(); }
+      };
+    }
+    var topic = null, countyLabel = "", cmp = null;
+    if (TOPICS[tab]) {
+      var T = TOPICS[tab];
+      var philCs = topicCounties(tab);
+      var cs = ALL17;
+      var picked = gCounty;
+      countyLabel = picked + " County";
+      var chipBase = "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; ";
+      var current = [], past = [], here = [];
+      var refRole = {}, curKeys = [];
+      T.refs.forEach(function (r) {
+        var w = WORK[r[0]];
+        if (w.current) { refRole[r[0]] = r[1]; curKeys.push(r[0]); }
+        else past.push({ name: w.name, years: w.years, role: r[1], url: WORK_URL[r[0]] || "", hasUrl: !!WORK_URL[r[0]], noUrl: !WORK_URL[r[0]] });
+      });
+      var roots = [];
+      curKeys.forEach(function (k) { var root = WORK[k].parentKey || k; if (roots.indexOf(root) < 0) roots.push(root); });
+      function row(key, isChild) {
+        var w = WORK[key];
+        var on = w.counties.indexOf(picked) >= 0;
+        var others = (topicsOf[key] || []).filter(function (x) { return x !== tab; });
+        var open = !!(s.open && s.open[tab + ":" + key]);
+        if (on && here.indexOf(w.name) < 0) here.push(w.name);
+        return { name: w.name, url: WORK_URL[key] || "", hasUrl: !!WORK_URL[key], noUrl: !WORK_URL[key], years: w.years, status: w.status,
+          role: refRole[key] || w.summary || "", where: w.where,
+          parent: isChild ? w.parent : "", hasParent: isChild,
+          expanded: open, expandedAttr: open ? "true" : "false", toggleLabel: open ? "Hide activities" : "Show activities",
+          toggle: function () { var nx = Object.assign({}, s.open || {}); nx[tab + ":" + key] = !open; self.setState({ open: nx }); },
+          rowStyle: "display: flex; flex-direction: column; gap: 12px; padding: 18px 16px; border-bottom: 1px solid #dee3e8; background: " + (on ? "#f3e9d7" : "#ffffff") + ";" + (isChild ? " margin-left: 32px;" : ""),
+          activities: w.activities.map(function (a) { return { text: a }; }), hasActivities: w.activities.length > 0,
+          serves: on, servesText: "Active in " + picked + " County",
+          otherTopics: others.map(function (x) { return { title: TOPICS[x].title, pick: go(x) }; }), hasOther: others.length > 0 };
+      }
+      var groups = [];
+      var CHILD_LABEL = { rrih: "Projects of the Rural Resilience Innovation Hub", nac: "Programs of the Northern ACEs Collaborative" };
+      roots.forEach(function (root) {
+        var g = row(root, false);
+        current.push(g);
+        var kids = [];
+        curKeys.forEach(function (k) { if (WORK[k].parentKey === root) { var c = row(k, true); current.push(c); c.cardStyle = "background: #f3e9d7; border-radius: 6px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px;"; kids.push(c); } });
+        g.children = kids; g.hasChildren = kids.length > 0; g.childLabel = CHILD_LABEL[root] || "Projects and Partnerships";
+        g.cardStyle = "background: #ffffff; border: 1px solid " + (g.serves ? "#02784d" : "#dee3e8") + "; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(18, 54, 91, 0.06);" + (kids.length ? " grid-column: 1 / -1;" : "");
+        groups.push(g);
+      });
+      // Split by the selected county. A program that serves the county while its parent does not moves up as its own card.
+      var groupsHere = [], groupsOther = [];
+      var TOP_CARD = "background: #ffffff; border: 1px solid #02784d; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(18, 54, 91, 0.06);";
+      groups.forEach(function (g) {
+        if (g.serves) { groupsHere.push(g); return; }
+        var on = g.children.filter(function (c) { return c.serves; });
+        var off = g.children.filter(function (c) { return !c.serves; });
+        on.forEach(function (c) { groupsHere.push(Object.assign({}, c, { cardStyle: TOP_CARD, children: [], hasChildren: false, childLabel: "" })); });
+        if (on.length) {
+          g.children = off; g.hasChildren = off.length > 0;
+          g.cardStyle = g.cardStyle.replace(" grid-column: 1 / -1;", "") + (off.length ? " grid-column: 1 / -1;" : "");
+        }
+        groupsOther.push(g);
+      });
+
+      // Compare counties table for this topic
+      var cs0 = s.cmp || {};
+      var cmpOpen = !!(cs0.open && cs0.open[tab]);
+      var SETS = [
+        { id: "all", label: "All 17 counties", list: ALL17 },
+        { id: "topic", label: "Counties where PHIL works on this topic", list: philCs },
+        { id: "nac", label: "Northern ACEs Collaborative", list: WORK.nac.counties },
+        { id: "path", label: "PATH collaboratives", list: WORK.cpi.counties }
+      ].filter(function (x) { return x.list && x.list.length; });
+      var setId = cs0.set && SETS.some(function (x) { return x.id === cs0.set; }) ? cs0.set : "all";
+      var setList = SETS.filter(function (x) { return x.id === setId; })[0].list;
+      var cmpCols = [];
+      T.indicators.forEach(function (k) { var d = INDD[k]; if (!d) return; d.m.forEach(function (m, mi) { if (m.u === "count" || m.u === "dollars" || m.u.indexOf("count of") === 0) return; cmpCols.push({ key: k + ":" + mi, m: m, u: m.u }); }); });
+      var sortKey = cs0.sortKey || "", sortDir = cs0.sortDir || "desc";
+      function setCmp(patch) { var nx = Object.assign({}, cs0, patch); self.setState({ cmp: nx }); }
+      var cmpRows = ["California"].concat(setList.slice().sort()).map(function (c) {
+        return { name: c === "California" ? "California" : c, isCa: c === "California", isPicked: c === picked,
+          vals: cmpCols.map(function (col) { return c === "California" ? col.m.ca : col.m.v[c]; }) };
+      });
+      if (sortKey) {
+        var si = cmpCols.map(function (x) { return x.key; }).indexOf(sortKey);
+        if (si >= 0) {
+          var ca = cmpRows.shift();
+          cmpRows.sort(function (a, b) { var av = a.vals[si], bv = b.vals[si]; var an = typeof av === "number", bn = typeof bv === "number"; if (an && bn) return sortDir === "desc" ? bv - av : av - bv; if (an) return -1; if (bn) return 1; return a.name.localeCompare(b.name); });
+          cmpRows.unshift(ca);
+        }
+      }
+      var cmp = {
+        open: cmpOpen, openAttr: cmpOpen ? "true" : "false", toggleLabel: cmpOpen ? "Hide county comparison" : "Compare counties",
+        btnBg: cmpOpen ? "#12365b" : "#ffffff", btnFg: cmpOpen ? "#ffffff" : "#12365b",
+        toggle: function () { var o = Object.assign({}, cs0.open || {}); o[tab] = !cmpOpen; setCmp({ open: o }); },
+        sets: SETS.map(function (x) { var on = x.id === setId; return { label: x.label, pressed: on ? "true" : "false", pick: function () { setCmp({ set: x.id }); },
+          style: "min-height: 36px; padding: 4px 12px; border-radius: 999px; font-family: inherit; font-size: 12px; font-weight: 800; cursor: pointer; " + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") }; }),
+        cols: cmpCols.map(function (col) { var on = col.key === sortKey; return { label: col.m.l, title: "Sort by " + col.m.l, period: col.m.p || "", arrow: on ? (sortDir === "desc" ? " \u25BC" : " \u25B2") : "",
+          pick: function () { setCmp({ sortKey: col.key, sortDir: on && sortDir === "desc" ? "asc" : "desc" }); } }; }),
+        rows: cmpRows.map(function (r) {
+          var base = "padding: 7px 10px; border-bottom: 1px solid #e6ebf0; text-align: right; white-space: nowrap;";
+          return { name: r.name, rowStyle: r.isPicked ? "background: #f3e9d7;" : (r.isCa ? "background: #eef4f8;" : ""),
+            nameStyle: "position: sticky; left: 0; text-align: left; padding: 7px 10px; border-bottom: 1px solid #e6ebf0; font-weight: " + (r.isPicked || r.isCa ? "800" : "600") + "; color: #12365b; background: " + (r.isPicked ? "#f3e9d7" : r.isCa ? "#eef4f8" : "#ffffff") + "; z-index: 1",
+            cells: cmpCols.map(function (col, i) {
+              var v = r.vals[i], txt = typeof v === "number" ? fmtVal(v, col.u) : (v === "suppressed" ? "Suppressed" : (r.isCa ? "" : "Not published"));
+              var st = base; var jc = r.isCa ? null : judgeCa(v, col.m.ca, col.m.w);
+              if (jc && jc.tone === "worse") st += " background: #fdecea;"; else if (jc && jc.tone === "better") st += " background: #e6f5ec;";
+              if (typeof v !== "number") st += " color: #7a8590; font-style: italic;";
+              return { text: txt, style: st };
+            }) };
+        })
+      };
+      topic = {
+        act: buildAct(tab, picked),
+        title: T.title, intro: T.intro, population: T.population, current: current, groups: groups, groupsHere: groupsHere, groupsOther: groupsOther, hasHere: groupsHere.length > 0, noHere: groupsHere.length === 0, hasOther: groupsOther.length > 0,
+        engagedLine: "PHIL stays engaged with partners in the " + picked + " County community through past projects and ongoing relationships.", past: past, hasPast: past.length > 0,
+        foxSrc: ({ cardio: "assets/fox-hammer.png", aces: "assets/fox-wrench.png", early: "assets/fox-lightbulb.png", youth: "assets/fox-hammer.png", sub: "assets/fox-wrench.png", medi: "assets/fox-lightbulb.png" })[tab],
+        foxAlt: ({ cardio: "PHIL's fox mascot holding a hammer", aces: "PHIL's fox mascot holding a wrench", early: "PHIL's fox mascot holding a lit lightbulb", youth: "PHIL's fox mascot holding a hammer", sub: "PHIL's fox mascot holding a wrench", medi: "PHIL's fox mascot holding a lit lightbulb" })[tab],
+        workHere: here.length ? here.join("; ") : "PHIL stays engaged with partners in the " + picked + " County community through past projects and ongoing relationships. PHIL's projects on this topic in other counties are listed further down.",
+        counties: countyChips(philCs, chipBase),
+        indicators: T.indicators.map(function (k) {
+          var i = IND[k];
+          var ab = aboutFor(k); return { charts: chartsFor(k, picked), about: ab, hasAbout: ab.length > 0, name: i.name, level: i.level, levelStyle: LEVEL_STYLE[i.level] || "", dataset: i.dataset, publisher: i.publisher, cadence: i.cadence, access: i.access, geo: geoFor(i.geoType, picked), hasGeo: geoFor(i.geoType, picked).indexOf("County estimate") !== 0, note: i.note, hasNote: i.note.length > 0 };
+        })
+      };
+    }
+
+
+    var ECM_USE = __ECM_USE__;
+    var MCP_PLANS = __MCP_PLANS__;
+    var ECMD_PUB = __ECMD_PUB__;
+    var ECMD = __ECMD__;
+    var ECM_POF = [["Adults", "Individuals Experiencing Homelessness"], ["Adults", "Individuals At Risk for Avoidable Hospital or Emergency Department (ED) Utilization"], ["Adults", "Individuals with Serious Mental Health and/or Substance Use Disorder (SUD) Needs"], ["Adults", "Nursing Facility Residents Transitioning to Community"], ["Adults", "Living in the Community and At Risk for Long-Term Care Institutionalization"], ["Adults", "Individuals Transitioning from Incarceration (some Whole Person Care (WPC) counties only)"], ["Adults", "Birth Equity"], ["Children and Youth", "Individuals Experiencing Homelessness"], ["Children and Youth", "Individuals At Risk for Avoidable Hospital or Emergency Department (ED) Utilization"], ["Children and Youth", "Individuals with Serious Mental Health and/or Substance Use Disorder (SUD) Needs"], ["Children and Youth", "Enrolled in California Children's Services (CCS) with Additional Needs"], ["Children and Youth", "Involved in Child Welfare"], ["Children and Youth", "Individuals Transitioning from Incarceration (some Whole Person Care (WPC) counties only)"], ["Children and Youth", "Birth Equity"]];
+    var ECM_SVC = ["Housing Transition Navigation Services", "Housing Deposits", "Housing Tenancy and Sustaining Services", "Short-Term Post-Hospitalization Housing", "Recuperative Care (Medical Respite)", "Respite Services", "Day Habilitation Programs", "Nursing Facility Transition/Diversion to Assisted Living Facilities", "Community Transition Services/Nursing Facility Transition to a Home", "Personal Care and Homemaker Services", "Environmental Accessibility Adaptations (Home Modifications)", "Medically Tailored Meals or Medically Supportive Food", "Sobering Centers", "Asthma Remediation"];
+    var ecm = null;
+    if (tab === "ecmcs") {
+      var eNames = Object.keys(ECMD.counties);
+      var ePicked = gCounty;
+      var E = ECMD.counties[ePicked];
+      var periodYear = (ECMD.meta && ECMD.meta.period_end) ? ECMD.meta.period_end.slice(-4) : "2025";
+      var eChip = "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; ";
+      var nf = function (v) { return Math.round(v).toLocaleString("en-US"); };
+      var shortPlan = function (p) { return p === "Partnership HealthPlan of California" ? "Partnership HealthPlan" : p; };
+      function sumField(arr, k) { var t = 0, sup = false, any = false; arr.forEach(function (r) { var v = r[k]; if (typeof v === "number") { t += v; any = true; } else if (v === "suppressed") sup = true; }); return { t: t, sup: sup, any: any }; }
+      function showSum(x) { if (x.sup && !x.any) return "Suppressed"; return (x.sup ? "At least " : "") + nf(x.t); }
+      var offeredAny = {};
+      E.plans.forEach(function (p) { (E.offered[p] || []).forEach(function (sv) { offeredAny[sv] = true; }); });
+      var nOffered = Object.keys(offeredAny).length;
+      var totals = ECM_SVC.map(function (sv) { var t = 0; E.plans.forEach(function (p) { var v = (E.contracts[p] || {})[sv]; if (typeof v === "number" && v > 0) t += v; }); return t; });
+      var maxT = Math.max.apply(null, totals.concat([1]));
+      var services = ECM_SVC.map(function (sv, i) {
+        return { name: sv, total: totals[i] ? nf(totals[i]) : "0",
+          barTitle: sv + ": " + nf(totals[i]) + " provider contracts across all plans",
+          barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: #02784d; width: " + (totals[i] / maxT * 100).toFixed(1) + "%",
+          cells: E.plans.map(function (p) {
+            var off = (E.offered[p] || []).indexOf(sv) >= 0;
+            var v = (E.contracts[p] || {})[sv];
+            var pend = E.pending[p + "|" + sv];
+            var has = typeof v === "number" && v > 0;
+            var text, dot, ts = "font-size: 14px; color: #12365b;";
+            if (pend) { text = pend; dot = "width: 12px; height: 12px; border-radius: 50%; border: 2px solid #02784d; box-sizing: border-box; display: inline-block; flex-shrink: 0"; ts = "font-size: 13px; color: #3d556e;"; }
+            else if (off && has) { text = nf(v) + (v === 1 ? " contract" : " contracts"); dot = "width: 12px; height: 12px; border-radius: 50%; background: #02784d; display: inline-block; flex-shrink: 0"; ts += " font-weight: 700;"; }
+            else if (off) { text = "Offered, no contracts yet"; dot = "width: 12px; height: 12px; border-radius: 50%; border: 2px solid #02784d; box-sizing: border-box; display: inline-block; flex-shrink: 0"; ts = "font-size: 13px; color: #3d556e;"; }
+            else { text = v === -2 ? "Suppressed" : "No contracted providers"; dot = "width: 12px; height: 12px; border-radius: 50%; background: #dee3e8; display: inline-block; flex-shrink: 0"; ts = "font-size: 13px; color: #5c7086;"; }
+            return { text: text, dotStyle: dot, textStyle: ts, title: shortPlan(p) + ", " + sv + ": " + text };
+          })
+        };
+      });
+      var csM = sumField(E.csUtil, "members"), csU = sumField(E.csUtil, "services_used"), ecmM = sumField(E.ecmReach, "members");
+      var avgAll = 0; E.csUtil.forEach(function (r) { if (typeof r.avg_members === "number") avgAll += r.avg_members; });
+      var avgCsKnown = 0; E.csUtil.forEach(function (r) { if (typeof r.services_used === "number") avgCsKnown += r.avg_members; });
+      var avgEcmKnown = 0; E.ecmReach.forEach(function (r) { if (typeof r.members === "number") avgEcmKnown += r.avg_members; });
+      var cRate = csU.any && avgCsKnown ? csU.t / avgCsKnown * 10000 : null;
+      var cEcm = ecmM.any && avgEcmKnown ? ecmM.t / avgEcmKnown * 100 : null;
+      function cmp(title, sub, cv, sv, fmt, note) {
+        var mx = Math.max(cv || 0, sv) * 1.1;
+        return { title: title, sub: sub, note: note, bars: [
+          { label: ePicked + " County", value: cv === null ? "Suppressed" : fmt(cv), title: ePicked + " County: " + (cv === null ? "suppressed by DHCS" : fmt(cv)), barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: #02784d; width: " + (cv === null ? 0 : cv / mx * 100).toFixed(1) + "%" },
+          { label: "California", value: fmt(sv), title: "California: " + fmt(sv), barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: #4bb1dc; width: " + (sv / mx * 100).toFixed(1) + "%" }
+        ] };
+      }
+
+      var USE = ECM_USE.d[ePicked] || {};
+      var usePlanNames = Object.keys(USE).sort(function (a, b) {
+        var t = function (p) { var x = 0; USE[p].cs.forEach(function (r) { if (typeof r[3] === "number") x += r[3]; }); USE[p].pof.forEach(function (r) { if (typeof r[3] === "number") x += r[3]; }); return x; };
+        return t(b) - t(a); });
+      var upSel = (s.usePlan && s.usePlan[ePicked] && USE[s.usePlan[ePicked]]) ? s.usePlan[ePicked] : usePlanNames[0];
+      var U = USE[upSel] || { cs: [], pof: [] };
+      var qLab = ECM_USE.q;
+      function useRows(arr, labels, color) {
+        var rows = labels.map(function (lab, i) { var r = arr[i] || [null, null, null, null]; return { lab: lab, v: r[3], all: r }; }).filter(function (x) { return x.v !== null && x.v !== undefined; });
+        var mx = Math.max.apply(null, rows.map(function (x) { return typeof x.v === "number" ? x.v : 0; }).concat([1]));
+        rows.sort(function (a, b) { var k = function (v) { return typeof v === "number" ? (v === 0 ? -1 : v) : 0.5; }; return k(b.v) - k(a.v); });
+        return rows.map(function (x) {
+          var qs = x.all.map(function (v, i) { return qLab[i].replace("2025 ", "") + " " + (typeof v === "number" ? nf(v) : v === "s" ? "suppressed" : "not reported"); }).join(", ");
+          return { label: x.lab, value: typeof x.v === "number" ? nf(x.v) : "Suppressed",
+            valueStyle: typeof x.v === "number" ? "font-weight: 800; color: #12365b; white-space: nowrap" : "font-style: italic; color: #5c7086; white-space: nowrap",
+            title: x.lab + ", 2025 by quarter: " + qs,
+            barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: " + color + "; width: " + (typeof x.v === "number" ? x.v / mx * 100 : 0).toFixed(1) + "%" };
+        });
+      }
+      var pofLabels = ECM_POF.map(function (pp) { return (pp[0] === "Adults" ? "Adults: " : "Children and youth: ") + pp[1]; });
+      var csRows = useRows(U.cs, ECM_SVC, "#02784d"), pofRows = useRows(U.pof, pofLabels, "#12365b");
+      var useCharts = [
+        { title: "Members Using Each Community Support", rows: csRows, empty: csRows.length === 0, emptyText: "DHCS reports no Community Supports use for this plan in this county." },
+        { title: "ECM Members by Population of Focus", rows: pofRows, empty: pofRows.length === 0, emptyText: "DHCS reports no ECM enrollment for this plan in this county." }
+      ];
+      var usePlans = usePlanNames.map(function (p) { var on = p === upSel; return { name: shortPlan(p), pressed: on ? "true" : "false",
+        style: "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; " + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"),
+        pick: function () { var nx = Object.assign({}, s.usePlan || {}); nx[ePicked] = p; self.setState({ usePlan: nx }); } }; });
+      var PUBC = ECMD_PUB.county[ePicked] || {};
+      var pv = function (v, f) { return typeof v === "number" ? f(v) : (v === "suppressed" ? "Suppressed" : "Not published"); };
+      var rk = function (cv, all, f) { var j = judgeRank(cv, all, null); return { dots: strip(cv, all, "neutral"), rankText: j ? rankWords(j.above, j.below, j.n) + " of " + j.n + " counties with DHCS data" : "", rankLow: "Lowest county: " + f(all[0]), rankHigh: "Highest county: " + f(all[all.length - 1]) }; };
+      var compare = [
+        Object.assign(rk(PUBC.ecmPct, ECMD_PUB.allEcmPct, function (v) { return v.toFixed(2) + "%"; }), { title: "ECM Reach", sub: "Share of Medi-Cal managed care members in " + ePicked + " County who received ECM, January 1 to December 31, " + periodYear + "", big: pv(PUBC.ecmPct, function (v) { return v.toFixed(2) + "%"; }), unit: "of plan members",
+          side: pv(PUBC.ecmMembers, nf) + " members in " + ePicked + " County. California: " + nf(ECMD_PUB.state.ecmMembers12) + " members.", note: "ECM serves members with the most complex needs, so a small share of all plan members is expected. DHCS publishes county rates and statewide member counts; it does not publish a statewide rate." }),
+        Object.assign(rk(PUBC.csRate, ECMD_PUB.allCsRate, nf), { title: "Community Supports Use", sub: "Community Supports services used per 10,000 Medi-Cal managed care members in " + ePicked + " County, January 1 to December 31, " + periodYear + "", big: pv(PUBC.csRate, nf), unit: "per 10,000 plan members",
+          side: pv(PUBC.csServices, nf) + " services used in " + ePicked + " County. California: " + nf(ECMD_PUB.state.csServices12) + " services.", note: "One member can receive several services. DHCS publishes county rates and statewide totals; it does not publish a statewide rate." })
+      ];
+      var pofTot = ECM_POF.map(function (_, i) { var t = 0; Object.keys(E.ecmPof).forEach(function (p) { var v = E.ecmPof[p][i]; if (typeof v === "number" && v > 0) t += v; }); return t; });
+      var pofMax = Math.max.apply(null, pofTot.concat([1]));
+      var pofGroups = ["Adults", "Children and Youth"].map(function (g) {
+        return { name: g, rows: ECM_POF.map(function (pp, i) { return { g: pp[0], label: pp[1], t: pofTot[i] }; }).filter(function (r) { return r.g === g; }).map(function (r) {
+          return { label: r.label, value: r.t ? nf(r.t) + (r.t === 1 ? " contract" : " contracts") : "No contracts", title: g + ", " + r.label + ": " + (r.t ? nf(r.t) + " ECM provider contracts" : "no ECM provider contracts"),
+            barStyle: "height: 100%; border-radius: 0 4px 4px 0; background: " + (g === "Adults" ? "#12365b" : "#30718d") + "; width: " + (r.t / pofMax * 100).toFixed(1) + "%" };
+        }) };
+      });
+      var fmtV = function (v) { return typeof v === "number" ? nf(v) : v === "suppressed" ? "Suppressed" : "Not reported"; };
+      var planRows = E.plans.map(function (p) {
+        var cu = E.csUtil.filter(function (r) { return r.plan === p; })[0] || {};
+        var er = E.ecmReach.filter(function (r) { return r.plan === p; })[0] || {};
+        var en = ((MCP_PLANS[ePicked] || {})[p]);
+        return { plan: p, enroll: fmtV(en), avg: fmtV(cu.avg_members !== undefined ? cu.avg_members : er.avg_members), csMembers: fmtV(cu.members), csRate: fmtV(cu.rate10k), ecmMembers: fmtV(er.members),
+          ecmPct: typeof er.pct === "number" ? er.pct.toFixed(2) + "%" : fmtV(er.pct) };
+      });
+      var pendKeys = Object.keys(E.pending || {});
+      var enrollMonth = (function (m) { if (!m) return ""; var d = new Date(m + "-15"); return d.toLocaleString("en-US", { month: "long", year: "numeric" }); })(MCP_PLANS.month);
+      var contractsQ = (ECMD.meta && ECMD.meta.cs_contracts_period) ? ECMD.meta.cs_contracts_period.replace(/^(\d{4}) (Q\d)$/, "$2 $1") : "Q4 2025";
+      ecm = {
+        countyLabel: ePicked + " County",
+        philHere: (function () { var h = []; (TOPICS.medi.refs || []).forEach(function (r) { var w = WORK[r[0]]; if (w.current && w.counties && w.counties.indexOf(ePicked) >= 0 && h.indexOf(w.name) < 0) h.push(w.name); }); return h.length ? h.join("; ") : "PHIL stays engaged with Medi-Cal partners in the " + ePicked + " County community through past projects and ongoing relationships. The data on this page applies to everyone working in the county."; })(),
+        goMedi: go("medi"),
+        counties: eNames.map(function (c) { var on = hasCounty && c === ePicked; return { name: c, pressed: on ? "true" : "false",
+          style: eChip + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"),
+          pick: function () { self.setState({ gCounty: c }); } }; }),
+        tiles: [
+          { value: nOffered + " of 14", label: "Community Supports with contracted providers, " + contractsQ },
+          { value: pv(PUBC.avgMembers, nf), label: "Average Medi-Cal managed care members, " + periodYear },
+          { value: pv(PUBC.csServices, nf), label: "Community Supports services used, " + periodYear },
+          { value: pv(PUBC.ecmMembers, nf), label: "Members who received ECM, " + periodYear }
+        ],
+        plans: E.plans.map(function (p) { return { name: shortPlan(p) }; }),
+        services: services,
+        contractsAsOf: contractsQ,
+        pofAsOf: contractsQ,
+        hasPending: pendKeys.length > 0,
+        pendingNote: pendKeys.map(function (k) { var a = k.split("|"); return shortPlan(a[0]) + " adds " + a[1] + " on " + E.pending[k].replace("Starts ", "") + "."; }).join(" "),
+        compare: compare,
+        useCharts: useCharts, usePlans: usePlans, useMultiPlan: usePlanNames.length > 1, useQuarter: contractsQ,
+        pofGroups: pofGroups,
+        planRows: planRows,
+        periodLabel: "January 1 to December 31, " + periodYear, periodYear: periodYear, enrollMonth: enrollMonth
+      };
+    }
+
+
+    var ovSnap = [
+      { key: "acsChild", i: 0, tab: "aces", label: "Children under 18 living below the federal poverty level" },
+      { key: "placesMH", i: 0, tab: "aces", label: "Adults with frequent mental distress" },
+      { key: "od", i: 0, tab: "sub", label: "Drug overdose deaths per 100,000 residents" },
+      { key: "hdmort", i: 0, tab: "cardio", label: "Heart disease deaths per 100,000 adults ages 35 and older" },
+      { key: "cdeAbs", i: 0, tab: "youth", label: "K to 12 students who were chronically absent" },
+      { key: "medical", i: 0, tab: "medi", label: "Residents with Medi-Cal or other income-based public coverage" }
+    ].map(function (c) {
+      var m = (INDD[c.key] || { m: [] }).m[c.i]; if (!m) return null;
+      var cv = m.v[gCounty], u = m.u, pct = u === "percent";
+      var fv = function (v) { return typeof v === "number" ? (pct ? (Math.round(v * 10) / 10).toFixed(1) + "%" : (Math.round(v * 10) / 10).toLocaleString("en-US")) : (v === "suppressed" ? "Suppressed" : "Not published"); };
+      var jc = judgeCa(cv, m.ca, m.w), jr = m.all ? judgeRank(cv, m.all, m.w) : null;
+      var mx = Math.max(typeof cv === "number" ? cv : 0, typeof m.ca === "number" ? m.ca : 0) * 1.1 || 1;
+      var bar = function (v, col) { return "display: block; height: 100%; border-radius: 0 4px 4px 0; background: " + col + "; width: " + (typeof v === "number" ? v / mx * 100 : 0).toFixed(1) + "%"; };
+      return { topic: TOPICS[c.tab].title, label: c.label, value: fv(cv), period: m.p + " · " + IND[c.key].publisher.replace(/ \([A-Z]+\)$/, ""),
+        hasPill: !!(jc || jr), pill: jc ? jc.text : jr ? jr.text : "", pillStyle: jc ? jc.style : jr ? jr.style : "",
+        isBars: !!jc, bars: jc ? [{ label: gCounty, value: fv(cv), style: bar(cv, "#02784d") }, { label: "California", value: fv(m.ca), style: bar(m.ca, "#4bb1dc") }] : [],
+        isRank: !jc && !!jr, dots: (!jc && jr) ? strip(cv, m.all, jr.tone) : [], rankLow: m.all ? "Lowest: " + fv(m.all[0]) : "", rankHigh: m.all ? "Highest: " + fv(m.all[m.all.length - 1]) : "",
+        pick: go(c.tab) };
+    }).filter(function (x) { return x; });
+    var philHere = [];
+    Object.keys(WORK).forEach(function (k) {
+      var w = WORK[k];
+      if (!w.current || !w.counties || w.counties.indexOf(gCounty) < 0) return;
+      var ts = topicsOf[k] || [];
+      var role = w.summary || "";
+      if (!role) TOPIC_ORDER.some(function (tid) { var r = TOPICS[tid].refs.filter(function (x) { return x[0] === k; })[0]; if (r) { role = r[1]; return true; } return false; });
+      philHere.push({ name: w.name, url: WORK_URL[k] || "", hasUrl: !!WORK_URL[k], noUrl: !WORK_URL[k], years: w.years, where: w.where, role: role,
+        topics: ts.map(function (tid) { return { title: SHORT_T[tid], pick: go(tid) }; }) });
+    });
+    var activeAll = Object.keys(allSet);
+    var ecmCo = (ECMD.counties[gCounty] || { plans: [], offered: {} });
+    var ecmOffered = {}; ecmCo.plans.forEach(function (p) { (ecmCo.offered[p] || []).forEach(function (x) { ecmOffered[x] = true; }); });
+    var ov = {
+      countyLabel: gCounty + " County",
+      topicsLine: hasCounty ? "Each topic opens with " + gCounty + " County selected." : "Choose a county above, then open any topic to see its data.",
+      pickTitle: hasCounty ? "Your County: " + gCounty : "Choose Your County to Begin",
+      counties: countyChips([], "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; "),
+      snapshot: ovSnap,
+      goEcm: go("ecmcs"), goTopics: scrollToId("ov-topics"), goPhil: scrollToId("ov-phil"),
+      ecmLine: "Medi-Cal coverage and access to care, and the " + Object.keys(ecmOffered).length + " of 14 Community Supports with contracted providers in " + gCounty + " County.",
+      philLine: philHere.length ? "PHIL is engaged here through " + philHere.length + (philHere.length === 1 ? " project or partnership." : " projects and partnerships.") : "PHIL stays engaged here through past projects and ongoing relationships.",
+      philIntro: philHere.length ? "PHIL's engagements in the " + gCounty + " County community include funded projects, collaboratives, and communities of practice. Select a name to open its page on pophealthinnovationlab.org, or a topic to see its data." : "PHIL stays engaged with partners in the " + gCounty + " County community through past projects and ongoing relationships. PHIL's projects and partnerships across California are shown below, and every page has data for " + gCounty + " County.",
+      hasPhil: philHere.length > 0,
+      philWork: philHere
+    };
+
+    var RES = __RES__;
+    var res = null;
+    if (tab === "resources") {
+      var rGroups = RES.groups.map(function (g) {
+        var items = RES.resources.filter(function (r) { return r.group === g.id; }).map(function (r) {
+          var cs = r.counties || [], here = hasCounty && cs.indexOf(gCounty) >= 0, soon = r.status === "coming soon";
+          return { title: r.title, url: r.url, description: r.description, isLink: !soon && !!r.url, isSoon: soon, here: here, hereLabel: "Covers " + gCounty + " County",
+            hasCounties: cs.length > 0, countyList: cs.join(", "),
+            cardStyle: "background: #ffffff; border: 1px solid " + (here ? "#02784d" : "#dee3e8") + "; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px;" + (soon ? " opacity: 0.85;" : "") };
+        });
+        return { title: g.title, description: g.description, items: items };
+      }).filter(function (g) { return g.items.length; });
+      res = { groups: rGroups, countyLine: hasCounty ? "Resources that cover " + gCounty + " County are marked." : "Choose a county on the Overview to mark the resources that cover it." };
+    }
+    var tabsHome = tabs.filter(function (t) { return t.id === "overview"; });
+    var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi"; });
+    var tabsServices = tabs.filter(function (t) { return t.id === "medi" || t.id === "ecmcs"; });
+    var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
+    return {
+      hasCounty: hasCounty, noCounty: !hasCounty,
+      tabs: tabs, tabsHome: tabsHome, tabsTopics: tabsTopics, tabsServices: tabsServices, ov: ov, careCards: careCards, tiles: tiles, topicCards: topicCards, bridges: bridges, matrixCols: matrixCols,
+      ovCounties: ovCounties, ovCountyLabel: ovPicked + " County", ovCountyTopics: (byCounty[ovPicked] || []).join("; "),
+      sourceSummary: "The dashboard draws on " + dataSources.length + " public datasets from " + pubs.length + " publishers, including the Centers for Disease Control and Prevention (CDC), the California Department of Public Health, the California Department of Health Care Services, and the U.S. Census Bureau.",
+      showSources: srcOpen, sourcesExpanded: srcOpen ? "true" : "false", sourcesLabel: srcOpen ? "Hide data sources" : "Show all data sources",
+      toggleSources: function () { self.setState({ showSources: !srcOpen }); },
+      dataSources: dataSources,
+      showOverview: tab === "overview", showTopic: !!TOPICS[tab],
+      topic: topic || { groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
+      countyLabel: countyLabel, cmp: cmp || { open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {}, sets: [], cols: [], rows: [] },
+      showEcm: tab === "ecmcs", showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
+      ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
+    };
+  }
+}
+</script>
+<script src="runtime.js"></script>
+<!-- Built __BUILD_DATE__ -->
+</body>
+</html>
