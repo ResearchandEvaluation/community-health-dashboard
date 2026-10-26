@@ -1,4 +1,5 @@
-"""Run every data pull in order. Continues after a failure and reports all failures at the end.
+"""Run every data pull in order. Continues after a failure, reports all failures at the end, and keeps the
+last saved data for any source that fails (the run fails only if more than MAX_FAILED sources fail).
 Usage: python3 scripts/run_all.py            (all sources)
        python3 scripts/run_all.py ecm places (named scripts only)"""
 import os, sys, subprocess, time
@@ -15,6 +16,14 @@ for n in names:
     tail = (r.stdout + r.stderr).strip().splitlines()[-6:]
     for line in tail: print("    " + line)
     if r.returncode: failed.append(n)
+# A source that fails keeps its last saved data, so the dashboard still publishes.
+# The run is marked failed only when more than MAX_FAILED sources fail at once.
+MAX_FAILED = 3
 if failed:
-    print("\nFailed:", ", ".join(failed)); sys.exit(1)
-print("\nAll pulls finished.")
+    print("\nFailed:", ", ".join(failed))
+    for n in failed:
+        print(f"::warning title=Data source not refreshed::{n} failed this run. The dashboard keeps its last saved data for {n}. Re-run later or check scripts/{n}.py.")
+    if len(failed) > MAX_FAILED: sys.exit(1)
+    print("Continuing with last saved data for the failed sources.")
+else:
+    print("\nAll pulls finished.")
