@@ -1,0 +1,66 @@
+{
+  "key": "edVisits",
+  "measures": [
+    {
+      "id": "ed_encounters_total",
+      "label": "Emergency department encounters at hospitals located in the county (treated and released plus admitted)",
+      "unit": "count",
+      "period": "2025",
+      "values": {
+        "Butte": 112432,
+        "Colusa": 5595,
+        "Del Norte": 19709,
+        "Glenn": 4457,
+        "Humboldt": 67447,
+        "Lake": 43627,
+        "Mendocino": 57871,
+        "Shasta": 94415,
+        "Tehama": 31872,
+        "Trinity": 5242,
+        "Siskiyou": 23515,
+        "Los Angeles": 3611760,
+        "San Bernardino": 987552,
+        "Sonoma": 202181,
+        "Marin": 94862,
+        "Sutter": 0,
+        "Napa": 39982
+      },
+      "california": 15454035,
+      "california_source": "calculated",
+      "higher_is_worse": null,
+      "note": "Sum of Department of Health Care Access and Information (HCAI) emergency department ED_Visit (treated and released) and ED_Admit (admitted to the same hospital) encounters across all facilities in the county, by hospital location, including patients who live in other counties. California value is the sum across all California facilities. Blank counts were treated as 0. No hospital located in Sutter reported emergency department encounters in 2025, so the value is 0.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=eb592e95-d6bd-4ec7-9493-840978188c88"
+    },
+    {
+      "id": "ed_hospitals_count",
+      "label": "Hospitals with a licensed emergency department located in the county",
+      "unit": "count",
+      "period": "2025",
+      "values": {
+        "Butte": 3,
+        "Colusa": 1,
+        "Del Norte": 1,
+        "Glenn": 1,
+        "Humboldt": 4,
+        "Lake": 2,
+        "Mendocino": 3,
+        "Shasta": 3,
+        "Tehama": 1,
+        "Trinity": 1,
+        "Siskiyou": 2,
+        "Los Angeles": 69,
+        "San Bernardino": 18,
+        "Sonoma": 6,
+        "Marin": 3,
+        "Sutter": 0,
+        "Napa": 2
+      },
+      "california": 311,
+      "california_source": "calculated",
+      "higher_is_worse": null,
+      "note": "Number of distinct facilities (by Department of Health Care Access and Information (HCAI) facility ID) in the county reporting emergency department encounters with a licensed emergency service level (standby, basic, or comprehensive). California value is the count across all California facilities. No hospital located in Sutter reported emergency department encounters in 2025, so the value is 0.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=eb592e95-d6bd-4ec7-9493-840978188c88"
+    }
+  ],
+  "geo_note": "Hospitals located in the county (counts reflect hospital location, not patient residence)."
+}

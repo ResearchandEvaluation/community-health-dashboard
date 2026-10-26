@@ -1,0 +1,36 @@
+{
+  "key": "bhwork",
+  "measures": [
+    {
+      "id": "bh_encounters_per_bh_license",
+      "label": "Behavioral health hospital encounters per behavioral health provider license",
+      "unit": "encounters per provider license",
+      "period": "2023 hospital encounters; provider licenses as of December 3, 2024",
+      "values": {
+        "Butte": 473,
+        "Colusa": 1080,
+        "Del Norte": 424,
+        "Glenn": 1080,
+        "Humboldt": 424,
+        "Lake": 1097,
+        "Mendocino": 3057,
+        "Shasta": 376,
+        "Tehama": 607,
+        "Trinity": 424,
+        "Siskiyou": 1084,
+        "Los Angeles": 132,
+        "San Bernardino": 128,
+        "Sonoma": 194,
+        "Marin": 127,
+        "Sutter": 468,
+        "Napa": 34
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Number of inpatient hospitalizations and emergency department visits with a behavioral health diagnosis at hospitals in the county, per one health care provider license with a behavioral health specialty in the county, as published by the Department of Health Care Access and Information (HCAI). Larger ratios may indicate greater need for behavioral health providers. HCAI publishes combined values for some small counties; each member county shows the combined value: Colusa and Glenn; Del Norte, Humboldt, and Trinity; Plumas and Tehama; Sutter and Yuba. HCAI does not publish a statewide ratio or provider licenses per 100,000 population in this dataset.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=b625cae2-5730-4929-a355-6c2c8031d7b5"
+    }
+  ],
+  "geo_note": "Hospital encounters and provider licenses are counted by county of the hospital and of the license. Colusa and Glenn, Del Norte, Humboldt, and Trinity, Plumas and Tehama, and Sutter and Yuba are published as combined county groups."
+}
