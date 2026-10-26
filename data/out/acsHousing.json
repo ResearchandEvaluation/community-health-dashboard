@@ -1,0 +1,66 @@
+{
+  "key": "acsHousing",
+  "measures": [
+    {
+      "id": "rent_35pct_or_more",
+      "label": "Renter households paying 35.0 percent or more of household income on gross rent",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 52.6,
+        "Colusa": 45.8,
+        "Del Norte": 50.9,
+        "Glenn": 44.1,
+        "Humboldt": 53.3,
+        "Lake": 53.2,
+        "Mendocino": 44.5,
+        "Shasta": 43.3,
+        "Tehama": 46.9,
+        "Trinity": 30.2,
+        "Siskiyou": 49.5,
+        "Los Angeles": 48.3,
+        "San Bernardino": 48.6,
+        "Sonoma": 44.1,
+        "Marin": 47.2,
+        "Sutter": 44.0,
+        "Napa": 44.9
+      },
+      "california": 46.0,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "American Community Survey (ACS) 5-year estimates, data profile DP04. Percent of occupied units paying rent (excluding units where the ratio cannot be computed) whose gross rent is 35.0 percent or more of household income. The Census Bureau publishes rent burden in bands and does not publish a single 30 percent or more percent in this table, so the published 35.0 percent or more band is shown.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/profile?get=NAME,DP04_0142PE,DP04_0142PM&for=county:*&in=state:06"
+    },
+    {
+      "id": "owner_mortgage_35pct_or_more",
+      "label": "Owner households with a mortgage paying 35.0 percent or more of household income on selected monthly owner costs",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 26.7,
+        "Colusa": 30.5,
+        "Del Norte": 19.7,
+        "Glenn": 27.0,
+        "Humboldt": 31.8,
+        "Lake": 37.0,
+        "Mendocino": 33.6,
+        "Shasta": 27.9,
+        "Tehama": 29.3,
+        "Trinity": 43.6,
+        "Siskiyou": 28.6,
+        "Los Angeles": 34.7,
+        "San Bernardino": 30.1,
+        "Sonoma": 30.2,
+        "Marin": 30.3,
+        "Sutter": 26.8,
+        "Napa": 31.1
+      },
+      "california": 30.0,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "American Community Survey (ACS) 5-year estimates, data profile DP04. Percent of owner-occupied housing units with a mortgage (excluding units where the ratio cannot be computed) whose selected monthly owner costs are 35.0 percent or more of household income. The Census Bureau publishes owner cost burden in bands and does not publish a single 30 percent or more percent for units with a mortgage, so the published 35.0 percent or more band is shown.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/profile?get=NAME,DP04_0115PE,DP04_0115PM&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

@@ -1,0 +1,174 @@
+{
+  "key": "infmort",
+  "measures": [
+    {
+      "id": "infant_mortality_rate_2020_2022",
+      "label": "Infant deaths per 1,000 live births, all race and ethnic groups, 3 year birth cohort",
+      "unit": "rate per 1,000",
+      "period": "2020 to 2022",
+      "values": {
+        "Butte": 3.5,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": 10.3,
+        "Humboldt": 3.6,
+        "Lake": "suppressed",
+        "Mendocino": 6.1,
+        "Shasta": 4.7,
+        "Tehama": 5.0,
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 3.6,
+        "San Bernardino": 4.7,
+        "Sonoma": 3.1,
+        "Marin": 2.1,
+        "Sutter": "suppressed",
+        "Napa": 3.4
+      },
+      "california": 3.7,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "hp_target": 5.0,
+      "hp_objective": "MICH-02",
+      "note": "Published birth cohort infant death rate per 1,000 live births from the California Department of Public Health (CDPH) County Health Status Profiles 2025, infant deaths (deaths before age 1 year) among live births, by county of residence, based on the total live births 2020 to 2022 and the infant deaths among them. CDPH flags the rate as unreliable (relative standard error of 23 percent or more) for Glenn, Humboldt, Mendocino, Tehama, Marin, Napa. CDPH suppressed the value for Colusa, Del Norte, Lake, Trinity, Siskiyou, Sutter. California value is the statewide value published in the same CDPH table. Healthy People 2030 objective MICH-02 target as published in the same table: 5.0. Trend shows the same published rate from the 2021 to 2025 editions, covering the periods 2016 to 2018 through 2020 to 2022; each edition covers a 3 year period, so adjacent periods share 2 years of live births. Values flagged unreliable in earlier periods: 2016 to 2018: Lake, Mendocino, Napa; 2017 to 2019: Lake, Mendocino, Tehama; 2018 to 2020: Lake, Mendocino, Tehama, Siskiyou; 2019 to 2021: Glenn, Humboldt, Mendocino, Tehama, Sutter.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2016 to 2018",
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022"
+        ],
+        "values": {
+          "Butte": [
+            4.0,
+            3.9,
+            3.4,
+            3.8,
+            3.5
+          ],
+          "Colusa": [
+            "suppressed",
+            "suppressed",
+            null,
+            "suppressed",
+            "suppressed"
+          ],
+          "Del Norte": [
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            "suppressed"
+          ],
+          "Glenn": [
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            10.9,
+            10.3
+          ],
+          "Humboldt": [
+            5.6,
+            6.2,
+            5.5,
+            4.9,
+            3.6
+          ],
+          "Lake": [
+            5.7,
+            6.5,
+            7.7,
+            "suppressed",
+            "suppressed"
+          ],
+          "Mendocino": [
+            6.3,
+            4.0,
+            5.3,
+            4.9,
+            6.1
+          ],
+          "Shasta": [
+            5.7,
+            7.1,
+            6.5,
+            6.2,
+            4.7
+          ],
+          "Tehama": [
+            "suppressed",
+            7.5,
+            7.2,
+            8.1,
+            5.0
+          ],
+          "Trinity": [
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            "suppressed"
+          ],
+          "Siskiyou": [
+            "suppressed",
+            "suppressed",
+            10.4,
+            "suppressed",
+            "suppressed"
+          ],
+          "Los Angeles": [
+            3.8,
+            3.6,
+            3.5,
+            3.5,
+            3.6
+          ],
+          "San Bernardino": [
+            5.3,
+            5.0,
+            5.1,
+            5.0,
+            4.7
+          ],
+          "Sonoma": [
+            2.9,
+            3.0,
+            2.8,
+            2.9,
+            3.1
+          ],
+          "Marin": [
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            2.1
+          ],
+          "Sutter": [
+            5.2,
+            6.4,
+            5.6,
+            4.6,
+            "suppressed"
+          ],
+          "Napa": [
+            3.9,
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            3.4
+          ]
+        },
+        "california": [
+          3.9,
+          3.9,
+          3.8,
+          3.7,
+          3.7
+        ]
+      }
+    }
+  ]
+}

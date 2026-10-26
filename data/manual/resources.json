@@ -1,0 +1,168 @@
+{
+ "_about": "Resources shown on the dashboard's Resources page. Edit this file to add, change, or remove a resource. Fields: group (one of the group names below), title, url, description, counties (optional list; leave out for statewide or all counties), status (optional: 'coming soon'). Groups appear in the order listed in 'groups'.",
+ "groups": [
+  {
+   "id": "phil",
+   "title": "Resources From PHIL",
+   "description": "Reports, toolkits, trainings, and convening materials from PHIL's work with communities and partners. PHIL's communications team maintains these pages on pophealthinnovationlab.org."
+  },
+  {
+   "id": "bht",
+   "title": "Behavioral Health Transformation",
+   "description": "State tools for the Behavioral Health Services Act (BHSA), including county Integrated Plans."
+  },
+  {
+   "id": "calaim",
+   "title": "Medi-Cal and CalAIM",
+   "description": "State sources on Enhanced Care Management (ECM) and Community Supports."
+  },
+  {
+   "id": "data",
+   "title": "County Health Data Sources",
+   "description": "The public datasets behind this dashboard. Each one offers more measures, years, and breakdowns than the dashboard shows."
+  },
+  {
+   "id": "maps",
+   "title": "Partner Maps and Directories",
+   "description": "Maps and directories of partners and services in the counties PHIL serves."
+  }
+ ],
+ "resources": [
+  {
+   "group": "phil",
+   "title": "PHIL Resource Library",
+   "url": "https://pophealthinnovationlab.org/resource-library/",
+   "description": "Reports, toolkits, and trainings. Filter by topic, audience, or program."
+  },
+  {
+   "group": "phil",
+   "title": "Northern ACEs Collaborative (NAC) Resources",
+   "url": "https://pophealthinnovationlab.org/nac-resources/",
+   "description": "Convening slides and recordings, the NAC Taxonomy, a report on ACEs screening in rural Northern California, a social media toolkit, and newsletters.",
+   "counties": [
+    "Butte",
+    "Colusa",
+    "Del Norte",
+    "Glenn",
+    "Humboldt",
+    "Lake",
+    "Mendocino",
+    "Shasta",
+    "Tehama",
+    "Trinity"
+   ]
+  },
+  {
+   "group": "phil",
+   "title": "PATH Collaborative Planning and Implementation (CPI) Resources",
+   "url": "https://pophealthinnovationlab.org/projects/path/path-cpi-resources/",
+   "description": "Meeting materials and resources for the Northwest and Southwest PATH collaboratives.",
+   "counties": [
+    "Del Norte",
+    "Humboldt",
+    "Lake",
+    "Marin",
+    "Mendocino",
+    "Napa",
+    "Sonoma"
+   ]
+  },
+  {
+   "group": "phil",
+   "title": "Data Walk",
+   "url": "https://pophealthinnovationlab.org/data-walk/",
+   "description": "PHIL's approach to sharing data with community members and partners so they can interpret it together."
+  },
+  {
+   "group": "phil",
+   "title": "Measurement Toolbox",
+   "url": "https://pophealthinnovationlab.org/resources/measurement-toolbox-2/",
+   "description": "Measures and tools for multisector collaboratives."
+  },
+  {
+   "group": "phil",
+   "title": "The PHIL Collective",
+   "url": "https://pophealthinnovationlab.org/welcome-to-the-phil-collective-your-place-for-all-things-collaboration/",
+   "description": "PHIL's community for people working on collaboration and systems change."
+  },
+  {
+   "group": "bht",
+   "title": "Behavioral Health Public County Profile",
+   "url": "https://county-profile.mes.dhcs.ca.gov/",
+   "description": "DHCS tool showing how each county plans, funds, and delivers behavioral health services under the BHSA, including county spending plans, demographics, homelessness and housing services, and draft Integrated Plans. Select your county in the tool."
+  },
+  {
+   "group": "phil",
+   "title": "PHIL on YouTube",
+   "url": "https://www.youtube.com/@pophealthinnovationlab",
+   "description": "Recordings of convenings, trainings, and webinars from PHIL and its collaboratives."
+  },
+  {
+   "group": "bht",
+   "title": "Behavioral Health Transformation Resources",
+   "url": "https://www.dhcs.ca.gov/behavioral-health-transformation/resources-bht-resources/",
+   "description": "DHCS guidance, policy documents, and webinars on Behavioral Health Transformation."
+  },
+  {
+   "group": "calaim",
+   "title": "ECM and Community Supports Quarterly Implementation Report",
+   "url": "https://storymaps.arcgis.com/collections/a07f998dfefa497fbd7613981e4f6117?item=4",
+   "description": "DHCS report with quarterly trends, member demographics, and statewide totals for ECM and Community Supports."
+  },
+  {
+   "group": "calaim",
+   "title": "Enhanced Care Management and Community Supports (DHCS)",
+   "url": "https://www.dhcs.ca.gov/CalAIM/ECM/Pages/Home.aspx",
+   "description": "DHCS program page with policy guides, provider information, and updates."
+  },
+  {
+   "group": "calaim",
+   "title": "Community Supports Plan Elections by County",
+   "url": "https://www.dhcs.ca.gov/Documents/MCQMD/Community-Supports-Elections-by-MCP-and-County.pdf",
+   "description": "DHCS list of the Community Supports each Medi-Cal managed care plan offers in each county."
+  },
+  {
+   "group": "data",
+   "title": "CDC PLACES: Local Data for Better Health",
+   "url": "https://data.cdc.gov/500-Cities-Places/PLACES-Local-Data-for-Better-Health-County-Data-20/swc5-untb",
+   "description": "County estimates for 40 health measures, including chronic conditions, mental health, and social needs."
+  },
+  {
+   "group": "data",
+   "title": "County Health Status Profiles (CDPH)",
+   "url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles",
+   "description": "Annual county rates for deaths, births, and communicable disease from the California Department of Public Health."
+  },
+  {
+   "group": "data",
+   "title": "Preventable Hospitalizations by County (HCAI)",
+   "url": "https://data.chhs.ca.gov/dataset/rates-of-preventable-hospitalizations-for-selected-medical-conditions-by-county",
+   "description": "Hospital stays that good outpatient care can often prevent, by county and condition."
+  },
+  {
+   "group": "data",
+   "title": "Behavioral Health Public County Profile Data",
+   "url": "https://data.chhs.ca.gov/dataset/bh-county-profile",
+   "description": "The open data behind the DHCS county profile, including homelessness and housing measures."
+  },
+  {
+   "group": "data",
+   "title": "Health Professional Shortage Areas (HRSA)",
+   "url": "https://data.hrsa.gov/data/download",
+   "description": "Primary care, mental health, and dental shortage area designations and scores."
+  },
+  {
+   "group": "data",
+   "title": "Chronic Absenteeism Data (CDE)",
+   "url": "https://www.cde.ca.gov/ds/ad/chronicdata.asp",
+   "description": "Chronic absenteeism by county, district, and school from the California Department of Education."
+  },
+  {
+   "group": "maps",
+   "title": "Map of ECM and Community Supports Providers",
+   "url": "",
+   "description": "PHIL is developing a map of the organizations that provide ECM and Community Supports in the counties it serves. It will appear here when published.",
+   "status": "coming soon"
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+  "key": "hpsaPC",
+  "measures": [
+    {
+      "id": "hpsapc_count",
+      "label": "Designated primary care Health Professional Shortage Areas (HPSAs) in county",
+      "unit": "count",
+      "period": "Designations as of October 22, 2026",
+      "values": {
+        "Butte": 9,
+        "Colusa": 2,
+        "Del Norte": 6,
+        "Glenn": 3,
+        "Humboldt": 7,
+        "Lake": 13,
+        "Mendocino": 17,
+        "Shasta": 15,
+        "Tehama": 16,
+        "Trinity": 5,
+        "Siskiyou": 13,
+        "Los Angeles": 100,
+        "San Bernardino": 24,
+        "Sonoma": 7,
+        "Marin": 3,
+        "Sutter": 3,
+        "Napa": 1
+      },
+      "california": 590,
+      "california_source": "calculated",
+      "higher_is_worse": true,
+      "note": "Counts distinct Health Professional Shortage Area (HPSA) identification numbers with status Designated that have at least one component in the county, including geographic, high needs geographic, population, and facility designations (Federally Qualified Health Centers, Rural Health Clinics, Indian Health Service, Tribal, and Urban Indian health organizations, correctional and other facilities). HPSAs with status Proposed for Withdrawal are excluded. The California value is the statewide count of distinct designated primary care HPSAs; 1 HPSA spans more than one county and is counted in each county covered. Counties with a whole-county geographic or population designation: Del Norte.",
+      "source_url": "https://data.hrsa.gov/DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv"
+    },
+    {
+      "id": "hpsapc_max_score",
+      "label": "Highest primary care HPSA score in county",
+      "unit": "score (0 to 25, higher means greater shortage)",
+      "period": "Designations as of October 22, 2026",
+      "values": {
+        "Butte": 17,
+        "Colusa": 15,
+        "Del Norte": 20,
+        "Glenn": 17,
+        "Humboldt": 20,
+        "Lake": 18,
+        "Mendocino": 17,
+        "Shasta": 18,
+        "Tehama": 17,
+        "Trinity": 17,
+        "Siskiyou": 19,
+        "Los Angeles": 21,
+        "San Bernardino": 19,
+        "Sonoma": 20,
+        "Marin": 20,
+        "Sutter": 18,
+        "Napa": 19
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Highest HPSA score among designated primary care HPSAs in the county (scale 0 to 25 for primary care, higher means greater shortage). A value of 0 means the county has no designated primary care HPSA. No statewide score is published.",
+      "source_url": "https://data.hrsa.gov/DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv"
+    }
+  ],
+  "geo_note": ""
+}

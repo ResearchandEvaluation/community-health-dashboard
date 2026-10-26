@@ -1,0 +1,210 @@
+{
+ "key": "cdeHomeless",
+ "measures": [
+  {
+   "id": "homeless_students",
+   "label": "Students experiencing homelessness",
+   "unit": "count",
+   "period": "2025-26 school year",
+   "values": {
+    "Butte": 1810.0,
+    "Colusa": 321.0,
+    "Del Norte": 220.0,
+    "Glenn": 135.0,
+    "Humboldt": 1129.0,
+    "Lake": 763.0,
+    "Mendocino": 724.0,
+    "Shasta": 870.0,
+    "Tehama": 584.0,
+    "Trinity": 238.0,
+    "Siskiyou": 258.0,
+    "Los Angeles": 54657.0,
+    "San Bernardino": 25632.0,
+    "Sonoma": 1495.0,
+    "Marin": 1569.0,
+    "Sutter": 665.0,
+    "Napa": 611.0
+   },
+   "california": 260772.0,
+   "california_source": "published",
+   "higher_is_worse": true,
+   "note": "Count of students identified as experiencing homelessness at any point in the school year, as published by CDE. Includes students temporarily doubled up, in shelters, in hotels or motels, and unsheltered. Beginning in 2025-26, CDE required local educational agencies to close homeless program records each year and re-verify status through the annual Housing Questionnaire; CDE states the 2025-26 decrease may reflect this change, so 2025-26 counts are not directly comparable with earlier years.",
+   "source_url": "https://www3.cde.ca.gov/demo-downloads/homeless/hse2526.txt",
+   "trend": {
+    "periods": [
+     "2019-20",
+     "2020-21",
+     "2021-22",
+     "2022-23",
+     "2023-24",
+     "2024-25",
+     "2025-26"
+    ],
+    "values": {
+     "Butte": [
+      1887.0,
+      1524.0,
+      1558.0,
+      1608.0,
+      1798.0,
+      2114.0,
+      1810.0
+     ],
+     "Colusa": [
+      313.0,
+      442.0,
+      426.0,
+      430.0,
+      474.0,
+      519.0,
+      321.0
+     ],
+     "Del Norte": [
+      272.0,
+      235.0,
+      207.0,
+      241.0,
+      331.0,
+      245.0,
+      220.0
+     ],
+     "Glenn": [
+      251.0,
+      177.0,
+      148.0,
+      183.0,
+      211.0,
+      157.0,
+      135.0
+     ],
+     "Humboldt": [
+      1065.0,
+      1032.0,
+      1032.0,
+      1259.0,
+      1425.0,
+      1387.0,
+      1129.0
+     ],
+     "Lake": [
+      746.0,
+      580.0,
+      532.0,
+      678.0,
+      863.0,
+      921.0,
+      763.0
+     ],
+     "Mendocino": [
+      879.0,
+      667.0,
+      648.0,
+      723.0,
+      836.0,
+      1059.0,
+      724.0
+     ],
+     "Shasta": [
+      711.0,
+      527.0,
+      650.0,
+      881.0,
+      964.0,
+      904.0,
+      870.0
+     ],
+     "Tehama": [
+      698.0,
+      733.0,
+      677.0,
+      752.0,
+      747.0,
+      688.0,
+      584.0
+     ],
+     "Trinity": [
+      140.0,
+      138.0,
+      169.0,
+      209.0,
+      244.0,
+      229.0,
+      238.0
+     ],
+     "Siskiyou": [
+      318.0,
+      379.0,
+      341.0,
+      309.0,
+      324.0,
+      297.0,
+      258.0
+     ],
+     "Los Angeles": [
+      54095.0,
+      50215.0,
+      48306.0,
+      47689.0,
+      61249.0,
+      61682.0,
+      54657.0
+     ],
+     "San Bernardino": [
+      32080.0,
+      25597.0,
+      25184.0,
+      26301.0,
+      28266.0,
+      28164.0,
+      25632.0
+     ],
+     "Sonoma": [
+      1000.0,
+      799.0,
+      622.0,
+      1024.0,
+      1432.0,
+      1753.0,
+      1495.0
+     ],
+     "Marin": [
+      1361.0,
+      1564.0,
+      1684.0,
+      1092.0,
+      1498.0,
+      1677.0,
+      1569.0
+     ],
+     "Sutter": [
+      396.0,
+      445.0,
+      476.0,
+      479.0,
+      633.0,
+      720.0,
+      665.0
+     ],
+     "Napa": [
+      368.0,
+      614.0,
+      353.0,
+      450.0,
+      724.0,
+      831.0,
+      611.0
+     ]
+    },
+    "california": [
+     244626.0,
+     226275.0,
+     224191.0,
+     246480.0,
+     286853.0,
+     298254.0,
+     260772.0
+    ]
+   }
+  }
+ ]
+}

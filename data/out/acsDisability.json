@@ -1,0 +1,36 @@
+{
+  "key": "acsDisability",
+  "measures": [
+    {
+      "id": "disability",
+      "label": "People with a disability (civilian noninstitutionalized population)",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 16.3,
+        "Colusa": 12.1,
+        "Del Norte": 21.1,
+        "Glenn": 14.3,
+        "Humboldt": 18.9,
+        "Lake": 21.6,
+        "Mendocino": 18.6,
+        "Shasta": 18.1,
+        "Tehama": 18.0,
+        "Trinity": 17.4,
+        "Siskiyou": 17.3,
+        "Los Angeles": 11.3,
+        "San Bernardino": 12.2,
+        "Sonoma": 12.6,
+        "Marin": 10.0,
+        "Sutter": 15.0,
+        "Napa": 12.8
+      },
+      "california": 11.6,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "American Community Survey (ACS) 5-year estimates, subject table S1810. Percent of the total civilian noninstitutionalized population with a disability, as published.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1810_C03_001E,S1810_C03_001M&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

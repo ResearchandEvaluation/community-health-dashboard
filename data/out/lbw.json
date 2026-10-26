@@ -1,0 +1,174 @@
+{
+  "key": "lbw",
+  "measures": [
+    {
+      "id": "low_birthweight_pct_2021_2023",
+      "label": "Low birthweight infants (under 2,500 grams) as a percent of live births, 3 year average",
+      "unit": "percent",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 7.1,
+        "Colusa": 7.5,
+        "Del Norte": 7.7,
+        "Glenn": 5.0,
+        "Humboldt": 6.5,
+        "Lake": 7.5,
+        "Mendocino": 6.5,
+        "Shasta": 7.0,
+        "Tehama": 7.0,
+        "Trinity": 8.0,
+        "Siskiyou": 8.6,
+        "Los Angeles": 7.7,
+        "San Bernardino": 8.3,
+        "Sonoma": 5.9,
+        "Marin": 5.6,
+        "Sutter": 7.4,
+        "Napa": 6.9
+      },
+      "california": 7.4,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "hp_target": null,
+      "hp_objective": null,
+      "note": "Published percent from the California Department of Public Health (CDPH) County Health Status Profiles 2025, live births with low birthweight (under 2,500 grams), by county of residence, based on the total live births 2021 to 2023. California value is the statewide value published in the same CDPH table. CDPH publishes no Healthy People 2030 objective target for this indicator. Trend shows the same published percent from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of live births. Values flagged unreliable in earlier periods: 2017 to 2019: Trinity; 2019 to 2021: Trinity.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            6.1,
+            6.0,
+            6.5,
+            6.7,
+            7.1
+          ],
+          "Colusa": [
+            5.2,
+            4.6,
+            6.1,
+            6.5,
+            7.5
+          ],
+          "Del Norte": [
+            5.5,
+            5.7,
+            7.0,
+            7.7,
+            7.7
+          ],
+          "Glenn": [
+            6.5,
+            7.0,
+            5.9,
+            4.9,
+            5.0
+          ],
+          "Humboldt": [
+            6.0,
+            6.1,
+            6.0,
+            6.3,
+            6.5
+          ],
+          "Lake": [
+            7.0,
+            7.5,
+            7.2,
+            8.0,
+            7.5
+          ],
+          "Mendocino": [
+            7.0,
+            6.5,
+            6.7,
+            6.6,
+            6.5
+          ],
+          "Shasta": [
+            6.7,
+            6.5,
+            6.7,
+            6.7,
+            7.0
+          ],
+          "Tehama": [
+            6.1,
+            6.0,
+            6.3,
+            7.0,
+            7.0
+          ],
+          "Trinity": [
+            5.7,
+            8.1,
+            6.2,
+            8.2,
+            8.0
+          ],
+          "Siskiyou": [
+            9.0,
+            9.1,
+            8.6,
+            8.2,
+            8.6
+          ],
+          "Los Angeles": [
+            7.3,
+            7.4,
+            7.4,
+            7.6,
+            7.7
+          ],
+          "San Bernardino": [
+            7.7,
+            7.9,
+            8.1,
+            8.1,
+            8.3
+          ],
+          "Sonoma": [
+            5.8,
+            6.0,
+            5.8,
+            5.9,
+            5.9
+          ],
+          "Marin": [
+            5.5,
+            5.2,
+            5.4,
+            5.5,
+            5.6
+          ],
+          "Sutter": [
+            7.1,
+            6.6,
+            7.0,
+            6.8,
+            7.4
+          ],
+          "Napa": [
+            6.1,
+            5.5,
+            5.2,
+            6.1,
+            6.9
+          ]
+        },
+        "california": [
+          7.0,
+          7.0,
+          7.1,
+          7.2,
+          7.4
+        ]
+      }
+    }
+  ]
+}

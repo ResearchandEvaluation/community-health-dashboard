@@ -1,0 +1,36 @@
+{
+  "key": "acsChild",
+  "measures": [
+    {
+      "id": "poverty_under18",
+      "label": "Children under 18 living below the federal poverty level",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 21.1,
+        "Colusa": 12.6,
+        "Del Norte": 14.8,
+        "Glenn": 21.9,
+        "Humboldt": 17.5,
+        "Lake": 20.3,
+        "Mendocino": 16.8,
+        "Shasta": 13.8,
+        "Tehama": 20.9,
+        "Trinity": 21.8,
+        "Siskiyou": 20.5,
+        "Los Angeles": 17.6,
+        "San Bernardino": 17.6,
+        "Sonoma": 9.6,
+        "Marin": 9.8,
+        "Sutter": 19.8,
+        "Napa": 10.1
+      },
+      "california": 15.0,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Table S1701, population under 18 for whom poverty status is determined.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1701_C03_001E,S1701_C03_002E,S1701_C03_003E&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

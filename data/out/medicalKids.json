@@ -1,0 +1,35 @@
+{
+  "key": "medicalKids",
+  "measures": [
+    {
+      "id": "medicaid_pct_under19",
+      "label": "Children and youth under age 19 with Medicaid or other means-tested public health coverage (civilian noninstitutionalized population)",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 49.5,
+        "Colusa": 55.0,
+        "Del Norte": 55.4,
+        "Glenn": 55.9,
+        "Humboldt": 57.7,
+        "Lake": 63.7,
+        "Mendocino": 50.3,
+        "Shasta": 42.5,
+        "Tehama": 65.6,
+        "Trinity": 54.9,
+        "Siskiyou": 51.9,
+        "Los Angeles": 48.2,
+        "San Bernardino": 51.6,
+        "Sonoma": 36.6,
+        "Marin": 23.5,
+        "Sutter": 53.4,
+        "Napa": 37.1
+      },
+      "california": 42.9,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "American Community Survey (ACS) 5-year estimates, table S2704. Medicaid/means-tested public coverage includes Medi-Cal and other means-tested public health coverage, alone or in combination with other coverage, as reported by survey respondents. The Census Bureau publishes this measure for the under 19 age group.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S2704_C03_006E,S2704_C03_006M,S2704_C03_007E,S2704_C03_007M&for=county:*&in=state:06"
+    }
+  ]
+}

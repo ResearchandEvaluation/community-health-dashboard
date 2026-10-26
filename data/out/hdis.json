@@ -1,0 +1,564 @@
+{
+  "key": "hdis",
+  "measures": [
+    {
+      "id": "hdis_people_accessing_services",
+      "label": "People accessing homeless response services who experienced homelessness during the year (California System Performance Measure 1a), Continuum of Care total",
+      "unit": "count",
+      "period": "2025",
+      "values": {
+        "Butte": 6176,
+        "Colusa": 792,
+        "Del Norte": 4101,
+        "Glenn": 792,
+        "Humboldt": 1995,
+        "Lake": 591,
+        "Mendocino": 1665,
+        "Shasta": 4101,
+        "Tehama": 1220,
+        "Trinity": 792,
+        "Siskiyou": 4101,
+        "Los Angeles": 130731,
+        "San Bernardino": 13405,
+        "Sonoma": 6006,
+        "Marin": 2865,
+        "Sutter": 3797,
+        "Napa": 1152
+      },
+      "california": 420127,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The Los Angeles County row is smaller than the sum of the four Los Angeles CoC rows (135,773) because people served in more than one CoC are counted once. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
+      "trend": {
+        "periods": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "values": {
+          "Butte": [
+            2205,
+            2494,
+            2962,
+            4805,
+            6016,
+            6176
+          ],
+          "Colusa": [
+            579,
+            720,
+            800,
+            850,
+            818,
+            792
+          ],
+          "Del Norte": [
+            1912,
+            2368,
+            3201,
+            3743,
+            4222,
+            4101
+          ],
+          "Glenn": [
+            579,
+            720,
+            800,
+            850,
+            818,
+            792
+          ],
+          "Humboldt": [
+            1971,
+            1760,
+            2424,
+            2719,
+            2324,
+            1995
+          ],
+          "Lake": [
+            216,
+            446,
+            366,
+            548,
+            507,
+            591
+          ],
+          "Mendocino": [
+            1278,
+            1678,
+            1960,
+            1806,
+            1738,
+            1665
+          ],
+          "Shasta": [
+            1912,
+            2368,
+            3201,
+            3743,
+            4222,
+            4101
+          ],
+          "Tehama": [
+            677,
+            780,
+            1442,
+            1526,
+            1518,
+            1220
+          ],
+          "Trinity": [
+            579,
+            720,
+            800,
+            850,
+            818,
+            792
+          ],
+          "Siskiyou": [
+            1912,
+            2368,
+            3201,
+            3743,
+            4222,
+            4101
+          ],
+          "Los Angeles": [
+            100789,
+            99852,
+            107125,
+            119983,
+            127626,
+            130731
+          ],
+          "San Bernardino": [
+            8281,
+            7455,
+            10745,
+            12202,
+            11040,
+            13405
+          ],
+          "Sonoma": [
+            5460,
+            5376,
+            5826,
+            6049,
+            6044,
+            6006
+          ],
+          "Marin": [
+            1649,
+            2339,
+            2443,
+            2596,
+            2716,
+            2865
+          ],
+          "Sutter": [
+            2614,
+            3165,
+            3821,
+            4342,
+            4174,
+            3797
+          ],
+          "Napa": [
+            1494,
+            987,
+            1102,
+            1137,
+            1311,
+            1152
+          ]
+        },
+        "california": [
+          287799,
+          303308,
+          357349,
+          401607,
+          419372,
+          420127
+        ]
+      }
+    },
+    {
+      "id": "hdis_exits_to_permanent_housing",
+      "label": "People who exited homelessness into permanent housing during the year (California System Performance Measure 3), Continuum of Care total",
+      "unit": "count",
+      "period": "2025",
+      "values": {
+        "Butte": 981,
+        "Colusa": 348,
+        "Del Norte": 741,
+        "Glenn": 348,
+        "Humboldt": 408,
+        "Lake": 101,
+        "Mendocino": 199,
+        "Shasta": 741,
+        "Tehama": 110,
+        "Trinity": 348,
+        "Siskiyou": 741,
+        "Los Angeles": 14029,
+        "San Bernardino": 3168,
+        "Sonoma": 1007,
+        "Marin": 653,
+        "Sutter": 587,
+        "Napa": 324
+      },
+      "california": 68758,
+      "california_source": "published",
+      "higher_is_worse": false,
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. Measure 3 counts people who exited the homelessness response system to permanent housing plus people who moved into permanent housing within the system. Cal ICH publishes this measure as a count of people; the dataset publishes no percent of exits. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
+      "trend": {
+        "periods": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "values": {
+          "Butte": [
+            433,
+            401,
+            348,
+            1262,
+            1426,
+            981
+          ],
+          "Colusa": [
+            211,
+            233,
+            317,
+            327,
+            307,
+            348
+          ],
+          "Del Norte": [
+            451,
+            485,
+            592,
+            734,
+            946,
+            741
+          ],
+          "Glenn": [
+            211,
+            233,
+            317,
+            327,
+            307,
+            348
+          ],
+          "Humboldt": [
+            364,
+            260,
+            508,
+            527,
+            487,
+            408
+          ],
+          "Lake": [
+            86,
+            175,
+            139,
+            119,
+            86,
+            101
+          ],
+          "Mendocino": [
+            235,
+            280,
+            359,
+            327,
+            314,
+            199
+          ],
+          "Shasta": [
+            451,
+            485,
+            592,
+            734,
+            946,
+            741
+          ],
+          "Tehama": [
+            89,
+            92,
+            326,
+            185,
+            179,
+            110
+          ],
+          "Trinity": [
+            211,
+            233,
+            317,
+            327,
+            307,
+            348
+          ],
+          "Siskiyou": [
+            451,
+            485,
+            592,
+            734,
+            946,
+            741
+          ],
+          "Los Angeles": [
+            12659,
+            12759,
+            12651,
+            16320,
+            18640,
+            14029
+          ],
+          "San Bernardino": [
+            3137,
+            2415,
+            2927,
+            3239,
+            2841,
+            3168
+          ],
+          "Sonoma": [
+            934,
+            1056,
+            1053,
+            1192,
+            1235,
+            1007
+          ],
+          "Marin": [
+            379,
+            478,
+            494,
+            590,
+            647,
+            653
+          ],
+          "Sutter": [
+            529,
+            660,
+            764,
+            948,
+            740,
+            587
+          ],
+          "Napa": [
+            369,
+            221,
+            186,
+            323,
+            381,
+            324
+          ]
+        },
+        "california": [
+          54227,
+          54114,
+          62285,
+          74826,
+          77031,
+          68758
+        ]
+      }
+    },
+    {
+      "id": "hdis_returns_to_homelessness",
+      "label": "People who returned to homelessness within 6 months of exiting the homeless response system to permanent housing (California System Performance Measure 5), Continuum of Care percent",
+      "unit": "percent",
+      "period": "2025",
+      "values": {
+        "Butte": 6.6,
+        "Colusa": 1.8,
+        "Del Norte": 3.5,
+        "Glenn": 1.8,
+        "Humboldt": 4.4,
+        "Lake": 5.8,
+        "Mendocino": 9.7,
+        "Shasta": 3.5,
+        "Tehama": 5.2,
+        "Trinity": 1.8,
+        "Siskiyou": 3.5,
+        "Los Angeles": 7.6,
+        "San Bernardino": 8.3,
+        "Sonoma": 6.6,
+        "Marin": 6.0,
+        "Sutter": 8.2,
+        "Napa": 7.8
+      },
+      "california": 8.5,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The data dictionary defines Measure 5 as returns within 6 months of exit to permanent housing. Cal ICH stores the share as a decimal fraction (for example 0.085); the value shown is that fraction multiplied by 100 and rounded to one decimal. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
+      "trend": {
+        "periods": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "values": {
+          "Butte": [
+            11.2,
+            7.2,
+            7.3,
+            21.4,
+            10.2,
+            6.6
+          ],
+          "Colusa": [
+            4.9,
+            6.4,
+            6.1,
+            3.6,
+            4.6,
+            1.8
+          ],
+          "Del Norte": [
+            6.6,
+            4.1,
+            5.5,
+            3.8,
+            4.8,
+            3.5
+          ],
+          "Glenn": [
+            4.9,
+            6.4,
+            6.1,
+            3.6,
+            4.6,
+            1.8
+          ],
+          "Humboldt": [
+            6.5,
+            9.6,
+            10.6,
+            12.2,
+            7.3,
+            4.4
+          ],
+          "Lake": [
+            3.2,
+            10.0,
+            9.7,
+            12.2,
+            12.2,
+            5.8
+          ],
+          "Mendocino": [
+            13.3,
+            6.3,
+            8.8,
+            4.4,
+            6.3,
+            9.7
+          ],
+          "Shasta": [
+            6.6,
+            4.1,
+            5.5,
+            3.8,
+            4.8,
+            3.5
+          ],
+          "Tehama": [
+            22.6,
+            2.8,
+            5.3,
+            3.2,
+            3.3,
+            5.2
+          ],
+          "Trinity": [
+            4.9,
+            6.4,
+            6.1,
+            3.6,
+            4.6,
+            1.8
+          ],
+          "Siskiyou": [
+            6.6,
+            4.1,
+            5.5,
+            3.8,
+            4.8,
+            3.5
+          ],
+          "Los Angeles": [
+            6.5,
+            8.5,
+            6.8,
+            8.2,
+            7.6,
+            7.6
+          ],
+          "San Bernardino": [
+            10.5,
+            5.6,
+            8.0,
+            6.1,
+            7.9,
+            8.3
+          ],
+          "Sonoma": [
+            7.9,
+            5.5,
+            7.6,
+            7.7,
+            4.8,
+            6.6
+          ],
+          "Marin": [
+            6.2,
+            7.5,
+            5.7,
+            6.7,
+            7.1,
+            6.0
+          ],
+          "Sutter": [
+            2.2,
+            11.4,
+            10.6,
+            4.5,
+            13.7,
+            8.2
+          ],
+          "Napa": [
+            7.1,
+            11.0,
+            8.7,
+            1.8,
+            10.2,
+            7.8
+          ]
+        },
+        "california": [
+          8.6,
+          8.4,
+          9.4,
+          8.7,
+          9.1,
+          8.5
+        ]
+      }
+    }
+  ],
+  "geo_note": "Continuum of Care"
+}

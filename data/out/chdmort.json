@@ -1,0 +1,174 @@
+{
+  "key": "chdmort",
+  "measures": [
+    {
+      "id": "chd_death_rate_aa_2021_2023",
+      "label": "Coronary heart disease death rate, age adjusted, 3 year average",
+      "unit": "rate per 100,000",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 72.5,
+        "Colusa": 64.9,
+        "Del Norte": 75.0,
+        "Glenn": 109.9,
+        "Humboldt": 90.0,
+        "Lake": 119.5,
+        "Mendocino": 91.3,
+        "Shasta": 99.4,
+        "Tehama": 96.3,
+        "Trinity": 72.2,
+        "Siskiyou": 72.1,
+        "Los Angeles": 84.4,
+        "San Bernardino": 92.9,
+        "Sonoma": 54.8,
+        "Marin": 44.7,
+        "Sutter": 78.3,
+        "Napa": 76.5
+      },
+      "california": 72.2,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "hp_target": 71.1,
+      "hp_objective": "HDS-02",
+      "note": "Published age-adjusted death rate per 100,000 population from the California Department of Public Health (CDPH) County Health Status Profiles 2025, deaths due to coronary heart disease by county of residence, based on the average annual number of deaths 2021 to 2023 and 2022 population. California value is the statewide value published in the same CDPH table. Healthy People 2030 objective HDS-02 target as published in the same table: 71.1. Trend shows the same published rate from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of deaths, and each edition uses the population estimates current when it was published.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            82.8,
+            91.5,
+            91.0,
+            78.8,
+            72.5
+          ],
+          "Colusa": [
+            79.0,
+            84.6,
+            83.1,
+            82.5,
+            64.9
+          ],
+          "Del Norte": [
+            92.9,
+            77.0,
+            65.9,
+            70.8,
+            75.0
+          ],
+          "Glenn": [
+            70.9,
+            65.9,
+            84.8,
+            96.6,
+            109.9
+          ],
+          "Humboldt": [
+            99.6,
+            100.1,
+            98.2,
+            100.0,
+            90.0
+          ],
+          "Lake": [
+            105.5,
+            109.0,
+            112.0,
+            119.7,
+            119.5
+          ],
+          "Mendocino": [
+            86.7,
+            90.4,
+            97.8,
+            99.8,
+            91.3
+          ],
+          "Shasta": [
+            119.2,
+            116.2,
+            113.0,
+            110.3,
+            99.4
+          ],
+          "Tehama": [
+            114.2,
+            119.7,
+            113.2,
+            102.2,
+            96.3
+          ],
+          "Trinity": [
+            71.4,
+            75.4,
+            77.3,
+            72.6,
+            72.2
+          ],
+          "Siskiyou": [
+            81.1,
+            76.4,
+            79.1,
+            76.3,
+            72.1
+          ],
+          "Los Angeles": [
+            95.0,
+            96.6,
+            94.1,
+            91.6,
+            84.4
+          ],
+          "San Bernardino": [
+            102.0,
+            103.7,
+            100.8,
+            99.0,
+            92.9
+          ],
+          "Sonoma": [
+            66.1,
+            63.0,
+            59.1,
+            58.0,
+            54.8
+          ],
+          "Marin": [
+            44.0,
+            44.7,
+            44.7,
+            46.3,
+            44.7
+          ],
+          "Sutter": [
+            98.9,
+            89.3,
+            87.5,
+            85.2,
+            78.3
+          ],
+          "Napa": [
+            80.1,
+            82.6,
+            82.8,
+            79.7,
+            76.5
+          ]
+        },
+        "california": [
+          80.6,
+          80.7,
+          79.0,
+          77.2,
+          72.2
+        ]
+      }
+    }
+  ]
+}

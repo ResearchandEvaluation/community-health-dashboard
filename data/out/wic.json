@@ -1,0 +1,1494 @@
+{
+  "key": "wic",
+  "measures": [
+    {
+      "id": "wic_prenatal",
+      "label": "Pregnant WIC participants (Prenatal category), certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 499,
+        "Colusa": 82,
+        "Del Norte": 83,
+        "Glenn": 126,
+        "Humboldt": 249,
+        "Lake": 183,
+        "Mendocino": 194,
+        "Shasta": 316,
+        "Tehama": 186,
+        "Trinity": 17,
+        "Siskiyou": 81,
+        "Los Angeles": 20548,
+        "San Bernardino": 5463,
+        "Sonoma": 554,
+        "Marin": 298,
+        "Sutter": 282,
+        "Napa": 186
+      },
+      "california": 77889,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Prenatal category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            483,
+            377,
+            381,
+            438,
+            497,
+            499
+          ],
+          "Colusa": [
+            88,
+            51,
+            57,
+            69,
+            70,
+            82
+          ],
+          "Del Norte": [
+            99,
+            60,
+            69,
+            69,
+            83,
+            83
+          ],
+          "Glenn": [
+            109,
+            76,
+            108,
+            97,
+            97,
+            126
+          ],
+          "Humboldt": [
+            320,
+            210,
+            236,
+            245,
+            252,
+            249
+          ],
+          "Lake": [
+            219,
+            135,
+            148,
+            160,
+            181,
+            183
+          ],
+          "Mendocino": [
+            227,
+            157,
+            149,
+            195,
+            163,
+            194
+          ],
+          "Shasta": [
+            479,
+            314,
+            261,
+            266,
+            301,
+            316
+          ],
+          "Tehama": [
+            185,
+            186,
+            161,
+            190,
+            170,
+            186
+          ],
+          "Trinity": [
+            38,
+            26,
+            23,
+            31,
+            28,
+            17
+          ],
+          "Siskiyou": [
+            117,
+            77,
+            82,
+            64,
+            77,
+            81
+          ],
+          "Los Angeles": [
+            25282,
+            18608,
+            18857,
+            19482,
+            20388,
+            20548
+          ],
+          "San Bernardino": [
+            6313,
+            4716,
+            4765,
+            4804,
+            5190,
+            5463
+          ],
+          "Sonoma": [
+            663,
+            488,
+            490,
+            552,
+            602,
+            554
+          ],
+          "Marin": [
+            240,
+            166,
+            279,
+            261,
+            277,
+            298
+          ],
+          "Sutter": [
+            289,
+            243,
+            236,
+            239,
+            252,
+            282
+          ],
+          "Napa": [
+            152,
+            126,
+            148,
+            152,
+            144,
+            186
+          ]
+        },
+        "california": [
+          87539,
+          67905,
+          68852,
+          72628,
+          76035,
+          77889
+        ]
+      }
+    },
+    {
+      "id": "wic_breastfeeding",
+      "label": "Postpartum breastfeeding WIC participants, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 554,
+        "Colusa": 73,
+        "Del Norte": 101,
+        "Glenn": 135,
+        "Humboldt": 402,
+        "Lake": 271,
+        "Mendocino": 311,
+        "Shasta": 439,
+        "Tehama": 245,
+        "Trinity": 40,
+        "Siskiyou": 83,
+        "Los Angeles": 23949,
+        "San Bernardino": 5867,
+        "Sonoma": 995,
+        "Marin": 477,
+        "Sutter": 387,
+        "Napa": 279
+      },
+      "california": 96337,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Breastfeeding category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            501,
+            448,
+            405,
+            469,
+            522,
+            554
+          ],
+          "Colusa": [
+            55,
+            43,
+            53,
+            66,
+            70,
+            73
+          ],
+          "Del Norte": [
+            86,
+            79,
+            92,
+            105,
+            96,
+            101
+          ],
+          "Glenn": [
+            129,
+            124,
+            95,
+            128,
+            107,
+            135
+          ],
+          "Humboldt": [
+            438,
+            399,
+            362,
+            431,
+            373,
+            402
+          ],
+          "Lake": [
+            258,
+            221,
+            195,
+            222,
+            209,
+            271
+          ],
+          "Mendocino": [
+            314,
+            273,
+            236,
+            291,
+            304,
+            311
+          ],
+          "Shasta": [
+            417,
+            400,
+            360,
+            387,
+            413,
+            439
+          ],
+          "Tehama": [
+            219,
+            192,
+            191,
+            235,
+            242,
+            245
+          ],
+          "Trinity": [
+            25,
+            33,
+            40,
+            37,
+            39,
+            40
+          ],
+          "Siskiyou": [
+            122,
+            80,
+            85,
+            94,
+            91,
+            83
+          ],
+          "Los Angeles": [
+            20056,
+            19448,
+            18811,
+            21984,
+            22936,
+            23949
+          ],
+          "San Bernardino": [
+            3828,
+            3699,
+            3605,
+            4464,
+            4993,
+            5867
+          ],
+          "Sonoma": [
+            811,
+            797,
+            774,
+            931,
+            997,
+            995
+          ],
+          "Marin": [
+            372,
+            439,
+            411,
+            530,
+            537,
+            477
+          ],
+          "Sutter": [
+            251,
+            277,
+            262,
+            337,
+            333,
+            387
+          ],
+          "Napa": [
+            280,
+            213,
+            184,
+            253,
+            256,
+            279
+          ]
+        },
+        "california": [
+          78094,
+          75082,
+          73009,
+          86580,
+          90731,
+          96337
+        ]
+      }
+    },
+    {
+      "id": "wic_non_breastfeeding",
+      "label": "Postpartum non-breastfeeding WIC participants, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 213,
+        "Colusa": 26,
+        "Del Norte": 38,
+        "Glenn": 41,
+        "Humboldt": 100,
+        "Lake": 83,
+        "Mendocino": 64,
+        "Shasta": 138,
+        "Tehama": 89,
+        "Trinity": "suppressed",
+        "Siskiyou": 30,
+        "Los Angeles": 11236,
+        "San Bernardino": 3656,
+        "Sonoma": 228,
+        "Marin": 52,
+        "Sutter": 128,
+        "Napa": 60
+      },
+      "california": 41798,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Non-Breastfeeding category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH (1 of the 17 counties in this month). Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            171,
+            254,
+            201,
+            201,
+            227,
+            213
+          ],
+          "Colusa": [
+            37,
+            61,
+            47,
+            46,
+            37,
+            26
+          ],
+          "Del Norte": [
+            30,
+            45,
+            48,
+            37,
+            38,
+            38
+          ],
+          "Glenn": [
+            44,
+            49,
+            43,
+            51,
+            36,
+            41
+          ],
+          "Humboldt": [
+            97,
+            94,
+            110,
+            83,
+            83,
+            100
+          ],
+          "Lake": [
+            72,
+            98,
+            78,
+            68,
+            66,
+            83
+          ],
+          "Mendocino": [
+            69,
+            88,
+            88,
+            68,
+            71,
+            64
+          ],
+          "Shasta": [
+            127,
+            204,
+            164,
+            156,
+            156,
+            138
+          ],
+          "Tehama": [
+            70,
+            94,
+            115,
+            101,
+            96,
+            89
+          ],
+          "Trinity": [
+            "suppressed",
+            "suppressed",
+            "suppressed",
+            11,
+            "suppressed",
+            "suppressed"
+          ],
+          "Siskiyou": [
+            35,
+            37,
+            27,
+            39,
+            29,
+            30
+          ],
+          "Los Angeles": [
+            15714,
+            14927,
+            14347,
+            12902,
+            11932,
+            11236
+          ],
+          "San Bernardino": [
+            5276,
+            4651,
+            4320,
+            3831,
+            3800,
+            3656
+          ],
+          "Sonoma": [
+            188,
+            218,
+            235,
+            239,
+            200,
+            228
+          ],
+          "Marin": [
+            20,
+            41,
+            61,
+            37,
+            57,
+            52
+          ],
+          "Sutter": [
+            148,
+            165,
+            155,
+            148,
+            165,
+            128
+          ],
+          "Napa": [
+            58,
+            84,
+            81,
+            60,
+            64,
+            60
+          ]
+        },
+        "california": [
+          52474,
+          52604,
+          49983,
+          45542,
+          43177,
+          41798
+        ]
+      }
+    },
+    {
+      "id": "wic_infant",
+      "label": "Infant WIC participants under age 1, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 1101,
+        "Colusa": 148,
+        "Del Norte": 188,
+        "Glenn": 234,
+        "Humboldt": 584,
+        "Lake": 442,
+        "Mendocino": 485,
+        "Shasta": 753,
+        "Tehama": 445,
+        "Trinity": 56,
+        "Siskiyou": 155,
+        "Los Angeles": 47396,
+        "San Bernardino": 13751,
+        "Sonoma": 1455,
+        "Marin": 580,
+        "Sutter": 689,
+        "Napa": 413
+      },
+      "california": 184595,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Infant category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            1099,
+            967,
+            967,
+            966,
+            1090,
+            1101
+          ],
+          "Colusa": [
+            171,
+            171,
+            150,
+            154,
+            149,
+            148
+          ],
+          "Del Norte": [
+            197,
+            160,
+            174,
+            194,
+            170,
+            188
+          ],
+          "Glenn": [
+            256,
+            227,
+            201,
+            230,
+            199,
+            234
+          ],
+          "Humboldt": [
+            784,
+            612,
+            578,
+            629,
+            577,
+            584
+          ],
+          "Lake": [
+            497,
+            465,
+            377,
+            394,
+            383,
+            442
+          ],
+          "Mendocino": [
+            559,
+            463,
+            444,
+            473,
+            469,
+            485
+          ],
+          "Shasta": [
+            929,
+            806,
+            722,
+            717,
+            754,
+            753
+          ],
+          "Tehama": [
+            476,
+            406,
+            457,
+            488,
+            493,
+            445
+          ],
+          "Trinity": [
+            54,
+            44,
+            61,
+            67,
+            59,
+            56
+          ],
+          "Siskiyou": [
+            262,
+            180,
+            186,
+            195,
+            171,
+            155
+          ],
+          "Los Angeles": [
+            60004,
+            50192,
+            48020,
+            49176,
+            47374,
+            47396
+          ],
+          "San Bernardino": [
+            17087,
+            14225,
+            13632,
+            13429,
+            13179,
+            13751
+          ],
+          "Sonoma": [
+            1480,
+            1332,
+            1321,
+            1462,
+            1437,
+            1455
+          ],
+          "Marin": [
+            526,
+            530,
+            541,
+            634,
+            634,
+            580
+          ],
+          "Sutter": [
+            695,
+            658,
+            613,
+            663,
+            698,
+            689
+          ],
+          "Napa": [
+            462,
+            398,
+            355,
+            387,
+            394,
+            413
+          ]
+        },
+        "california": [
+          216569,
+          186858,
+          179218,
+          186597,
+          182302,
+          184595
+        ]
+      }
+    },
+    {
+      "id": "wic_child_1",
+      "label": "WIC participants aged 1, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 1045,
+        "Colusa": 146,
+        "Del Norte": 150,
+        "Glenn": 206,
+        "Humboldt": 519,
+        "Lake": 324,
+        "Mendocino": 436,
+        "Shasta": 778,
+        "Tehama": 459,
+        "Trinity": 62,
+        "Siskiyou": 159,
+        "Los Angeles": 45030,
+        "San Bernardino": 12075,
+        "Sonoma": 1374,
+        "Marin": 600,
+        "Sutter": 701,
+        "Napa": 381
+      },
+      "california": 171244,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Child Aged 1 category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            842,
+            933,
+            840,
+            916,
+            936,
+            1045
+          ],
+          "Colusa": [
+            127,
+            141,
+            161,
+            146,
+            148,
+            146
+          ],
+          "Del Norte": [
+            156,
+            153,
+            115,
+            165,
+            170,
+            150
+          ],
+          "Glenn": [
+            201,
+            237,
+            215,
+            193,
+            237,
+            206
+          ],
+          "Humboldt": [
+            562,
+            603,
+            523,
+            555,
+            560,
+            519
+          ],
+          "Lake": [
+            373,
+            433,
+            373,
+            338,
+            365,
+            324
+          ],
+          "Mendocino": [
+            344,
+            406,
+            409,
+            415,
+            467,
+            436
+          ],
+          "Shasta": [
+            745,
+            776,
+            738,
+            717,
+            749,
+            778
+          ],
+          "Tehama": [
+            352,
+            374,
+            339,
+            409,
+            453,
+            459
+          ],
+          "Trinity": [
+            61,
+            48,
+            44,
+            58,
+            69,
+            62
+          ],
+          "Siskiyou": [
+            209,
+            180,
+            142,
+            160,
+            187,
+            159
+          ],
+          "Los Angeles": [
+            45121,
+            49947,
+            45630,
+            44471,
+            46511,
+            45030
+          ],
+          "San Bernardino": [
+            11566,
+            13563,
+            12000,
+            10730,
+            11305,
+            12075
+          ],
+          "Sonoma": [
+            1104,
+            1316,
+            1206,
+            1188,
+            1380,
+            1374
+          ],
+          "Marin": [
+            366,
+            434,
+            447,
+            521,
+            622,
+            600
+          ],
+          "Sutter": [
+            520,
+            621,
+            618,
+            593,
+            645,
+            701
+          ],
+          "Napa": [
+            304,
+            405,
+            336,
+            277,
+            349,
+            381
+          ]
+        },
+        "california": [
+          158643,
+          177958,
+          165701,
+          162995,
+          174730,
+          171244
+        ]
+      }
+    },
+    {
+      "id": "wic_child_2",
+      "label": "WIC participants aged 2, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 872,
+        "Colusa": 145,
+        "Del Norte": 150,
+        "Glenn": 217,
+        "Humboldt": 501,
+        "Lake": 337,
+        "Mendocino": 411,
+        "Shasta": 665,
+        "Tehama": 394,
+        "Trinity": 62,
+        "Siskiyou": 147,
+        "Los Angeles": 43051,
+        "San Bernardino": 10751,
+        "Sonoma": 1220,
+        "Marin": 538,
+        "Sutter": 588,
+        "Napa": 312
+      },
+      "california": 160301,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Child Aged 2 category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            740,
+            765,
+            755,
+            763,
+            849,
+            872
+          ],
+          "Colusa": [
+            142,
+            128,
+            136,
+            147,
+            135,
+            145
+          ],
+          "Del Norte": [
+            144,
+            132,
+            117,
+            112,
+            147,
+            150
+          ],
+          "Glenn": [
+            194,
+            190,
+            206,
+            188,
+            183,
+            217
+          ],
+          "Humboldt": [
+            465,
+            481,
+            467,
+            456,
+            479,
+            501
+          ],
+          "Lake": [
+            371,
+            343,
+            330,
+            341,
+            344,
+            337
+          ],
+          "Mendocino": [
+            351,
+            306,
+            350,
+            377,
+            380,
+            411
+          ],
+          "Shasta": [
+            716,
+            617,
+            600,
+            657,
+            628,
+            665
+          ],
+          "Tehama": [
+            317,
+            314,
+            288,
+            324,
+            333,
+            394
+          ],
+          "Trinity": [
+            52,
+            65,
+            40,
+            51,
+            57,
+            62
+          ],
+          "Siskiyou": [
+            167,
+            161,
+            122,
+            113,
+            134,
+            147
+          ],
+          "Los Angeles": [
+            45040,
+            43459,
+            43421,
+            40902,
+            41655,
+            43051
+          ],
+          "San Bernardino": [
+            10999,
+            10208,
+            10811,
+            9487,
+            9830,
+            10751
+          ],
+          "Sonoma": [
+            1058,
+            993,
+            1114,
+            1031,
+            1104,
+            1220
+          ],
+          "Marin": [
+            390,
+            338,
+            397,
+            400,
+            526,
+            538
+          ],
+          "Sutter": [
+            477,
+            498,
+            510,
+            546,
+            542,
+            588
+          ],
+          "Napa": [
+            283,
+            299,
+            304,
+            247,
+            251,
+            312
+          ]
+        },
+        "california": [
+          153935,
+          147231,
+          150074,
+          145516,
+          150884,
+          160301
+        ]
+      }
+    },
+    {
+      "id": "wic_child_3",
+      "label": "WIC participants aged 3, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 822,
+        "Colusa": 123,
+        "Del Norte": 143,
+        "Glenn": 195,
+        "Humboldt": 467,
+        "Lake": 318,
+        "Mendocino": 361,
+        "Shasta": 614,
+        "Tehama": 338,
+        "Trinity": 53,
+        "Siskiyou": 128,
+        "Los Angeles": 40459,
+        "San Bernardino": 10002,
+        "Sonoma": 1084,
+        "Marin": 492,
+        "Sutter": 537,
+        "Napa": 260
+      },
+      "california": 146696,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Child Aged 3 category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            677,
+            648,
+            654,
+            690,
+            778,
+            822
+          ],
+          "Colusa": [
+            145,
+            139,
+            120,
+            125,
+            145,
+            123
+          ],
+          "Del Norte": [
+            142,
+            103,
+            110,
+            113,
+            122,
+            143
+          ],
+          "Glenn": [
+            146,
+            186,
+            170,
+            190,
+            192,
+            195
+          ],
+          "Humboldt": [
+            434,
+            363,
+            394,
+            457,
+            423,
+            467
+          ],
+          "Lake": [
+            357,
+            336,
+            292,
+            330,
+            349,
+            318
+          ],
+          "Mendocino": [
+            339,
+            310,
+            281,
+            354,
+            330,
+            361
+          ],
+          "Shasta": [
+            648,
+            607,
+            544,
+            590,
+            634,
+            614
+          ],
+          "Tehama": [
+            314,
+            277,
+            275,
+            312,
+            313,
+            338
+          ],
+          "Trinity": [
+            39,
+            47,
+            55,
+            45,
+            43,
+            53
+          ],
+          "Siskiyou": [
+            171,
+            114,
+            112,
+            132,
+            115,
+            128
+          ],
+          "Los Angeles": [
+            42850,
+            41652,
+            40110,
+            40932,
+            40032,
+            40459
+          ],
+          "San Bernardino": [
+            10281,
+            9370,
+            9273,
+            9098,
+            9031,
+            10002
+          ],
+          "Sonoma": [
+            982,
+            934,
+            929,
+            1016,
+            1013,
+            1084
+          ],
+          "Marin": [
+            366,
+            342,
+            326,
+            396,
+            422,
+            492
+          ],
+          "Sutter": [
+            450,
+            432,
+            469,
+            505,
+            535,
+            537
+          ],
+          "Napa": [
+            302,
+            263,
+            251,
+            254,
+            236,
+            260
+          ]
+        },
+        "california": [
+          144252,
+          138120,
+          134792,
+          140318,
+          142820,
+          146696
+        ]
+      }
+    },
+    {
+      "id": "wic_child_4",
+      "label": "WIC participants aged 4, certified",
+      "unit": "count",
+      "period": "December 2024",
+      "values": {
+        "Butte": 789,
+        "Colusa": 138,
+        "Del Norte": 121,
+        "Glenn": 183,
+        "Humboldt": 444,
+        "Lake": 331,
+        "Mendocino": 331,
+        "Shasta": 606,
+        "Tehama": 316,
+        "Trinity": 45,
+        "Siskiyou": 97,
+        "Los Angeles": 40544,
+        "San Bernardino": 9454,
+        "Sonoma": 1065,
+        "Marin": 430,
+        "Sutter": 548,
+        "Napa": 277
+      },
+      "california": 144261,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Child Aged 4 category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH. Trend shows December of each year from 2019 to 2024.",
+      "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
+      "trend": {
+        "periods": [
+          "December 2019",
+          "December 2020",
+          "December 2021",
+          "December 2022",
+          "December 2023",
+          "December 2024"
+        ],
+        "values": {
+          "Butte": [
+            649,
+            660,
+            581,
+            670,
+            779,
+            789
+          ],
+          "Colusa": [
+            141,
+            141,
+            142,
+            128,
+            134,
+            138
+          ],
+          "Del Norte": [
+            153,
+            121,
+            76,
+            114,
+            125,
+            121
+          ],
+          "Glenn": [
+            200,
+            161,
+            185,
+            178,
+            195,
+            183
+          ],
+          "Humboldt": [
+            422,
+            355,
+            322,
+            393,
+            437,
+            444
+          ],
+          "Lake": [
+            336,
+            329,
+            305,
+            267,
+            363,
+            331
+          ],
+          "Mendocino": [
+            354,
+            315,
+            292,
+            283,
+            366,
+            331
+          ],
+          "Shasta": [
+            644,
+            566,
+            537,
+            557,
+            575,
+            606
+          ],
+          "Tehama": [
+            344,
+            274,
+            249,
+            301,
+            312,
+            316
+          ],
+          "Trinity": [
+            45,
+            39,
+            40,
+            62,
+            43,
+            45
+          ],
+          "Siskiyou": [
+            133,
+            127,
+            108,
+            112,
+            137,
+            97
+          ],
+          "Los Angeles": [
+            44452,
+            41691,
+            40697,
+            40213,
+            41723,
+            40544
+          ],
+          "San Bernardino": [
+            10606,
+            9203,
+            8976,
+            8636,
+            8998,
+            9454
+          ],
+          "Sonoma": [
+            1016,
+            946,
+            901,
+            926,
+            1053,
+            1065
+          ],
+          "Marin": [
+            344,
+            332,
+            365,
+            333,
+            434,
+            430
+          ],
+          "Sutter": [
+            448,
+            447,
+            430,
+            497,
+            534,
+            548
+          ],
+          "Napa": [
+            295,
+            300,
+            248,
+            211,
+            247,
+            277
+          ]
+        },
+        "california": [
+          148483,
+          136527,
+          134141,
+          135313,
+          143814,
+          144261
+        ]
+      }
+    }
+  ],
+  "geo_note": ""
+}

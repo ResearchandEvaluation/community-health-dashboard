@@ -1,0 +1,65 @@
+{
+ "key": "ecm",
+ "measures": [
+  {
+   "id": "ecm_pct",
+   "label": "Medi-Cal managed care members who received Enhanced Care Management (ECM)",
+   "unit": "percent",
+   "period": "January 1 to December 31, 2025",
+   "values": {
+    "Butte": 3.34,
+    "Colusa": 4.15,
+    "Del Norte": 2.58,
+    "Glenn": 3.28,
+    "Humboldt": 4.13,
+    "Lake": 3.1,
+    "Mendocino": 3.09,
+    "Shasta": 5.22,
+    "Tehama": 2.14,
+    "Trinity": 3.34,
+    "Siskiyou": 1.99,
+    "Los Angeles": 1.41,
+    "San Bernardino": 2.52,
+    "Sonoma": 3,
+    "Marin": 2.56,
+    "Sutter": 2.74,
+    "Napa": 1.89
+   },
+   "california": null,
+   "california_source": "published",
+   "higher_is_worse": null,
+   "note": "DHCS county rate for 2025. DHCS publishes a statewide member count and does not publish a statewide rate.",
+   "source_url": "https://data.chhs.ca.gov/dataset/chart-1-5-county-penetration-rates-for-ecm-in-the-last-12-months-of-the-reporting-period"
+  },
+  {
+   "id": "ecm_members",
+   "label": "Members who received ECM",
+   "unit": "count",
+   "period": "January 1 to December 31, 2025",
+   "values": {
+    "Butte": 2848,
+    "Colusa": 423,
+    "Del Norte": 319,
+    "Glenn": 449,
+    "Humboldt": 2376,
+    "Lake": 1051,
+    "Mendocino": 1258,
+    "Shasta": 3412,
+    "Tehama": 640,
+    "Trinity": 175,
+    "Siskiyou": 355,
+    "Los Angeles": 54799,
+    "San Bernardino": 23243,
+    "Sonoma": 4121,
+    "Marin": 1377,
+    "Sutter": 1208,
+    "Napa": 667
+   },
+   "california": 345946,
+   "california_source": "published",
+   "higher_is_worse": null,
+   "note": "DHCS count for 2025.",
+   "source_url": "https://data.chhs.ca.gov/dataset/chart-1-5-county-penetration-rates-for-ecm-in-the-last-12-months-of-the-reporting-period"
+  }
+ ]
+}

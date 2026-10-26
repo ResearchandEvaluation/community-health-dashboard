@@ -1,0 +1,66 @@
+{
+  "key": "acsPov",
+  "measures": [
+    {
+      "id": "poverty_all",
+      "label": "People living below the federal poverty level",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 19.2,
+        "Colusa": 11.4,
+        "Del Norte": 12.9,
+        "Glenn": 16.0,
+        "Humboldt": 18.7,
+        "Lake": 17.0,
+        "Mendocino": 15.4,
+        "Shasta": 13.3,
+        "Tehama": 15.6,
+        "Trinity": 20.7,
+        "Siskiyou": 16.4,
+        "Los Angeles": 13.7,
+        "San Bernardino": 13.3,
+        "Sonoma": 8.9,
+        "Marin": 8.3,
+        "Sutter": 14.4,
+        "Napa": 8.5
+      },
+      "california": 12.0,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Table S1701, population for whom poverty status is determined.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1701_C03_001E,S1701_C03_002E,S1701_C03_003E&for=county:*&in=state:06"
+    },
+    {
+      "id": "uninsured",
+      "label": "People without health insurance (civilian noninstitutionalized population)",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 6.4,
+        "Colusa": 8.0,
+        "Del Norte": 5.5,
+        "Glenn": 8.5,
+        "Humboldt": 4.9,
+        "Lake": 6.9,
+        "Mendocino": 7.7,
+        "Shasta": 6.5,
+        "Tehama": 6.6,
+        "Trinity": 9.3,
+        "Siskiyou": 6.0,
+        "Los Angeles": 8.2,
+        "San Bernardino": 8.0,
+        "Sonoma": 5.1,
+        "Marin": 3.8,
+        "Sutter": 6.4,
+        "Napa": 5.7
+      },
+      "california": 6.6,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Table S2701, percent uninsured.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S2701_C05_001E&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

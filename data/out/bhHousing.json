@@ -1,0 +1,65 @@
+{
+  "key": "bhHousing",
+  "measures": [
+    {
+      "id": "medi_cal_homelessness_rate",
+      "label": "Medi-Cal members who experienced homelessness, rate per 10,000 Medi-Cal members",
+      "unit": "rate per 10,000",
+      "period": "FY 2024-25",
+      "values": {
+        "Butte": 710.67,
+        "Colusa": 189.07,
+        "Del Norte": 672.49,
+        "Glenn": 295.73,
+        "Humboldt": 612.15,
+        "Lake": 639.8,
+        "Mendocino": 558.75,
+        "Shasta": 765.03,
+        "Tehama": 359.24,
+        "Trinity": 553.61,
+        "Siskiyou": 536.4,
+        "Los Angeles": 179.66,
+        "San Bernardino": 212.29,
+        "Sonoma": 349.44,
+        "Marin": 336.87,
+        "Sutter": 445.35,
+        "Napa": 333.94
+      },
+      "california": 263.03,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "DHCS Behavioral Health Transformation 'Reduce Homelessness' measure, published in the Behavioral Health Public County Profile as 'Rate (per 10,000) of Medi-Cal members who experienced homelessness'. Sutter County value is the combined Sutter-Yuba behavioral health county value (DHCS does not publish Sutter alone). California value is the DHCS 'State' row.",
+      "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/39b4a109-39e0-4a39-9940-6ae0d3349444"
+    },
+    {
+      "id": "medi_cal_sig_bh_homelessness_rate",
+      "label": "Medi-Cal members with significant behavioral health needs who experienced homelessness, rate per 10,000 Medi-Cal members with significant behavioral health needs",
+      "unit": "rate per 10,000",
+      "period": "FY 2024-25",
+      "values": {
+        "Butte": 1581.06,
+        "Colusa": 687.02,
+        "Del Norte": 1408.93,
+        "Glenn": 895.31,
+        "Humboldt": 1471.5,
+        "Lake": 1347.91,
+        "Mendocino": 1381.36,
+        "Shasta": 1747.83,
+        "Tehama": 956.51,
+        "Trinity": 1093.25,
+        "Siskiyou": 1257.9,
+        "Los Angeles": 831.81,
+        "San Bernardino": 656.2,
+        "Sonoma": 967.57,
+        "Marin": 1172.49,
+        "Sutter": 1243.49,
+        "Napa": 1029.15
+      },
+      "california": 988.67,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "DHCS Behavioral Health Transformation 'Reduce Homelessness' measure, published in the Behavioral Health Public County Profile as 'Rate (per 10,000) of Medi-Cal members with significant BH needs who experienced homelessness'. Sutter County value is the combined Sutter-Yuba behavioral health county value (DHCS does not publish Sutter alone). California value is the DHCS 'State' row.",
+      "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/39b4a109-39e0-4a39-9940-6ae0d3349444"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "key": "strokemort",
+  "measures": [
+    {
+      "id": "strokemort_rate_35plus",
+      "label": "Stroke deaths among adults ages 35 and older, age-adjusted rate per 100,000 (3-year average)",
+      "unit": "rate per 100,000",
+      "period": "2022 to 2024",
+      "values": {
+        "Butte": 88.2,
+        "Colusa": 70.2,
+        "Del Norte": 76.2,
+        "Glenn": 84.9,
+        "Humboldt": 124.3,
+        "Lake": 67.2,
+        "Mendocino": 65.1,
+        "Shasta": 73.0,
+        "Tehama": 79.3,
+        "Trinity": 45.4,
+        "Siskiyou": 84.4,
+        "Los Angeles": 64.7,
+        "San Bernardino": 85.2,
+        "Sonoma": 82.4,
+        "Marin": 55.9,
+        "Sutter": 107.1,
+        "Napa": 66.9
+      },
+      "california": 75.1,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Age-adjusted 3-year average stroke death rate for adults ages 35 and older, all sexes and racial and ethnic groups, from the National Vital Statistics System (NVSS). County rates are spatially smoothed by CDC; the California rate is the published state rate, which is not spatially smoothed.",
+      "source_url": "https://data.cdc.gov/resource/y5ii-knwc.json"
+    }
+  ]
+}

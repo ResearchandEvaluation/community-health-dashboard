@@ -1,0 +1,239 @@
+{
+  "_about": "Content for the 'How Partners Can Act' section at the bottom of each topic page. PHIL reviews these links each quarter. 'works' lists strategies from What Works for Health (County Health Rankings and Roadmaps), the Community Preventive Services Task Force, and CDC; 'state' lists California efforts partners can take part in; and 'county' is one county-specific tool. In county descriptions, {county} becomes the selected county name. The page shows no ratings.",
+  "topics": {
+    "cardio": {
+      "works": [
+        {
+          "name": "Self-measured blood pressure monitoring with added support",
+          "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-self-measured-blood-pressure-with-additional-support.html",
+          "source": "Community Preventive Services Task Force",
+          "desc": "People with high blood pressure check it at home and receive counseling, education, or follow-up from their care team."
+        },
+        {
+          "name": "Team-based care for blood pressure control",
+          "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-team-based-care-improve-blood-pressure-control.html",
+          "source": "Community Preventive Services Task Force",
+          "desc": "The patient, primary care provider, nurses, pharmacists, and community health workers share responsibility for blood pressure control."
+        },
+        {
+          "name": "Community health workers for heart disease prevention",
+          "url": "https://www.thecommunityguide.org/findings/heart-disease-stroke-prevention-interventions-engaging-community-health-workers.html",
+          "source": "Community Preventive Services Task Force",
+          "desc": "Community health workers provide culturally appropriate education, social support, and connections to services for people at higher risk."
+        }
+      ],
+      "state": [
+        {
+          "name": "Medi-Cal Community Health Worker benefit",
+          "url": "https://www.dhcs.ca.gov/providers-partners/community-health-workers/",
+          "desc": "Medi-Cal pays for community health worker services such as health education and navigation. Community organizations can offer these services as Medi-Cal providers."
+        },
+        {
+          "name": "Medically tailored meals through Community Supports",
+          "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/enhanced-care-management-and-community-supports/",
+          "desc": "Medi-Cal managed care plans can offer medically tailored meals and medically supportive food to members with chronic conditions, including heart disease."
+        }
+      ],
+      "county": {
+        "name": "Community Supports Search Tool",
+        "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/enhanced-care-management-and-community-supports/community-supports-search-tool/",
+        "desc": "Enter {county} County to see which Community Supports, including medically tailored meals, local Medi-Cal plans offer."
+      }
+    },
+    "aces": {
+      "works": [
+        {
+          "name": "Trauma-informed schools",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/trauma-informed-schools",
+          "source": "What Works for Health",
+          "desc": "Schools offer trauma-informed practices for all students, added support for some, and intensive services for students exposed to trauma."
+        },
+        {
+          "name": "School-based trauma counseling",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/school-based-trauma-counseling",
+          "source": "What Works for Health",
+          "desc": "Trained staff help students process trauma and build coping skills in individual or small group sessions, with caregivers involved."
+        },
+        {
+          "name": "Preventing Adverse Childhood Experiences",
+          "url": "https://www.cdc.gov/aces/prevention/index.html",
+          "source": "Centers for Disease Control and Prevention",
+          "desc": "CDC prevention strategies include family-friendly policies, quality child care, parenting skill building, mentoring, and crisis services."
+        }
+      ],
+      "state": [
+        {
+          "name": "ACEs Aware",
+          "url": "https://www.acesaware.org/",
+          "desc": "The Office of the California Surgeon General and the Department of Health Care Services (DHCS) train and pay Medi-Cal providers to screen children and adults for ACEs. Partners can find ACEs Aware clinicians and trainings."
+        },
+        {
+          "name": "CYBHI free resources for families",
+          "url": "https://cybhi.chhs.ca.gov/resource-external/",
+          "desc": "The Children and Youth Behavioral Health Initiative (CYBHI) offers free apps, parent coaching, and materials on ACEs and stress in English and Spanish."
+        }
+      ],
+      "county": {
+        "name": "Behavioral Health Public County Profile",
+        "url": "https://county-profile.mes.dhcs.ca.gov/",
+        "desc": "Select {county} County to see how it plans, funds, and delivers behavioral health services under the Behavioral Health Services Act (BHSA)."
+      }
+    },
+    "early": {
+      "works": [
+        {
+          "name": "Early childhood home visiting programs",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/early-childhood-home-visiting-programs",
+          "source": "What Works for Health",
+          "desc": "Trained home visitors support expectant parents and families with young children on health, development, and care, and connect them to services."
+        },
+        {
+          "name": "Reach Out and Read",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/reach-out-and-read",
+          "source": "What Works for Health",
+          "desc": "Pediatric clinicians give families age-appropriate books and reading guidance during routine well-child visits."
+        },
+        {
+          "name": "Community-based doulas",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/community-based-doulas",
+          "source": "What Works for Health",
+          "desc": "Doulas who share the cultural background of the families they serve provide support and education from pregnancy through the postpartum period."
+        }
+      ],
+      "state": [
+        {
+          "name": "Medi-Cal doula benefit",
+          "url": "https://www.dhcs.ca.gov/providers-partners/doula-services-as-a-medi-cal-benefit/",
+          "desc": "Since 2023, Medi-Cal covers doula support during pregnancy, birth, and the postpartum period. Doulas can enroll as Medi-Cal providers."
+        },
+        {
+          "name": "CYBHI free resources for families",
+          "url": "https://cybhi.chhs.ca.gov/resource-external/",
+          "desc": "The Children and Youth Behavioral Health Initiative (CYBHI) offers free parent coaching for families with children ages 0 to 12, in English and Spanish."
+        }
+      ],
+      "county": {
+        "name": "Behavioral Health Public County Profile",
+        "url": "https://county-profile.mes.dhcs.ca.gov/",
+        "desc": "Select {county} County to see how it plans, funds, and delivers behavioral health services under the Behavioral Health Services Act (BHSA)."
+      }
+    },
+    "youth": {
+      "works": [
+        {
+          "name": "Universal school-based cognitive behavioral therapy",
+          "url": "https://www.thecommunityguide.org/findings/mental-health-universal-school-based-cognitive-behavioral-therapy-programs-reduce-depression-anxiety-symptoms.html",
+          "source": "Community Preventive Services Task Force",
+          "desc": "Schools offer group sessions to all students that build skills to prevent and reduce symptoms of depression and anxiety."
+        },
+        {
+          "name": "School-based health centers",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/school-based-health-centers",
+          "source": "What Works for Health",
+          "desc": "Clinicians deliver physical and mental health care to students on or near school grounds."
+        },
+        {
+          "name": "Trauma-informed schools",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/trauma-informed-schools",
+          "source": "What Works for Health",
+          "desc": "Schools offer trauma-informed practices for all students, added support for some, and intensive services for students exposed to trauma."
+        }
+      ],
+      "state": [
+        {
+          "name": "Children and Youth Behavioral Health Initiative",
+          "url": "https://cybhi.chhs.ca.gov/",
+          "desc": "The Children and Youth Behavioral Health Initiative (CYBHI) funds school-linked services, workforce, and digital supports for young people ages 0 to 25. Partners can use its resources for schools and providers."
+        },
+        {
+          "name": "CYBHI free resources for youth",
+          "url": "https://cybhi.chhs.ca.gov/resource-external/",
+          "desc": "Free apps, confidential support for ages 13 to 25, a teen mental health campaign, and suicide prevention materials, in English and Spanish."
+        }
+      ],
+      "county": {
+        "name": "Behavioral Health Public County Profile",
+        "url": "https://county-profile.mes.dhcs.ca.gov/",
+        "desc": "Select {county} County to see how it plans, funds, and delivers behavioral health services under the Behavioral Health Services Act (BHSA)."
+      }
+    },
+    "sub": {
+      "works": [
+        {
+          "name": "Naloxone education and distribution",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/naloxone-education-distribution-programs",
+          "source": "What Works for Health",
+          "desc": "Community members and first responders learn to recognize an opioid overdose and reverse it with naloxone."
+        },
+        {
+          "name": "Housing First",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/housing-first",
+          "source": "What Works for Health",
+          "desc": "People experiencing chronic homelessness move directly into permanent housing, with case management and crisis support after move-in."
+        },
+        {
+          "name": "Expanding access to medications for opioid use disorder",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/medication-assisted-treatment-access-enhancement-initiatives",
+          "source": "What Works for Health",
+          "desc": "More clinicians and sites offer methadone, buprenorphine, and naltrexone alongside counseling and behavioral therapy."
+        }
+      ],
+      "state": [
+        {
+          "name": "Naloxone Distribution Project",
+          "url": "https://www.dhcs.ca.gov/individuals/naloxone-distribution-project/",
+          "desc": "The Department of Health Care Services (DHCS) provides free naloxone and fentanyl test strips to eligible organizations, such as schools, county agencies, and treatment programs."
+        },
+        {
+          "name": "Behavioral Health Transformation",
+          "url": "https://www.dhcs.ca.gov/behavioral-health-transformation/resources-bht-resources/",
+          "desc": "Proposition 1 and the Behavioral Health Services Act (BHSA) fund county mental health and substance use services, including housing interventions. DHCS posts guidance and webinars."
+        }
+      ],
+      "county": {
+        "name": "Behavioral Health Public County Profile",
+        "url": "https://county-profile.mes.dhcs.ca.gov/",
+        "desc": "Select {county} County to see its behavioral health spending plans and housing and homelessness services under the Behavioral Health Services Act (BHSA)."
+      }
+    },
+    "medi": {
+      "works": [
+        {
+          "name": "Health insurance enrollment outreach and support",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/health-insurance-enrollment-outreach-support",
+          "source": "What Works for Health",
+          "desc": "Trained staff help people enroll in coverage and renew it on time."
+        },
+        {
+          "name": "Community health workers",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/community-health-workers",
+          "source": "What Works for Health",
+          "desc": "Community health workers provide outreach, education, referrals, and follow-up for people who face barriers to care."
+        },
+        {
+          "name": "Medical-legal partnerships",
+          "url": "https://www.countyhealthrankings.org/strategies-and-solutions/what-works-for-health/strategies/medical-legal-partnerships",
+          "source": "What Works for Health",
+          "desc": "Lawyers work inside clinics so patients get help with housing, food, and utility problems that affect health."
+        }
+      ],
+      "state": [
+        {
+          "name": "Enhanced Care Management and Community Supports",
+          "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/enhanced-care-management-and-community-supports/",
+          "desc": "CalAIM offers care management and services such as housing navigation, medically tailored meals, and asthma remediation. Community organizations can contract with Medi-Cal plans to provide them."
+        },
+        {
+          "name": "Medi-Cal Community Health Worker benefit",
+          "url": "https://www.dhcs.ca.gov/providers-partners/community-health-workers/",
+          "desc": "Medi-Cal pays for community health worker services such as health education and navigation. Community organizations can offer these services as Medi-Cal providers."
+        }
+      ],
+      "county": {
+        "name": "Community Supports Search Tool",
+        "url": "https://www.dhcs.ca.gov/calaim-transforming-medi-cal/enhanced-care-management-and-community-supports/community-supports-search-tool/",
+        "desc": "Enter {county} County to see which Community Supports local Medi-Cal plans offer."
+      }
+    }
+  }
+}

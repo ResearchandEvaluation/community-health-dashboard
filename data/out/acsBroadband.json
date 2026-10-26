@@ -1,0 +1,36 @@
+{
+  "key": "acsBroadband",
+  "measures": [
+    {
+      "id": "broadband",
+      "label": "Households with a broadband Internet subscription",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 91.8,
+        "Colusa": 84.6,
+        "Del Norte": 91.4,
+        "Glenn": 89.5,
+        "Humboldt": 90.9,
+        "Lake": 87.1,
+        "Mendocino": 89.6,
+        "Shasta": 91.3,
+        "Tehama": 88.0,
+        "Trinity": 81.9,
+        "Siskiyou": 88.5,
+        "Los Angeles": 93.0,
+        "San Bernardino": 93.3,
+        "Sonoma": 94.4,
+        "Marin": 95.8,
+        "Sutter": 90.6,
+        "Napa": 93.5
+      },
+      "california": 93.5,
+      "california_source": "published",
+      "higher_is_worse": false,
+      "note": "American Community Survey (ACS) 5-year estimates, subject table S2801. Percent of total households with an Internet subscription that is broadband of any type (cellular data plan, cable, fiber optic, DSL, or satellite), as published.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S2801_C02_014E,S2801_C02_014M&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

@@ -1,0 +1,174 @@
+{
+  "key": "prenatal",
+  "measures": [
+    {
+      "id": "prenatal_first_trimester_pct_2021_2023",
+      "label": "Live births with prenatal care begun in the first trimester, percent of live births, 3 year average",
+      "unit": "percent",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 82.8,
+        "Colusa": 74.0,
+        "Del Norte": 79.1,
+        "Glenn": 82.0,
+        "Humboldt": 82.4,
+        "Lake": 78.3,
+        "Mendocino": 80.4,
+        "Shasta": 80.3,
+        "Tehama": 71.3,
+        "Trinity": 66.7,
+        "Siskiyou": 82.4,
+        "Los Angeles": 87.1,
+        "San Bernardino": 84.7,
+        "Sonoma": 89.5,
+        "Marin": 84.8,
+        "Sutter": 72.4,
+        "Napa": 89.1
+      },
+      "california": 86.5,
+      "california_source": "published",
+      "higher_is_worse": false,
+      "hp_target": null,
+      "hp_objective": null,
+      "note": "Published percent from the California Department of Public Health (CDPH) County Health Status Profiles 2025, live births to mothers whose prenatal care began in the first trimester of pregnancy, by county of residence, based on the total live births 2021 to 2023. California value is the statewide value published in the same CDPH table. CDPH publishes no Healthy People 2030 objective target for this indicator. Trend shows the same published percent from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of live births.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            76.0,
+            78.9,
+            81.9,
+            83.2,
+            82.8
+          ],
+          "Colusa": [
+            65.2,
+            68.0,
+            72.1,
+            72.9,
+            74.0
+          ],
+          "Del Norte": [
+            76.6,
+            77.3,
+            80.3,
+            81.4,
+            79.1
+          ],
+          "Glenn": [
+            75.0,
+            78.1,
+            80.1,
+            81.1,
+            82.0
+          ],
+          "Humboldt": [
+            79.8,
+            80.4,
+            82.0,
+            82.0,
+            82.4
+          ],
+          "Lake": [
+            73.1,
+            76.9,
+            79.1,
+            79.4,
+            78.3
+          ],
+          "Mendocino": [
+            71.3,
+            77.0,
+            81.6,
+            80.9,
+            80.4
+          ],
+          "Shasta": [
+            75.2,
+            79.9,
+            82.5,
+            81.5,
+            80.3
+          ],
+          "Tehama": [
+            66.9,
+            67.3,
+            71.2,
+            74.6,
+            71.3
+          ],
+          "Trinity": [
+            62.7,
+            68.5,
+            70.4,
+            69.6,
+            66.7
+          ],
+          "Siskiyou": [
+            78.2,
+            79.7,
+            83.1,
+            83.0,
+            82.4
+          ],
+          "Los Angeles": [
+            85.7,
+            87.0,
+            88.2,
+            88.2,
+            87.1
+          ],
+          "San Bernardino": [
+            83.9,
+            85.1,
+            86.5,
+            86.5,
+            84.7
+          ],
+          "Sonoma": [
+            89.1,
+            90.4,
+            91.5,
+            90.7,
+            89.5
+          ],
+          "Marin": [
+            87.5,
+            89.1,
+            90.6,
+            89.1,
+            84.8
+          ],
+          "Sutter": [
+            68.3,
+            68.9,
+            73.0,
+            74.2,
+            72.4
+          ],
+          "Napa": [
+            90.0,
+            91.1,
+            91.6,
+            90.2,
+            89.1
+          ]
+        },
+        "california": [
+          85.1,
+          86.5,
+          87.9,
+          87.6,
+          86.5
+        ]
+      }
+    }
+  ]
+}

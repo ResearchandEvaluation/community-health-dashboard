@@ -1,0 +1,66 @@
+{
+  "key": "hpsaMH",
+  "measures": [
+    {
+      "id": "hpsamh_count",
+      "label": "Designated mental health Health Professional Shortage Areas (HPSAs) in county",
+      "unit": "count",
+      "period": "Designations as of October 22, 2026",
+      "values": {
+        "Butte": 7,
+        "Colusa": 3,
+        "Del Norte": 6,
+        "Glenn": 2,
+        "Humboldt": 7,
+        "Lake": 13,
+        "Mendocino": 14,
+        "Shasta": 11,
+        "Tehama": 13,
+        "Trinity": 5,
+        "Siskiyou": 11,
+        "Los Angeles": 86,
+        "San Bernardino": 26,
+        "Sonoma": 7,
+        "Marin": 3,
+        "Sutter": 3,
+        "Napa": 1
+      },
+      "california": 552,
+      "california_source": "calculated",
+      "higher_is_worse": true,
+      "note": "Counts distinct Health Professional Shortage Area (HPSA) identification numbers with status Designated that have at least one component in the county, including geographic, high needs geographic, population, and facility designations (Federally Qualified Health Centers, Rural Health Clinics, Indian Health Service, Tribal, and Urban Indian health organizations, correctional and other facilities). HPSAs with status Proposed for Withdrawal are excluded. The California value is the statewide count of distinct designated mental health HPSAs. Counties with a whole-county geographic or population designation: Butte, Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Shasta, Siskiyou, Sutter, Tehama, Trinity.",
+      "source_url": "https://data.hrsa.gov/DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv"
+    },
+    {
+      "id": "hpsamh_max_score",
+      "label": "Highest mental health HPSA score in county",
+      "unit": "score (0 to 25, higher means greater shortage)",
+      "period": "Designations as of October 22, 2026",
+      "values": {
+        "Butte": 19,
+        "Colusa": 17,
+        "Del Norte": 21,
+        "Glenn": 17,
+        "Humboldt": 20,
+        "Lake": 19,
+        "Mendocino": 21,
+        "Shasta": 17,
+        "Tehama": 19,
+        "Trinity": 19,
+        "Siskiyou": 18,
+        "Los Angeles": 22,
+        "San Bernardino": 22,
+        "Sonoma": 21,
+        "Marin": 20,
+        "Sutter": 23,
+        "Napa": 14
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Highest HPSA score among designated mental health HPSAs in the county (scale 0 to 25 for mental health, higher means greater shortage). A value of 0 means the county has no designated mental health HPSA. No statewide score is published.",
+      "source_url": "https://data.hrsa.gov/DataDownload/DD_Files/BCD_HPSA_FCT_DET_MH.csv"
+    }
+  ],
+  "geo_note": ""
+}

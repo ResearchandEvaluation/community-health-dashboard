@@ -1,0 +1,36 @@
+{
+  "key": "acsLanguage",
+  "measures": [
+    {
+      "id": "limited_english",
+      "label": "People age 5 and older who speak English less than very well",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 6.0,
+        "Colusa": 21.2,
+        "Del Norte": 4.4,
+        "Glenn": 14.2,
+        "Humboldt": 3.7,
+        "Lake": 5.9,
+        "Mendocino": 8.9,
+        "Shasta": 2.7,
+        "Tehama": 8.1,
+        "Trinity": 0.5,
+        "Siskiyou": 3.3,
+        "Los Angeles": 23.4,
+        "San Bernardino": 15.3,
+        "Sonoma": 11.4,
+        "Marin": 9.6,
+        "Sutter": 16.4,
+        "Napa": 15.4
+      },
+      "california": 17.5,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "American Community Survey (ACS) 5-year estimates, subject table S1601. Percent of the population 5 years and over who speak English less than \"very well\", as published. Estimates for Trinity have a coefficient of variation above 30 percent (based on the published margin of error) and should be interpreted with caution.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1601_C06_001E,S1601_C06_001M&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

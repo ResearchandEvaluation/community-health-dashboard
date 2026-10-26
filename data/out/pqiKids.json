@@ -1,0 +1,67 @@
+{
+  "key": "pqiKids",
+  "measures": [
+    {
+      "id": "pdi90_overall_composite",
+      "label": "Preventable hospitalizations among children age 6 to 17, Pediatric Quality Indicator (PDI) 90 overall composite, risk-adjusted",
+      "unit": "rate per 100,000",
+      "period": "2024",
+      "values": {
+        "Butte": 79.6,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": 59.9,
+        "Tehama": "suppressed",
+        "Trinity": 0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 63.5,
+        "San Bernardino": 103.3,
+        "Sonoma": 64.7,
+        "Marin": "suppressed",
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+      },
+      "california": 74.9,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Department of Health Care Access and Information (HCAI) risk-adjusted rate per 100,000 children age 6 to 17, by county of patient residence. California value is the dataset's statewide row. Suppressed by HCAI for small numbers: Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Tehama, Siskiyou, Marin, Sutter, Napa. Rates based on fewer than 11 hospitalizations are statistically unstable: Trinity (0 hospitalizations). No trend is shown: HCAI computed 2024 rates with a different Agency for Healthcare Research and Quality (AHRQ) software version than earlier years (2016 to 2022 with v2023, 2023 with v2024, 2024 with v2025, which also changed the risk adjustment model), and HCAI advises against comparing rates across software versions.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=c441b087-ed26-4652-bde1-174aa0fd5760",
+      "trend": null
+    },
+    {
+      "id": "pdi14_asthma",
+      "label": "Asthma hospitalizations among children age 2 to 17, Pediatric Quality Indicator (PDI) 14, risk-adjusted",
+      "unit": "rate per 100,000",
+      "period": "2024",
+      "values": {
+        "Butte": 35.4,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": 37.4,
+        "Tehama": "suppressed",
+        "Trinity": 0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 45.3,
+        "San Bernardino": 69.8,
+        "Sonoma": 68.7,
+        "Marin": 60.7,
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+      },
+      "california": 57.9,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Department of Health Care Access and Information (HCAI) risk-adjusted rate per 100,000 children age 2 to 17, by county of patient residence. California value is the dataset's statewide row. Suppressed by HCAI for small numbers: Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Tehama, Siskiyou, Sutter, Napa. Rates based on fewer than 11 hospitalizations are statistically unstable: Trinity (0 hospitalizations). No trend is shown: HCAI computed 2024 rates with a different Agency for Healthcare Research and Quality (AHRQ) software version than earlier years (2016 to 2022 with v2023, 2023 with v2024, 2024 with v2025, which also changed the risk adjustment model), and HCAI advises against comparing rates across software versions.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=c441b087-ed26-4652-bde1-174aa0fd5760",
+      "trend": null
+    }
+  ]
+}

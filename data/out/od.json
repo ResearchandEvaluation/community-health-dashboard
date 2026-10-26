@@ -1,0 +1,134 @@
+{
+  "key": "od",
+  "measures": [
+    {
+      "id": "od_rate_aa_2021_2023",
+      "label": "Drug overdose deaths, age-adjusted rate per 100,000 (3-year average)",
+      "unit": "rate per 100,000",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 55.7,
+        "Colusa": 20.8,
+        "Del Norte": 78.2,
+        "Glenn": 42.1,
+        "Humboldt": 59.1,
+        "Lake": 87.3,
+        "Mendocino": 69.6,
+        "Shasta": 45.8,
+        "Tehama": 51.2,
+        "Trinity": 34.0,
+        "Siskiyou": 49.6,
+        "Los Angeles": 22.9,
+        "San Bernardino": 26.1,
+        "Sonoma": 27.9,
+        "Marin": 23.0,
+        "Sutter": 31.7,
+        "Napa": 18.2
+      },
+      "california": 27.3,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Published age-adjusted death rate from the California Department of Public Health (CDPH) County Health Status Profiles 2025, drug overdose deaths by county of residence, based on the average annual number of deaths 2021 to 2023 and 2022 population. CDPH flags the rate as unreliable (relative standard error of 23 percent or more) for Colusa, Trinity. California value is the statewide rate published in the same CDPH table. Trend shows the same published rate from the 2023 to 2025 editions, covering the periods 2019 to 2021 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of deaths, and each edition uses the population estimates current when it was published. Earlier editions (2021, 2022) published this table as Drug Induced Deaths, a different definition, so those periods are left out of the trend. Rates flagged unreliable in earlier periods: 2019 to 2021: Colusa, Trinity; 2020 to 2022: Colusa, Trinity.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            40.6,
+            46.5,
+            55.7
+          ],
+          "Colusa": [
+            15.1,
+            15.8,
+            20.8
+          ],
+          "Del Norte": [
+            29.9,
+            58.5,
+            78.2
+          ],
+          "Glenn": [
+            32.5,
+            39.7,
+            42.1
+          ],
+          "Humboldt": [
+            37.1,
+            50.6,
+            59.1
+          ],
+          "Lake": [
+            77.6,
+            86.2,
+            87.3
+          ],
+          "Mendocino": [
+            56.2,
+            66.9,
+            69.6
+          ],
+          "Shasta": [
+            32.0,
+            38.9,
+            45.8
+          ],
+          "Tehama": [
+            17.3,
+            33.6,
+            51.2
+          ],
+          "Trinity": [
+            39.5,
+            36.2,
+            34.0
+          ],
+          "Siskiyou": [
+            24.4,
+            42.1,
+            49.6
+          ],
+          "Los Angeles": [
+            17.9,
+            21.8,
+            22.9
+          ],
+          "San Bernardino": [
+            20.6,
+            24.7,
+            26.1
+          ],
+          "Sonoma": [
+            28.0,
+            29.2,
+            27.9
+          ],
+          "Marin": [
+            20.4,
+            23.3,
+            23.0
+          ],
+          "Sutter": [
+            19.0,
+            29.1,
+            31.7
+          ],
+          "Napa": [
+            13.2,
+            17.5,
+            18.2
+          ]
+        },
+        "california": [
+          21.4,
+          25.3,
+          27.3
+        ]
+      }
+    }
+  ]
+}

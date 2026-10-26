@@ -1,0 +1,36 @@
+{
+  "key": "acsYoung",
+  "measures": [
+    {
+      "id": "poverty_under5",
+      "label": "Children under 5 living below the federal poverty level",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 26.2,
+        "Colusa": 13.0,
+        "Del Norte": 14.6,
+        "Glenn": 29.6,
+        "Humboldt": 19.1,
+        "Lake": 17.8,
+        "Mendocino": 23.6,
+        "Shasta": 18.4,
+        "Tehama": 30.9,
+        "Trinity": 7.6,
+        "Siskiyou": 21.7,
+        "Los Angeles": 16.8,
+        "San Bernardino": 17.7,
+        "Sonoma": 10.0,
+        "Marin": 8.2,
+        "Sutter": 23.3,
+        "Napa": 17.0
+      },
+      "california": 14.9,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Table S1701, children under 5 for whom poverty status is determined. The Census Bureau publishes this age group directly. Estimates for Colusa, Del Norte, Trinity have a coefficient of variation above 30 percent (based on the published margin of error) and should be interpreted with caution.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1701_C03_001E,S1701_C03_002E,S1701_C03_003E&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

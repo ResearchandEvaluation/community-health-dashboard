@@ -1,0 +1,36 @@
+{
+  "key": "pqiAll",
+  "measures": [
+    {
+      "id": "pqi90_overall_composite",
+      "label": "Preventable hospitalizations for all conditions among adults, Prevention Quality Indicator (PQI) 90 overall composite, risk-adjusted",
+      "unit": "rate per 100,000",
+      "period": "2024",
+      "values": {
+        "Butte": 1311.2,
+        "Colusa": 1335.8,
+        "Del Norte": 824.5,
+        "Glenn": 1322.3,
+        "Humboldt": 703.9,
+        "Lake": 837.8,
+        "Mendocino": 639.4,
+        "Shasta": 1160.3,
+        "Tehama": 914.8,
+        "Trinity": 358.9,
+        "Siskiyou": 649,
+        "Los Angeles": 985.3,
+        "San Bernardino": 1230.1,
+        "Sonoma": 798.5,
+        "Marin": 578.9,
+        "Sutter": 1270.4,
+        "Napa": 791.7
+      },
+      "california": 964.4,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Department of Health Care Access and Information (HCAI) risk-adjusted rate per 100,000 residents age 18 and older, by county of patient residence. California value is the dataset's STATEWIDE row. No trend is shown: HCAI computed 2024 rates with a different Agency for Healthcare Research and Quality (AHRQ) software version than earlier years (2016 to 2022 with v2023, 2023 with v2024, 2024 with v2025, which also changed the risk adjustment model), and HCAI advises against comparing rates across software versions.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=7c7aed93-3643-43b8-92fc-324bf8fc13f2",
+      "trend": null
+    }
+  ]
+}

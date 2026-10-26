@@ -1,0 +1,172 @@
+{
+  "key": "suicide",
+  "measures": [
+    {
+      "id": "suicide_rate_aa_2021_2023",
+      "label": "Suicide death rate, age adjusted, 3 year average",
+      "unit": "rate per 100,000",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 13.4,
+        "Colusa": 11.9,
+        "Del Norte": 19.7,
+        "Glenn": 12.7,
+        "Humboldt": 24.4,
+        "Lake": 26.1,
+        "Mendocino": 20.7,
+        "Shasta": 26.1,
+        "Tehama": 27.7,
+        "Trinity": 30.2,
+        "Siskiyou": 29.8,
+        "Los Angeles": 8.0,
+        "San Bernardino": 11.0,
+        "Sonoma": 13.7,
+        "Marin": 11.5,
+        "Sutter": 11.8,
+        "Napa": 9.6
+      },
+      "california": 10.0,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Published age-adjusted death rate from the California Department of Public Health (CDPH) County Health Status Profiles 2025, deaths due to suicide by county of residence, based on the average annual number of deaths 2021 to 2023 and 2022 population. CDPH flags the rate as unreliable (relative standard error of 23 percent or more) for Colusa, Del Norte, Glenn, Trinity. California value is the statewide rate published in the same CDPH table. Trend shows the same published rate from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of deaths, and each edition uses the population estimates current when it was published. Rates flagged unreliable in earlier periods: 2017 to 2019: Colusa, Del Norte, Glenn, Trinity; 2018 to 2020: Colusa, Del Norte, Glenn, Trinity; 2019 to 2021: Colusa, Glenn, Trinity; 2020 to 2022: Colusa, Del Norte, Glenn, Trinity.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            19.9,
+            22.1,
+            20.0,
+            15.2,
+            13.4
+          ],
+          "Colusa": [
+            10.5,
+            8.7,
+            8.5,
+            8.2,
+            11.9
+          ],
+          "Del Norte": [
+            18.3,
+            22.8,
+            26.4,
+            24.3,
+            19.7
+          ],
+          "Glenn": [
+            18.6,
+            18.9,
+            15.2,
+            15.3,
+            12.7
+          ],
+          "Humboldt": [
+            21.5,
+            22.4,
+            20.3,
+            22.8,
+            24.4
+          ],
+          "Lake": [
+            31.9,
+            25.4,
+            23.9,
+            24.5,
+            26.1
+          ],
+          "Mendocino": [
+            19.7,
+            20.8,
+            24.2,
+            23.1,
+            20.7
+          ],
+          "Shasta": [
+            27.9,
+            25.0,
+            26.6,
+            27.4,
+            26.1
+          ],
+          "Tehama": [
+            19.7,
+            18.9,
+            20.6,
+            24.5,
+            27.7
+          ],
+          "Trinity": [
+            37.9,
+            25.8,
+            26.0,
+            34.6,
+            30.2
+          ],
+          "Siskiyou": [
+            20.2,
+            24.1,
+            28.7,
+            26.6,
+            29.8
+          ],
+          "Los Angeles": [
+            8.3,
+            8.2,
+            7.9,
+            8.0,
+            8.0
+          ],
+          "San Bernardino": [
+            11.0,
+            11.2,
+            11.0,
+            11.1,
+            11.0
+          ],
+          "Sonoma": [
+            14.0,
+            14.1,
+            14.2,
+            13.6,
+            13.7
+          ],
+          "Marin": [
+            15.2,
+            14.4,
+            13.7,
+            12.3,
+            11.5
+          ],
+          "Sutter": [
+            10.7,
+            9.6,
+            10.7,
+            10.8,
+            11.8
+          ],
+          "Napa": [
+            10.1,
+            10.8,
+            11.7,
+            10.4,
+            9.6
+          ]
+        },
+        "california": [
+          10.7,
+          10.5,
+          10.3,
+          10.1,
+          10.0
+        ]
+      }
+    }
+  ]
+}

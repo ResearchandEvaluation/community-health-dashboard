@@ -1,0 +1,67 @@
+{
+  "key": "pqiCardiac",
+  "measures": [
+    {
+      "id": "pqi08_heart_failure",
+      "label": "Heart failure hospitalizations among adults, Prevention Quality Indicator (PQI) 08, risk-adjusted",
+      "unit": "rate per 100,000",
+      "period": "2024",
+      "values": {
+        "Butte": 528.8,
+        "Colusa": 531.7,
+        "Del Norte": 308.8,
+        "Glenn": 522.8,
+        "Humboldt": 284.2,
+        "Lake": 289,
+        "Mendocino": 236.7,
+        "Shasta": 428.7,
+        "Tehama": 392.2,
+        "Trinity": 95,
+        "Siskiyou": 178.1,
+        "Los Angeles": 364.3,
+        "San Bernardino": 467.7,
+        "Sonoma": 314.2,
+        "Marin": 233,
+        "Sutter": 513.7,
+        "Napa": 295.1
+      },
+      "california": 363.9,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Department of Health Care Access and Information (HCAI) risk-adjusted rate per 100,000 residents age 18 and older, by county of patient residence. California value is the dataset's STATEWIDE row. No trend is shown: HCAI computed 2024 rates with a different Agency for Healthcare Research and Quality (AHRQ) software version than earlier years (2016 to 2022 with v2023, 2023 with v2024, 2024 with v2025, which also changed the risk adjustment model), and HCAI advises against comparing rates across software versions.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=7c7aed93-3643-43b8-92fc-324bf8fc13f2",
+      "trend": null
+    },
+    {
+      "id": "pqi07_hypertension",
+      "label": "Hypertension hospitalizations among adults, Prevention Quality Indicator (PQI) 07, risk-adjusted",
+      "unit": "rate per 100,000",
+      "period": "2024",
+      "values": {
+        "Butte": 97.5,
+        "Colusa": 56.4,
+        "Del Norte": 63.4,
+        "Glenn": 27.9,
+        "Humboldt": 29.7,
+        "Lake": 30.5,
+        "Mendocino": 17.6,
+        "Shasta": 69.2,
+        "Tehama": 33.8,
+        "Trinity": 4.9,
+        "Siskiyou": 15.7,
+        "Los Angeles": 63.3,
+        "San Bernardino": 82.3,
+        "Sonoma": 41.1,
+        "Marin": 27.1,
+        "Sutter": 73.4,
+        "Napa": 32.4
+      },
+      "california": 56.2,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Department of Health Care Access and Information (HCAI) risk-adjusted rate per 100,000 residents age 18 and older, by county of patient residence. California value is the dataset's STATEWIDE row. Rates based on fewer than 11 hospitalizations are statistically unstable: Colusa (8 hospitalizations), Glenn (6 hospitalizations), Trinity (1 hospitalizations), Siskiyou (8 hospitalizations). No trend is shown: HCAI computed 2024 rates with a different Agency for Healthcare Research and Quality (AHRQ) software version than earlier years (2016 to 2022 with v2023, 2023 with v2024, 2024 with v2025, which also changed the risk adjustment model), and HCAI advises against comparing rates across software versions.",
+      "source_url": "https://data.chhs.ca.gov/api/3/action/datastore_search?resource_id=7c7aed93-3643-43b8-92fc-324bf8fc13f2",
+      "trend": null
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "key": "acsVehicle",
+  "measures": [
+    {
+      "id": "no_vehicle",
+      "label": "Households with no vehicle available",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 6.0,
+        "Colusa": 4.6,
+        "Del Norte": 8.2,
+        "Glenn": 4.3,
+        "Humboldt": 6.1,
+        "Lake": 5.6,
+        "Mendocino": 7.3,
+        "Shasta": 6.3,
+        "Tehama": 6.1,
+        "Trinity": 5.5,
+        "Siskiyou": 6.1,
+        "Los Angeles": 8.9,
+        "San Bernardino": 4.6,
+        "Sonoma": 4.8,
+        "Marin": 4.9,
+        "Sutter": 5.5,
+        "Napa": 4.8
+      },
+      "california": 7.1,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "American Community Survey (ACS) 5-year estimates, data profile DP04. Percent of occupied housing units with no vehicles available, as published. Estimates for Trinity have a coefficient of variation above 30 percent (based on the published margin of error) and should be interpreted with caution.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/profile?get=NAME,DP04_0058PE,DP04_0058PM&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

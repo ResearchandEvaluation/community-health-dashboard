@@ -1,0 +1,35 @@
+{
+  "key": "medical",
+  "measures": [
+    {
+      "id": "medicaid_pct_all",
+      "label": "People with Medicaid or other means-tested public health coverage, all ages (civilian noninstitutionalized population)",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 31.8,
+        "Colusa": 38.2,
+        "Del Norte": 37.5,
+        "Glenn": 37.7,
+        "Humboldt": 38.2,
+        "Lake": 40.8,
+        "Mendocino": 34.2,
+        "Shasta": 28.2,
+        "Tehama": 40.3,
+        "Trinity": 39.7,
+        "Siskiyou": 30.3,
+        "Los Angeles": 30.1,
+        "San Bernardino": 33.1,
+        "Sonoma": 20.5,
+        "Marin": 14.9,
+        "Sutter": 34.7,
+        "Napa": 19.8
+      },
+      "california": 26.9,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "American Community Survey (ACS) 5-year estimates, table S2704. Medicaid/means-tested public coverage includes Medi-Cal and other means-tested public health coverage, alone or in combination with other coverage, as reported by survey respondents.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S2704_C03_006E,S2704_C03_006M,S2704_C03_007E,S2704_C03_007M&for=county:*&in=state:06"
+    }
+  ]
+}

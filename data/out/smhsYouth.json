@@ -1,0 +1,65 @@
+{
+  "key": "smhsYouth",
+  "measures": [
+    {
+      "id": "smhs_1plus_count_0_20",
+      "label": "Medi-Cal children ages 0 to 20 who received 1 or more Specialty Mental Health Services (SMHS) services in the fiscal year",
+      "unit": "count",
+      "period": "FY 2022-23",
+      "values": {
+        "Butte": 2371,
+        "Colusa": 246,
+        "Del Norte": 335,
+        "Glenn": 518,
+        "Humboldt": 1410,
+        "Lake": 481,
+        "Mendocino": 1004,
+        "Shasta": 1204,
+        "Tehama": 347,
+        "Trinity": 109,
+        "Siskiyou": 276,
+        "Los Angeles": 84694,
+        "San Bernardino": 15193,
+        "Sonoma": 1221,
+        "Marin": 445,
+        "Sutter": 612,
+        "Napa": 508
+      },
+      "california": 249981,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. Ages 0 to 20 is the DHCS 'All' age group for the children and youth population.",
+      "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
+    },
+    {
+      "id": "smhs_5plus_count_0_20",
+      "label": "Medi-Cal children ages 0 to 20 who received 5 or more Specialty Mental Health Services (SMHS) services in the fiscal year",
+      "unit": "count",
+      "period": "FY 2022-23",
+      "values": {
+        "Butte": 1812,
+        "Colusa": 193,
+        "Del Norte": 227,
+        "Glenn": 373,
+        "Humboldt": 883,
+        "Lake": 315,
+        "Mendocino": 709,
+        "Shasta": 870,
+        "Tehama": 224,
+        "Trinity": 79,
+        "Siskiyou": 159,
+        "Los Angeles": 66064,
+        "San Bernardino": 10540,
+        "Sonoma": 902,
+        "Marin": 324,
+        "Sutter": 332,
+        "Napa": 327
+      },
+      "california": 184134,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. Ages 0 to 20 is the DHCS 'All' age group for the children and youth population.",
+      "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
+    }
+  ]
+}

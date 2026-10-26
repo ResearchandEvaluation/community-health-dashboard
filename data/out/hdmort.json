@@ -1,0 +1,35 @@
+{
+  "key": "hdmort",
+  "measures": [
+    {
+      "id": "hdmort_rate_35plus",
+      "label": "Heart disease deaths among adults ages 35 and older, age-adjusted rate per 100,000 (3-year average)",
+      "unit": "rate per 100,000",
+      "period": "2022 to 2024",
+      "values": {
+        "Butte": 300.5,
+        "Colusa": 267.9,
+        "Del Norte": 312.0,
+        "Glenn": 320.2,
+        "Humboldt": 332.1,
+        "Lake": 325.7,
+        "Mendocino": 263.5,
+        "Shasta": 353.8,
+        "Tehama": 307.3,
+        "Trinity": 244.1,
+        "Siskiyou": 352.4,
+        "Los Angeles": 281.8,
+        "San Bernardino": 365.8,
+        "Sonoma": 236.3,
+        "Marin": 173.8,
+        "Sutter": 282.2,
+        "Napa": 269.0
+      },
+      "california": 265.8,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Age-adjusted 3-year average heart disease death rate for adults ages 35 and older, all sexes and racial and ethnic groups, from the National Vital Statistics System (NVSS). County rates are spatially smoothed by CDC; the California rate is the published state rate, which is not spatially smoothed.",
+      "source_url": "https://data.cdc.gov/resource/mri7-5jtw.json"
+    }
+  ]
+}

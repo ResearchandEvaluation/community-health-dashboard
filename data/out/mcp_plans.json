@@ -1,0 +1,96 @@
+{
+  "Butte": {
+    "Partnership HealthPlan of California": 83236
+  },
+  "Colusa": {
+    "Partnership HealthPlan of California": 9686
+  },
+  "Del Norte": {
+    "Partnership HealthPlan of California": 11603
+  },
+  "Glenn": {
+    "Partnership HealthPlan of California": 12797
+  },
+  "Humboldt": {
+    "Partnership HealthPlan of California": 53196,
+    "Humboldt Senior Resource Center, Inc. (PACE)": 358
+  },
+  "Lake": {
+    "Partnership HealthPlan of California": 32019
+  },
+  "Mendocino": {
+    "Partnership HealthPlan of California": 37946
+  },
+  "Shasta": {
+    "Partnership HealthPlan of California": 63696
+  },
+  "Tehama": {
+    "Partnership HealthPlan of California": 27755
+  },
+  "Trinity": {
+    "Partnership HealthPlan of California": 4756
+  },
+  "Siskiyou": {
+    "Partnership HealthPlan of California": 17123
+  },
+  "Los Angeles": {
+    "Health Net Community Solutions": 1064503,
+    "Kaiser Permanente": 342544,
+    "California Dental Network (Dental)": 20881,
+    "Health Net Community Solutions (Dental)": 186394,
+    "Liberty Dental Plan of CA (Dental)": 86131,
+    "L.A. Care Health Plan": 2062157,
+    "Asian Heritage PACE (PACE)": 39,
+    "Chinatown Service Center (PACE)": 174,
+    "ConcertoHealth PACE of Los Angeles (PACE)": 144,
+    "Habitat Health South Los Angeles (PACE)": 66,
+    "K-Day PACE (PACE)": 168,
+    "LA Coast PACE (PACE)": 1120,
+    "MyPlace Health PACE (PACE)": 213,
+    "myPlace PACE (PACE)": 151,
+    "Pacific PACE (PACE)": 1667,
+    "Seen Health (PACE)": 294,
+    "Vista Community Clinic PACE (PACE)": "suppressed",
+    "AIDS Healthcare Foundation (Primary Care Case Management)": 823,
+    "SCAN Health Plan (SCAN)": 13089,
+    "SCAN Health Plan (SCAN) (row 2)": 1774,
+    "AltaMed Health Sr. Buena Care (Special Project)": 4961,
+    "Brandman Centers for Senior Care (Special Project)": 463
+  },
+  "San Bernardino": {
+    "Kaiser Permanente": 101352,
+    "Molina Healthcare of California": 73778,
+    "Inland Empire Health Plan": 685384,
+    "AltaMed PACE (PACE)": 21,
+    "High Desert PACE (PACE)": 256,
+    "InnovAge PACE (PACE)": 1022,
+    "Loma Linda University Health PACE (PACE)": 148,
+    "Neighborhood Healthcare PACE (PACE)": 123,
+    "WelbeHealth Inland Empire (PACE)": "suppressed",
+    "WelbeHealth San Bernardino PACE (PACE)": 219,
+    "SCAN Health Plan (SCAN)": 3345,
+    "SCAN Health Plan (SCAN) (row 2)": 432
+  },
+  "Sonoma": {
+    "Kaiser Permanente": 26383,
+    "Partnership HealthPlan of California": 98223,
+    "AgeWell PACE (PACE)": 124,
+    "Providence PACE (PACE)": "suppressed"
+  },
+  "Marin": {
+    "Kaiser Permanente": 7724,
+    "Partnership HealthPlan of California": 40785,
+    "AgeWell PACE (PACE)": "suppressed"
+  },
+  "Sutter": {
+    "Kaiser Permanente": "suppressed",
+    "Partnership HealthPlan of California": 42995,
+    "InnovAge PACE (PACE)": "suppressed"
+  },
+  "Napa": {
+    "Kaiser Permanente": 8215,
+    "Partnership HealthPlan of California": 25421,
+    "Providence PACE (PACE)": 100
+  },
+  "month": "2026-09"
+}

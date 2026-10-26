@@ -1,0 +1,172 @@
+{
+  "key": "births",
+  "measures": [
+    {
+      "id": "adolescent_birth_rate_15_19_2021_2023",
+      "label": "Adolescent birth rate: births to mothers ages 15 to 19 per 1,000 females ages 15 to 19, 3 year average",
+      "unit": "rate per 1,000",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 9.1,
+        "Colusa": 13.7,
+        "Del Norte": 20.2,
+        "Glenn": 13.3,
+        "Humboldt": 7.9,
+        "Lake": 19.8,
+        "Mendocino": 17.5,
+        "Shasta": 13.3,
+        "Tehama": 23.6,
+        "Trinity": 23.8,
+        "Siskiyou": 14.9,
+        "Los Angeles": 7.6,
+        "San Bernardino": 11.5,
+        "Sonoma": 6.9,
+        "Marin": 4.0,
+        "Sutter": 11.7,
+        "Napa": 5.4
+      },
+      "california": 8.9,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Published age-specific birth rate from the California Department of Public Health (CDPH) County Health Status Profiles 2025, births to adolescent mothers ages 15 to 19 by county of residence, based on the average annual number of births 2021 to 2023 and the 2022 female population ages 15 to 19. California value is the statewide rate published in the same CDPH table. Trend shows the same published rate from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of births, and each edition uses the population estimates current when it was published. Rates flagged unreliable in earlier periods: 2018 to 2020: Trinity; 2019 to 2021: Trinity; 2020 to 2022: Trinity.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            12.1,
+            10.2,
+            10.3,
+            8.6,
+            9.1
+          ],
+          "Colusa": [
+            15.7,
+            16.6,
+            14.7,
+            15.7,
+            13.7
+          ],
+          "Del Norte": [
+            26.0,
+            20.8,
+            18.5,
+            22.0,
+            20.2
+          ],
+          "Glenn": [
+            17.5,
+            15.6,
+            14.8,
+            13.6,
+            13.3
+          ],
+          "Humboldt": [
+            10.3,
+            10.4,
+            10.1,
+            8.1,
+            7.9
+          ],
+          "Lake": [
+            26.8,
+            22.9,
+            23.0,
+            20.7,
+            19.8
+          ],
+          "Mendocino": [
+            18.2,
+            16.8,
+            17.6,
+            17.1,
+            17.5
+          ],
+          "Shasta": [
+            16.5,
+            14.6,
+            13.7,
+            13.4,
+            13.3
+          ],
+          "Tehama": [
+            20.3,
+            19.8,
+            18.9,
+            21.3,
+            23.6
+          ],
+          "Trinity": [
+            22.3,
+            20.3,
+            17.3,
+            20.4,
+            23.8
+          ],
+          "Siskiyou": [
+            20.4,
+            15.3,
+            14.7,
+            14.5,
+            14.9
+          ],
+          "Los Angeles": [
+            12.0,
+            10.6,
+            9.4,
+            8.3,
+            7.6
+          ],
+          "San Bernardino": [
+            17.0,
+            15.6,
+            14.0,
+            12.8,
+            11.5
+          ],
+          "Sonoma": [
+            7.7,
+            7.8,
+            7.2,
+            7.1,
+            6.9
+          ],
+          "Marin": [
+            4.6,
+            4.2,
+            3.9,
+            3.6,
+            4.0
+          ],
+          "Sutter": [
+            13.7,
+            14.7,
+            14.7,
+            13.1,
+            11.7
+          ],
+          "Napa": [
+            8.4,
+            7.6,
+            6.6,
+            5.2,
+            5.4
+          ]
+        },
+        "california": [
+          12.5,
+          11.4,
+          10.3,
+          9.5,
+          8.9
+        ]
+      }
+    }
+  ]
+}

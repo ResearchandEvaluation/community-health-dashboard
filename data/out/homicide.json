@@ -1,0 +1,174 @@
+{
+  "key": "homicide",
+  "measures": [
+    {
+      "id": "homicide_death_rate_aa_2021_2023",
+      "label": "Homicide death rate, age adjusted, 3 year average",
+      "unit": "rate per 100,000",
+      "period": "2021 to 2023",
+      "values": {
+        "Butte": 3.4,
+        "Colusa": 1.4,
+        "Del Norte": 6.7,
+        "Glenn": 8.1,
+        "Humboldt": 8.7,
+        "Lake": 6.2,
+        "Mendocino": 8.0,
+        "Shasta": 5.9,
+        "Tehama": 6.6,
+        "Trinity": 8.1,
+        "Siskiyou": 7.2,
+        "Los Angeles": 7.3,
+        "San Bernardino": 7.8,
+        "Sonoma": 3.1,
+        "Marin": 2.3,
+        "Sutter": 3.1,
+        "Napa": 1.6
+      },
+      "california": 5.8,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "hp_target": 5.5,
+      "hp_objective": "IVP-09",
+      "note": "Published age-adjusted death rate per 100,000 population from the California Department of Public Health (CDPH) County Health Status Profiles 2025, deaths due to homicide by county of residence, based on the average annual number of deaths 2021 to 2023 and 2022 population. CDPH flags the rate as unreliable (relative standard error of 23 percent or more) for Colusa, Del Norte, Glenn, Lake, Mendocino, Tehama, Trinity, Siskiyou, Marin, Sutter, Napa. California value is the statewide value published in the same CDPH table. Healthy People 2030 objective IVP-09 target as published in the same table: 5.5. Trend shows the same published rate from the 2021 to 2025 editions, covering the periods 2017 to 2019 through 2021 to 2023; each edition covers a 3 year period, so adjacent periods share 2 years of deaths, and each edition uses the population estimates current when it was published. Values flagged unreliable in earlier periods: 2017 to 2019: Colusa, Del Norte, Glenn, Lake, Mendocino, Tehama, Trinity, Siskiyou, Marin, Sutter, Napa; 2018 to 2020: Colusa, Del Norte, Glenn, Lake, Mendocino, Tehama, Trinity, Siskiyou, Marin, Sutter, Napa; 2019 to 2021: Colusa, Del Norte, Glenn, Lake, Mendocino, Tehama, Trinity, Siskiyou, Marin, Sutter, Napa; 2020 to 2022: Del Norte, Glenn, Lake, Tehama, Trinity, Siskiyou, Marin, Sutter, Napa.",
+      "source_url": "https://data.chhs.ca.gov/dataset/county-health-status-profiles/resource/610d4269-d7fb-4af4-ad4a-75d44c80742a",
+      "trend": {
+        "periods": [
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2020 to 2022",
+          "2021 to 2023"
+        ],
+        "values": {
+          "Butte": [
+            4.3,
+            4.6,
+            5.1,
+            3.9,
+            3.4
+          ],
+          "Colusa": [
+            6.3,
+            6.4,
+            1.4,
+            null,
+            1.4
+          ],
+          "Del Norte": [
+            13.0,
+            7.7,
+            7.3,
+            6.1,
+            6.7
+          ],
+          "Glenn": [
+            9.1,
+            7.8,
+            10.6,
+            9.6,
+            8.1
+          ],
+          "Humboldt": [
+            5.9,
+            8.7,
+            8.5,
+            9.8,
+            8.7
+          ],
+          "Lake": [
+            11.0,
+            8.9,
+            7.2,
+            7.0,
+            6.2
+          ],
+          "Mendocino": [
+            6.2,
+            8.4,
+            8.8,
+            9.1,
+            8.0
+          ],
+          "Shasta": [
+            5.8,
+            5.3,
+            5.2,
+            6.4,
+            5.9
+          ],
+          "Tehama": [
+            8.4,
+            7.7,
+            8.3,
+            7.9,
+            6.6
+          ],
+          "Trinity": [
+            14.1,
+            8.2,
+            8.4,
+            9.5,
+            8.1
+          ],
+          "Siskiyou": [
+            8.3,
+            4.6,
+            5.6,
+            6.6,
+            7.2
+          ],
+          "Los Angeles": [
+            5.6,
+            6.0,
+            6.8,
+            7.4,
+            7.3
+          ],
+          "San Bernardino": [
+            6.9,
+            7.6,
+            8.3,
+            8.8,
+            7.8
+          ],
+          "Sonoma": [
+            2.0,
+            2.2,
+            2.4,
+            3.2,
+            3.1
+          ],
+          "Marin": [
+            1.9,
+            2.2,
+            1.7,
+            2.1,
+            2.3
+          ],
+          "Sutter": [
+            4.8,
+            4.7,
+            5.2,
+            4.2,
+            3.1
+          ],
+          "Napa": [
+            2.3,
+            2.7,
+            1.4,
+            1.9,
+            1.6
+          ]
+        },
+        "california": [
+          4.8,
+          5.2,
+          5.7,
+          6.1,
+          5.8
+        ]
+      }
+    }
+  ]
+}
