@@ -320,6 +320,8 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: #12365b">
 <li>{{sourceSummary}}</li>
 <li>Every value is published by its data source. PHIL does not calculate its own rates or statewide figures.</li>
+<li>PHIL ranks the published county values from highest to lowest, and marks whether a higher value is better or worse for each measure. These rankings and colors are the only things PHIL adds.</li>
+<li>Census estimates come from a survey and are published with a margin of error, shown as ±. The true value is likely within that range.</li>
 <li>The dashboard compares a county with California only when one dataset publishes both values. Otherwise, it shows the county's rank among California counties or the county value alone.</li>
 <li>"Suppressed" means the publisher withheld a small number to protect privacy. Some publishers report small counties as a combined group, and the dashboard shows those groups as published.</li>
 <li>Each chart shows the years its data covers. The dashboard updates on a regular schedule as publishers release new data.</li>
@@ -996,7 +998,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #3d556e; border-top: 1px solid #dee3e8; padding-top: 10px">
 <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 22px; height: 10px; border-radius: 3px; background: #12365b; display: inline-block"></span>{{det.countyLabel}}</span>
 <span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 3px; height: 14px; border-radius: 2px; background: #2a9fd6; display: inline-block"></span>California, same group and source</span>
-<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 22px; height: 10px; border-radius: 3px; background: repeating-linear-gradient(45deg, #496b9c, #496b9c 5px, #7d97bd 5px, #7d97bd 9px); display: inline-block"></span>Use with caution</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="position: relative; width: 26px; height: 12px; display: inline-block"><span style="position: absolute; left: 2px; right: 2px; top: 5px; border-top: 2px solid #c98a1b"></span><span style="position: absolute; left: 1px; top: 1px; bottom: 1px; width: 2px; background: #c98a1b"></span><span style="position: absolute; right: 1px; top: 1px; bottom: 1px; width: 2px; background: #c98a1b"></span></span>Census margin of error (±)</span>
 <span style="display: inline-flex; align-items: center; gap: 6px; font-style: italic">Suppressed: withheld by the source to protect privacy</span>
 </div>
 </div>
@@ -1021,9 +1023,9 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #30718d; border-bottom: 1px solid #dee3e8; padding-bottom: 6px">{{x.name}}</div>
 <sc-for list="{{x.rows}}" as="r" hint-placeholder-count="5">
 <div style="display: grid; grid-template-columns: minmax(96px, 36%) minmax(0, 1fr) 92px; gap: 4px 12px; align-items: center">
-<div style="font-size: 14px; line-height: 1.3; color: #24384d">{{r.label}}<sc-if value="{{r.caution}}" hint-placeholder-val="{{false}}"><span style="display: block; font-size: 11px; font-weight: 800; color: #8a5a00">Use with caution</span></sc-if></div>
-<div style="position: relative; height: 26px; background: #eef2f5; border-radius: 6px"><div style="{{r.barStyle}}"></div><div title="{{r.caText}}" style="{{r.caStyle}}"></div></div>
-<div style="{{r.valStyle}}">{{r.valText}}</div>
+<div style="font-size: 14px; line-height: 1.3; color: #24384d">{{r.label}}</div>
+<div style="position: relative; height: 26px; background: #eef2f5; border-radius: 6px"><div style="{{r.barStyle}}"></div><div aria-hidden="true" style="{{r.moeStyle}}"></div><div aria-hidden="true" style="{{r.moeCapL}}"></div><div aria-hidden="true" style="{{r.moeCapR}}"></div><div title="{{r.caText}}" style="{{r.caStyle}}"></div></div>
+<div style="{{r.valStyle}}">{{r.valText}}<sc-if value="{{r.hasMoe}}" hint-placeholder-val="{{false}}"><span style="display: block; font-size: 12px; font-weight: 600; color: #8a5a00">{{r.moeText}}</span></sc-if></div>
 <sc-if value="{{r.hasCa}}" hint-placeholder-val="{{true}}"><div></div><div style="font-size: 12px; color: #1f6f99; margin-top: -2px">{{r.caText}}</div><div></div></sc-if>
 </div>
 </sc-for>
@@ -1041,7 +1043,8 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #12365b">Reading These Breakdowns</h3>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px">
 <li>Each source defines its own groups, so group names differ across measures. The dashboard uses each source's groups as published.</li>
-<li>Small groups in small counties are often suppressed, or have wide margins of error. Values marked "Use with caution" come from Census estimates with a coefficient of variation above 30 percent.</li>
+<li>Census poverty and insurance estimates come from a survey, so the Census Bureau publishes each one with a margin of error, shown as ± and as a gold range on the bar. The true value is likely within that range. Small groups in small counties often have wide ranges.</li>
+<li>Other sources withhold small numbers to protect privacy. Those values show as "Suppressed."</li>
 <li>A California line appears only when the same dataset publishes the same group for the state.</li>
 <li>Differences between groups often reflect differences in access, resources, and conditions in the community.</li>
 </ul>
@@ -1160,8 +1163,8 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       "Community conditions": LVL_BASE + "background: #f3e9d7; color: #12365b;"
     };
     var IND = {
-      hdmort: { name: "Heart Disease Mortality, Adults 35 and Older", dataset: "Heart Disease Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, spatially smoothed", access: "API", geoType: "county", level: "Population health outcome", note: "" },
-      strokemort: { name: "Stroke Mortality, Adults 35 and Older", dataset: "Stroke Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, spatially smoothed", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      hdmort: { name: "Heart Disease Mortality, Adults 35 and Older", dataset: "Heart Disease Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, blended with nearby counties for stability", access: "API", geoType: "county", level: "Population health outcome", note: "" },
+      strokemort: { name: "Stroke Mortality, Adults 35 and Older", dataset: "Stroke Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, blended with nearby counties for stability", access: "API", geoType: "county", level: "Population health outcome", note: "" },
       places: { name: "High Blood Pressure and Coronary Heart Disease Prevalence", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Population health outcome", note: "" },
       placesRisk: { name: "Diagnosed Diabetes, Obesity, and Current Smoking", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
       placesBPmed: { name: "Taking Blood Pressure Medication and Routine Checkups", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Risk and prevention", note: "" },
@@ -1568,26 +1571,31 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       function fmt(v, unit) {
         if (unit === "count") return Math.round(v).toLocaleString("en-US");
         if (unit === "percent") return v.toFixed(1) + "%";
+        if (unit === "pp") return v.toFixed(1);
         return v.toFixed(1);
       }
       var cards = ms.filter(function (m) { return dTopic === "all" || m.topic === dTopic; }).map(function (m) {
         var dims = m.dims.filter(function (x) { return dDim === "all" || x.name === dDim; }).map(function (x) {
           var nums = [];
-          x.groups.forEach(function (g) { var v = g.county[gCounty]; if (typeof v === "number") nums.push(v); if (typeof g.ca === "number") nums.push(g.ca); });
+          x.groups.forEach(function (g) { var v = g.county[gCounty], mo = g.moe ? g.moe[gCounty] : null; if (typeof v === "number") nums.push(typeof mo === "number" ? v + mo : v); if (typeof g.ca === "number") nums.push(g.ca); });
           var max = nums.length ? Math.max.apply(null, nums) : 1; if (!max) max = 1;
           var anyCa = x.groups.some(function (g) { return typeof g.ca === "number"; });
           var rows = x.groups.map(function (g) {
             var v = g.county[gCounty], has = typeof v === "number", sup = v === "suppressed";
-            var caHas = typeof g.ca === "number", caution = !!(g.caution && g.caution[gCounty]);
+            var caHas = typeof g.ca === "number", moe = g.moe ? g.moe[gCounty] : null, hasMoe = has && typeof moe === "number";
+            var lo = hasMoe ? Math.max(0, v - moe) : 0, hi = hasMoe ? v + moe : 0;
             var w = has ? Math.max(0.6, v / max * 100) : 0;
             return { label: g.label, valText: has ? fmt(v, m.unit) : sup ? "Suppressed" : "Not available",
               valStyle: "font-size: 14px; font-weight: 800; white-space: nowrap; text-align: right; " + (has ? "color: #12365b;" : "color: #73889e; font-style: italic; font-weight: 600;"),
-              barStyle: "position: absolute; left: 0; top: 4px; bottom: 4px; border-radius: 4px; background: " + (caution ? "repeating-linear-gradient(45deg, #496b9c, #496b9c 5px, #7d97bd 5px, #7d97bd 9px)" : "#12365b") + "; width: " + w.toFixed(2) + "%;",
+              barStyle: "position: absolute; left: 0; top: 4px; bottom: 4px; border-radius: 4px; background: " + "#12365b" + "; width: " + w.toFixed(2) + "%;",
               hasCa: caHas, caText: caHas ? "California " + fmt(g.ca, m.unit) : "",
               caStyle: caHas ? "position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1.5px; background: #2a9fd6; border-radius: 2px; left: " + (g.ca / max * 100).toFixed(2) + "%;" : "display: none;",
-              caution: caution };
+              hasMoe: hasMoe, moeText: hasMoe ? "\u00b1 " + fmt(moe, m.unit === "percent" ? "pp" : m.unit) : "",
+              moeStyle: hasMoe ? "position: absolute; top: 50%; height: 0; border-top: 2px solid #c98a1b; left: " + (lo / max * 100).toFixed(2) + "%; width: " + ((hi - lo) / max * 100).toFixed(2) + "%;" : "display: none;",
+              moeCapL: hasMoe ? "position: absolute; top: 6px; bottom: 6px; width: 2px; margin-left: -1px; background: #c98a1b; left: " + (lo / max * 100).toFixed(2) + "%;" : "display: none;",
+              moeCapR: hasMoe ? "position: absolute; top: 6px; bottom: 6px; width: 2px; margin-left: -1px; background: #c98a1b; left: " + (hi / max * 100).toFixed(2) + "%;" : "display: none;" };
           });
-          return { name: x.name, rows: rows, anyCa: anyCa };
+          return { name: x.name, rows: rows, anyCa: anyCa, anyMoe: rows.some(function (r) { return r.hasMoe; }) };
         });
         return { topic: m.topic, title: m.title, topicLabel: DT_TOPIC[m.topic] || "", period: m.period, source: m.source, url: m.url || m.source_url, note: m.note,
           unitLabel: m.unit === "percent" ? "Percent" : m.unit === "count" ? "Number of people" : m.unit.charAt(0).toUpperCase() + m.unit.slice(1),

@@ -9,7 +9,7 @@
    "higher_is_worse": true,
    "source": "Centers for Disease Control and Prevention (CDC), National Vital Statistics System",
    "source_url": "https://data.cdc.gov/resource/mri7-5jtw.json",
-   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC spatially smooths county rates; the California rate is not smoothed. 'Suppressed' means CDC reports insufficient data.",
+   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC blends each county's rate with nearby counties to make small-county rates more stable; the California rate is not blended. 'Suppressed' means CDC reports too few deaths to publish a rate.",
    "dims": [
     {
      "name": "Sex",
@@ -239,7 +239,7 @@
    "higher_is_worse": true,
    "source": "Centers for Disease Control and Prevention (CDC), National Vital Statistics System",
    "source_url": "https://data.cdc.gov/resource/y5ii-knwc.json",
-   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC spatially smooths county rates; the California rate is not smoothed. 'Suppressed' means CDC reports insufficient data.",
+   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC blends each county's rate with nearby counties to make small-county rates more stable; the California rate is not blended. 'Suppressed' means CDC reports too few deaths to publish a rate.",
    "dims": [
     {
      "name": "Sex",
@@ -469,7 +469,7 @@
    "higher_is_worse": true,
    "source": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates",
    "source_url": "https://data.census.gov/table/ACSST5Y2024.S1701?g=040XX00US06",
-   "note": "Percent of people below the federal poverty level. Values marked 'Use with caution' have a coefficient of variation above 30 percent, based on the published margin of error.",
+   "note": "Percent of people below the federal poverty level. The Census Bureau publishes each estimate with a margin of error at the 90 percent confidence level, shown as plus or minus. A larger margin means the true value may differ more from the estimate. Small groups in small counties often have large margins of error.",
    "dims": [
     {
      "name": "Age group",
@@ -496,11 +496,26 @@
         "Napa": 17.0
        },
        "ca": 14.9,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 4.2,
+        "Colusa": 8.3,
+        "Del Norte": 7.4,
+        "Glenn": 10.5,
+        "Humboldt": 4.0,
+        "Lake": 7.8,
+        "Mendocino": 6.9,
+        "Shasta": 4.5,
+        "Tehama": 7.7,
+        "Trinity": 6.1,
+        "Siskiyou": 7.1,
+        "Los Angeles": 0.7,
+        "San Bernardino": 1.2,
+        "Sonoma": 2.3,
+        "Marin": 2.5,
+        "Sutter": 5.4,
+        "Napa": 6.0
+       },
+       "ca_moe": 0.3
       },
       {
        "label": "5 to 17",
@@ -523,7 +538,27 @@
         "Sutter": 18.7,
         "Napa": 8.0
        },
-       "ca": 15.1
+       "ca": 15.1,
+       "moe": {
+        "Butte": 2.5,
+        "Colusa": 4.8,
+        "Del Norte": 5.8,
+        "Glenn": 5.7,
+        "Humboldt": 3.2,
+        "Lake": 4.5,
+        "Mendocino": 4.3,
+        "Shasta": 2.1,
+        "Tehama": 4.2,
+        "Trinity": 11.1,
+        "Siskiyou": 5.7,
+        "Los Angeles": 0.4,
+        "San Bernardino": 0.9,
+        "Sonoma": 1.5,
+        "Marin": 1.8,
+        "Sutter": 3.8,
+        "Napa": 1.9
+       },
+       "ca_moe": 0.2
       },
       {
        "label": "18 to 34",
@@ -546,7 +581,27 @@
         "Sutter": 13.3,
         "Napa": 8.9
        },
-       "ca": 12.8
+       "ca": 12.8,
+       "moe": {
+        "Butte": 2.0,
+        "Colusa": 3.3,
+        "Del Norte": 4.4,
+        "Glenn": 5.0,
+        "Humboldt": 2.6,
+        "Lake": 3.0,
+        "Mendocino": 3.5,
+        "Shasta": 1.8,
+        "Tehama": 2.9,
+        "Trinity": 12.1,
+        "Siskiyou": 3.5,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.5,
+        "Sonoma": 0.8,
+        "Marin": 1.5,
+        "Sutter": 2.1,
+        "Napa": 1.7
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "35 to 64",
@@ -569,7 +624,27 @@
         "Sutter": 12.4,
         "Napa": 7.4
        },
-       "ca": 10.0
+       "ca": 10.0,
+       "moe": {
+        "Butte": 1.1,
+        "Colusa": 3.6,
+        "Del Norte": 2.9,
+        "Glenn": 3.1,
+        "Humboldt": 1.8,
+        "Lake": 2.2,
+        "Mendocino": 1.8,
+        "Shasta": 1.6,
+        "Tehama": 1.9,
+        "Trinity": 8.5,
+        "Siskiyou": 2.5,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.4,
+        "Sonoma": 0.7,
+        "Marin": 0.8,
+        "Sutter": 2.0,
+        "Napa": 1.1
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "65 and older",
@@ -592,7 +667,27 @@
         "Sutter": 12.1,
         "Napa": 8.5
        },
-       "ca": 11.6
+       "ca": 11.6,
+       "moe": {
+        "Butte": 1.6,
+        "Colusa": 5.5,
+        "Del Norte": 2.7,
+        "Glenn": 3.0,
+        "Humboldt": 1.6,
+        "Lake": 2.0,
+        "Mendocino": 2.5,
+        "Shasta": 1.3,
+        "Tehama": 2.5,
+        "Trinity": 4.0,
+        "Siskiyou": 2.1,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.6,
+        "Sonoma": 0.8,
+        "Marin": 1.0,
+        "Sutter": 2.5,
+        "Napa": 1.5
+       },
+       "ca_moe": 0.1
       }
      ]
     },
@@ -620,7 +715,27 @@
         "Sutter": 16.0,
         "Napa": 8.6
        },
-       "ca": 13.0
+       "ca": 13.0,
+       "moe": {
+        "Butte": 1.3,
+        "Colusa": 3.8,
+        "Del Norte": 2.7,
+        "Glenn": 4.1,
+        "Humboldt": 1.7,
+        "Lake": 2.0,
+        "Mendocino": 1.9,
+        "Shasta": 1.4,
+        "Tehama": 2.2,
+        "Trinity": 6.9,
+        "Siskiyou": 2.2,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.4,
+        "Sonoma": 0.7,
+        "Marin": 0.9,
+        "Sutter": 2.3,
+        "Napa": 1.1
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Male",
@@ -643,7 +758,27 @@
         "Sutter": 12.9,
         "Napa": 8.3
        },
-       "ca": 11.0
+       "ca": 11.0,
+       "moe": {
+        "Butte": 1.2,
+        "Colusa": 3.0,
+        "Del Norte": 2.7,
+        "Glenn": 2.9,
+        "Humboldt": 1.3,
+        "Lake": 1.9,
+        "Mendocino": 2.2,
+        "Shasta": 1.2,
+        "Tehama": 1.9,
+        "Trinity": 5.1,
+        "Siskiyou": 1.9,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.4,
+        "Sonoma": 0.6,
+        "Marin": 0.9,
+        "Sutter": 1.7,
+        "Napa": 1.2
+       },
+       "ca_moe": 0.1
       }
      ]
     },
@@ -672,15 +807,26 @@
         "Napa": 30.8
        },
        "ca": 15.4,
-       "caution": {
-        "Colusa": true,
-        "Glenn": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 9.7,
+        "Colusa": 4.3,
+        "Del Norte": 7.0,
+        "Glenn": 8.9,
+        "Humboldt": 6.7,
+        "Lake": 13.7,
+        "Mendocino": 5.2,
+        "Shasta": 8.8,
+        "Tehama": 9.0,
+        "Trinity": 2.1,
+        "Siskiyou": 5.9,
+        "Los Angeles": 1.6,
+        "San Bernardino": 2.4,
+        "Sonoma": 5.1,
+        "Marin": 17.3,
+        "Sutter": 12.2,
+        "Napa": 18.7
+       },
+       "ca_moe": 0.7
       },
       {
        "label": "Asian",
@@ -704,16 +850,26 @@
         "Napa": 7.8
        },
        "ca": 9.7,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true
-       }
+       "moe": {
+        "Butte": 5.8,
+        "Colusa": 7.2,
+        "Del Norte": 3.4,
+        "Glenn": 31.2,
+        "Humboldt": 9.4,
+        "Lake": 17.5,
+        "Mendocino": 5.6,
+        "Shasta": 5.4,
+        "Tehama": 2.8,
+        "Trinity": 41.4,
+        "Siskiyou": 12.0,
+        "Los Angeles": 0.3,
+        "San Bernardino": 1.0,
+        "Sonoma": 2.6,
+        "Marin": 2.0,
+        "Sutter": 5.0,
+        "Napa": 2.4
+       },
+       "ca_moe": 0.2
       },
       {
        "label": "Black or African American",
@@ -737,16 +893,26 @@
         "Napa": 18.0
        },
        "ca": 19.2,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Mendocino": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Sutter": true
-       }
+       "moe": {
+        "Butte": 10.2,
+        "Colusa": 27.3,
+        "Del Norte": 44.5,
+        "Glenn": 55.0,
+        "Humboldt": 7.3,
+        "Lake": 17.5,
+        "Mendocino": 19.9,
+        "Shasta": 12.8,
+        "Tehama": 3.8,
+        "Trinity": 24.3,
+        "Siskiyou": 8.3,
+        "Los Angeles": 0.7,
+        "San Bernardino": 1.8,
+        "Sonoma": 6.0,
+        "Marin": 10.5,
+        "Sutter": 18.5,
+        "Napa": 8.7
+       },
+       "ca_moe": 0.4
       },
       {
        "label": "Hispanic or Latino (any race)",
@@ -770,9 +936,26 @@
         "Napa": 10.7
        },
        "ca": 14.6,
-       "caution": {
-        "Del Norte": true
-       }
+       "moe": {
+        "Butte": 2.6,
+        "Colusa": 4.1,
+        "Del Norte": 6.9,
+        "Glenn": 4.3,
+        "Humboldt": 5.2,
+        "Lake": 3.1,
+        "Mendocino": 4.5,
+        "Shasta": 4.0,
+        "Tehama": 3.7,
+        "Trinity": 17.0,
+        "Siskiyou": 3.6,
+        "Los Angeles": 0.3,
+        "San Bernardino": 0.5,
+        "Sonoma": 1.2,
+        "Marin": 2.7,
+        "Sutter": 3.7,
+        "Napa": 2.0
+       },
+       "ca_moe": 0.2
       },
       {
        "label": "Native Hawaiian and Other Pacific Islander",
@@ -796,21 +979,25 @@
         "Napa": 0.0
        },
        "ca": 13.8,
-       "caution": {
-        "Butte": true,
-        "Colusa": true,
-        "Del Norte": true,
-        "Humboldt": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Shasta": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Sonoma": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 23.6,
+        "Colusa": 67.8,
+        "Del Norte": 35.9,
+        "Humboldt": 12.2,
+        "Lake": 17.4,
+        "Mendocino": 20.7,
+        "Shasta": 27.1,
+        "Tehama": 39.0,
+        "Trinity": 34.2,
+        "Siskiyou": 37.1,
+        "Los Angeles": 2.6,
+        "San Bernardino": 9.0,
+        "Sonoma": 8.1,
+        "Marin": 12.3,
+        "Sutter": 3.2,
+        "Napa": 8.4
+       },
+       "ca_moe": 1.3
       },
       {
        "label": "White, not Hispanic or Latino",
@@ -833,7 +1020,27 @@
         "Sutter": 10.4,
         "Napa": 6.7
        },
-       "ca": 9.0
+       "ca": 9.0,
+       "moe": {
+        "Butte": 1.1,
+        "Colusa": 4.3,
+        "Del Norte": 2.7,
+        "Glenn": 4.4,
+        "Humboldt": 1.4,
+        "Lake": 1.8,
+        "Mendocino": 1.6,
+        "Shasta": 1.1,
+        "Tehama": 2.1,
+        "Trinity": 5.8,
+        "Siskiyou": 2.2,
+        "Los Angeles": 0.3,
+        "San Bernardino": 0.5,
+        "Sonoma": 0.6,
+        "Marin": 0.6,
+        "Sutter": 1.9,
+        "Napa": 1.0
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Some other race",
@@ -857,11 +1064,26 @@
         "Napa": 11.6
        },
        "ca": 15.9,
-       "caution": {
-        "Del Norte": true,
-        "Trinity": true,
-        "Siskiyou": true
-       }
+       "moe": {
+        "Butte": 5.9,
+        "Colusa": 5.8,
+        "Del Norte": 11.7,
+        "Glenn": 7.0,
+        "Humboldt": 8.4,
+        "Lake": 3.9,
+        "Mendocino": 8.2,
+        "Shasta": 7.3,
+        "Tehama": 6.8,
+        "Trinity": 11.3,
+        "Siskiyou": 6.8,
+        "Los Angeles": 0.4,
+        "San Bernardino": 0.9,
+        "Sonoma": 2.2,
+        "Marin": 4.0,
+        "Sutter": 6.9,
+        "Napa": 2.9
+       },
+       "ca_moe": 0.2
       },
       {
        "label": "Two or more races",
@@ -885,10 +1107,26 @@
         "Napa": 7.4
        },
        "ca": 12.3,
-       "caution": {
-        "Colusa": true,
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 2.5,
+        "Colusa": 6.6,
+        "Del Norte": 7.1,
+        "Glenn": 7.0,
+        "Humboldt": 3.6,
+        "Lake": 4.8,
+        "Mendocino": 4.0,
+        "Shasta": 3.9,
+        "Tehama": 4.5,
+        "Trinity": 10.1,
+        "Siskiyou": 4.3,
+        "Los Angeles": 0.4,
+        "San Bernardino": 0.9,
+        "Sonoma": 1.5,
+        "Marin": 2.6,
+        "Sutter": 4.2,
+        "Napa": 2.1
+       },
+       "ca_moe": 0.2
       }
      ]
     }
@@ -903,7 +1141,7 @@
    "higher_is_worse": true,
    "source": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates",
    "source_url": "https://data.census.gov/table/ACSST5Y2024.S2701?g=040XX00US06",
-   "note": "Percent of the civilian noninstitutionalized population without health insurance. Values marked 'Use with caution' have a coefficient of variation above 30 percent, based on the published margin of error.",
+   "note": "Percent of the civilian noninstitutionalized population without health insurance. The Census Bureau publishes each estimate with a margin of error at the 90 percent confidence level, shown as plus or minus. A larger margin means the true value may differ more from the estimate. Small groups in small counties often have large margins of error.",
    "dims": [
     {
      "name": "Age group",
@@ -930,9 +1168,26 @@
         "Napa": 4.0
        },
        "ca": 3.2,
-       "caution": {
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 1.2,
+        "Colusa": 2.3,
+        "Del Norte": 2.9,
+        "Glenn": 2.2,
+        "Humboldt": 0.8,
+        "Lake": 2.4,
+        "Mendocino": 1.5,
+        "Shasta": 1.1,
+        "Tehama": 1.6,
+        "Trinity": 8.3,
+        "Siskiyou": 1.2,
+        "Los Angeles": 0.1,
+        "San Bernardino": 0.3,
+        "Sonoma": 0.6,
+        "Marin": 0.7,
+        "Sutter": 1.3,
+        "Napa": 1.1
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "19 to 64",
@@ -955,7 +1210,27 @@
         "Sutter": 9.4,
         "Napa": 8.3
        },
-       "ca": 9.3
+       "ca": 9.3,
+       "moe": {
+        "Butte": 0.8,
+        "Colusa": 3.1,
+        "Del Norte": 1.8,
+        "Glenn": 2.4,
+        "Humboldt": 0.9,
+        "Lake": 1.5,
+        "Mendocino": 1.2,
+        "Shasta": 0.9,
+        "Tehama": 1.6,
+        "Trinity": 4.7,
+        "Siskiyou": 1.5,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.3,
+        "Sonoma": 0.6,
+        "Marin": 0.7,
+        "Sutter": 1.4,
+        "Napa": 1.0
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "65 and older",
@@ -979,23 +1254,26 @@
         "Napa": 0.3
        },
        "ca": 1.1,
-       "caution": {
-        "Butte": true,
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Humboldt": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Shasta": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Sonoma": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 0.1,
+        "Colusa": 1.7,
+        "Del Norte": 0.8,
+        "Glenn": 0.4,
+        "Humboldt": 0.1,
+        "Lake": 0.3,
+        "Mendocino": 1.5,
+        "Shasta": 0.2,
+        "Tehama": 0.5,
+        "Trinity": 0.8,
+        "Siskiyou": 0.4,
+        "Los Angeles": 0.1,
+        "San Bernardino": 0.2,
+        "Sonoma": 0.3,
+        "Marin": 0.2,
+        "Sutter": 0.6,
+        "Napa": 0.2
+       },
+       "ca_moe": 0.1
       }
      ]
     },
@@ -1024,9 +1302,26 @@
         "Napa": 5.0
        },
        "ca": 5.6,
-       "caution": {
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 0.7,
+        "Colusa": 2.4,
+        "Del Norte": 1.4,
+        "Glenn": 2.2,
+        "Humboldt": 0.6,
+        "Lake": 1.3,
+        "Mendocino": 1.1,
+        "Shasta": 0.8,
+        "Tehama": 1.0,
+        "Trinity": 3.6,
+        "Siskiyou": 0.8,
+        "Los Angeles": 0.1,
+        "San Bernardino": 0.2,
+        "Sonoma": 0.4,
+        "Marin": 0.4,
+        "Sutter": 1.1,
+        "Napa": 0.9
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Male",
@@ -1049,7 +1344,27 @@
         "Sutter": 7.1,
         "Napa": 6.5
        },
-       "ca": 7.6
+       "ca": 7.6,
+       "moe": {
+        "Butte": 0.7,
+        "Colusa": 2.4,
+        "Del Norte": 2.0,
+        "Glenn": 2.1,
+        "Humboldt": 0.9,
+        "Lake": 1.6,
+        "Mendocino": 1.1,
+        "Shasta": 0.8,
+        "Tehama": 1.4,
+        "Trinity": 3.9,
+        "Siskiyou": 1.4,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.3,
+        "Sonoma": 0.5,
+        "Marin": 0.6,
+        "Sutter": 1.1,
+        "Napa": 1.0
+       },
+       "ca_moe": 0.1
       }
      ]
     },
@@ -1078,17 +1393,26 @@
         "Napa": 9.5
        },
        "ca": 11.6,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 4.2,
+        "Colusa": 7.6,
+        "Del Norte": 6.8,
+        "Glenn": 7.6,
+        "Humboldt": 1.9,
+        "Lake": 8.9,
+        "Mendocino": 4.1,
+        "Shasta": 3.5,
+        "Tehama": 6.9,
+        "Trinity": 20.4,
+        "Siskiyou": 3.1,
+        "Los Angeles": 0.8,
+        "San Bernardino": 1.7,
+        "Sonoma": 2.8,
+        "Marin": 5.4,
+        "Sutter": 7.7,
+        "Napa": 7.0
+       },
+       "ca_moe": 0.5
       },
       {
        "label": "Asian",
@@ -1112,17 +1436,26 @@
         "Napa": 4.3
        },
        "ca": 3.8,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Humboldt": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true
-       }
+       "moe": {
+        "Butte": 2.4,
+        "Colusa": 13.2,
+        "Del Norte": 0.9,
+        "Glenn": 9.4,
+        "Humboldt": 3.1,
+        "Lake": 8.7,
+        "Mendocino": 6.1,
+        "Shasta": 2.1,
+        "Tehama": 3.1,
+        "Trinity": 14.0,
+        "Siskiyou": 11.9,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.7,
+        "Sonoma": 1.0,
+        "Marin": 1.1,
+        "Sutter": 1.6,
+        "Napa": 1.5
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Black or African American",
@@ -1146,23 +1479,26 @@
         "Napa": 5.8
        },
        "ca": 5.5,
-       "caution": {
-        "Butte": true,
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Humboldt": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Shasta": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Sonoma": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 2.7,
+        "Colusa": 12.5,
+        "Del Norte": 38.9,
+        "Glenn": 55.0,
+        "Humboldt": 2.5,
+        "Lake": 4.0,
+        "Mendocino": 7.3,
+        "Shasta": 7.7,
+        "Tehama": 8.8,
+        "Trinity": 24.0,
+        "Siskiyou": 6.9,
+        "Los Angeles": 0.3,
+        "San Bernardino": 0.9,
+        "Sonoma": 2.8,
+        "Marin": 2.4,
+        "Sutter": 3.9,
+        "Napa": 4.5
+       },
+       "ca_moe": 0.2
       },
       {
        "label": "Hispanic or Latino (any race)",
@@ -1186,9 +1522,26 @@
         "Napa": 8.9
        },
        "ca": 10.8,
-       "caution": {
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 1.8,
+        "Colusa": 3.0,
+        "Del Norte": 2.5,
+        "Glenn": 3.4,
+        "Humboldt": 1.6,
+        "Lake": 3.3,
+        "Mendocino": 1.7,
+        "Shasta": 2.2,
+        "Tehama": 2.4,
+        "Trinity": 14.1,
+        "Siskiyou": 3.1,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.4,
+        "Sonoma": 1.0,
+        "Marin": 1.9,
+        "Sutter": 2.0,
+        "Napa": 1.3
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Native Hawaiian and Other Pacific Islander",
@@ -1212,22 +1565,25 @@
         "Napa": 3.5
        },
        "ca": 7.1,
-       "caution": {
-        "Butte": true,
-        "Colusa": true,
-        "Del Norte": true,
-        "Humboldt": true,
-        "Lake": true,
-        "Mendocino": true,
-        "Shasta": true,
-        "Tehama": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Sonoma": true,
-        "Marin": true,
-        "Sutter": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 11.8,
+        "Colusa": 67.8,
+        "Del Norte": 46.1,
+        "Humboldt": 6.6,
+        "Lake": 24.1,
+        "Mendocino": 3.8,
+        "Shasta": 9.5,
+        "Tehama": 40.0,
+        "Trinity": 33.8,
+        "Siskiyou": 1.5,
+        "Los Angeles": 1.4,
+        "San Bernardino": 3.4,
+        "Sonoma": 9.2,
+        "Marin": 18.2,
+        "Sutter": 12.5,
+        "Napa": 5.9
+       },
+       "ca_moe": 0.7
       },
       {
        "label": "White, not Hispanic or Latino",
@@ -1250,7 +1606,27 @@
         "Sutter": 4.0,
         "Napa": 3.8
        },
-       "ca": 3.3
+       "ca": 3.3,
+       "moe": {
+        "Butte": 0.7,
+        "Colusa": 1.8,
+        "Del Norte": 1.5,
+        "Glenn": 2.0,
+        "Humboldt": 0.7,
+        "Lake": 1.2,
+        "Mendocino": 0.9,
+        "Shasta": 0.7,
+        "Tehama": 1.0,
+        "Trinity": 3.0,
+        "Siskiyou": 0.8,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.3,
+        "Sonoma": 0.4,
+        "Marin": 0.3,
+        "Sutter": 1.2,
+        "Napa": 1.0
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Some other race",
@@ -1274,10 +1650,26 @@
         "Napa": 10.5
        },
        "ca": 12.7,
-       "caution": {
-        "Del Norte": true,
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 2.8,
+        "Colusa": 4.6,
+        "Del Norte": 4.8,
+        "Glenn": 3.2,
+        "Humboldt": 3.0,
+        "Lake": 5.3,
+        "Mendocino": 5.1,
+        "Shasta": 5.6,
+        "Tehama": 4.0,
+        "Trinity": 19.6,
+        "Siskiyou": 5.3,
+        "Los Angeles": 0.3,
+        "San Bernardino": 0.5,
+        "Sonoma": 1.8,
+        "Marin": 2.7,
+        "Sutter": 2.9,
+        "Napa": 1.9
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "Two or more races",
@@ -1301,12 +1693,26 @@
         "Napa": 8.2
        },
        "ca": 8.2,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Glenn": true,
-        "Trinity": true
-       }
+       "moe": {
+        "Butte": 1.7,
+        "Colusa": 4.0,
+        "Del Norte": 3.6,
+        "Glenn": 4.9,
+        "Humboldt": 1.6,
+        "Lake": 3.2,
+        "Mendocino": 2.0,
+        "Shasta": 1.9,
+        "Tehama": 3.4,
+        "Trinity": 11.5,
+        "Siskiyou": 2.9,
+        "Los Angeles": 0.3,
+        "San Bernardino": 0.5,
+        "Sonoma": 0.9,
+        "Marin": 2.4,
+        "Sutter": 2.7,
+        "Napa": 2.0
+       },
+       "ca_moe": 0.1
       }
      ]
     },
@@ -1335,13 +1741,26 @@
         "Napa": 3.3
        },
        "ca": 3.9,
-       "caution": {
-        "Colusa": true,
-        "Del Norte": true,
-        "Trinity": true,
-        "Siskiyou": true,
-        "Napa": true
-       }
+       "moe": {
+        "Butte": 1.0,
+        "Colusa": 1.4,
+        "Del Norte": 2.1,
+        "Glenn": 2.3,
+        "Humboldt": 0.9,
+        "Lake": 1.0,
+        "Mendocino": 1.7,
+        "Shasta": 0.9,
+        "Tehama": 1.3,
+        "Trinity": 1.7,
+        "Siskiyou": 1.8,
+        "Los Angeles": 0.2,
+        "San Bernardino": 0.4,
+        "Sonoma": 0.7,
+        "Marin": 0.7,
+        "Sutter": 1.4,
+        "Napa": 1.9
+       },
+       "ca_moe": 0.1
       },
       {
        "label": "No disability",
@@ -1364,7 +1783,27 @@
         "Sutter": 6.8,
         "Napa": 6.1
        },
-       "ca": 6.9
+       "ca": 6.9,
+       "moe": {
+        "Butte": 0.7,
+        "Colusa": 2.4,
+        "Del Norte": 1.7,
+        "Glenn": 1.8,
+        "Humboldt": 0.7,
+        "Lake": 1.4,
+        "Mendocino": 0.9,
+        "Shasta": 0.7,
+        "Tehama": 1.1,
+        "Trinity": 3.5,
+        "Siskiyou": 1.0,
+        "Los Angeles": 0.1,
+        "San Bernardino": 0.2,
+        "Sonoma": 0.4,
+        "Marin": 0.5,
+        "Sutter": 1.1,
+        "Napa": 0.8
+       },
+       "ca_moe": 0.1
       }
      ]
     }
@@ -1849,7 +2288,7 @@
    "higher_is_worse": true,
    "source": "California Department of Public Health (CDPH), California Breathing Asthma Program",
    "source_url": "https://data.chhs.ca.gov/dataset/asthma-emergency-department-visit-rates/resource/94d84508-8046-40a7-b8d9-0ed73b13b697",
-   "note": "Age-adjusted emergency department visits with a primary diagnosis of asthma per 10,000 residents. 'Suppressed' means the publisher withheld the value; blank values are statistically unstable.",
+   "note": "Age-adjusted emergency department visits with a primary diagnosis of asthma per 10,000 residents. 'Suppressed' means the publisher withheld the value. 'Not available' means there were too few visits to report a stable rate.",
    "dims": [
     {
      "name": "Age group",

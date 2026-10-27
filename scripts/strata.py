@@ -7,8 +7,8 @@ Sources
   - CDC Heart Disease and Stroke Mortality Among US Adults (35+) by State and County (data.cdc.gov mri7-5jtw, y5ii-knwc):
     stratification1 = Sex, stratification2 = Race/Ethnicity.
   - Census American Community Survey (ACS) 5-year subject tables S1701 (poverty) and S2701 (health insurance), with
-    published margins of error. Estimates with a coefficient of variation above 30 percent are flagged, matching acs.py.
-    Needs the CENSUS_API_KEY environment variable.
+    published margins of error (90 percent confidence level).
+    Each estimate carries its published margin of error. Needs the CENSUS_API_KEY environment variable.
   - California Department of Education (CDE) chronic absenteeism file (same file list as cde.py), Reporting Category codes.
   - California Department of Public Health (CDPH) asthma emergency department visit rates (data.chhs.ca.gov).
   - Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, Demographic Data:
@@ -70,8 +70,9 @@ def cdc_measure(ds, mid, title, topic):
         "higher_is_worse": True,
         "source": "Centers for Disease Control and Prevention (CDC), National Vital Statistics System",
         "source_url": f"https://data.cdc.gov/resource/{ds}.json",
-        "note": ("Age-adjusted 3-year average death rate for adults ages 35 and older. CDC spatially smooths county "
-                 "rates; the California rate is not smoothed. 'Suppressed' means CDC reports insufficient data."),
+        "note": ("Age-adjusted 3-year average death rate for adults ages 35 and older. CDC blends each county's rate "
+                 "with nearby counties to make small-county rates more stable; the California rate is not blended. "
+                 "'Suppressed' means CDC reports too few deaths to publish a rate."),
         "dims": [
             dim("Sex", [g("Female", "Female", "Overall"), g("Male", "Male", "Overall")]),
             dim("Race and ethnicity", [g(lab, "Overall", s2) for s2, lab in CDC_RACE]),
@@ -113,12 +114,6 @@ def acs_get(vintage, vars_):
     return res
 
 
-def unreliable(est, moe):
-    if est is None or moe is None or moe < 0 or est == 0:
-        return est == 0 and moe is not None and moe > 0
-    return (moe / 1.645) / est > 0.30
-
-
 def acs_measure(vintage, table, col, rows_spec, mid, title, topic, note):
     vars_ = []
     for _, _, n in rows_spec:
@@ -128,15 +123,20 @@ def acs_measure(vintage, table, col, rows_spec, mid, title, topic, note):
     for dname, label, n in rows_spec:
         e, m = f"{table}_{col}_{n:03d}E", f"{table}_{col}_{n:03d}M"
         county = {c: (data[c][e] if data[c][e] is not None and data[c][e] >= 0 else None) for c in COUNTIES}
-        caution = {c: True for c in COUNTIES if unreliable(data[c][e], data[c][m])}
-        dims.setdefault(dname, []).append(group(label, county, data[CA][e], caution))
+        moe = {c: data[c][m] for c in COUNTIES if county[c] is not None and data[c][m] is not None and data[c][m] >= 0}
+        g = group(label, county, data[CA][e])
+        g["moe"] = moe
+        if data[CA][m] is not None and data[CA][m] >= 0:
+            g["ca_moe"] = data[CA][m]
+        dims.setdefault(dname, []).append(g)
     return {
         "id": mid, "topic": topic, "title": title, "unit": "percent", "period": f"{vintage - 4} to {vintage}",
         "higher_is_worse": True,
         "source": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates",
         "source_url": f"https://data.census.gov/table/ACSST5Y{vintage}.{table}?g=040XX00US06",
-        "note": note + (" Values marked 'Use with caution' have a coefficient of variation above 30 percent, based on "
-                        "the published margin of error."),
+        "note": note + (" The Census Bureau publishes each estimate with a margin of error at the 90 percent confidence "
+                        "level, shown as plus or minus. A larger margin means the true value may differ more from the "
+                        "estimate. Small groups in small counties often have large margins of error."),
         "dims": [dim(k, v) for k, v in dims.items()],
     }
 
@@ -226,7 +226,7 @@ def asthma_measure():
         "source": "California Department of Public Health (CDPH), California Breathing Asthma Program",
         "source_url": "https://data.chhs.ca.gov/dataset/asthma-emergency-department-visit-rates/resource/" + R,
         "note": ("Age-adjusted emergency department visits with a primary diagnosis of asthma per 10,000 residents. "
-                 "'Suppressed' means the publisher withheld the value; blank values are statistically unstable."),
+                 "'Suppressed' means the publisher withheld the value. 'Not available' means there were too few visits to report a stable rate."),
         "dims": [dim("Age group", items("Age groups")), dim("Race and ethnicity", items("Race/ethnicity"))],
     }
 

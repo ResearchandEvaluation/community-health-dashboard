@@ -71,10 +71,9 @@ def measure(mid, label, unit, period, vals, ca, ca_src, note, url):
 
 
 def cv_note(flags):
-    if not flags:
-        return ""
-    return ("Estimates for " + ", ".join(flags) + " have a coefficient of variation above 30 percent "
-            "(based on the published margin of error) and should be interpreted with caution.")
+    # PHIL shows published values only. The Census Bureau publishes margins of error but sets no reliability
+    # cutoff, so no PHIL-defined flag is added to the note.
+    return ""
 
 
 def subject_measure(data, est, moe, mid, label, period, url, extra=""):

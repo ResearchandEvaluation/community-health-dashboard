@@ -21,7 +21,7 @@ Keys and variables:
   acsBroadband   S2801_C02_014E  Households with a broadband Internet subscription of any type
   acsDisability  S1810_C03_001E  Percent with a disability, civilian noninstitutionalized population
   acsLanguage    S1601_C06_001E  Percent of population 5 years and over who speak English less than "very well"
-Reuses helpers from acs.py (get, subject_measure, coefficient of variation flags).
+Reuses helpers from acs.py (get, subject_measure).
 """
 import json
 import os

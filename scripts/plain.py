@@ -25,8 +25,8 @@ P={
 "acsPov":[("People living below the federal poverty level",ACS),("People without health insurance",ACS)],
 "acsChild":[("Children under 18 living below the federal poverty level",ACS)],
 "acsYoung":[("Children under 5 living below the federal poverty level",ACS)],
-"suicide":[("Suicide deaths per 100,000 residents","CDPH rate for 2021 to 2023, adjusted for age. CDPH marks rates based on small numbers as unreliable; this applies to Colusa, Del Norte, Glenn, and Trinity counties.")],
-"od":[("Drug overdose deaths per 100,000 residents","CDPH rate for 2021 to 2023, adjusted for age. CDPH marks rates based on small numbers as unreliable; this applies to Colusa and Trinity counties.")],
+"suicide":[("Suicide deaths per 100,000 residents","CDPH rate for 2021 to 2023, adjusted for age. CDPH flags rates based on a small number of deaths, which can change a lot from year to year. Flagged counties: Colusa, Del Norte, Glenn, and Trinity.")],
+"od":[("Drug overdose deaths per 100,000 residents","CDPH rate for 2021 to 2023, adjusted for age. CDPH flags rates based on a small number of deaths, which can change a lot from year to year. Flagged counties: Colusa and Trinity.")],
 "births":[("Births to mothers ages 15 to 19 per 1,000 females ages 15 to 19","CDPH rate for 2021 to 2023.")],
 "smhs05":[("Medi-Cal children ages 3 to 5 who received at least 1 specialty mental health service",SM),("Medi-Cal children ages 3 to 5 who received at least 5 specialty mental health services",SM)],
 "smhsYouth":[("Medi-Cal children and youth ages 0 to 20 who received at least 1 specialty mental health service",SM),("Medi-Cal children and youth ages 0 to 20 who received at least 5 specialty mental health services",SM)],
@@ -41,16 +41,16 @@ P={
 
 BHP="DHCS Behavioral Health Transformation performance measure for fiscal year 2024-25, from the Behavioral Health Public County Profile. California is the DHCS statewide value. DHCS withholds small counts to protect privacy."
 PLAN="From the county's Behavioral Health Services Act (BHSA) Integrated Plan for fiscal year 2026-27, as published by DHCS in the Behavioral Health Public County Profile. Counties submit these plans; DHCS publishes no statewide value."
-CHSP="CDPH County Health Status Profiles, 2021 to 2023, adjusted for age. CDPH marks rates based on small numbers as unreliable."
+CHSP="CDPH County Health Status Profiles, 2021 to 2023, adjusted for age. CDPH flags rates based on a small number of deaths, which can change a lot from year to year."
 P.update({
-"chdmort":[("Coronary heart disease deaths per 100,000 residents",CHSP+" Unreliable: none of the 17 counties.")],
-"diabmort":[("Diabetes deaths per 100,000 residents",CHSP+" Unreliable: Colusa and Trinity.")],
-"infmort":[("Infant deaths per 1,000 live births","CDPH County Health Status Profiles, births in 2020 to 2022. CDPH withholds rates for small counties and marks others as unreliable: Glenn, Humboldt, Mendocino, Tehama, Marin, and Napa.")],
+"chdmort":[("Coronary heart disease deaths per 100,000 residents",CHSP+" CDPH flags none of the 17 counties for this measure.")],
+"diabmort":[("Diabetes deaths per 100,000 residents",CHSP+" Flagged counties: Colusa and Trinity.")],
+"infmort":[("Infant deaths per 1,000 live births","CDPH County Health Status Profiles, births in 2020 to 2022. CDPH withholds rates for small counties and flags rates based on a small number of infant deaths, which can change a lot from year to year. Flagged counties: Glenn, Humboldt, Mendocino, Tehama, Marin, and Napa.")],
 "lbw":[("Babies born at low birthweight","CDPH County Health Status Profiles, 2021 to 2023. Low birthweight means under 2,500 grams (5.5 pounds).")],
 "prenatal":[("Births with prenatal care that began in the first trimester","CDPH County Health Status Profiles, 2021 to 2023.")],
-"firearm":[("Firearm deaths per 100,000 residents",CHSP+" Unreliable: Colusa, Del Norte, Glenn, and Trinity.")],
-"homicide":[("Homicide deaths per 100,000 residents",CHSP+" Unreliable in 11 of the 17 counties because of small numbers.")],
-"mvc":[("Motor vehicle crash deaths per 100,000 residents",CHSP+" Unreliable: Colusa, Del Norte, Glenn, and Trinity.")],
+"firearm":[("Firearm deaths per 100,000 residents",CHSP+" Flagged counties: Colusa, Del Norte, Glenn, and Trinity.")],
+"homicide":[("Homicide deaths per 100,000 residents",CHSP+" CDPH flags the rate in 11 of the 17 counties.")],
+"mvc":[("Motor vehicle crash deaths per 100,000 residents",CHSP+" Flagged counties: Colusa, Del Norte, Glenn, and Trinity.")],
 "bhPerfAccess":[("Emergency visits for mental illness followed by a mental health service within 7 days",BHP),("Emergency visits for substance use followed by a substance use service within 7 days",BHP),("Hospital stays for mental illness followed by a mental health service within 7 days",BHP),("New substance use disorder episodes with treatment started within 14 days",BHP)],
 "bhPerfServices":[("Medi-Cal members with significant mental health needs who received at least 1 behavioral health service",BHP),("Medi-Cal members with significant mental health needs who received at least 3 behavioral health services",BHP),("Medi-Cal members with significant behavioral health needs experiencing or at risk of homelessness who received housing services",BHP)],
 "bhPerfFoster":[("Children and youth ages 0 to 20 in foster care, per 10,000 Medi-Cal members ages 0 to 20",BHP),("Children and youth in foster care who received specialty mental health services",BHP)],
