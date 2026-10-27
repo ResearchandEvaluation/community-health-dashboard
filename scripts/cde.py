@@ -25,8 +25,22 @@ HSE_FILES = [("2025-26", "hse2526.txt"), ("2024-25", "hse2425.txt"), ("2023-24",
              ("2019-20", "hse1920.txt")]
 
 
+HEADERS = {"User-Agent": "PHIL-Community-Health-Dashboard/1.0 (+https://pophealthinnovationlab.org)"}
+
+
+def get(url, tries=4):
+    """Download with retries; the CDE server sometimes drops connections."""
+    import time
+    for i in range(tries):
+        try:
+            r = requests.get(url, timeout=120, headers=HEADERS); r.raise_for_status(); return r
+        except requests.exceptions.RequestException:
+            if i == tries - 1: raise
+            time.sleep(15 * (i + 1))
+
+
 def rows(url):
-    r = requests.get(url, timeout=300); r.raise_for_status()
+    r = get(url)
     rd = csv.DictReader(io.StringIO(r.content.decode("utf-8-sig", errors="replace")), delimiter="\t")
     for rec in rd:
         # Older files use field names without spaces (AggregateLevel, CharterYN); normalize.
@@ -71,25 +85,30 @@ def write(key, measures):
     json.dump({"key": key, "measures": measures}, open(f"{OUT}/{key}.json", "w"), indent=1); print("wrote", key)
 
 
-per, cv, ca, _ = series(ABS_FILES, ABS_BASE, "ChronicAbsenteeismRate")
-write("cdeAbs", [{"id": "chronic_abs_rate", "label": "Students who were chronically absent, grades K to 12", "unit": "percent",
-  "period": per[-1] + " school year", "values": {c: cv[c][-1] for c in COUNTIES},
-  "california": ca[-1], "california_source": "published", "higher_is_worse": True,
-  "note": ("Chronically absent means missing 10 percent or more of the instructional days a student was enrolled. "
-           "Rates are published by CDE for all students in the county. CDE did not publish 2019-20 absenteeism data "
-           "because of the COVID-19 pandemic, and recommends caution when comparing absenteeism data across years, "
-           "particularly 2020-21, when most instruction was distance learning."),
-  "source_url": ABS_BASE + ABS_FILES[0][1],
-  "trend": {"periods": per, "values": cv, "california": ca}}])
+def main():
+    per, cv, ca, _ = series(ABS_FILES, ABS_BASE, "ChronicAbsenteeismRate")
+    write("cdeAbs", [{"id": "chronic_abs_rate", "label": "Students who were chronically absent, grades K to 12", "unit": "percent",
+      "period": per[-1] + " school year", "values": {c: cv[c][-1] for c in COUNTIES},
+      "california": ca[-1], "california_source": "published", "higher_is_worse": True,
+      "note": ("Chronically absent means missing 10 percent or more of the instructional days a student was enrolled. "
+               "Rates are published by CDE for all students in the county. CDE did not publish 2019-20 absenteeism data "
+               "because of the COVID-19 pandemic, and recommends caution when comparing absenteeism data across years, "
+               "particularly 2020-21, when most instruction was distance learning."),
+      "source_url": ABS_BASE + ABS_FILES[0][1],
+      "trend": {"periods": per, "values": cv, "california": ca}}])
 
-per, cv, ca, _ = series(HSE_FILES, HSE_BASE, "HomelessStudentEnrollment")
-write("cdeHomeless", [{"id": "homeless_students", "label": "Students experiencing homelessness", "unit": "count",
-  "period": per[-1] + " school year", "values": {c: cv[c][-1] for c in COUNTIES},
-  "california": ca[-1], "california_source": "published", "higher_is_worse": True,
-  "note": ("Count of students identified as experiencing homelessness at any point in the school year, as published by CDE. "
-           "Includes students temporarily doubled up, in shelters, in hotels or motels, and unsheltered. Beginning in "
-           "2025-26, CDE required local educational agencies to close homeless program records each year and re-verify "
-           "status through the annual Housing Questionnaire; CDE states the 2025-26 decrease may reflect this change, "
-           "so 2025-26 counts are not directly comparable with earlier years."),
-  "source_url": HSE_BASE + HSE_FILES[0][1],
-  "trend": {"periods": per, "values": cv, "california": ca}}])
+    per, cv, ca, _ = series(HSE_FILES, HSE_BASE, "HomelessStudentEnrollment")
+    write("cdeHomeless", [{"id": "homeless_students", "label": "Students experiencing homelessness", "unit": "count",
+      "period": per[-1] + " school year", "values": {c: cv[c][-1] for c in COUNTIES},
+      "california": ca[-1], "california_source": "published", "higher_is_worse": True,
+      "note": ("Count of students identified as experiencing homelessness at any point in the school year, as published by CDE. "
+               "Includes students temporarily doubled up, in shelters, in hotels or motels, and unsheltered. Beginning in "
+               "2025-26, CDE required local educational agencies to close homeless program records each year and re-verify "
+               "status through the annual Housing Questionnaire; CDE states the 2025-26 decrease may reflect this change, "
+               "so 2025-26 counts are not directly comparable with earlier years."),
+      "source_url": HSE_BASE + HSE_FILES[0][1],
+      "trend": {"periods": per, "values": cv, "california": ca}}])
+
+
+if __name__ == "__main__":
+    main()

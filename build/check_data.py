@@ -7,7 +7,7 @@ import os, json, glob, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
 OUT = os.path.join(ROOT, "data", "out")
 COUNTIES = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity","Siskiyou","Los Angeles","San Bernardino","Sonoma","Marin","Sutter","Napa"]
-EXPECTED = ["hdmort","strokemort","places","placesRisk","placesBPmed","placesSocial","placesMH","placesAlc","placesSupport","placesHousing","placesAccess","od","pqiCardiac","pqiAll","pqiKids","hpsaPC","hpsaMH","acsPov","acsChild","acsYoung","medical","medicalKids","suicide","births","smhs05","smhsYouth","bhHousing","hdis","cdeAbs","cdeHomeless","ecm","ecm_tab","chdmort","diabmort","infmort","lbw","prenatal","firearm","homicide","mvc","bhPerf","bhPlan","bhPen","wic","asthmaED","acsHousing","acsVehicle","acsBroadband","acsDisability","acsLanguage","mcp_plans"]
+EXPECTED = ["hdmort","strokemort","places","placesRisk","placesBPmed","placesSocial","placesMH","placesAlc","placesSupport","placesHousing","placesAccess","od","pqiCardiac","pqiAll","pqiKids","hpsaPC","hpsaMH","acsPov","acsChild","acsYoung","medical","medicalKids","suicide","births","smhs05","smhsYouth","bhHousing","hdis","cdeAbs","cdeHomeless","ecm","ecm_tab","chdmort","diabmort","infmort","lbw","prenatal","firearm","homicide","mvc","bhPerf","bhPlan","bhPen","wic","asthmaED","acsHousing","acsVehicle","acsBroadband","acsDisability","acsLanguage","mcp_plans","strata"]
 problems = []
 def committed(path):
     try:
@@ -19,6 +19,13 @@ for key in EXPECTED:
     d = json.load(open(f))
     if key == "mcp_plans":
         if len([c for c in d if c != "month"]) != 17: problems.append("mcp_plans: county count")
+        continue
+    if key == "strata":
+        if len(d["measures"]) < 5: problems.append("strata: fewer than 5 measures")
+        for m in d["measures"]:
+            for dm in m["dims"]:
+                for g in dm["groups"]:
+                    if [c for c in COUNTIES if c not in g["county"]]: problems.append(f"strata {m['id']}: missing counties")
         continue
     if key == "ecm_tab":
         if len(d["ECMD"]["counties"]) != 17: problems.append("ecm_tab: county count")

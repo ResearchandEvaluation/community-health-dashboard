@@ -953,6 +953,103 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </section>
 </sc-if>
 
+<sc-if value="{{showDetail}}" hint-placeholder-val="{{false}}">
+<section style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center">
+<img src="assets/fox-magnifier.png" alt="PHIL's fox mascot holding a magnifying glass" style="height: 104px; width: auto; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 520px; min-width: 0">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Your County in Detail</h2>
+<p style="margin: 0; max-width: 820px; font-size: 16px; line-height: 1.55">See how health and community conditions differ across groups of people in one county, by race and ethnicity, sex, age, and student group. Every value appears exactly as its source publishes it.</p>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px">
+<div style="display: flex; gap: 12px; align-items: flex-start; background: #ffffff; border: 1px solid #dee3e8; border-top: 4px solid #02784d; border-radius: 10px; padding: 16px 18px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #02784d; color: #ffffff; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">1</span><div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 15px; font-weight: 800; color: #12365b">Choose a county</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">Select one of the 17 counties below.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: #ffffff; border: 1px solid #dee3e8; border-top: 4px solid #30718d; border-radius: 10px; padding: 16px 18px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #30718d; color: #ffffff; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">2</span><div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 15px; font-weight: 800; color: #12365b">Choose a breakdown</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">Show every breakdown, or one at a time, such as race and ethnicity.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: #ffffff; border: 1px solid #dee3e8; border-top: 4px solid #496b9c; border-radius: 10px; padding: 16px 18px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #496b9c; color: #ffffff; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">3</span><div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 15px; font-weight: 800; color: #12365b">Compare groups</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">Longer bars mean higher values. The blue line marks California for the same group.</div></div></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">County</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{det.counties}}" as="c" hint-placeholder-count="17">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="{{c.style}}">{{c.name}}</button>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{det.noCounty}}" hint-placeholder-val="{{false}}">
+<div style="border: 2px dashed #73889e; border-radius: 10px; padding: 28px; font-size: 17px; font-weight: 700; color: #12365b; background: #f8fafb">Choose a county above to see its data in detail.</div>
+</sc-if>
+<sc-if value="{{det.hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="background: #f8fafb; border: 1px solid #dee3e8; border-radius: 12px; padding: 16px 20px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 2px 8px rgba(18, 54, 91, 0.06)">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d; min-width: 110px">Break down by</span>
+<sc-for list="{{det.dimPills}}" as="d" hint-placeholder-count="6">
+<button type="button" onClick="{{d.pick}}" aria-pressed="{{d.pressed}}" style="{{d.style}}">{{d.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d; min-width: 110px">Topic</span>
+<sc-for list="{{det.topicPills}}" as="d" hint-placeholder-count="4">
+<button type="button" onClick="{{d.pick}}" aria-pressed="{{d.pressed}}" style="{{d.style}}">{{d.label}}</button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #3d556e; border-top: 1px solid #dee3e8; padding-top: 10px">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 22px; height: 10px; border-radius: 3px; background: #12365b; display: inline-block"></span>{{det.countyLabel}}</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 3px; height: 14px; border-radius: 2px; background: #2a9fd6; display: inline-block"></span>California, same group and source</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 22px; height: 10px; border-radius: 3px; background: repeating-linear-gradient(45deg, #496b9c, #496b9c 5px, #7d97bd 5px, #7d97bd 9px); display: inline-block"></span>Use with caution</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-style: italic">Suppressed: withheld by the source to protect privacy</span>
+</div>
+</div>
+
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">{{det.countyLabel}} by Group</h3>
+<sc-if value="{{det.noCards}}" hint-placeholder-val="{{false}}">
+<div style="border: 1px solid #dee3e8; border-radius: 10px; padding: 24px; font-size: 16px; background: #ffffff">No measures have this breakdown for the selected topic. Choose another breakdown or topic.</div>
+</sc-if>
+<sc-for list="{{det.sections}}" as="sec" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 50%; background: #02784d; display: inline-block; flex-shrink: 0"></span><h4 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #12365b">{{sec.label}}</h4><span aria-hidden="true" style="flex: 1; height: 1px; background: #dee3e8"></span></div>
+<sc-for list="{{sec.cards}}" as="m" hint-placeholder-count="2">
+<article style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 1px 2px rgba(18, 54, 91, 0.06)">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #02784d">{{m.topicLabel}}</span>
+<h4 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 21px; line-height: 1.3; color: #12365b">{{m.title}}</h4>
+<div style="font-size: 13px; color: #526c87">{{m.unitLabel}}, {{m.period}}</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 20px 36px; align-items: start">
+<sc-for list="{{m.dims}}" as="x" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #30718d; border-bottom: 1px solid #dee3e8; padding-bottom: 6px">{{x.name}}</div>
+<sc-for list="{{x.rows}}" as="r" hint-placeholder-count="5">
+<div style="display: grid; grid-template-columns: minmax(96px, 36%) minmax(0, 1fr) 92px; gap: 4px 12px; align-items: center">
+<div style="font-size: 14px; line-height: 1.3; color: #24384d">{{r.label}}<sc-if value="{{r.caution}}" hint-placeholder-val="{{false}}"><span style="display: block; font-size: 11px; font-weight: 800; color: #8a5a00">Use with caution</span></sc-if></div>
+<div style="position: relative; height: 26px; background: #eef2f5; border-radius: 6px"><div style="{{r.barStyle}}"></div><div title="{{r.caText}}" style="{{r.caStyle}}"></div></div>
+<div style="{{r.valStyle}}">{{r.valText}}</div>
+<sc-if value="{{r.hasCa}}" hint-placeholder-val="{{true}}"><div></div><div style="font-size: 12px; color: #1f6f99; margin-top: -2px">{{r.caText}}</div><div></div></sc-if>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+<details style="font-size: 13px; line-height: 1.5; color: #3d556e"><summary style="cursor: pointer; font-weight: 800; color: #496b9c">About this data</summary><p style="margin: 8px 0 0">{{m.note}}</p></details>
+<div style="font-size: 12px; color: #526c87">Source: <a href="{{m.url}}" target="_blank" rel="noopener" style="color: #496b9c">{{m.source}}</a></div>
+</article>
+</sc-for>
+</div>
+</sc-for>
+
+<div style="background: #f3e9d7; border-radius: 10px; padding: 20px 24px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.55">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 20px; color: #12365b">Reading These Breakdowns</h3>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px">
+<li>Each source defines its own groups, so group names differ across measures. The dashboard uses each source's groups as published.</li>
+<li>Small groups in small counties are often suppressed, or have wide margins of error. Values marked "Use with caution" come from Census estimates with a coefficient of variation above 30 percent.</li>
+<li>A California line appears only when the same dataset publishes the same group for the state.</li>
+<li>Differences between groups often reflect differences in access, resources, and conditions in the community.</li>
+</ul>
+</div>
+</sc-if>
+</section>
+</sc-if>
+
 <sc-if value="{{showResources}}" hint-placeholder-val="{{false}}">
 <section style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 10px">
@@ -1299,11 +1396,11 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       return Object.keys(set).sort();
     }
 
-    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "resources", label: "Resources" }]);
+    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "detail", label: "Your County in Detail" }, { id: "resources", label: "Resources" }]);
     var tabBase = "min-height: 44px; padding: 7px 12px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; white-space: nowrap; ";
     var tabs = TAB_DEFS.map(function (t) {
       var on = t.id === tab;
-      var NAVL = { overview: "Overview", cardio: "Cardiovascular", aces: "ACEs and Trauma", early: "Early Childhood", youth: "Youth Behavioral Health", sub: "Substance Use", medi: "Access to Care", ecmcs: "ECM and Community Supports", resources: "Resources" };
+      var NAVL = { overview: "Overview", cardio: "Cardiovascular", aces: "ACEs and Trauma", early: "Early Childhood", youth: "Youth Behavioral Health", sub: "Substance Use", medi: "Access to Care", ecmcs: "ECM and Community Supports", detail: "Your County in Detail", resources: "Resources" };
       return { id: t.id, label: t.label, navLabel: NAVL[t.id] || t.label, pick: go(t.id), current: on ? "page" : "false",
         style: tabBase + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") };
     });
@@ -1457,6 +1554,58 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       return parts.join(" ");
     }
 
+    var STRATA = __STRATA__;
+    var det = null;
+    if (tab === "detail") {
+      var DT_TOPIC = { cardio: "Cardiovascular", youth: "Youth Behavioral Health", medi: "Access to Care" };
+      var DT_TOPIC_ORDER = ["cardio", "youth", "medi"];
+      var DIM_ORDER = ["Race and ethnicity", "Sex", "Age group", "Student group", "Grade level", "Disability status"];
+      var dDim = s.detDim || "all", dTopic = s.detTopic || "all";
+      var ms = (STRATA.measures || []).slice().sort(function (a, b) { return DT_TOPIC_ORDER.indexOf(a.topic) - DT_TOPIC_ORDER.indexOf(b.topic); });
+      var dimsPresent = DIM_ORDER.filter(function (d) { return ms.some(function (m) { return m.dims.some(function (x) { return x.name === d; }); }); });
+      var pillBase = "min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; ";
+      function pill(on) { return pillBase + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"); }
+      function fmt(v, unit) {
+        if (unit === "count") return Math.round(v).toLocaleString("en-US");
+        if (unit === "percent") return v.toFixed(1) + "%";
+        return v.toFixed(1);
+      }
+      var cards = ms.filter(function (m) { return dTopic === "all" || m.topic === dTopic; }).map(function (m) {
+        var dims = m.dims.filter(function (x) { return dDim === "all" || x.name === dDim; }).map(function (x) {
+          var nums = [];
+          x.groups.forEach(function (g) { var v = g.county[gCounty]; if (typeof v === "number") nums.push(v); if (typeof g.ca === "number") nums.push(g.ca); });
+          var max = nums.length ? Math.max.apply(null, nums) : 1; if (!max) max = 1;
+          var anyCa = x.groups.some(function (g) { return typeof g.ca === "number"; });
+          var rows = x.groups.map(function (g) {
+            var v = g.county[gCounty], has = typeof v === "number", sup = v === "suppressed";
+            var caHas = typeof g.ca === "number", caution = !!(g.caution && g.caution[gCounty]);
+            var w = has ? Math.max(0.6, v / max * 100) : 0;
+            return { label: g.label, valText: has ? fmt(v, m.unit) : sup ? "Suppressed" : "Not available",
+              valStyle: "font-size: 14px; font-weight: 800; white-space: nowrap; text-align: right; " + (has ? "color: #12365b;" : "color: #73889e; font-style: italic; font-weight: 600;"),
+              barStyle: "position: absolute; left: 0; top: 4px; bottom: 4px; border-radius: 4px; background: " + (caution ? "repeating-linear-gradient(45deg, #496b9c, #496b9c 5px, #7d97bd 5px, #7d97bd 9px)" : "#12365b") + "; width: " + w.toFixed(2) + "%;",
+              hasCa: caHas, caText: caHas ? "California " + fmt(g.ca, m.unit) : "",
+              caStyle: caHas ? "position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1.5px; background: #2a9fd6; border-radius: 2px; left: " + (g.ca / max * 100).toFixed(2) + "%;" : "display: none;",
+              caution: caution };
+          });
+          return { name: x.name, rows: rows, anyCa: anyCa };
+        });
+        return { topic: m.topic, title: m.title, topicLabel: DT_TOPIC[m.topic] || "", period: m.period, source: m.source, url: m.url || m.source_url, note: m.note,
+          unitLabel: m.unit === "percent" ? "Percent" : m.unit === "count" ? "Number of people" : m.unit.charAt(0).toUpperCase() + m.unit.slice(1),
+          dims: dims, hasDims: dims.length > 0 };
+      }).filter(function (c) { return c.hasDims; });
+      det = {
+        countyLabel: gCounty + " County", hasCounty: hasCounty, noCounty: !hasCounty,
+        counties: ALL17.map(function (c) { var on = hasCounty && c === gCounty;
+          return { name: c, pressed: on ? "true" : "false", pick: function () { self.setState({ gCounty: c }); },
+            style: "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; " + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") }; }),
+        dimPills: [{ id: "all", label: "All breakdowns" }].concat(dimsPresent.map(function (d) { return { id: d, label: d }; })).map(function (d) {
+          return { label: d.label, pressed: dDim === d.id ? "true" : "false", style: pill(dDim === d.id), pick: function () { self.setState({ detDim: d.id }); } }; }),
+        topicPills: [{ id: "all", label: "All topics" }].concat(DT_TOPIC_ORDER.map(function (t) { return { id: t, label: DT_TOPIC[t] }; })).map(function (d) {
+          return { label: d.label, pressed: dTopic === d.id ? "true" : "false", style: pill(dTopic === d.id), pick: function () { self.setState({ detTopic: d.id }); } }; }),
+        cards: cards, hasCards: cards.length > 0, noCards: cards.length === 0,
+        sections: DT_TOPIC_ORDER.map(function (t) { return { label: DT_TOPIC[t], cards: cards.filter(function (c) { return c.topic === t; }) }; }).filter(function (x) { return x.cards.length; })
+      };
+    }
     var ACT = __ACT__;
     function buildAct(tid, county) {
       var A = (ACT.topics || {})[tid];
@@ -1797,7 +1946,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       }).filter(function (g) { return g.items.length; });
       res = { groups: rGroups, countyLine: hasCounty ? "Resources that cover " + gCounty + " County are marked." : "Choose a county on the Overview to mark the resources that cover it." };
     }
-    var tabsHome = tabs.filter(function (t) { return t.id === "overview"; });
+    var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "detail"; });
     var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi"; });
     var tabsServices = tabs.filter(function (t) { return t.id === "medi" || t.id === "ecmcs"; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
@@ -1812,7 +1961,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       showOverview: tab === "overview", showTopic: !!TOPICS[tab],
       topic: topic || { groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {}, sets: [], cols: [], rows: [] },
-      showEcm: tab === "ecmcs", showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
+      showEcm: tab === "ecmcs", showDetail: tab === "detail", det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
     };
   }

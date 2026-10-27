@@ -14,7 +14,7 @@ def ph(name, var):
     global logic
     a = logic.index(f"    var {var} = "); b = logic.index(";\n", a)
     logic = logic[:a] + f"    var {var} = __{name}__" + logic[b:]
-for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT"]: ph(v, v)
+for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT", "STRATA"]: ph(v, v)
 tpl = f'''<!doctype html>
 <html lang="en">
 <head>

@@ -1,0 +1,2434 @@
+{
+ "measures": [
+  {
+   "id": "hdStrata",
+   "topic": "cardio",
+   "title": "Heart disease deaths",
+   "unit": "rate per 100,000",
+   "period": "2022 to 2024",
+   "higher_is_worse": true,
+   "source": "Centers for Disease Control and Prevention (CDC), National Vital Statistics System",
+   "source_url": "https://data.cdc.gov/resource/mri7-5jtw.json",
+   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC spatially smooths county rates; the California rate is not smoothed. 'Suppressed' means CDC reports insufficient data.",
+   "dims": [
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 232.9,
+        "Colusa": 216.5,
+        "Del Norte": 225.8,
+        "Glenn": 228.5,
+        "Humboldt": 224.8,
+        "Lake": 211.2,
+        "Mendocino": 197.1,
+        "Shasta": 254.5,
+        "Tehama": 244.5,
+        "Trinity": 211.5,
+        "Siskiyou": 250.1,
+        "Los Angeles": 215.2,
+        "San Bernardino": 291.5,
+        "Sonoma": 182.5,
+        "Marin": 121.5,
+        "Sutter": 213.0,
+        "Napa": 201.6
+       },
+       "ca": 202.7
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 385.0,
+        "Colusa": 331.9,
+        "Del Norte": 423.5,
+        "Glenn": 405.1,
+        "Humboldt": 455.0,
+        "Lake": 422.8,
+        "Mendocino": 339.5,
+        "Shasta": 474.3,
+        "Tehama": 372.0,
+        "Trinity": 312.9,
+        "Siskiyou": 449.8,
+        "Los Angeles": 363.4,
+        "San Bernardino": 453.8,
+        "Sonoma": 303.6,
+        "Marin": 241.8,
+        "Sutter": 357.4,
+        "Napa": 339.7
+       },
+       "ca": 341.5
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian or Alaska Native",
+       "county": {
+        "Butte": 316.1,
+        "Colusa": 324.3,
+        "Del Norte": 387.9,
+        "Glenn": 351.2,
+        "Humboldt": 491.2,
+        "Lake": 297.9,
+        "Mendocino": 349.4,
+        "Shasta": 322.3,
+        "Tehama": 317.3,
+        "Trinity": 353.8,
+        "Siskiyou": 477.8,
+        "Los Angeles": 309.7,
+        "San Bernardino": 302.4,
+        "Sonoma": 223.3,
+        "Marin": "suppressed",
+        "Sutter": 277.4,
+        "Napa": 200.9
+       },
+       "ca": 277.5
+      },
+      {
+       "label": "Asian",
+       "county": {
+        "Butte": 217.3,
+        "Colusa": 175.6,
+        "Del Norte": "suppressed",
+        "Glenn": 154.8,
+        "Humboldt": 146.8,
+        "Lake": 138.1,
+        "Mendocino": 145.2,
+        "Shasta": 250.2,
+        "Tehama": 183.8,
+        "Trinity": 186.7,
+        "Siskiyou": 219.8,
+        "Los Angeles": 170.9,
+        "San Bernardino": 193.4,
+        "Sonoma": 145.9,
+        "Marin": 135.5,
+        "Sutter": 206.6,
+        "Napa": 147.9
+       },
+       "ca": 158.7
+      },
+      {
+       "label": "Black",
+       "county": {
+        "Butte": 503.9,
+        "Colusa": 424.3,
+        "Del Norte": "suppressed",
+        "Glenn": 443.5,
+        "Humboldt": 395.1,
+        "Lake": 402.6,
+        "Mendocino": 364.4,
+        "Shasta": 356.7,
+        "Tehama": 431.1,
+        "Trinity": 355.9,
+        "Siskiyou": 344.3,
+        "Los Angeles": 478.7,
+        "San Bernardino": 449.3,
+        "Sonoma": 341.9,
+        "Marin": 242.1,
+        "Sutter": 350.6,
+        "Napa": 369.1
+       },
+       "ca": 417.9
+      },
+      {
+       "label": "Hispanic or Latino",
+       "county": {
+        "Butte": 168.1,
+        "Colusa": 172.0,
+        "Del Norte": 187.3,
+        "Glenn": 167.8,
+        "Humboldt": 182.5,
+        "Lake": 185.9,
+        "Mendocino": 165.2,
+        "Shasta": 274.3,
+        "Tehama": 162.6,
+        "Trinity": 175.0,
+        "Siskiyou": 129.5,
+        "Los Angeles": 230.1,
+        "San Bernardino": 262.6,
+        "Sonoma": 160.7,
+        "Marin": 105.7,
+        "Sutter": 191.8,
+        "Napa": 188.1
+       },
+       "ca": 216.2
+      },
+      {
+       "label": "Native Hawaiian or Other Pacific Islander",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 436.4,
+        "San Bernardino": 472.4,
+        "Sonoma": 165.4,
+        "Marin": "suppressed",
+        "Sutter": 273.8,
+        "Napa": 203.0
+       },
+       "ca": 364.9
+      },
+      {
+       "label": "White",
+       "county": {
+        "Butte": 322.1,
+        "Colusa": 321.0,
+        "Del Norte": 324.0,
+        "Glenn": 352.7,
+        "Humboldt": 336.0,
+        "Lake": 337.7,
+        "Mendocino": 274.7,
+        "Shasta": 359.5,
+        "Tehama": 331.4,
+        "Trinity": 271.2,
+        "Siskiyou": 360.5,
+        "Los Angeles": 344.0,
+        "San Bernardino": 476.5,
+        "Sonoma": 250.3,
+        "Marin": 184.3,
+        "Sutter": 330.7,
+        "Napa": 297.4
+       },
+       "ca": 308.0
+      },
+      {
+       "label": "More than one race",
+       "county": {
+        "Butte": 233.5,
+        "Colusa": 190.9,
+        "Del Norte": 240.2,
+        "Glenn": 305.8,
+        "Humboldt": 336.8,
+        "Lake": 237.9,
+        "Mendocino": 296.2,
+        "Shasta": 476.7,
+        "Tehama": 384.2,
+        "Trinity": 414.5,
+        "Siskiyou": 406.2,
+        "Los Angeles": 139.1,
+        "San Bernardino": 345.1,
+        "Sonoma": 234.8,
+        "Marin": 106.2,
+        "Sutter": 189.4,
+        "Napa": 190.2
+       },
+       "ca": 178.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "strokeStrata",
+   "topic": "cardio",
+   "title": "Stroke deaths",
+   "unit": "rate per 100,000",
+   "period": "2022 to 2024",
+   "higher_is_worse": true,
+   "source": "Centers for Disease Control and Prevention (CDC), National Vital Statistics System",
+   "source_url": "https://data.cdc.gov/resource/y5ii-knwc.json",
+   "note": "Age-adjusted 3-year average death rate for adults ages 35 and older. CDC spatially smooths county rates; the California rate is not smoothed. 'Suppressed' means CDC reports insufficient data.",
+   "dims": [
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 89.0,
+        "Colusa": 80.8,
+        "Del Norte": 82.4,
+        "Glenn": 82.0,
+        "Humboldt": 122.5,
+        "Lake": 71.8,
+        "Mendocino": 67.2,
+        "Shasta": 60.1,
+        "Tehama": 71.6,
+        "Trinity": 50.0,
+        "Siskiyou": 74.0,
+        "Los Angeles": 60.4,
+        "San Bernardino": 80.2,
+        "Sonoma": 81.4,
+        "Marin": 53.3,
+        "Sutter": 104.8,
+        "Napa": 68.9
+       },
+       "ca": 72.4
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 86.4,
+        "Colusa": 76.8,
+        "Del Norte": 87.0,
+        "Glenn": 77.4,
+        "Humboldt": 122.7,
+        "Lake": 70.2,
+        "Mendocino": 67.4,
+        "Shasta": 85.9,
+        "Tehama": 85.3,
+        "Trinity": 61.7,
+        "Siskiyou": 96.6,
+        "Los Angeles": 68.9,
+        "San Bernardino": 88.8,
+        "Sonoma": 82.3,
+        "Marin": 60.8,
+        "Sutter": 103.0,
+        "Napa": 71.9
+       },
+       "ca": 77.0
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian or Alaska Native",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": "suppressed",
+        "Del Norte": 103.3,
+        "Glenn": "suppressed",
+        "Humboldt": 94.9,
+        "Lake": "suppressed",
+        "Mendocino": 97.3,
+        "Shasta": 59.2,
+        "Tehama": 73.0,
+        "Trinity": 87.0,
+        "Siskiyou": 83.5,
+        "Los Angeles": 60.0,
+        "San Bernardino": 62.2,
+        "Sonoma": 73.9,
+        "Marin": "suppressed",
+        "Sutter": 88.3,
+        "Napa": "suppressed"
+       },
+       "ca": 72.8
+      },
+      {
+       "label": "Asian",
+       "county": {
+        "Butte": 113.0,
+        "Colusa": 102.8,
+        "Del Norte": "suppressed",
+        "Glenn": 109.2,
+        "Humboldt": 184.7,
+        "Lake": 81.3,
+        "Mendocino": 63.3,
+        "Shasta": 62.8,
+        "Tehama": 90.5,
+        "Trinity": "suppressed",
+        "Siskiyou": 93.9,
+        "Los Angeles": 53.6,
+        "San Bernardino": 64.8,
+        "Sonoma": 71.7,
+        "Marin": 46.6,
+        "Sutter": 89.9,
+        "Napa": 82.6
+       },
+       "ca": 61.6
+      },
+      {
+       "label": "Black",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": 77.6,
+        "Mendocino": "suppressed",
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 107.2,
+        "San Bernardino": 108.6,
+        "Sonoma": 105.6,
+        "Marin": 68.2,
+        "Sutter": 115.9,
+        "Napa": 134.0
+       },
+       "ca": 113.7
+      },
+      {
+       "label": "Hispanic or Latino",
+       "county": {
+        "Butte": 79.7,
+        "Colusa": 65.0,
+        "Del Norte": 79.9,
+        "Glenn": 74.0,
+        "Humboldt": 64.3,
+        "Lake": 56.9,
+        "Mendocino": 65.7,
+        "Shasta": 43.2,
+        "Tehama": 50.8,
+        "Trinity": 54.3,
+        "Siskiyou": 83.0,
+        "Los Angeles": 62.5,
+        "San Bernardino": 76.2,
+        "Sonoma": 70.4,
+        "Marin": 66.8,
+        "Sutter": 76.9,
+        "Napa": 45.8
+       },
+       "ca": 68.8
+      },
+      {
+       "label": "Native Hawaiian or Other Pacific Islander",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 103.8,
+        "San Bernardino": 106.1,
+        "Sonoma": "suppressed",
+        "Marin": "suppressed",
+        "Sutter": 87.9,
+        "Napa": "suppressed"
+       },
+       "ca": 92.1
+      },
+      {
+       "label": "White",
+       "county": {
+        "Butte": 88.1,
+        "Colusa": 72.4,
+        "Del Norte": 80.9,
+        "Glenn": 84.2,
+        "Humboldt": 125.6,
+        "Lake": 69.0,
+        "Mendocino": 66.4,
+        "Shasta": 73.4,
+        "Tehama": 82.0,
+        "Trinity": 47.8,
+        "Siskiyou": 87.8,
+        "Los Angeles": 63.3,
+        "San Bernardino": 89.5,
+        "Sonoma": 83.9,
+        "Marin": 57.4,
+        "Sutter": 119.5,
+        "Napa": 73.8
+       },
+       "ca": 77.7
+      },
+      {
+       "label": "More than one race",
+       "county": {
+        "Butte": 78.5,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 78.2,
+        "Lake": 78.1,
+        "Mendocino": 93.9,
+        "Shasta": 55.0,
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": 66.8,
+        "Los Angeles": 28.5,
+        "San Bernardino": 56.8,
+        "Sonoma": 89.2,
+        "Marin": 25.8,
+        "Sutter": 68.6,
+        "Napa": 80.0
+       },
+       "ca": 45.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "povStrata",
+   "topic": "medi",
+   "title": "People living below the poverty level",
+   "unit": "percent",
+   "period": "2020 to 2024",
+   "higher_is_worse": true,
+   "source": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates",
+   "source_url": "https://data.census.gov/table/ACSST5Y2024.S1701?g=040XX00US06",
+   "note": "Percent of people below the federal poverty level. Values marked 'Use with caution' have a coefficient of variation above 30 percent, based on the published margin of error.",
+   "dims": [
+    {
+     "name": "Age group",
+     "groups": [
+      {
+       "label": "Under 5",
+       "county": {
+        "Butte": 26.2,
+        "Colusa": 13.0,
+        "Del Norte": 14.6,
+        "Glenn": 29.6,
+        "Humboldt": 19.1,
+        "Lake": 17.8,
+        "Mendocino": 23.6,
+        "Shasta": 18.4,
+        "Tehama": 30.9,
+        "Trinity": 7.6,
+        "Siskiyou": 21.7,
+        "Los Angeles": 16.8,
+        "San Bernardino": 17.7,
+        "Sonoma": 10.0,
+        "Marin": 8.2,
+        "Sutter": 23.3,
+        "Napa": 17.0
+       },
+       "ca": 14.9,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Trinity": true
+       }
+      },
+      {
+       "label": "5 to 17",
+       "county": {
+        "Butte": 19.4,
+        "Colusa": 12.5,
+        "Del Norte": 14.8,
+        "Glenn": 19.3,
+        "Humboldt": 17.0,
+        "Lake": 21.1,
+        "Mendocino": 14.6,
+        "Shasta": 12.4,
+        "Tehama": 17.8,
+        "Trinity": 25.9,
+        "Siskiyou": 20.1,
+        "Los Angeles": 17.9,
+        "San Bernardino": 17.6,
+        "Sonoma": 9.4,
+        "Marin": 10.3,
+        "Sutter": 18.7,
+        "Napa": 8.0
+       },
+       "ca": 15.1
+      },
+      {
+       "label": "18 to 34",
+       "county": {
+        "Butte": 30.3,
+        "Colusa": 8.0,
+        "Del Norte": 13.2,
+        "Glenn": 19.1,
+        "Humboldt": 26.5,
+        "Lake": 18.3,
+        "Mendocino": 18.7,
+        "Shasta": 12.7,
+        "Tehama": 16.5,
+        "Trinity": 26.5,
+        "Siskiyou": 18.3,
+        "Los Angeles": 13.3,
+        "San Bernardino": 12.4,
+        "Sonoma": 9.7,
+        "Marin": 10.9,
+        "Sutter": 13.3,
+        "Napa": 8.9
+       },
+       "ca": 12.8
+      },
+      {
+       "label": "35 to 64",
+       "county": {
+        "Butte": 14.0,
+        "Colusa": 10.1,
+        "Del Norte": 13.4,
+        "Glenn": 13.0,
+        "Humboldt": 17.2,
+        "Lake": 18.8,
+        "Mendocino": 14.9,
+        "Shasta": 14.6,
+        "Tehama": 12.4,
+        "Trinity": 27.3,
+        "Siskiyou": 16.7,
+        "Los Angeles": 11.7,
+        "San Bernardino": 11.3,
+        "Sonoma": 8.3,
+        "Marin": 7.1,
+        "Sutter": 12.4,
+        "Napa": 7.4
+       },
+       "ca": 10.0
+      },
+      {
+       "label": "65 and older",
+       "county": {
+        "Butte": 10.6,
+        "Colusa": 17.3,
+        "Del Norte": 10.2,
+        "Glenn": 8.7,
+        "Humboldt": 13.1,
+        "Lake": 10.2,
+        "Mendocino": 12.4,
+        "Shasta": 11.0,
+        "Tehama": 14.1,
+        "Trinity": 9.0,
+        "Siskiyou": 11.9,
+        "Los Angeles": 14.6,
+        "San Bernardino": 12.5,
+        "Sonoma": 8.7,
+        "Marin": 7.5,
+        "Sutter": 12.1,
+        "Napa": 8.5
+       },
+       "ca": 11.6
+      }
+     ]
+    },
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 20.3,
+        "Colusa": 13.1,
+        "Del Norte": 13.4,
+        "Glenn": 19.4,
+        "Humboldt": 19.5,
+        "Lake": 17.7,
+        "Mendocino": 15.2,
+        "Shasta": 14.5,
+        "Tehama": 16.3,
+        "Trinity": 23.7,
+        "Siskiyou": 16.8,
+        "Los Angeles": 14.9,
+        "San Bernardino": 14.6,
+        "Sonoma": 9.4,
+        "Marin": 8.3,
+        "Sutter": 16.0,
+        "Napa": 8.6
+       },
+       "ca": 13.0
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 18.2,
+        "Colusa": 9.8,
+        "Del Norte": 12.5,
+        "Glenn": 12.7,
+        "Humboldt": 17.8,
+        "Lake": 16.2,
+        "Mendocino": 15.5,
+        "Shasta": 12.0,
+        "Tehama": 14.8,
+        "Trinity": 17.5,
+        "Siskiyou": 16.0,
+        "Los Angeles": 12.6,
+        "San Bernardino": 12.0,
+        "Sonoma": 8.3,
+        "Marin": 8.3,
+        "Sutter": 12.9,
+        "Napa": 8.3
+       },
+       "ca": 11.0
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian and Alaska Native",
+       "county": {
+        "Butte": 23.6,
+        "Colusa": 4.1,
+        "Del Norte": 14.3,
+        "Glenn": 11.5,
+        "Humboldt": 26.1,
+        "Lake": 28.4,
+        "Mendocino": 20.7,
+        "Shasta": 24.1,
+        "Tehama": 11.1,
+        "Trinity": 1.2,
+        "Siskiyou": 18.8,
+        "Los Angeles": 15.3,
+        "San Bernardino": 14.0,
+        "Sonoma": 13.1,
+        "Marin": 15.6,
+        "Sutter": 16.7,
+        "Napa": 30.8
+       },
+       "ca": 15.4,
+       "caution": {
+        "Colusa": true,
+        "Glenn": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "Asian",
+       "county": {
+        "Butte": 31.2,
+        "Colusa": 1.9,
+        "Del Norte": 3.6,
+        "Glenn": 43.0,
+        "Humboldt": 20.0,
+        "Lake": 20.1,
+        "Mendocino": 11.3,
+        "Shasta": 13.9,
+        "Tehama": 2.1,
+        "Trinity": 30.2,
+        "Siskiyou": 24.1,
+        "Los Angeles": 11.5,
+        "San Bernardino": 10.4,
+        "Sonoma": 8.5,
+        "Marin": 6.3,
+        "Sutter": 12.3,
+        "Napa": 7.8
+       },
+       "ca": 9.7,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true
+       }
+      },
+      {
+       "label": "Black or African American",
+       "county": {
+        "Butte": 46.6,
+        "Colusa": 48.7,
+        "Del Norte": 40.8,
+        "Glenn": 0.0,
+        "Humboldt": 19.1,
+        "Lake": 60.3,
+        "Mendocino": 27.3,
+        "Shasta": 34.3,
+        "Tehama": 2.4,
+        "Trinity": 0.0,
+        "Siskiyou": 14.6,
+        "Los Angeles": 20.1,
+        "San Bernardino": 22.5,
+        "Sonoma": 18.5,
+        "Marin": 29.3,
+        "Sutter": 35.9,
+        "Napa": 18.0
+       },
+       "ca": 19.2,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Mendocino": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Sutter": true
+       }
+      },
+      {
+       "label": "Hispanic or Latino (any race)",
+       "county": {
+        "Butte": 26.0,
+        "Colusa": 10.9,
+        "Del Norte": 13.5,
+        "Glenn": 15.2,
+        "Humboldt": 22.9,
+        "Lake": 17.5,
+        "Mendocino": 19.2,
+        "Shasta": 18.6,
+        "Tehama": 18.7,
+        "Trinity": 35.8,
+        "Siskiyou": 15.4,
+        "Los Angeles": 15.5,
+        "San Bernardino": 14.0,
+        "Sonoma": 11.1,
+        "Marin": 15.6,
+        "Sutter": 19.6,
+        "Napa": 10.7
+       },
+       "ca": 14.6,
+       "caution": {
+        "Del Norte": true
+       }
+      },
+      {
+       "label": "Native Hawaiian and Other Pacific Islander",
+       "county": {
+        "Butte": 42.6,
+        "Colusa": 0.0,
+        "Del Norte": 0.0,
+        "Glenn": null,
+        "Humboldt": 12.7,
+        "Lake": 0.0,
+        "Mendocino": 10.3,
+        "Shasta": 47.2,
+        "Tehama": 2.8,
+        "Trinity": 0.0,
+        "Siskiyou": 82.4,
+        "Los Angeles": 11.6,
+        "San Bernardino": 25.4,
+        "Sonoma": 12.1,
+        "Marin": 10.3,
+        "Sutter": 1.3,
+        "Napa": 0.0
+       },
+       "ca": 13.8,
+       "caution": {
+        "Butte": true,
+        "Colusa": true,
+        "Del Norte": true,
+        "Humboldt": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Shasta": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Sonoma": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "White, not Hispanic or Latino",
+       "county": {
+        "Butte": 15.4,
+        "Colusa": 11.1,
+        "Del Norte": 12.3,
+        "Glenn": 15.1,
+        "Humboldt": 17.2,
+        "Lake": 14.8,
+        "Mendocino": 12.5,
+        "Shasta": 11.5,
+        "Tehama": 14.8,
+        "Trinity": 23.0,
+        "Siskiyou": 15.0,
+        "Los Angeles": 10.1,
+        "San Bernardino": 10.0,
+        "Sonoma": 7.5,
+        "Marin": 5.8,
+        "Sutter": 10.4,
+        "Napa": 6.7
+       },
+       "ca": 9.0
+      },
+      {
+       "label": "Some other race",
+       "county": {
+        "Butte": 29.1,
+        "Colusa": 12.3,
+        "Del Norte": 11.7,
+        "Glenn": 17.0,
+        "Humboldt": 27.4,
+        "Lake": 14.6,
+        "Mendocino": 27.3,
+        "Shasta": 24.2,
+        "Tehama": 17.7,
+        "Trinity": 10.9,
+        "Siskiyou": 12.4,
+        "Los Angeles": 16.7,
+        "San Bernardino": 15.0,
+        "Sonoma": 13.6,
+        "Marin": 18.1,
+        "Sutter": 24.4,
+        "Napa": 11.6
+       },
+       "ca": 15.9,
+       "caution": {
+        "Del Norte": true,
+        "Trinity": true,
+        "Siskiyou": true
+       }
+      },
+      {
+       "label": "Two or more races",
+       "county": {
+        "Butte": 21.8,
+        "Colusa": 11.9,
+        "Del Norte": 19.2,
+        "Glenn": 14.8,
+        "Humboldt": 20.7,
+        "Lake": 20.3,
+        "Mendocino": 15.6,
+        "Shasta": 17.1,
+        "Tehama": 15.6,
+        "Trinity": 17.8,
+        "Siskiyou": 21.5,
+        "Los Angeles": 13.3,
+        "San Bernardino": 12.5,
+        "Sonoma": 8.4,
+        "Marin": 10.6,
+        "Sutter": 15.6,
+        "Napa": 7.4
+       },
+       "ca": 12.3,
+       "caution": {
+        "Colusa": true,
+        "Trinity": true
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "uninsStrata",
+   "topic": "medi",
+   "title": "People without health insurance",
+   "unit": "percent",
+   "period": "2020 to 2024",
+   "higher_is_worse": true,
+   "source": "U.S. Census Bureau, American Community Survey (ACS) 5-Year Estimates",
+   "source_url": "https://data.census.gov/table/ACSST5Y2024.S2701?g=040XX00US06",
+   "note": "Percent of the civilian noninstitutionalized population without health insurance. Values marked 'Use with caution' have a coefficient of variation above 30 percent, based on the published margin of error.",
+   "dims": [
+    {
+     "name": "Age group",
+     "groups": [
+      {
+       "label": "Under 19",
+       "county": {
+        "Butte": 3.7,
+        "Colusa": 5.9,
+        "Del Norte": 6.0,
+        "Glenn": 4.6,
+        "Humboldt": 2.1,
+        "Lake": 5.4,
+        "Mendocino": 5.6,
+        "Shasta": 5.1,
+        "Tehama": 4.3,
+        "Trinity": 13.3,
+        "Siskiyou": 4.2,
+        "Los Angeles": 3.4,
+        "San Bernardino": 4.3,
+        "Sonoma": 2.4,
+        "Marin": 1.9,
+        "Sutter": 3.1,
+        "Napa": 4.0
+       },
+       "ca": 3.2,
+       "caution": {
+        "Trinity": true
+       }
+      },
+      {
+       "label": "19 to 64",
+       "county": {
+        "Butte": 9.3,
+        "Colusa": 10.8,
+        "Del Norte": 7.3,
+        "Glenn": 13.0,
+        "Humboldt": 7.4,
+        "Lake": 10.4,
+        "Mendocino": 11.4,
+        "Shasta": 9.4,
+        "Tehama": 9.9,
+        "Trinity": 13.0,
+        "Siskiyou": 9.8,
+        "Los Angeles": 11.5,
+        "San Bernardino": 11.1,
+        "Sonoma": 7.7,
+        "Marin": 6.0,
+        "Sutter": 9.4,
+        "Napa": 8.3
+       },
+       "ca": 9.3
+      },
+      {
+       "label": "65 and older",
+       "county": {
+        "Butte": 0.2,
+        "Colusa": 1.9,
+        "Del Norte": 0.7,
+        "Glenn": 0.6,
+        "Humboldt": 0.1,
+        "Lake": 0.5,
+        "Mendocino": 1.6,
+        "Shasta": 0.2,
+        "Tehama": 0.5,
+        "Trinity": 0.7,
+        "Siskiyou": 0.3,
+        "Los Angeles": 1.6,
+        "San Bernardino": 1.4,
+        "Sonoma": 0.6,
+        "Marin": 0.3,
+        "Sutter": 1.1,
+        "Napa": 0.3
+       },
+       "ca": 1.1,
+       "caution": {
+        "Butte": true,
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Humboldt": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Shasta": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Sonoma": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      }
+     ]
+    },
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 5.6,
+        "Colusa": 7.6,
+        "Del Norte": 4.4,
+        "Glenn": 8.0,
+        "Humboldt": 3.5,
+        "Lake": 5.1,
+        "Mendocino": 5.9,
+        "Shasta": 5.7,
+        "Tehama": 5.1,
+        "Trinity": 7.2,
+        "Siskiyou": 4.8,
+        "Los Angeles": 6.9,
+        "San Bernardino": 7.0,
+        "Sonoma": 4.1,
+        "Marin": 2.9,
+        "Sutter": 5.6,
+        "Napa": 5.0
+       },
+       "ca": 5.6,
+       "caution": {
+        "Trinity": true
+       }
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 7.2,
+        "Colusa": 8.5,
+        "Del Norte": 6.7,
+        "Glenn": 9.0,
+        "Humboldt": 6.2,
+        "Lake": 8.7,
+        "Mendocino": 9.6,
+        "Shasta": 7.2,
+        "Tehama": 8.1,
+        "Trinity": 11.6,
+        "Siskiyou": 7.2,
+        "Los Angeles": 9.6,
+        "San Bernardino": 9.0,
+        "Sonoma": 6.1,
+        "Marin": 4.7,
+        "Sutter": 7.1,
+        "Napa": 6.5
+       },
+       "ca": 7.6
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian and Alaska Native",
+       "county": {
+        "Butte": 12.9,
+        "Colusa": 9.8,
+        "Del Norte": 11.4,
+        "Glenn": 7.1,
+        "Humboldt": 5.5,
+        "Lake": 22.1,
+        "Mendocino": 11.1,
+        "Shasta": 8.8,
+        "Tehama": 8.1,
+        "Trinity": 11.3,
+        "Siskiyou": 5.5,
+        "Los Angeles": 12.1,
+        "San Bernardino": 9.9,
+        "Sonoma": 7.0,
+        "Marin": 6.0,
+        "Sutter": 13.6,
+        "Napa": 9.5
+       },
+       "ca": 11.6,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "Asian",
+       "county": {
+        "Butte": 8.7,
+        "Colusa": 10.1,
+        "Del Norte": 0.4,
+        "Glenn": 8.0,
+        "Humboldt": 5.7,
+        "Lake": 4.9,
+        "Mendocino": 10.1,
+        "Shasta": 6.6,
+        "Tehama": 3.3,
+        "Trinity": 9.2,
+        "Siskiyou": 10.1,
+        "Los Angeles": 4.7,
+        "San Bernardino": 5.1,
+        "Sonoma": 2.5,
+        "Marin": 2.7,
+        "Sutter": 4.2,
+        "Napa": 4.3
+       },
+       "ca": 3.8,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Humboldt": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true
+       }
+      },
+      {
+       "label": "Black or African American",
+       "county": {
+        "Butte": 5.4,
+        "Colusa": 0.0,
+        "Del Norte": 0.0,
+        "Glenn": 0.0,
+        "Humboldt": 2.6,
+        "Lake": 2.1,
+        "Mendocino": 4.8,
+        "Shasta": 8.8,
+        "Tehama": 0.0,
+        "Trinity": 0.0,
+        "Siskiyou": 5.3,
+        "Los Angeles": 6.1,
+        "San Bernardino": 5.8,
+        "Sonoma": 5.3,
+        "Marin": 3.7,
+        "Sutter": 4.0,
+        "Napa": 5.8
+       },
+       "ca": 5.5,
+       "caution": {
+        "Butte": true,
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Humboldt": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Shasta": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Sonoma": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "Hispanic or Latino (any race)",
+       "county": {
+        "Butte": 10.5,
+        "Colusa": 10.4,
+        "Del Norte": 5.1,
+        "Glenn": 12.0,
+        "Humboldt": 6.3,
+        "Lake": 11.8,
+        "Mendocino": 11.4,
+        "Shasta": 10.0,
+        "Tehama": 11.5,
+        "Trinity": 12.6,
+        "Siskiyou": 12.4,
+        "Los Angeles": 12.1,
+        "San Bernardino": 10.4,
+        "Sonoma": 10.2,
+        "Marin": 11.1,
+        "Sutter": 10.3,
+        "Napa": 8.9
+       },
+       "ca": 10.8,
+       "caution": {
+        "Trinity": true
+       }
+      },
+      {
+       "label": "Native Hawaiian and Other Pacific Islander",
+       "county": {
+        "Butte": 11.2,
+        "Colusa": 0.0,
+        "Del Norte": 0.0,
+        "Glenn": null,
+        "Humboldt": 7.3,
+        "Lake": 31.7,
+        "Mendocino": 1.7,
+        "Shasta": 8.4,
+        "Tehama": 0.0,
+        "Trinity": 0.0,
+        "Siskiyou": 0.6,
+        "Los Angeles": 5.2,
+        "San Bernardino": 10.6,
+        "Sonoma": 8.1,
+        "Marin": 10.1,
+        "Sutter": 17.5,
+        "Napa": 3.5
+       },
+       "ca": 7.1,
+       "caution": {
+        "Butte": true,
+        "Colusa": true,
+        "Del Norte": true,
+        "Humboldt": true,
+        "Lake": true,
+        "Mendocino": true,
+        "Shasta": true,
+        "Tehama": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Sonoma": true,
+        "Marin": true,
+        "Sutter": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "White, not Hispanic or Latino",
+       "county": {
+        "Butte": 4.8,
+        "Colusa": 3.8,
+        "Del Norte": 4.8,
+        "Glenn": 5.7,
+        "Humboldt": 4.3,
+        "Lake": 4.9,
+        "Mendocino": 5.4,
+        "Shasta": 5.8,
+        "Tehama": 4.4,
+        "Trinity": 9.0,
+        "Siskiyou": 4.7,
+        "Los Angeles": 3.8,
+        "San Bernardino": 4.6,
+        "Sonoma": 2.7,
+        "Marin": 1.8,
+        "Sutter": 4.0,
+        "Napa": 3.8
+       },
+       "ca": 3.3
+      },
+      {
+       "label": "Some other race",
+       "county": {
+        "Butte": 13.4,
+        "Colusa": 13.0,
+        "Del Norte": 6.7,
+        "Glenn": 9.8,
+        "Humboldt": 8.5,
+        "Lake": 13.4,
+        "Mendocino": 16.8,
+        "Shasta": 14.3,
+        "Tehama": 10.9,
+        "Trinity": 14.2,
+        "Siskiyou": 12.1,
+        "Los Angeles": 14.1,
+        "San Bernardino": 12.1,
+        "Sonoma": 14.4,
+        "Marin": 12.7,
+        "Sutter": 11.3,
+        "Napa": 10.5
+       },
+       "ca": 12.7,
+       "caution": {
+        "Del Norte": true,
+        "Trinity": true
+       }
+      },
+      {
+       "label": "Two or more races",
+       "county": {
+        "Butte": 8.5,
+        "Colusa": 7.8,
+        "Del Norte": 6.7,
+        "Glenn": 9.8,
+        "Humboldt": 6.2,
+        "Lake": 7.0,
+        "Mendocino": 9.3,
+        "Shasta": 7.6,
+        "Tehama": 11.4,
+        "Trinity": 10.1,
+        "Siskiyou": 11.0,
+        "Los Angeles": 9.2,
+        "San Bernardino": 8.4,
+        "Sonoma": 5.7,
+        "Marin": 6.6,
+        "Sutter": 8.6,
+        "Napa": 8.2
+       },
+       "ca": 8.2,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Glenn": true,
+        "Trinity": true
+       }
+      }
+     ]
+    },
+    {
+     "name": "Disability status",
+     "groups": [
+      {
+       "label": "With a disability",
+       "county": {
+        "Butte": 5.1,
+        "Colusa": 1.2,
+        "Del Norte": 3.9,
+        "Glenn": 4.8,
+        "Humboldt": 3.5,
+        "Lake": 2.3,
+        "Mendocino": 6.0,
+        "Shasta": 2.8,
+        "Tehama": 2.8,
+        "Trinity": 2.0,
+        "Siskiyou": 3.3,
+        "Los Angeles": 4.7,
+        "San Bernardino": 4.4,
+        "Sonoma": 3.1,
+        "Marin": 1.6,
+        "Sutter": 3.8,
+        "Napa": 3.3
+       },
+       "ca": 3.9,
+       "caution": {
+        "Colusa": true,
+        "Del Norte": true,
+        "Trinity": true,
+        "Siskiyou": true,
+        "Napa": true
+       }
+      },
+      {
+       "label": "No disability",
+       "county": {
+        "Butte": 6.7,
+        "Colusa": 9.0,
+        "Del Norte": 6.0,
+        "Glenn": 9.1,
+        "Humboldt": 5.2,
+        "Lake": 8.1,
+        "Mendocino": 8.1,
+        "Shasta": 7.3,
+        "Tehama": 7.4,
+        "Trinity": 10.8,
+        "Siskiyou": 6.5,
+        "Los Angeles": 8.7,
+        "San Bernardino": 8.5,
+        "Sonoma": 5.4,
+        "Marin": 4.0,
+        "Sutter": 6.8,
+        "Napa": 6.1
+       },
+       "ca": 6.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "absStrata",
+   "topic": "youth",
+   "title": "Chronic absenteeism",
+   "unit": "percent",
+   "period": "2025-26",
+   "higher_is_worse": true,
+   "source": "California Department of Education (CDE)",
+   "source_url": "https://www.cde.ca.gov/ds/ad/filesabd.asp",
+   "note": "Percent of students absent 10 percent or more of the days they were enrolled. 'Suppressed' means CDE withheld a small number to protect student privacy.",
+   "dims": [
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian or Alaska Native",
+       "county": {
+        "Butte": 36.4,
+        "Colusa": 25.9,
+        "Del Norte": 33.8,
+        "Glenn": 34.3,
+        "Humboldt": 52.5,
+        "Lake": 56.9,
+        "Mendocino": 40.8,
+        "Shasta": 23.6,
+        "Tehama": 22.6,
+        "Trinity": 24.7,
+        "Siskiyou": 38.8,
+        "Los Angeles": 26.6,
+        "San Bernardino": 26.7,
+        "Sonoma": 33.5,
+        "Marin": 23.3,
+        "Sutter": 19.3,
+        "Napa": 37.0
+       },
+       "ca": 30.5
+      },
+      {
+       "label": "Asian",
+       "county": {
+        "Butte": 6.6,
+        "Colusa": 34.1,
+        "Del Norte": 12.6,
+        "Glenn": 6.5,
+        "Humboldt": 11.8,
+        "Lake": 15.5,
+        "Mendocino": 11.4,
+        "Shasta": 9.4,
+        "Tehama": 11.1,
+        "Trinity": 3.4,
+        "Siskiyou": 25.6,
+        "Los Angeles": 5.6,
+        "San Bernardino": 7.2,
+        "Sonoma": 12.4,
+        "Marin": 8.6,
+        "Sutter": 8.9,
+        "Napa": 14.4
+       },
+       "ca": 8.2
+      },
+      {
+       "label": "African American",
+       "county": {
+        "Butte": 36.8,
+        "Colusa": 23.3,
+        "Del Norte": 30.0,
+        "Glenn": 19.4,
+        "Humboldt": 28.3,
+        "Lake": 44.8,
+        "Mendocino": 25.0,
+        "Shasta": 22.9,
+        "Tehama": 12.9,
+        "Trinity": 33.3,
+        "Siskiyou": 33.3,
+        "Los Angeles": 31.0,
+        "San Bernardino": 31.4,
+        "Sonoma": 19.3,
+        "Marin": 28.7,
+        "Sutter": 21.8,
+        "Napa": 24.2
+       },
+       "ca": 30.5
+      },
+      {
+       "label": "Filipino",
+       "county": {
+        "Butte": 8.3,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 2.6,
+        "Lake": 19.4,
+        "Mendocino": 8.6,
+        "Shasta": 11.3,
+        "Tehama": 0.0,
+        "Trinity": "suppressed",
+        "Siskiyou": 8.3,
+        "Los Angeles": 8.2,
+        "San Bernardino": 7.9,
+        "Sonoma": 14.0,
+        "Marin": 8.0,
+        "Sutter": 4.7,
+        "Napa": 10.2
+       },
+       "ca": 9.1
+      },
+      {
+       "label": "Hispanic or Latino",
+       "county": {
+        "Butte": 20.3,
+        "Colusa": 14.5,
+        "Del Norte": 17.8,
+        "Glenn": 13.8,
+        "Humboldt": 21.8,
+        "Lake": 34.8,
+        "Mendocino": 25.5,
+        "Shasta": 19.1,
+        "Tehama": 13.0,
+        "Trinity": 37.2,
+        "Siskiyou": 24.6,
+        "Los Angeles": 21.7,
+        "San Bernardino": 22.1,
+        "Sonoma": 20.8,
+        "Marin": 13.6,
+        "Sutter": 15.3,
+        "Napa": 19.0
+       },
+       "ca": 21.1
+      },
+      {
+       "label": "Pacific Islander",
+       "county": {
+        "Butte": 25.0,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 28.1,
+        "Lake": 58.8,
+        "Mendocino": "suppressed",
+        "Shasta": 19.5,
+        "Tehama": 27.3,
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 31.1,
+        "San Bernardino": 32.9,
+        "Sonoma": 25.8,
+        "Marin": 22.9,
+        "Sutter": 20.7,
+        "Napa": 31.1
+       },
+       "ca": 31.3
+      },
+      {
+       "label": "White",
+       "county": {
+        "Butte": 17.8,
+        "Colusa": 10.4,
+        "Del Norte": 18.7,
+        "Glenn": 11.2,
+        "Humboldt": 18.1,
+        "Lake": 31.2,
+        "Mendocino": 26.0,
+        "Shasta": 15.4,
+        "Tehama": 14.9,
+        "Trinity": 25.1,
+        "Siskiyou": 20.2,
+        "Los Angeles": 13.4,
+        "San Bernardino": 17.6,
+        "Sonoma": 14.1,
+        "Marin": 8.3,
+        "Sutter": 9.6,
+        "Napa": 13.4
+       },
+       "ca": 13.7
+      },
+      {
+       "label": "Two or more races",
+       "county": {
+        "Butte": 24.7,
+        "Colusa": 16.1,
+        "Del Norte": 25.8,
+        "Glenn": 14.8,
+        "Humboldt": 23.4,
+        "Lake": 36.8,
+        "Mendocino": 27.4,
+        "Shasta": 15.6,
+        "Tehama": 17.1,
+        "Trinity": 26.2,
+        "Siskiyou": 28.5,
+        "Los Angeles": 13.6,
+        "San Bernardino": 21.1,
+        "Sonoma": 16.7,
+        "Marin": 9.2,
+        "Sutter": 11.6,
+        "Napa": 20.0
+       },
+       "ca": 15.5
+      }
+     ]
+    },
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 18.2,
+        "Colusa": 14.2,
+        "Del Norte": 20.7,
+        "Glenn": 13.2,
+        "Humboldt": 22.4,
+        "Lake": 33.5,
+        "Mendocino": 26.8,
+        "Shasta": 15.9,
+        "Tehama": 13.7,
+        "Trinity": 25.0,
+        "Siskiyou": 22.4,
+        "Los Angeles": 19.5,
+        "San Bernardino": 21.2,
+        "Sonoma": 18.0,
+        "Marin": 10.6,
+        "Sutter": 11.9,
+        "Napa": 18.0
+       },
+       "ca": 18.3
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 19.7,
+        "Colusa": 14.4,
+        "Del Norte": 21.4,
+        "Glenn": 12.9,
+        "Humboldt": 22.7,
+        "Lake": 35.1,
+        "Mendocino": 27.2,
+        "Shasta": 16.8,
+        "Tehama": 14.7,
+        "Trinity": 24.8,
+        "Siskiyou": 24.2,
+        "Los Angeles": 19.2,
+        "San Bernardino": 21.5,
+        "Sonoma": 17.6,
+        "Marin": 10.8,
+        "Sutter": 12.4,
+        "Napa": 16.4
+       },
+       "ca": 18.3
+      },
+      {
+       "label": "Nonbinary",
+       "county": {
+        "Butte": 40.7,
+        "Colusa": null,
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 30.4,
+        "Lake": 63.2,
+        "Mendocino": 58.6,
+        "Shasta": 18.2,
+        "Tehama": 15.4,
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 31.6,
+        "San Bernardino": 35.7,
+        "Sonoma": 31.0,
+        "Marin": 23.9,
+        "Sutter": 18.2,
+        "Napa": 38.1
+       },
+       "ca": 31.1
+      }
+     ]
+    },
+    {
+     "name": "Student group",
+     "groups": [
+      {
+       "label": "Socioeconomically disadvantaged",
+       "county": {
+        "Butte": 24.9,
+        "Colusa": 15.7,
+        "Del Norte": 26.9,
+        "Glenn": 15.2,
+        "Humboldt": 27.7,
+        "Lake": 38.4,
+        "Mendocino": 29.4,
+        "Shasta": 21.3,
+        "Tehama": 16.2,
+        "Trinity": 29.9,
+        "Siskiyou": 27.7,
+        "Los Angeles": 23.1,
+        "San Bernardino": 24.6,
+        "Sonoma": 22.7,
+        "Marin": 16.0,
+        "Sutter": 15.9,
+        "Napa": 20.8
+       },
+       "ca": 22.9
+      },
+      {
+       "label": "English learners",
+       "county": {
+        "Butte": 14.7,
+        "Colusa": 16.5,
+        "Del Norte": 16.1,
+        "Glenn": 10.8,
+        "Humboldt": 18.4,
+        "Lake": 33.1,
+        "Mendocino": 21.6,
+        "Shasta": 18.3,
+        "Tehama": 10.7,
+        "Trinity": 10.9,
+        "Siskiyou": 15.3,
+        "Los Angeles": 21.1,
+        "San Bernardino": 21.4,
+        "Sonoma": 21.0,
+        "Marin": 12.5,
+        "Sutter": 13.6,
+        "Napa": 19.8
+       },
+       "ca": 20.6
+      },
+      {
+       "label": "Students with disabilities",
+       "county": {
+        "Butte": 28.6,
+        "Colusa": 20.4,
+        "Del Norte": 27.0,
+        "Glenn": 21.1,
+        "Humboldt": 30.4,
+        "Lake": 41.3,
+        "Mendocino": 34.9,
+        "Shasta": 24.9,
+        "Tehama": 21.7,
+        "Trinity": 28.6,
+        "Siskiyou": 31.5,
+        "Los Angeles": 27.1,
+        "San Bernardino": 28.9,
+        "Sonoma": 26.6,
+        "Marin": 18.5,
+        "Sutter": 20.6,
+        "Napa": 25.2
+       },
+       "ca": 26.6
+      },
+      {
+       "label": "Foster youth",
+       "county": {
+        "Butte": 32.7,
+        "Colusa": 33.3,
+        "Del Norte": 43.9,
+        "Glenn": 25.8,
+        "Humboldt": 51.8,
+        "Lake": 47.2,
+        "Mendocino": 40.3,
+        "Shasta": 28.0,
+        "Tehama": 22.2,
+        "Trinity": 51.7,
+        "Siskiyou": 31.6,
+        "Los Angeles": 37.6,
+        "San Bernardino": 32.5,
+        "Sonoma": 41.2,
+        "Marin": 25.6,
+        "Sutter": 30.5,
+        "Napa": 31.3
+       },
+       "ca": 37.0
+      },
+      {
+       "label": "Students experiencing homelessness",
+       "county": {
+        "Butte": 44.3,
+        "Colusa": 25.9,
+        "Del Norte": 44.7,
+        "Glenn": 31.0,
+        "Humboldt": 54.3,
+        "Lake": 53.2,
+        "Mendocino": 40.6,
+        "Shasta": 37.2,
+        "Tehama": 30.8,
+        "Trinity": 39.9,
+        "Siskiyou": 51.0,
+        "Los Angeles": 35.1,
+        "San Bernardino": 35.6,
+        "Sonoma": 35.5,
+        "Marin": 17.2,
+        "Sutter": 31.2,
+        "Napa": 31.8
+       },
+       "ca": 33.9
+      },
+      {
+       "label": "Migrant students",
+       "county": {
+        "Butte": 17.4,
+        "Colusa": 20.5,
+        "Del Norte": null,
+        "Glenn": 11.8,
+        "Humboldt": 36.4,
+        "Lake": 32.8,
+        "Mendocino": 18.9,
+        "Shasta": 53.3,
+        "Tehama": 15.1,
+        "Trinity": null,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 16.5,
+        "San Bernardino": 33.9,
+        "Sonoma": 17.9,
+        "Marin": "suppressed",
+        "Sutter": 14.0,
+        "Napa": 16.8
+       },
+       "ca": 17.3
+      }
+     ]
+    },
+    {
+     "name": "Grade level",
+     "groups": [
+      {
+       "label": "Transitional kindergarten to grade 8",
+       "county": {
+        "Butte": 16.7,
+        "Colusa": 13.0,
+        "Del Norte": 17.8,
+        "Glenn": 9.3,
+        "Humboldt": 18.5,
+        "Lake": 31.2,
+        "Mendocino": 23.3,
+        "Shasta": 13.3,
+        "Tehama": 11.3,
+        "Trinity": 11.2,
+        "Siskiyou": 20.3,
+        "Los Angeles": 16.1,
+        "San Bernardino": 18.4,
+        "Sonoma": 14.5,
+        "Marin": 7.8,
+        "Sutter": 10.4,
+        "Napa": 15.8
+       },
+       "ca": 15.3
+      },
+      {
+       "label": "Grades 9 to 12",
+       "county": {
+        "Butte": 23.2,
+        "Colusa": 15.6,
+        "Del Norte": 27.0,
+        "Glenn": 20.4,
+        "Humboldt": 31.3,
+        "Lake": 39.6,
+        "Mendocino": 33.2,
+        "Shasta": 22.1,
+        "Tehama": 19.2,
+        "Trinity": 48.0,
+        "Siskiyou": 28.0,
+        "Los Angeles": 24.3,
+        "San Bernardino": 25.9,
+        "Sonoma": 24.1,
+        "Marin": 16.4,
+        "Sutter": 15.2,
+        "Napa": 18.2
+       },
+       "ca": 22.9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "asthmaStrata",
+   "topic": "youth",
+   "title": "Asthma emergency department visits",
+   "unit": "rate per 10,000",
+   "period": "2023",
+   "higher_is_worse": true,
+   "source": "California Department of Public Health (CDPH), California Breathing Asthma Program",
+   "source_url": "https://data.chhs.ca.gov/dataset/asthma-emergency-department-visit-rates/resource/94d84508-8046-40a7-b8d9-0ed73b13b697",
+   "note": "Age-adjusted emergency department visits with a primary diagnosis of asthma per 10,000 residents. 'Suppressed' means the publisher withheld the value; blank values are statistically unstable.",
+   "dims": [
+    {
+     "name": "Age group",
+     "groups": [
+      {
+       "label": "0 to 4",
+       "county": {
+        "Butte": 40.4,
+        "Colusa": "suppressed",
+        "Del Norte": 106.9,
+        "Glenn": "suppressed",
+        "Humboldt": 52.2,
+        "Lake": 58.1,
+        "Mendocino": 65.6,
+        "Shasta": 54.8,
+        "Tehama": 65.5,
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 80.9,
+        "San Bernardino": 65.8,
+        "Sonoma": 88.5,
+        "Marin": 99.7,
+        "Sutter": 49.9,
+        "Napa": 80.8
+       },
+       "ca": 77.3
+      },
+      {
+       "label": "5 to 17",
+       "county": {
+        "Butte": 26.2,
+        "Colusa": 70.2,
+        "Del Norte": 59.2,
+        "Glenn": 37.3,
+        "Humboldt": 38.8,
+        "Lake": 79.2,
+        "Mendocino": 60.2,
+        "Shasta": 30.3,
+        "Tehama": 61.8,
+        "Trinity": null,
+        "Siskiyou": 40.4,
+        "Los Angeles": 58.9,
+        "San Bernardino": 59.0,
+        "Sonoma": 41.7,
+        "Marin": 30.9,
+        "Sutter": 32.2,
+        "Napa": 42.1
+       },
+       "ca": 52.8
+      },
+      {
+       "label": "18 to 64",
+       "county": {
+        "Butte": 25.4,
+        "Colusa": 24.9,
+        "Del Norte": 73.3,
+        "Glenn": 32.1,
+        "Humboldt": 45.7,
+        "Lake": 59.6,
+        "Mendocino": 48.7,
+        "Shasta": 33.8,
+        "Tehama": 37.2,
+        "Trinity": 37.1,
+        "Siskiyou": 32.7,
+        "Los Angeles": 32.6,
+        "San Bernardino": 39.0,
+        "Sonoma": 26.8,
+        "Marin": 18.0,
+        "Sutter": 27.0,
+        "Napa": 19.4
+       },
+       "ca": 30.7
+      },
+      {
+       "label": "65 and older",
+       "county": {
+        "Butte": 11.3,
+        "Colusa": "suppressed",
+        "Del Norte": 23.9,
+        "Glenn": 31.7,
+        "Humboldt": 11.5,
+        "Lake": 21.1,
+        "Mendocino": 20.6,
+        "Shasta": 14.4,
+        "Tehama": 10.4,
+        "Trinity": "suppressed",
+        "Siskiyou": 23.3,
+        "Los Angeles": 17.4,
+        "San Bernardino": 17.8,
+        "Sonoma": 16.1,
+        "Marin": 10.2,
+        "Sutter": 14.0,
+        "Napa": 17.0
+       },
+       "ca": 16.8
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "American Indian or Alaska Native",
+       "county": {
+        "Butte": 57.0,
+        "Colusa": 0.0,
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 57.1,
+        "Lake": null,
+        "Mendocino": 37.2,
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 24.0,
+        "San Bernardino": 23.4,
+        "Sonoma": "suppressed",
+        "Marin": 0.0,
+        "Sutter": 0.0,
+        "Napa": 0.0
+       },
+       "ca": 26.6
+      },
+      {
+       "label": "Asian or Pacific Islander",
+       "county": {
+        "Butte": 14.9,
+        "Colusa": 0.0,
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": 29.9,
+        "Tehama": "suppressed",
+        "Trinity": 0.0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 14.1,
+        "San Bernardino": 16.0,
+        "Sonoma": 21.7,
+        "Marin": 22.7,
+        "Sutter": 17.8,
+        "Napa": 24.2
+       },
+       "ca": 20.0
+      },
+      {
+       "label": "Black",
+       "county": {
+        "Butte": 160.2,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 141.0,
+        "Lake": 155.9,
+        "Mendocino": "suppressed",
+        "Shasta": 99.7,
+        "Tehama": null,
+        "Trinity": "suppressed",
+        "Siskiyou": null,
+        "Los Angeles": 116.1,
+        "San Bernardino": 98.1,
+        "Sonoma": 114.0,
+        "Marin": 99.6,
+        "Sutter": 64.8,
+        "Napa": 119.7
+       },
+       "ca": 114.7
+      },
+      {
+       "label": "Hispanic",
+       "county": {
+        "Butte": 26.0,
+        "Colusa": 30.4,
+        "Del Norte": 52.2,
+        "Glenn": 28.5,
+        "Humboldt": 46.5,
+        "Lake": 62.5,
+        "Mendocino": 42.6,
+        "Shasta": 29.0,
+        "Tehama": 44.7,
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 39.5,
+        "San Bernardino": 38.6,
+        "Sonoma": 40.6,
+        "Marin": 30.6,
+        "Sutter": 33.6,
+        "Napa": 28.6
+       },
+       "ca": 38.6
+      },
+      {
+       "label": "Multiple races",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": 0.0,
+        "Del Norte": "suppressed",
+        "Glenn": 0.0,
+        "Humboldt": 29.4,
+        "Lake": "suppressed",
+        "Mendocino": 0.0,
+        "Shasta": "suppressed",
+        "Tehama": 0.0,
+        "Trinity": 0.0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 20.9,
+        "San Bernardino": 50.2,
+        "Sonoma": 14.0,
+        "Marin": 23.4,
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+       },
+       "ca": 19.1
+      },
+      {
+       "label": "Native Hawaiian or Pacific Islander",
+       "county": {
+        "Butte": "suppressed",
+        "Colusa": 0.0,
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 0.0,
+        "Lake": "suppressed",
+        "Mendocino": 0.0,
+        "Shasta": "suppressed",
+        "Tehama": 0.0,
+        "Trinity": 0.0,
+        "Siskiyou": 0.0,
+        "Los Angeles": 70.4,
+        "San Bernardino": 46.8,
+        "Sonoma": "suppressed",
+        "Marin": "suppressed",
+        "Sutter": 0.0,
+        "Napa": "suppressed"
+       },
+       "ca": 81.1
+      },
+      {
+       "label": "White",
+       "county": {
+        "Butte": 20.2,
+        "Colusa": 38.9,
+        "Del Norte": 81.4,
+        "Glenn": 26.9,
+        "Humboldt": 34.6,
+        "Lake": 55.1,
+        "Mendocino": 50.9,
+        "Shasta": 30.3,
+        "Tehama": 34.4,
+        "Trinity": 35.0,
+        "Siskiyou": 33.4,
+        "Los Angeles": 20.0,
+        "San Bernardino": 27.7,
+        "Sonoma": 23.9,
+        "Marin": 15.7,
+        "Sutter": 25.8,
+        "Napa": 20.1
+       },
+       "ca": 22.6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smhsStrata",
+   "topic": "youth",
+   "unit": "count",
+   "period": "FY 2022-23",
+   "higher_is_worse": null,
+   "title": "Children and youth receiving specialty mental health services",
+   "source": "Department of Health Care Services (DHCS), Behavioral Health Program Performance Data",
+   "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c",
+   "note": "Number of Medi-Cal members ages 0 to 20 with 1 or more specialty mental health services (SMHS) in the fiscal year. DHCS publishes counts, so there is no California comparison. 'Suppressed' means DHCS withheld a small number to protect privacy.",
+   "dims": [
+    {
+     "name": "Age group",
+     "groups": [
+      {
+       "label": "0 to 2",
+       "county": {
+        "Butte": 56.0,
+        "Colusa": 0.0,
+        "Del Norte": 0.0,
+        "Glenn": 0.0,
+        "Humboldt": "suppressed",
+        "Lake": 0.0,
+        "Mendocino": 0.0,
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 3154.0,
+        "San Bernardino": 797.0,
+        "Sonoma": 16.0,
+        "Marin": "suppressed",
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+       }
+      },
+      {
+       "label": "3 to 5",
+       "county": {
+        "Butte": 129.0,
+        "Colusa": "suppressed",
+        "Del Norte": 12.0,
+        "Glenn": 27.0,
+        "Humboldt": "suppressed",
+        "Lake": 13.0,
+        "Mendocino": 46.0,
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 5943.0,
+        "San Bernardino": 1173.0,
+        "Sonoma": 56.0,
+        "Marin": "suppressed",
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+       }
+      },
+      {
+       "label": "6 to 11",
+       "county": {
+        "Butte": 716.0,
+        "Colusa": 76.0,
+        "Del Norte": 97.0,
+        "Glenn": 148.0,
+        "Humboldt": 449.0,
+        "Lake": 125.0,
+        "Mendocino": 311.0,
+        "Shasta": 360.0,
+        "Tehama": 71.0,
+        "Trinity": 32.0,
+        "Siskiyou": 69.0,
+        "Los Angeles": 25070.0,
+        "San Bernardino": 4462.0,
+        "Sonoma": 232.0,
+        "Marin": 85.0,
+        "Sutter": 157.0,
+        "Napa": 99.0
+       }
+      },
+      {
+       "label": "12 to 17",
+       "county": {
+        "Butte": 1129.0,
+        "Colusa": 126.0,
+        "Del Norte": 169.0,
+        "Glenn": 275.0,
+        "Humboldt": 652.0,
+        "Lake": 268.0,
+        "Mendocino": 502.0,
+        "Shasta": 597.0,
+        "Tehama": 193.0,
+        "Trinity": 55.0,
+        "Siskiyou": 138.0,
+        "Los Angeles": 39252.0,
+        "San Bernardino": 7029.0,
+        "Sonoma": 705.0,
+        "Marin": 252.0,
+        "Sutter": 333.0,
+        "Napa": 298.0
+       }
+      },
+      {
+       "label": "18 to 20",
+       "county": {
+        "Butte": 341.0,
+        "Colusa": "suppressed",
+        "Del Norte": 57.0,
+        "Glenn": 68.0,
+        "Humboldt": 218.0,
+        "Lake": 75.0,
+        "Mendocino": 145.0,
+        "Shasta": 151.0,
+        "Tehama": 70.0,
+        "Trinity": "suppressed",
+        "Siskiyou": 40.0,
+        "Los Angeles": 11275.0,
+        "San Bernardino": 1732.0,
+        "Sonoma": 212.0,
+        "Marin": 93.0,
+        "Sutter": 96.0,
+        "Napa": 90.0
+       }
+      }
+     ]
+    },
+    {
+     "name": "Race and ethnicity",
+     "groups": [
+      {
+       "label": "Alaska Native or American Indian",
+       "county": {
+        "Butte": 30.0,
+        "Colusa": 0.0,
+        "Del Norte": 28.0,
+        "Glenn": "suppressed",
+        "Humboldt": 103.0,
+        "Lake": 16.0,
+        "Mendocino": 67.0,
+        "Shasta": 27.0,
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": 15.0,
+        "Los Angeles": 140.0,
+        "San Bernardino": 30.0,
+        "Sonoma": 20.0,
+        "Marin": "suppressed",
+        "Sutter": "suppressed",
+        "Napa": 0.0
+       }
+      },
+      {
+       "label": "Asian or Pacific Islander",
+       "county": {
+        "Butte": 26.0,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": 0.0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 2278.0,
+        "San Bernardino": 171.0,
+        "Sonoma": 17.0,
+        "Marin": "suppressed",
+        "Sutter": 17.0,
+        "Napa": "suppressed"
+       }
+      },
+      {
+       "label": "Black",
+       "county": {
+        "Butte": 76.0,
+        "Colusa": "suppressed",
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": 25.0,
+        "Lake": 13.0,
+        "Mendocino": 12.0,
+        "Shasta": 32.0,
+        "Tehama": "suppressed",
+        "Trinity": 0.0,
+        "Siskiyou": "suppressed",
+        "Los Angeles": 10060.0,
+        "San Bernardino": 2077.0,
+        "Sonoma": 40.0,
+        "Marin": 41.0,
+        "Sutter": 13.0,
+        "Napa": "suppressed"
+       }
+      },
+      {
+       "label": "Hispanic",
+       "county": {
+        "Butte": 520.0,
+        "Colusa": 170.0,
+        "Del Norte": 41.0,
+        "Glenn": 273.0,
+        "Humboldt": 219.0,
+        "Lake": 99.0,
+        "Mendocino": 332.0,
+        "Shasta": 149.0,
+        "Tehama": 82.0,
+        "Trinity": "suppressed",
+        "Siskiyou": 50.0,
+        "Los Angeles": 61307.0,
+        "San Bernardino": 8330.0,
+        "Sonoma": 530.0,
+        "Marin": 261.0,
+        "Sutter": 250.0,
+        "Napa": 357.0
+       }
+      },
+      {
+       "label": "White",
+       "county": {
+        "Butte": 1388.0,
+        "Colusa": 51.0,
+        "Del Norte": 217.0,
+        "Glenn": 190.0,
+        "Humboldt": 852.0,
+        "Lake": 314.0,
+        "Mendocino": 485.0,
+        "Shasta": 810.0,
+        "Tehama": 192.0,
+        "Trinity": 86.0,
+        "Siskiyou": 183.0,
+        "Los Angeles": 5859.0,
+        "San Bernardino": 2714.0,
+        "Sonoma": 419.0,
+        "Marin": 104.0,
+        "Sutter": 274.0,
+        "Napa": 129.0
+       }
+      },
+      {
+       "label": "Other",
+       "county": {
+        "Butte": 20.0,
+        "Colusa": 0.0,
+        "Del Norte": "suppressed",
+        "Glenn": "suppressed",
+        "Humboldt": "suppressed",
+        "Lake": "suppressed",
+        "Mendocino": "suppressed",
+        "Shasta": "suppressed",
+        "Tehama": "suppressed",
+        "Trinity": "suppressed",
+        "Siskiyou": "suppressed",
+        "Los Angeles": 1090.0,
+        "San Bernardino": 80.0,
+        "Sonoma": 51.0,
+        "Marin": "suppressed",
+        "Sutter": "suppressed",
+        "Napa": "suppressed"
+       }
+      }
+     ]
+    },
+    {
+     "name": "Sex",
+     "groups": [
+      {
+       "label": "Female",
+       "county": {
+        "Butte": 1327.0,
+        "Colusa": 133.0,
+        "Del Norte": 180.0,
+        "Glenn": 286.0,
+        "Humboldt": 767.0,
+        "Lake": 246.0,
+        "Mendocino": 540.0,
+        "Shasta": 614.0,
+        "Tehama": 190.0,
+        "Trinity": 58.0,
+        "Siskiyou": 145.0,
+        "Los Angeles": 45114.0,
+        "San Bernardino": 7584.0,
+        "Sonoma": 687.0,
+        "Marin": 240.0,
+        "Sutter": 333.0,
+        "Napa": 265.0
+       }
+      },
+      {
+       "label": "Male",
+       "county": {
+        "Butte": 1044.0,
+        "Colusa": 113.0,
+        "Del Norte": 155.0,
+        "Glenn": 232.0,
+        "Humboldt": 643.0,
+        "Lake": 235.0,
+        "Mendocino": 464.0,
+        "Shasta": 590.0,
+        "Tehama": 157.0,
+        "Trinity": 51.0,
+        "Siskiyou": 131.0,
+        "Los Angeles": 39580.0,
+        "San Bernardino": 7609.0,
+        "Sonoma": 534.0,
+        "Marin": 205.0,
+        "Sutter": 279.0,
+        "Napa": 243.0
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

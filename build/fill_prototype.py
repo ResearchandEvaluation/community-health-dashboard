@@ -7,9 +7,10 @@ ind = open(os.path.join(HERE, "inddata.json")).read()
 tab = json.load(open(os.path.join(ROOT, "data", "out", "ecm_tab.json")))
 res = json.load(open(os.path.join(ROOT, "data", "manual", "resources.json"))); res.pop("_about", None)
 act = json.load(open(os.path.join(ROOT, "data", "manual", "actions.json"))); act.pop("_about", None)
+strata = json.load(open(os.path.join(ROOT, "data", "out", "strata.json")))
 mcp = json.load(open(os.path.join(ROOT, "data", "out", "mcp_plans.json")))
 J = lambda o: json.dumps(o, separators=(",", ":"))
-blobs = {"INDD": ind, "ECM_USE": J(tab["ECM_USE"]), "MCP_PLANS": J(mcp), "ECMD_PUB": J(tab["ECMD_PUB"]), "ECMD": J(tab["ECMD"]), "RES": J(res), "ACT": J(act)}
+blobs = {"INDD": ind, "ECM_USE": J(tab["ECM_USE"]), "MCP_PLANS": J(mcp), "ECMD_PUB": J(tab["ECMD_PUB"]), "ECMD": J(tab["ECMD"]), "RES": J(res), "ACT": J(act), "STRATA": J(strata)}
 p = sys.argv[1]; s = open(p).read()
 for var, data in blobs.items():
     a = s.index(f"    var {var} = "); b = s.index(";\n", a)
