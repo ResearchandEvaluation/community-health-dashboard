@@ -28,7 +28,7 @@
       "california": 14.9,
       "california_source": "published",
       "higher_is_worse": true,
-      "note": "Table S1701, children under 5 for whom poverty status is determined. The Census Bureau publishes this age group directly. Estimates for Colusa, Del Norte, Trinity have a coefficient of variation above 30 percent (based on the published margin of error) and should be interpreted with caution.",
+      "note": "Table S1701, children under 5 for whom poverty status is determined. The Census Bureau publishes this age group directly.",
       "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S1701_C03_001E,S1701_C03_002E,S1701_C03_003E&for=county:*&in=state:06"
     }
   ],
