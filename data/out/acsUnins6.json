@@ -1,0 +1,36 @@
+{
+  "key": "acsUnins6",
+  "measures": [
+    {
+      "id": "uninsured_under6",
+      "label": "Children under 6 without health insurance",
+      "unit": "percent",
+      "period": "2020 to 2024",
+      "values": {
+        "Butte": 3.8,
+        "Colusa": 4.2,
+        "Del Norte": 4.8,
+        "Glenn": 5.4,
+        "Humboldt": 1.9,
+        "Lake": 1.6,
+        "Mendocino": 6.7,
+        "Shasta": 3.7,
+        "Tehama": 2.1,
+        "Trinity": 9.5,
+        "Siskiyou": 5.5,
+        "Los Angeles": 2.4,
+        "San Bernardino": 3.5,
+        "Sonoma": 1.6,
+        "Marin": 2.8,
+        "Sutter": 3.7,
+        "Napa": 6.2
+      },
+      "california": 2.6,
+      "california_source": "published",
+      "higher_is_worse": true,
+      "note": "Table S2701, percent uninsured among children under 6 in the civilian noninstitutionalized population.",
+      "source_url": "https://api.census.gov/data/2024/acs/acs5/subject?get=NAME,S2701_C05_001E&for=county:*&in=state:06"
+    }
+  ],
+  "geo_note": ""
+}

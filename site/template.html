@@ -24,8 +24,8 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div id="phil-dash-scroll" style="height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; background: #ffffff; color: #12365b; font-family: 'Avenir Next LT Pro', 'Avenir Next', Avenir, Arial, Helvetica, sans-serif">
 <div style="background: #ffffff; border-bottom: 1px solid #dee3e8; padding: 20px 24px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
-<a href="https://pophealthinnovationlab.org/" style="display: inline-flex; padding: 8px 0"><img src="assets/phil-logo.png" alt="Population Health Innovation Lab, a program of the Public Health Institute" style="height: 56px; width: auto; max-width: 100%; display: block"></a>
-<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Team Review</span>
+<a href="https://pophealthinnovationlab.org/" style="display: inline-flex; padding: 8px 0"><img src="assets/phil-logo.png" alt="Population Health Innovation Lab, a program of the Public Health Institute" style="height: 104px; width: auto; max-width: none; display: block; margin: -17px 0 -21px -20px"></a>
+<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Review</span>
 </div>
 </div>
 <header style="background: #12365b; color: #ffffff; padding: 40px 24px 32px">
@@ -417,10 +417,11 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </div>
 </div>
 </sc-if>
+<sc-if value="{{topic.noStages}}" hint-placeholder-val="{{false}}">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
 <sc-for list="{{topic.indicators}}" as="i" hint-placeholder-count="4">
 <article style="border: 1px solid #dee3e8; border-radius: 8px; padding: 24px; display: flex; flex-direction: column; gap: 12px; background: #ffffff">
-<span style="{{i.levelStyle}}">{{i.level}}</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="{{i.levelStyle}}">{{i.level}}</span><sc-if value="{{i.hasRealm}}" hint-placeholder-val="{{false}}"><span style="{{i.realmStyle}}">{{i.realmLabel}}</span></sc-if></div>
 <h4 style="margin: 0; font-size: 18px; line-height: 1.35; font-weight: 800">{{i.name}}</h4>
 <sc-if value="{{i.hasGeo}}" hint-placeholder-val="{{false}}">
 <div style="font-size: 13px; font-weight: 700; color: #30718d">{{i.geo}}</div>
@@ -486,20 +487,113 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </sc-if>
 </div>
 </sc-for>
-<sc-if value="{{i.hasAbout}}" hint-placeholder-val="{{false}}">
 <details style="font-size: 13px; line-height: 1.45; color: #526c87">
 <summary style="cursor: pointer; min-height: 32px; font-weight: 700; color: #496b9c">About this data</summary>
-<p style="margin: 8px 0 0">{{i.about}}</p>
+<sc-if value="{{i.hasAbout}}" hint-placeholder-val="{{false}}"><p style="margin: 8px 0 0">{{i.about}}</p></sc-if>
+<p style="margin: 8px 0 0">Source: {{i.dataset}}, {{i.publisher}}. {{i.cadence}}. {{i.access}}.</p>
 </details>
-</sc-if>
 </div>
-<div style="font-size: 13px; line-height: 1.45; color: #526c87">Source: {{i.dataset}}, {{i.publisher}}. {{i.cadence}}. {{i.access}}.</div>
 <sc-if value="{{i.hasNote}}" hint-placeholder-val="{{false}}">
 <p style="margin: 0; font-size: 13px; line-height: 1.45; font-style: italic; color: #526c87">{{i.note}}</p>
 </sc-if>
 </article>
 </sc-for>
 </div>
+</sc-if>
+<sc-if value="{{topic.hasStages}}" hint-placeholder-val="{{true}}">
+<div style="background: #f8fafb; border: 1px solid #dee3e8; border-radius: 12px; padding: 18px 22px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">How This Page Is Organized</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 4px 0 6px"><span style="font-size: 13px; font-weight: 800; color: #3d556e">Show:</span><sc-for list="{{topic.stageFilters}}" as="st" hint-placeholder-count="5"><button type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" style="{{st.style}}"><sc-if value="{{st.hasNum}}" hint-placeholder-val="{{true}}"><span aria-hidden="true" style="{{st.dot}}">{{st.num}}</span></sc-if>{{st.title}}</button></sc-for></div><p style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 900px">Measures follow the life course, from the earliest years through adulthood. The colored band on each card shows its stage, and the buttons above show one stage at a time. The life course framework draws on Nurius, Fleming, and Brindle (2019).</p></div>
+<sc-if value="{{topic.hasRealms}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 900px">Measures related to childhood adversity also carry a tag for one of the <a href="https://pacesconnection.com/pages/3RealmsACEs" target="_blank" rel="noopener" style="color: #496b9c">three realms of ACEs</a>, the settings where adverse experiences can occur:</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px"><div style="background: #fde7d9; border: 1px solid #f2b48f; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #8a3b12">Realm 1: Within the household</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Caregiver mental health, substance use, and incarceration of a household member.</span></div><div style="background: #e6e1f5; border: 1px solid #bcb0e3; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #3f2f7a">Realm 2: Beyond the household</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Community violence and the social connections that surround a family.</span></div><div style="background: #dff1ea; border: 1px solid #9fd3bd; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #0b5a40">Realm 3: Broader environment</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Poverty and the economic conditions of the community.</span></div></div></div>
+</sc-if>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px">
+<sc-for list="{{topic.flow}}" as="i" hint-placeholder-count="6">
+<sc-if value="{{i.isCard}}" hint-placeholder-val="{{true}}">
+<article style="border: 1px solid #dee3e8; border-radius: 8px; padding: 0 24px 24px; display: flex; flex-direction: column; gap: 12px; background: #ffffff; overflow: hidden">
+<div style="{{i.stageBand}}"><span style="{{i.stageDot}}">{{i.stageNum}}</span>{{i.stageTitle}}</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px"><span style="{{i.levelStyle}}">{{i.level}}</span><sc-if value="{{i.hasRealm}}" hint-placeholder-val="{{false}}"><span style="{{i.realmStyle}}">{{i.realmLabel}}</span></sc-if></div>
+<h4 style="margin: 0; font-size: 18px; line-height: 1.35; font-weight: 800">{{i.name}}</h4>
+<sc-if value="{{i.hasGeo}}" hint-placeholder-val="{{false}}">
+<div style="font-size: 13px; font-weight: 700; color: #30718d">{{i.geo}}</div>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 18px; padding: 4px 0">
+<sc-for list="{{i.charts}}" as="m" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 8px" title="{{m.title}}">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 14px; line-height: 1.35; font-weight: 700; color: #12365b">{{m.label}}</div>
+<div style="font-size: 12px; color: #526c87">{{m.period}}</div>
+</div>
+<sc-if value="{{m.hasPill}}" hint-placeholder-val="{{false}}">
+<span style="{{m.pillStyle}}">{{m.pill}}</span>
+</sc-if>
+<sc-if value="{{m.isBars}}" hint-placeholder-val="{{true}}">
+<sc-for list="{{m.bars}}" as="b" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 13px"><span style="color: #12365b">{{b.label}}</span><span style="font-weight: 800; color: #12365b; white-space: nowrap">{{b.value}}</span></div>
+<div style="height: 16px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><div style="{{b.barStyle}}"></div></div>
+</div>
+</sc-for>
+</sc-if>
+<sc-if value="{{m.isNumber}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px">
+<span style="font-family: Archer, Georgia, Cambria, serif; font-size: 30px; font-weight: 700; line-height: 1.1; color: #12365b">{{m.big}}</span>
+<span style="font-size: 13px; color: #526c87">{{m.side}}</span>
+</div>
+</sc-if>
+<sc-if value="{{m.isMissing}}" hint-placeholder-val="{{false}}">
+<div style="border: 1px dashed #73889e; border-radius: 4px; padding: 14px; font-size: 13px; line-height: 1.45; color: #526c87">{{m.missing}}</div>
+</sc-if>
+<sc-if value="{{m.hasHp}}" hint-placeholder-val="{{false}}">
+<div style="font-size: 12px; color: #526c87">{{m.hpText}}</div>
+</sc-if>
+<sc-if value="{{m.hasRank}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="position: relative; height: 26px; margin: 0 10px" aria-hidden="true">
+<div style="position: absolute; left: -6px; right: -6px; top: 9px; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #e3f1f8, #8cc9e4 50%, #2a7fa8)"></div>
+<sc-for list="{{m.dots}}" as="dt" hint-placeholder-count="58">
+<span style="{{dt.style}}"></span>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #526c87"><span>{{m.rankLow}}</span><span>{{m.rankHigh}}</span></div>
+<div style="font-size: 13px; line-height: 1.4; color: #12365b">{{m.rankText}}</div>
+</div>
+</sc-if>
+<sc-if value="{{m.hasTrend}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #30718d">Trend</div>
+<svg viewBox="0 0 320 92" width="100%" height="92" role="img" aria-label="{{m.trendAria}}" style="display: block; overflow: visible">
+<line x1="10" y1="84" x2="310" y2="84" stroke="#dee3e8" stroke-width="1"></line>
+<path d="{{m.caD}}" fill="none" stroke="#4bb1dc" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="{{m.coD}}" fill="none" stroke="#02784d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></path>
+<circle cx="{{m.lastX}}" cy="{{m.lastY}}" r="4" fill="#02784d"></circle>
+</svg>
+<div style="display: flex; justify-content: space-between; gap: 12px; font-size: 12px; color: #526c87"><span>{{m.trendStart}}</span><span style="font-weight: 800; color: #12365b">{{m.trendEnd}}</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: #526c87">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="display: inline-block; width: 16px; height: 3px; background: #02784d"></span>County</span>
+<sc-if value="{{m.trendHasCa}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="display: inline-block; width: 16px; height: 3px; background: #4bb1dc"></span>California</span></sc-if>
+<span>{{m.trendNote}}</span>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-for>
+<details style="font-size: 13px; line-height: 1.45; color: #526c87">
+<summary style="cursor: pointer; min-height: 32px; font-weight: 700; color: #496b9c">About this data</summary>
+<sc-if value="{{i.hasAbout}}" hint-placeholder-val="{{false}}"><p style="margin: 8px 0 0">{{i.about}}</p></sc-if>
+<p style="margin: 8px 0 0">Source: {{i.dataset}}, {{i.publisher}}. {{i.cadence}}. {{i.access}}.</p>
+</details>
+</div>
+<sc-if value="{{i.hasNote}}" hint-placeholder-val="{{false}}">
+<p style="margin: 0; font-size: 13px; line-height: 1.45; font-style: italic; color: #526c87">{{i.note}}</p>
+</sc-if>
+</article>
+</sc-if>
+</sc-for>
+</div>
+</sc-if>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 12px">
@@ -1117,11 +1211,13 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
     var FIFTH = ["Lowest fifth", "Second lowest fifth", "Middle fifth", "Second highest fifth", "Highest fifth"];
     function ordinal(n) { var s2 = ["th", "st", "nd", "rd"], v = n % 100; return n + (s2[(v - 20) % 10] || s2[v] || s2[0]); }
     function rankWords(above, below, n) { return above + 1 <= Math.ceil(n / 2) ? "Ranks " + ordinal(above + 1) + " highest" : "Ranks " + ordinal(below + 1) + " lowest"; }
+    var QUARTER = ["In the lowest quarter of California counties", "In the second lowest quarter of California counties", "In the second highest quarter of California counties", "In the highest quarter of California counties"];
     function judgeRank(cv, all, w) {
       if (typeof cv !== "number" || !all || all.length < 5) return null;
       var below = all.filter(function (v) { return v < cv; }).length, above = all.filter(function (v) { return v > cv; }).length, n = all.length;
       var t = "neutral";
-      return { text: rankWords(above, below, n) + " of " + n + " California counties", style: TONE[t], tone: t, below: below, above: above, n: n };
+      var text = n === 58 ? rankWords(above, below, n) + " of 58 California counties" : QUARTER[Math.min(3, Math.floor(below / n * 4))];
+      return { text: text, style: TONE[t], tone: t, below: below, above: above, n: n };
     }
     function strip(cv, all, tone) {
       var lo = all[0], hi = all[all.length - 1], span = (hi - lo) || 1;
@@ -1163,6 +1259,10 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       "Community conditions": LVL_BASE + "background: #f3e9d7; color: #12365b;"
     };
     var IND = {
+      cdeGrad: { name: "High School Graduation", dataset: "Adjusted Cohort Graduation Rate Data", publisher: "California Department of Education (CDE)", cadence: "Annual, by school year", access: "Stable file download (text)", geoType: "county", level: "Community conditions", note: "" },
+      jailRate: { name: "Jail Population", dataset: "Incarceration Trends", publisher: "Vera Institute of Justice", cadence: "Annual", access: "Stable file download (CSV)", geoType: "county", level: "Community conditions", note: "" },
+      chrProviders: { name: "Mental Health and Primary Care Providers", dataset: "County Health Rankings National Data", publisher: "County Health Rankings & Roadmaps, University of Wisconsin Population Health Institute", cadence: "Annual", access: "Stable file download (CSV)", geoType: "county", level: "Health system and access", note: "" },
+      acsUnins6: { name: "Young Children Without Health Insurance", dataset: "American Community Survey (ACS) 5-Year Estimates", publisher: "U.S. Census Bureau", cadence: "Annual", access: "API", geoType: "county", level: "Health system and access", note: "" },
       hdmort: { name: "Heart Disease Mortality, Adults 35 and Older", dataset: "Heart Disease Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, blended with nearby counties for stability", access: "API", geoType: "county", level: "Population health outcome", note: "" },
       strokemort: { name: "Stroke Mortality, Adults 35 and Older", dataset: "Stroke Mortality Data Among US Adults (35+) by State/Territory and County", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Three-year averages, blended with nearby counties for stability", access: "API", geoType: "county", level: "Population health outcome", note: "" },
       places: { name: "High Blood Pressure and Coronary Heart Disease Prevalence", dataset: "PLACES: Local Data for Better Health, County Data, 2025 Release", publisher: "Centers for Disease Control and Prevention (CDC)", cadence: "Annual release", access: "API", geoType: "county", level: "Population health outcome", note: "" },
@@ -1332,7 +1432,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
           ["rc", "Evaluated a national collaborative of local health departments using the Community Resilience Framework."],
           ["kp", "Planned and facilitated a conference to strengthen family violence prevention programs."]
         ],
-        indicators: ["placesMH","suicide","firearm","homicide","mvc","placesAlc","bhPerfAccess","hpsaMH","placesSupport","acsChild"]
+        indicators: ["placesMH","suicide","firearm","homicide","mvc","placesAlc","jailRate","cdeGrad","bhPerfAccess","chrProviders","hpsaMH","placesSupport","acsChild"]
       },
       early: {
         title: "Maternal and Early Childhood Behavioral Health",
@@ -1343,7 +1443,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
           ["practice", "Supported primary care clinic teams across California in screening children and families for ACEs and toxic stress and connecting them to care, as part of ACEs Aware."],
           ["lbact", "Engaged residents in co-creating solutions to gaps in social drivers of health for children ages 0 to 8 and their families."]
         ],
-        indicators: ["births","prenatal","lbw","infmort","pqiKids","smhs05","bhPerfFoster","wic","medicalKids","hpsaMH","acsYoung"]
+        indicators: ["births","prenatal","lbw","infmort","pqiKids","smhs05","bhPerfFoster","wic","medicalKids","acsUnins6","hpsaMH","acsYoung"]
       },
       youth: {
         title: "Youth Behavioral Health",
@@ -1354,7 +1454,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
           ["rrih", "Runs the Youth Behavioral Health and Justice Community of Practice across 11 Northern California counties."],
           ["cybhi", "Serves as regional outreach partner for Children and Youth Behavioral Health Initiative (CYBHI) resources, including Cal-MAP, Safe Spaces, Open Doors, Soluna, BrightLife Kids, Mirror, and Live Beyond."]
         ],
-        indicators: ["suicide","smhsYouth","bhPerfFoster","asthmaED","hpsaMH","cdeAbs","cdeHomeless","acsChild"]
+        indicators: ["suicide","smhsYouth","bhPerfFoster","asthmaED","hpsaMH","cdeAbs","cdeGrad","cdeHomeless","acsChild"]
       },
       sub: {
         title: "Substance Use and Homelessness",
@@ -1383,7 +1483,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
           ["practice", "Supported ACEs Aware, the California Department of Health Care Services initiative that trains and pays Medi-Cal providers to screen for ACEs."],
           ["pathta", "Provided no-cost technical assistance to California-based organizations through the PATH Technical Assistance Marketplace."]
         ],
-        indicators: ["placesAccess","pqiAll","medical","ecm","bhPlanAlloc","bhPlanServed","bhPlanCost","hpsaPC","acsVehicle","acsLanguage","acsDisability","acsBroadband","acsPov"]
+        indicators: ["placesAccess","pqiAll","medical","ecm","bhPlanAlloc","bhPlanServed","bhPlanCost","hpsaPC","chrProviders","acsVehicle","acsLanguage","acsDisability","acsBroadband","acsPov"]
       }
     };
     var TOPIC_ORDER = ["cardio","aces","early","youth","sub","medi"];
@@ -1484,7 +1584,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
     function fmtVal(v, u) {
       if (typeof v !== "number") return v === "suppressed" ? "Suppressed" : "Not published";
       if (u === "percent") return (Math.round(v * 10) / 10).toFixed(1) + "%";
-      if (u === "count") return Math.round(v).toLocaleString("en-US");
+      if (u === "count" || u.indexOf("residents per") === 0) return Math.round(v).toLocaleString("en-US");
       if (u === "dollars") return "$" + Math.round(v).toLocaleString("en-US");
       if (Math.abs(v) >= 1000) return Math.round(v).toLocaleString("en-US");
       return (Math.round(v * 10) / 10).toFixed(1);
@@ -1558,6 +1658,29 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
     }
 
     var STRATA = __STRATA__;
+    var STAGES = {
+      aces: [
+        { title: "Childhood", desc: "The economic conditions children grow up in.", keys: ["acsChild"] },
+        { title: "School Age and Adolescence", desc: "How young people are doing as they move through school toward adulthood.", keys: ["cdeGrad"] },
+        { title: "Adulthood", desc: "Adult health and safety. These measures describe all adults in the county, including parents and caregivers, so they also reflect the households and communities children grow up in.", keys: ["placesMH", "placesAlc", "jailRate", "firearm", "homicide", "placesSupport", "suicide", "mvc"] },
+        { title: "Support Across the Life Course", desc: "The behavioral health services and workforce available at every stage.", keys: ["bhPerfAccess", "chrProviders", "hpsaMH"] }
+      ],
+      early: [
+        { title: "Prenatal and Birth", desc: "The conditions babies are born into.", keys: ["prenatal", "lbw", "births", "infmort"] },
+        { title: "Ages 0 to 5", desc: "Health, coverage, and economic conditions during the years of fastest brain development.", keys: ["acsYoung", "wic", "medicalKids", "acsUnins6", "pqiKids", "smhs05"] },
+        { title: "Support Across Early Childhood", desc: "Services for children in foster care and the behavioral health workforce.", keys: ["bhPerfFoster", "hpsaMH"] }
+      ],
+      youth: [
+        { title: "School Age", desc: "Early signs in school and at home that young people may need support.", keys: ["acsChild", "cdeAbs", "cdeHomeless", "asthmaED"] },
+        { title: "Adolescence", desc: "Mental health care and the transition to adulthood.", keys: ["smhsYouth", "bhPerfFoster", "cdeGrad"] },
+        { title: "All Ages", desc: "This measure covers residents of every age.", keys: ["suicide"] },
+        { title: "Support Across the Life Course", desc: "The behavioral health workforce available to young people.", keys: ["hpsaMH"] }
+      ]
+    };
+    var REALM_OF = { aces: { placesMH: 1, placesAlc: 1, jailRate: 1, firearm: 2, homicide: 2, placesSupport: 2, acsChild: 3 } };
+    var REALM_LABEL = { 1: "Realm 1: Within the household", 2: "Realm 2: Beyond the household", 3: "Realm 3: Broader environment" };
+    var REALM_BASE = "display: inline-block; align-self: flex-start; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 800; line-height: 1.4; ";
+    var REALM_STYLE = { 1: REALM_BASE + "background: #fde7d9; color: #8a3b12; border: 1px solid #f2b48f;", 2: REALM_BASE + "background: #e6e1f5; color: #3f2f7a; border: 1px solid #bcb0e3;", 3: REALM_BASE + "background: #dff1ea; color: #0b5a40; border: 1px solid #9fd3bd;" };
     var det = null;
     if (tab === "detail") {
       var DT_TOPIC = { cardio: "Cardiovascular", youth: "Youth Behavioral Health", medi: "Access to Care" };
@@ -1739,6 +1862,10 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
             }) };
         })
       };
+      function cardFor(k) {
+          var i = IND[k];
+          var ab = aboutFor(k); return { charts: chartsFor(k, picked), about: ab, hasAbout: ab.length > 0, name: i.name, level: i.level, levelStyle: LEVEL_STYLE[i.level] || "", dataset: i.dataset, publisher: i.publisher, cadence: i.cadence, access: i.access, geo: geoFor(i.geoType, picked), hasGeo: geoFor(i.geoType, picked).indexOf("County estimate") !== 0, note: i.note, hasNote: i.note.length > 0, hasRealm: !!REALM_OF[tab] && !!REALM_OF[tab][k], realmLabel: REALM_OF[tab] && REALM_OF[tab][k] ? REALM_LABEL[REALM_OF[tab][k]] : "", realmStyle: REALM_OF[tab] && REALM_OF[tab][k] ? REALM_STYLE[REALM_OF[tab][k]] : "" };
+      }
       topic = {
         act: buildAct(tab, picked),
         title: T.title, intro: T.intro, population: T.population, current: current, groups: groups, groupsHere: groupsHere, groupsOther: groupsOther, hasHere: groupsHere.length > 0, noHere: groupsHere.length === 0, hasOther: groupsOther.length > 0,
@@ -1747,14 +1874,37 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
         foxAlt: ({ cardio: "PHIL's fox mascot holding a hammer", aces: "PHIL's fox mascot holding a wrench", early: "PHIL's fox mascot holding a lit lightbulb", youth: "PHIL's fox mascot holding a hammer", sub: "PHIL's fox mascot holding a wrench", medi: "PHIL's fox mascot holding a lit lightbulb" })[tab],
         workHere: here.length ? here.join("; ") : "PHIL stays engaged with partners in the " + picked + " County community through past projects and ongoing relationships. PHIL's projects on this topic in other counties are listed further down.",
         counties: countyChips(philCs, chipBase),
-        indicators: T.indicators.map(function (k) {
-          var i = IND[k];
-          var ab = aboutFor(k); return { charts: chartsFor(k, picked), about: ab, hasAbout: ab.length > 0, name: i.name, level: i.level, levelStyle: LEVEL_STYLE[i.level] || "", dataset: i.dataset, publisher: i.publisher, cadence: i.cadence, access: i.access, geo: geoFor(i.geoType, picked), hasGeo: geoFor(i.geoType, picked).indexOf("County estimate") !== 0, note: i.note, hasNote: i.note.length > 0 };
-        })
+        indicators: T.indicators.map(cardFor),
+        hasStages: !!STAGES[tab], noStages: !STAGES[tab], hasRealms: !!REALM_OF[tab],
+        stages: STAGES[tab] ? (function () { var used = {}; var out = STAGES[tab].map(function (st, n) { var items = st.keys.filter(function (k) { return T.indicators.indexOf(k) >= 0; }).map(function (k) { used[k] = true; return cardFor(k); });
+            return { num: String(n + 1), title: st.title, desc: st.desc, items: items, hasItems: items.length > 0 }; });
+          var rest = T.indicators.filter(function (k) { return !used[k]; }).map(cardFor);
+          if (rest.length) out.push({ num: String(out.length + 1), title: "More measures", desc: "", items: rest, hasItems: true });
+          out = out.filter(function (x) { return x.hasItems; }); out.forEach(function (x, n) { x.num = String(n + 1); x.notLast = n < out.length - 1; x.countText = x.items.length + (x.items.length === 1 ? " measure" : " measures"); }); return out; })() : [],
       };
     }
 
 
+    if (topic) {
+      var SC = [["#e6f5ec", "#02623f", "#039862"], ["#e2f2f1", "#0b5a55", "#14857d"], ["#e3eef8", "#1f4f7a", "#30718d"], ["#eef0f3", "#3d556e", "#73889e"], ["#f3e9d7", "#6b4e1e", "#a07a3a"]];
+      var stSel = (s.stageSel && s.stageSel[tab]) || "all";
+      topic.flow = [];
+      (topic.stages || []).forEach(function (st, n) {
+        var c = SC[n % SC.length];
+        if (stSel !== "all" && stSel !== st.num) return;
+        st.items.forEach(function (card) { topic.flow.push(Object.assign({}, card, { isCard: true, stageNum: st.num, stageTitle: st.title,
+          stageBand: "margin: 0 -24px 4px; padding: 9px 24px; background: " + c[0] + "; border-bottom: 1px solid " + c[2] + "33; color: " + c[1] + "; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;",
+          stageDot: "width: 20px; height: 20px; border-radius: 50%; background: " + c[2] + "; color: #ffffff; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;" })); });
+      });
+      var pillB = "min-height: 40px; padding: 6px 14px 6px 8px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; ";
+      topic.stageFilters = [{ num: "all", title: "All stages", hasNum: false }].concat((topic.stages || []).map(function (st) { return { num: st.num, title: st.title, hasNum: true }; })).map(function (f, n) {
+        var on = stSel === f.num, c = SC[(n - 1 + SC.length) % SC.length];
+        return { title: f.title, num: f.num, hasNum: f.hasNum, pressed: on ? "true" : "false",
+          dot: "width: 22px; height: 22px; border-radius: 50%; background: " + (on ? "#ffffff" : c[2]) + "; color: " + (on ? "#12365b" : "#ffffff") + "; font-size: 12px; display: inline-flex; align-items: center; justify-content: center;",
+          style: pillB + (f.hasNum ? "" : "padding-left: 14px; ") + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #b5c2cf;"),
+          pick: function () { var nx = Object.assign({}, s.stageSel || {}); nx[tab] = f.num; self.setState({ stageSel: nx }); } };
+      });
+    }
     var ECM_USE = __ECM_USE__;
     var MCP_PLANS = __MCP_PLANS__;
     var ECMD_PUB = __ECMD_PUB__;
@@ -1967,7 +2117,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       toggleSources: function () { self.setState({ showSources: !srcOpen }); },
       dataSources: dataSources,
       showOverview: tab === "overview", showTopic: !!TOPICS[tab],
-      topic: topic || { groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
+      topic: topic || { stageFilters: [], flow: [], stages: [], hasStages: false, noStages: true, hasRealms: false, groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {}, sets: [], cols: [], rows: [] },
       showEcm: tab === "ecmcs", showDetail: tab === "detail", det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }

@@ -193,6 +193,38 @@ def cde_measure():
     }
 
 
+def grad_measure():
+    import cde_grad, datetime
+    yy = datetime.date.today().year % 100 + 1
+    url = None
+    while yy >= 17:
+        url = f"{cde_grad.BASE}acgr{yy:02d}.txt"
+        try:
+            rows = list(cde.rows(url)); break
+        except Exception:
+            yy -= 1
+    inv = {v: k for k, v in cde.COUNTIES.items()}
+    idx = {}
+    for r in rows:
+        if r.get("CharterSchool", "All") != "All" or r.get("DASS", "All") != "All":
+            continue
+        lvl = r["AggregateLevel"]
+        geo = CA if lvl == "T" else (inv.get(r["CountyCode"]) if lvl == "C" else None)
+        if geo:
+            idx[(geo, r["ReportingCategory"])] = cde.num(r.get("RegularHSDiplomaGraduates(Rate)"))
+    groups = [g for g in CDE_GROUPS if g[0] != "Grade level"]
+    dims = [dim(d, [group(lab, {c: idx.get((c, code)) for c in COUNTIES}, idx.get((CA, code))) for code, lab in items])
+            for d, items in groups]
+    return {
+        "id": "gradStrata", "topic": "youth", "title": "High school graduation", "unit": "percent",
+        "period": f"20{yy - 1:02d}-{yy:02d}", "higher_is_worse": False, "source": "California Department of Education (CDE)",
+        "source_url": "https://www.cde.ca.gov/ds/ad/filesacgr.asp",
+        "note": ("Four-year adjusted cohort graduation rate: students who earned a regular high school diploma within four "
+                 "years of starting grade 9. 'Suppressed' means CDE withheld a small number to protect student privacy."),
+        "dims": dims,
+    }
+
+
 # ---------- CDPH asthma ED visits ----------
 ASTHMA_RACE = {"AI/AN": "American Indian or Alaska Native", "Asian/PI": "Asian or Pacific Islander",
                "NHPI": "Native Hawaiian or Pacific Islander", "Multi-race": "Multiple races"}
@@ -279,7 +311,7 @@ def main():
                             "medi", "Percent of people below the federal poverty level."),
         lambda: acs_measure(vintage, "S2701", "C05", UNINS_ROWS, "uninsStrata", "People without health insurance",
                             "medi", "Percent of the civilian noninstitutionalized population without health insurance."),
-        cde_measure, asthma_measure, smhs_measure,
+        cde_measure, grad_measure, asthma_measure, smhs_measure,
     ]
     for j in jobs:
         try:

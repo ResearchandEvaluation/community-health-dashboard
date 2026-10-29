@@ -4,7 +4,7 @@ Usage: python3 scripts/run_all.py            (all sources)
        python3 scripts/run_all.py ecm places (named scripts only)"""
 import os, sys, subprocess, time
 HERE = os.path.dirname(os.path.abspath(__file__))
-ORDER = ["cvd_mortality", "places", "od", "hcai", "hpsa", "acs", "acs_medicaid", "suicide", "chsp_more", "births", "dhcs_smhs", "dhcs_bh_housing", "hdis", "cde", "strata", "ecm",
+ORDER = ["cvd_mortality", "places", "od", "hcai", "hpsa", "acs", "acs_medicaid", "suicide", "chsp_more", "births", "dhcs_smhs", "dhcs_bh_housing", "hdis", "cde", "cde_grad", "vera_jail", "chr_providers", "strata", "ecm",
          "hcai_asthma", "cdph_wic", "dhcs_mcp_enrollment"]
 names = sys.argv[1:] or ORDER
 failed = []

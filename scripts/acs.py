@@ -98,7 +98,7 @@ def main():
     b17001_url = f"{det}?get=group(B17001)&for=county:*&in=state:06"
     try:
         s1701 = get(sub, ["S1701_C03_001E", "S1701_C03_001M", "S1701_C03_002E", "S1701_C03_002M", "S1701_C03_003E", "S1701_C03_003M"])
-        s2701 = get(sub, ["S2701_C05_001E", "S2701_C05_001M"])
+        s2701 = get(sub, ["S2701_C05_001E", "S2701_C05_001M", "S2701_C05_002E", "S2701_C05_002M"])
         below = ["B17001_004", "B17001_005", "B17001_018", "B17001_019"]
         above = ["B17001_033", "B17001_034", "B17001_047", "B17001_048"]
         bv = [x + s for x in below + above for s in ("E", "M")]
@@ -131,6 +131,9 @@ def main():
     write("acsYoung", [subject_measure(s1701, "S1701_C03_003E", "S1701_C03_003M", "poverty_under5",
                                        "Children under 5 living below the federal poverty level", period, s1701_url,
                                        "Table S1701, children under 5 for whom poverty status is determined. The Census Bureau publishes this age group directly.")])
+    write("acsUnins6", [subject_measure(s2701, "S2701_C05_002E", "S2701_C05_002M", "uninsured_under6",
+                                        "Children under 6 without health insurance", period, s2701_url,
+                                        "Table S2701, percent uninsured among children under 6 in the civilian noninstitutionalized population.")])
     print("done", v)
 
 
