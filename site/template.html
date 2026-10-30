@@ -1310,6 +1310,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       "Community conditions": LVL_BASE + "background: #f3e9d7; color: #12365b;"
     };
     var IND = {
+      opioidED: { name: "Opioid Overdose Emergency Visits and Hospitalizations", dataset: "Behavioral Health Public County Profile", publisher: "Department of Health Care Services (DHCS)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
       cdeGrad: { name: "High School Graduation", dataset: "Adjusted Cohort Graduation Rate Data", publisher: "California Department of Education (CDE)", cadence: "Annual, by school year", access: "Stable file download (text)", geoType: "county", level: "Community conditions", note: "" },
       jailRate: { name: "Jail Population", dataset: "Incarceration Trends", publisher: "Vera Institute of Justice", cadence: "Annual", access: "Stable file download (CSV)", geoType: "county", level: "Community conditions", note: "" },
       chrProviders: { name: "Mental Health and Primary Care Providers", dataset: "County Health Rankings National Data", publisher: "County Health Rankings & Roadmaps, University of Wisconsin Population Health Institute", cadence: "Annual", access: "Stable file download (CSV)", geoType: "county", level: "Health system and access", note: "" },
@@ -1517,7 +1518,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
           ["psp", "Includes curriculum content on stimulant-associated cardiomyopathy and reaches patients through the emergency department substance use navigator and street medicine."],
           ["threads", "Supports cross-sector systems transformation for individuals experiencing homelessness with serious mental illness (SMI) and substance use disorders (SUD) in Sonoma County."]
         ],
-        indicators: ["od","placesAlc","bhPerfAccess","bhPen","bhHousing","bhPerfServices","hdis","placesHousing","acsHousing"]
+        indicators: ["od","opioidED","placesAlc","bhPerfAccess","bhPen","bhHousing","bhPerfServices","hdis","placesHousing","acsHousing"]
       },
       medi: {
         title: "Access to Care",

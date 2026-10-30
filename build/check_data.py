@@ -7,7 +7,7 @@ import os, json, glob, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.join(HERE, "..")
 OUT = os.path.join(ROOT, "data", "out")
 COUNTIES = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity","Siskiyou","Los Angeles","San Bernardino","Sonoma","Marin","Sutter","Napa"]
-EXPECTED = ["hdmort","strokemort","places","placesRisk","placesBPmed","placesSocial","placesMH","placesAlc","placesSupport","placesHousing","placesAccess","od","pqiCardiac","pqiAll","pqiKids","hpsaPC","hpsaMH","acsPov","acsChild","acsYoung","medical","medicalKids","suicide","births","smhs05","smhsYouth","bhHousing","hdis","cdeAbs","cdeHomeless","ecm","ecm_tab","chdmort","diabmort","infmort","lbw","prenatal","firearm","homicide","mvc","bhPerf","bhPlan","bhPen","wic","asthmaED","acsHousing","acsVehicle","acsBroadband","acsDisability","acsLanguage","mcp_plans","strata","cdeGrad","jailRate","chrProviders","acsUnins6"]
+EXPECTED = ["hdmort","strokemort","places","placesRisk","placesBPmed","placesSocial","placesMH","placesAlc","placesSupport","placesHousing","placesAccess","od","pqiCardiac","pqiAll","pqiKids","hpsaPC","hpsaMH","acsPov","acsChild","acsYoung","medical","medicalKids","suicide","births","smhs05","smhsYouth","bhHousing","hdis","cdeAbs","cdeHomeless","ecm","ecm_tab","chdmort","diabmort","infmort","lbw","prenatal","firearm","homicide","mvc","bhPerf","bhPlan","bhPen","wic","asthmaED","acsHousing","acsVehicle","acsBroadband","acsDisability","acsLanguage","mcp_plans","strata","cdeGrad","jailRate","chrProviders","acsUnins6","opioidED"]
 problems = []
 def committed(path):
     try:
