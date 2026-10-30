@@ -1053,13 +1053,22 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <img src="assets/fox-clipboard.png" alt="PHIL's fox mascot reviewing a clipboard" style="height: 96px; width: auto; flex-shrink: 0">
 <div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 480px; min-width: 0">
 <h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Print Your County Profile</h2>
-<p style="margin: 0; max-width: 820px; font-size: 16px; line-height: 1.55">Every measure on this dashboard for one county, on a few printable pages. Use it for planning meetings, community health assessments, or a Data Walk.</p>
+<p style="margin: 0; max-width: 820px; font-size: 16px; line-height: 1.55">The measures on this dashboard for one county, on printable pages. Choose a county and the topics you need. Use it for planning meetings, community health assessments, or a Data Walk.</p>
 </div>
 </div>
 <div class="phil-noprint" style="display: flex; flex-direction: column; gap: 12px">
 <h3 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">County</h3>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
 <sc-for list="{{prof.counties}}" as="c" hint-placeholder-count="17"><button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" style="{{c.style}}">{{c.name}}</button></sc-for>
+</div>
+</div>
+<div class="phil-noprint" style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 15px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">Topics to Include</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">Select the topics you need. The profile and the PDF include only the selected topics.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" onClick="{{prof.pickAll}}" aria-pressed="{{prof.allPressed}}" style="{{prof.allStyle}}">All topics</button>
+<sc-for list="{{prof.topics}}" as="pt" hint-placeholder-count="7"><button type="button" onClick="{{pt.pick}}" aria-pressed="{{pt.pressed}}" style="{{pt.style}}">{{pt.name}}</button></sc-for>
+<button type="button" onClick="{{prof.pickNone}}" style="min-height: 40px; padding: 6px 14px; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; text-decoration: underline">Clear all</button>
 </div>
 </div>
 <sc-if value="{{prof.noCounty}}" hint-placeholder-val="{{false}}">
@@ -1076,6 +1085,9 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #3d556e">Population Health Innovation Lab (PHIL), a program of the Public Health Institute. All values are published by their sources. Full sources and notes: dashboard.pophealthinnovationlab.org</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; background: #fbf4e6; border: 1px solid #ead9b8; border-radius: 10px; padding: 14px 18px; font-size: 15px; line-height: 1.5; color: #12365b"><span style="font-weight: 800">Want different measures for your county?</span><span>Reach out to <a href="mailto:research@pophealthinnovationlab.org" style="color: #496b9c; font-weight: 800">research@pophealthinnovationlab.org</a> and PHIL will work with you.</span></div>
+<sc-if value="{{prof.noTopics}}" hint-placeholder-val="{{false}}">
+<div class="phil-noprint" style="border: 2px dashed #73889e; border-radius: 10px; padding: 24px; font-size: 16px; font-weight: 700; color: #12365b; background: #f8fafb">Select at least one topic above to build the profile.</div>
+</sc-if>
 <sc-for list="{{prof.sections}}" as="sec" hint-placeholder-count="6">
 <div style="display: flex; flex-direction: column; gap: 0">
 <h3 style="margin: 12px 0 8px; font-family: Archer, Georgia, Cambria, serif; font-size: 22px; color: #12365b; border-left: 5px solid #039862; padding-left: 12px">{{sec.title}}</h3>
@@ -1733,7 +1745,14 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
     var prof = null;
     if (tab === "profile") {
       var seenK = {};
-      var pSections = TOPIC_ORDER.map(function (tid) {
+      var pOff = s.profOff || {};
+      var CHIP = "min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer; ";
+      var pTopics = TOPIC_ORDER.map(function (tid) { var on = !pOff[tid];
+        return { name: TOPICS[tid].title, pressed: on ? "true" : "false",
+          pick: function () { var nx = Object.assign({}, s.profOff || {}); nx[tid] = on; self.setState({ profOff: nx }); },
+          style: CHIP + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") }; });
+      var pAll = TOPIC_ORDER.every(function (tid) { return !pOff[tid]; });
+      var pSections = TOPIC_ORDER.filter(function (tid) { return !pOff[tid]; }).map(function (tid) {
         var rows = [];
         TOPICS[tid].indicators.forEach(function (k) {
           if (seenK[k] || !INDD[k] || !IND[k]) return; seenK[k] = true;
@@ -1749,6 +1768,11 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
         return { title: TOPICS[tid].title, rows: rows, hasRows: rows.length > 0 };
       }).filter(function (x) { return x.hasRows; });
       prof = { countyLabel: gCounty + " County", hasCounty: hasCounty, noCounty: !hasCounty, sections: pSections,
+        topics: pTopics, noTopics: hasCounty && pSections.length === 0, hasSections: hasCounty && pSections.length > 0,
+        allPressed: pAll ? "true" : "false",
+        allStyle: CHIP + (pAll ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #02784d; border: 1px solid #02784d;"),
+        pickAll: function () { self.setState({ profOff: {} }); },
+        pickNone: function () { var nx = {}; TOPIC_ORDER.forEach(function (tid) { nx[tid] = true; }); self.setState({ profOff: nx }); },
         doPrint: function () { try { window.print(); } catch (e) {} },
         counties: ALL17.map(function (c) { var on = hasCounty && c === gCounty;
           return { name: c, pressed: on ? "true" : "false", pick: function () { self.setState({ gCounty: c }); },
@@ -2192,7 +2216,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       showOverview: tab === "overview", showTopic: !!TOPICS[tab],
       topic: topic || { stageFilters: [], flow: [], stages: [], hasStages: false, noStages: true, hasRealms: false, groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {}, sets: [], cols: [], rows: [] },
-      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
+      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], topics: [], noTopics: false, hasSections: false, allPressed: "false", allStyle: "", pickAll: function () {}, pickNone: function () {}, hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
     };
   }
