@@ -9,12 +9,21 @@ tab = json.load(open(os.path.join(ROOT, "data", "out", "ecm_tab.json")))
 res = json.load(open(os.path.join(ROOT, "data", "manual", "resources.json"))); res.pop("_about", None)
 act = json.load(open(os.path.join(ROOT, "data", "manual", "actions.json"))); act.pop("_about", None)
 strata = json.load(open(os.path.join(ROOT, "data", "out", "strata.json")))
+def _nice(d): return d.strftime("%B ") + str(d.day) + d.strftime(", %Y")
+def _next_refresh(today):
+    for y in (today.year, today.year + 1):
+        for mth in (2, 5, 8, 11):
+            d = datetime.date(y, mth, 15)
+            if d > today: return d
+rf = json.load(open(os.path.join(ROOT, "data", "out", "_refresh.json"))) if os.path.exists(os.path.join(ROOT, "data", "out", "_refresh.json")) else {"refreshed": datetime.date.today().isoformat()}
+rdate = datetime.date.fromisoformat(rf["refreshed"])
+refresh_line = "Data last refreshed " + _nice(rdate) + ". Next scheduled refresh: " + _nice(_next_refresh(datetime.date.today())) + "."
 mcp = json.load(open(os.path.join(ROOT, "data", "out", "mcp_plans.json")))
 tpl = open(os.path.join(ROOT, "site", "template.html")).read()
 J = lambda o: json.dumps(o, separators=(",", ":"))
 page = (tpl.replace("__INDD__", ind).replace("__ECM_USE__", J(tab["ECM_USE"])).replace("__ECMD_PUB__", J(tab["ECMD_PUB"]))
-        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
-for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__"]:
+        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
+for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__REFRESH_LINE__"]:
     assert ph not in page, ph
 if "–" in page or "—" in page:
     raise SystemExit("dash character found in page")

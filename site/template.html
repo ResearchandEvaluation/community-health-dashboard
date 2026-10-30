@@ -27,13 +27,13 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div style="background: #ffffff; border-bottom: 1px solid #dee3e8; padding: 20px 24px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
 <a href="https://pophealthinnovationlab.org/" style="display: inline-flex; padding: 8px 0"><img src="assets/phil-logo.png" alt="Population Health Innovation Lab, a program of the Public Health Institute" style="height: 104px; width: auto; max-width: none; display: block; margin: -17px 0 -21px -20px"></a>
-<span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Review</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Review</span><a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback" style="min-height: 40px; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; background: #039862; color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none">Share feedback</a></div>
 </div>
 </div>
 <header style="background: #12365b; color: #ffffff; padding: 40px 24px 32px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px">
 <h1 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 40px; line-height: 1.15; font-weight: 700; color: #ffffff">Community Health Data Dashboard</h1>
-<p style="margin: 0; max-width: 820px; font-size: 17px; line-height: 1.5; color: #f3e9d7">Public data on health needs in the California communities PHIL serves, alongside how PHIL and its partners are working to improve health in each community.</p>
+<p style="margin: 0; max-width: 820px; font-size: 17px; line-height: 1.5; color: #f3e9d7">Public data on health needs in the California communities the Population Health Innovation Lab (PHIL) serves, alongside how PHIL and its partners are working to improve health in each community.</p>
 </div>
 </header>
 <nav aria-label="Dashboard sections" style="background: #f3e9d7; border-bottom: 1px solid #dee3e8; padding: 12px 24px">
@@ -347,7 +347,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <section style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">{{topic.title}}</h2>
-<p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.5"><span style="font-weight: 800">Population: </span>{{topic.population}}</p>
+<p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.5"><span style="font-weight: 800">PHIL's work on this topic focuses on: </span>{{topic.population}}</p>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 12px">
@@ -508,7 +508,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">How This Page Is Organized</span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 4px 0 6px"><span style="font-size: 13px; font-weight: 800; color: #3d556e">Show:</span><sc-for list="{{topic.stageFilters}}" as="st" hint-placeholder-count="5"><button type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" style="{{st.style}}"><sc-if value="{{st.hasNum}}" hint-placeholder-val="{{true}}"><span aria-hidden="true" style="{{st.dot}}">{{st.num}}</span></sc-if>{{st.title}}</button></sc-for></div><p style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 900px">Measures follow the life course, from the earliest years through adulthood. The colored band on each card shows its stage, and the buttons above show one stage at a time. The life course framework draws on Nurius, Fleming, and Brindle (2019).</p></div>
 <sc-if value="{{topic.hasRealms}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 900px">Measures related to childhood adversity also carry a tag for one of the <a href="https://pacesconnection.com/pages/3RealmsACEs" target="_blank" rel="noopener" style="color: #496b9c">three realms of ACEs</a>, the settings where adverse experiences can occur:</p>
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 15px; line-height: 1.55; max-width: 900px">Measures related to childhood adversity also carry a tag for one of the <a href="https://pacesconnection.libguides.com/paces_science_resources/paces_connection_handouts" target="_blank" rel="noopener" style="color: #496b9c">three realms of ACEs</a>, the settings where adverse experiences can occur:</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px"><div style="background: #fde7d9; border: 1px solid #f2b48f; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #8a3b12">Realm 1: Within the household</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Caregiver mental health, substance use, and incarceration of a household member.</span></div><div style="background: #e6e1f5; border: 1px solid #bcb0e3; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #3f2f7a">Realm 2: Beyond the household</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Community violence and the social connections that surround a family.</span></div><div style="background: #dff1ea; border: 1px solid #9fd3bd; border-radius: 10px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 800; color: #0b5a40">Realm 3: Broader environment</span><span style="font-size: 13px; line-height: 1.45; color: #24384d">Poverty and the economic conditions of the community.</span></div></div></div>
 </sc-if>
 </div>
@@ -1235,7 +1235,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <img src="assets/phil-mark.png" alt="Population Health Innovation Lab mark" style="height: 72px; width: auto; flex-shrink: 0">
 <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5">
 <div style="font-weight: 800">About This Prototype</div>
-<p style="margin: 0">This is a prototype for PHIL team review. All data comes from public sources that update automatically.</p>
+<p style="margin: 0">This dashboard is open for public review through December 2026. Tell PHIL what is useful, what is unclear, and what is missing: <a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback" style="color: #496b9c; font-weight: 800">research@pophealthinnovationlab.org</a>. All data comes from public sources that update automatically. {{refreshLine}}</p>
 <p style="margin: 0">The Population Health Innovation Lab (PHIL), a program of the Public Health Institute, designs, catalyzes, and accelerates innovative approaches that advance public health, well-being, and equity. <a href="https://pophealthinnovationlab.org/">pophealthinnovationlab.org</a></p>
 </div>
 </div>
@@ -1710,6 +1710,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
     }
 
     var STRATA = __STRATA__;
+    var REFRESH_LINE = "__REFRESH_LINE__";
     var STAGES = {
       aces: [
         { title: "Childhood", desc: "The economic conditions children grow up in.", keys: ["acsChild"] },
@@ -2188,14 +2189,14 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       hasCounty: hasCounty, noCounty: !hasCounty,
       tabs: tabs, tabsHome: tabsHome, tabsTopics: tabsTopics, tabsServices: tabsServices, ov: ov, careCards: careCards, tiles: tiles, topicCards: topicCards, bridges: bridges, matrixCols: matrixCols,
       ovCounties: ovCounties, ovCountyLabel: ovPicked + " County", ovCountyTopics: (byCounty[ovPicked] || []).join("; "),
-      sourceSummary: "The dashboard draws on " + dataSources.length + " public datasets from " + pubs.length + " publishers, including the Centers for Disease Control and Prevention (CDC), the California Department of Public Health, the California Department of Health Care Services, and the U.S. Census Bureau.",
+      sourceSummary: "The dashboard draws on " + dataSources.length + " public datasets from " + pubs.length + " publishers, including the Centers for Disease Control and Prevention (CDC), the California Department of Public Health (CDPH), the Department of Health Care Services (DHCS), and the U.S. Census Bureau.",
       showSources: srcOpen, sourcesExpanded: srcOpen ? "true" : "false", sourcesLabel: srcOpen ? "Hide data sources" : "Show all data sources",
       toggleSources: function () { self.setState({ showSources: !srcOpen }); },
       dataSources: dataSources,
       showOverview: tab === "overview", showTopic: !!TOPICS[tab],
       topic: topic || { stageFilters: [], flow: [], stages: [], hasStages: false, noStages: true, hasRealms: false, groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {}, sets: [], cols: [], rows: [] },
-      showEcm: tab === "ecmcs", goProfile: go("profile"), showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
+      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
     };
   }

@@ -27,3 +27,6 @@ if failed:
     print("Continuing with last saved data for the failed sources.")
 else:
     print("\nAll pulls finished.")
+# Record when the data was last refreshed, for the dashboard footer.
+import json, datetime
+json.dump({"refreshed": datetime.date.today().isoformat(), "failed": failed}, open(os.path.join(HERE, "..", "data", "out", "_refresh.json"), "w"))

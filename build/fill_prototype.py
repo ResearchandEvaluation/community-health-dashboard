@@ -15,4 +15,14 @@ p = sys.argv[1]; s = open(p).read()
 for var, data in blobs.items():
     a = s.index(f"    var {var} = "); b = s.index(";\n", a)
     s = s[:a] + f"    var {var} = " + data + s[b:]
+import re as _re, datetime as _dt
+rf = json.load(open(os.path.join(ROOT, "data", "out", "_refresh.json")))
+rd = _dt.date.fromisoformat(rf["refreshed"])
+def _n(d): return d.strftime("%B ") + str(d.day) + d.strftime(", %Y")
+def _nx(t):
+    for y in (t.year, t.year + 1):
+        for m in (2, 5, 8, 11):
+            d = _dt.date(y, m, 15)
+            if d > t: return d
+s = _re.sub(r'var REFRESH_LINE = "[^"]*"', 'var REFRESH_LINE = "Data last refreshed ' + _n(rd) + '. Next scheduled refresh: ' + _n(_nx(_dt.date.today())) + '."', s)
 open(p, "w").write(s); print("prototype filled")
