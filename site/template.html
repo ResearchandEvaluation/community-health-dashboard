@@ -27,7 +27,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <div style="background: #ffffff; border-bottom: 1px solid #dee3e8; padding: 20px 24px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
 <a href="https://pophealthinnovationlab.org/" style="display: inline-flex; padding: 8px 0"><img src="assets/phil-logo.png" alt="Population Health Innovation Lab, a program of the Public Health Institute" style="height: 104px; width: auto; max-width: none; display: block; margin: -17px 0 -21px -20px"></a>
-<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Review</span><a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback" style="min-height: 40px; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; background: #039862; color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none">Share feedback</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center"><span style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #526c87">Prototype for Review</span><a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback&body=Which%20of%20these%20measures%20would%20you%20use%20in%20your%20next%20community%20health%20assessment%2C%20improvement%20plan%2C%20or%20BHSA%20Integrated%20Plan%3F%20What%20is%20missing%3F%0A%0AYour%20county%20and%20organization%3A%20%0A%0AYour%20answer%3A%20" style="min-height: 40px; display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 999px; background: #039862; color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none">Share feedback</a></div>
 </div>
 </div>
 <header style="background: #12365b; color: #ffffff; padding: 40px 24px 32px">
@@ -114,6 +114,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <li><span style="font-weight: 800">Open the Care and Coverage pages</span> for Medi-Cal coverage, access to care, Enhanced Care Management (ECM), and Community Supports in your county.</li>
 <li><span style="font-weight: 800">See how PHIL engages in your community</span> and how to connect.</li>
 <li><span style="font-weight: 800">Open Resources</span> for state dashboards, PHIL reports and toolkits, and the data sources behind this dashboard.</li>
+<li><span style="font-weight: 800">Planning a CHA, CHIP, or BHSA Integrated Plan?</span> <button type="button" onClick="{{ov.goPlan}}" style="padding: 0; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; text-decoration: underline">See how PHIL can help</button>.</li>
 </ol>
 </div>
 </div>
@@ -234,6 +235,30 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </div>
 </div>
 
+<section id="ov-plan" aria-labelledby="ov-plan-h" style="position: relative; overflow: hidden; border-radius: 14px; background: linear-gradient(120deg, #02623f 0%, #039862 55%, #30718d 100%); color: #ffffff; padding: 32px 32px 28px; display: flex; flex-direction: column; gap: 20px">
+<div aria-hidden="true" style="position: absolute; right: -60px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: rgba(184, 216, 118, 0.16)"></div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center">
+<img src="assets/fox-pointing.png" alt="PHIL's fox mascot pointing ahead" style="height: 110px; width: auto; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 460px; min-width: 0">
+<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #d9ef9f">Put This Data to Work</div>
+<h2 id="ov-plan-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; line-height: 1.2; color: #ffffff">Planning a Community Health Assessment, Improvement Plan, or BHSA Integrated Plan?</h2>
+<p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 1.55; color: #f0faf4">Health departments, hospitals, and community partners use data like this for community health assessments (CHA), community health needs assessments (CHNA), and community health improvement plans (CHIP). County behavioral health departments use it for Behavioral Health Services Act (BHSA) Integrated Plans, which counties write every three years and update each year. PHIL supports teams through each step, and has supported hospital needs assessments, including the Cottage Health CHNA.</p>
+</div>
+</div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">1</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Make sense of the data together</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Data Walks and facilitated sessions with community members and partners.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">2</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Set shared priorities</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Facilitation that brings sectors to agreement on what to act on first.</div></div></div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">3</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Put findings into practice</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Planning, coaching, and data visualization to carry priorities into action.</div></div></div>
+</div>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+<a href="https://pophealthinnovationlab.org/phil-collective-consultation-form/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #b8d876; color: #12365b; font-size: 15px; font-weight: 800; text-decoration: none">Request a consultation<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#12365b" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+<a href="https://pophealthinnovationlab.org/technical-assistance/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">PHIL technical assistance</a>
+<button type="button" onClick="{{goProfile}}" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); background: transparent; color: #ffffff; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer">Print your county profile</button>
+<a href="https://www.dhcs.ca.gov/?p=82676" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">About BHSA Integrated Plans</a>
+<a href="https://pophealthinnovationlab.org/data-walk/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">About Data Walks</a>
+</div>
+</section>
+
 <sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
 <div id="ov-phil" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 6px">
@@ -291,29 +316,6 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </table>
 </div>
 </div>
-
-<section id="ov-plan" aria-labelledby="ov-plan-h" style="position: relative; overflow: hidden; border-radius: 14px; background: linear-gradient(120deg, #02623f 0%, #039862 55%, #30718d 100%); color: #ffffff; padding: 32px 32px 28px; display: flex; flex-direction: column; gap: 20px">
-<div aria-hidden="true" style="position: absolute; right: -60px; bottom: -80px; width: 260px; height: 260px; border-radius: 50%; background: rgba(184, 216, 118, 0.16)"></div>
-<div style="position: relative; display: flex; flex-wrap: wrap; gap: 20px 28px; align-items: center">
-<img src="assets/fox-pointing.png" alt="PHIL's fox mascot pointing ahead" style="height: 110px; width: auto; flex-shrink: 0">
-<div style="display: flex; flex-direction: column; gap: 8px; flex: 1 1 460px; min-width: 0">
-<div style="font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #d9ef9f">Put This Data to Work</div>
-<h2 id="ov-plan-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 28px; line-height: 1.2; color: #ffffff">Planning a Community Health Assessment or Improvement Plan?</h2>
-<p style="margin: 0; max-width: 760px; font-size: 16px; line-height: 1.55; color: #f0faf4">Health departments, hospitals, and community partners use data like this for community health assessments (CHA), community health needs assessments (CHNA), and community health improvement plans (CHIP). PHIL supports teams through each step, and has supported hospital needs assessments, including the Cottage Health CHNA.</p>
-</div>
-</div>
-<div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
-<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">1</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Make sense of the data together</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Data Walks and facilitated sessions with community members and partners.</div></div></div>
-<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">2</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Set shared priorities</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Facilitation that brings sectors to agreement on what to act on first.</div></div></div>
-<div style="display: flex; gap: 12px; align-items: flex-start; background: rgba(255, 255, 255, 0.10); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px; padding: 14px 16px"><span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 50%; background: #b8d876; color: #02623f; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0">3</span><div><div style="font-size: 15px; font-weight: 800; color: #ffffff">Put findings into practice</div><div style="font-size: 13px; line-height: 1.45; color: #dff3e8">Planning, coaching, and data visualization to carry priorities into action.</div></div></div>
-</div>
-<div style="position: relative; display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
-<a href="https://pophealthinnovationlab.org/phil-collective-consultation-form/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; background: #b8d876; color: #12365b; font-size: 15px; font-weight: 800; text-decoration: none">Request a consultation<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#12365b" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
-<a href="https://pophealthinnovationlab.org/technical-assistance/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">PHIL technical assistance</a>
-<button type="button" onClick="{{goProfile}}" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); background: transparent; color: #ffffff; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer">Print your county profile</button>
-<a href="https://pophealthinnovationlab.org/data-walk/" target="_blank" rel="noopener" style="min-height: 48px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.7); color: #ffffff; font-size: 15px; font-weight: 800; text-decoration: none">About Data Walks</a>
-</div>
-</section>
 
 <div style="background: #f3e9d7; border-radius: 10px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; gap: 16px; align-items: center">
@@ -831,7 +833,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <a href="{{topic.act.county.url}}" target="_blank" rel="noopener" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 999px; background: #12365b; color: #ffffff; font-size: 14px; font-weight: 800; text-decoration: none">Open the tool<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </article>
 <div style="background: #e6f5ec; border: 1px solid #b5dfc6; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<div style="font-size: 15px; font-weight: 800; line-height: 1.4; color: #02623f">Planning a community health assessment, needs assessment, or improvement plan in {{countyLabel}}?</div>
+<div style="font-size: 15px; font-weight: 800; line-height: 1.4; color: #02623f">Planning a community health assessment, improvement plan, or BHSA Integrated Plan in {{countyLabel}}?</div>
 <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">PHIL can help your team make sense of this data with partners, set shared priorities, and put findings into practice.</p>
 <a href="https://pophealthinnovationlab.org/phil-collective-consultation-form/" target="_blank" rel="noopener" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 800; color: #02623f; text-decoration: underline; text-underline-offset: 3px">Request a consultation with PHIL<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#02623f" stroke-width="2.6" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 </div>
@@ -1235,7 +1237,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <img src="assets/phil-mark.png" alt="Population Health Innovation Lab mark" style="height: 72px; width: auto; flex-shrink: 0">
 <div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.5">
 <div style="font-weight: 800">About This Prototype</div>
-<p style="margin: 0">This dashboard is open for public review through December 2026. Tell PHIL what is useful, what is unclear, and what is missing: <a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback" style="color: #496b9c; font-weight: 800">research@pophealthinnovationlab.org</a>. All data comes from public sources that update automatically. {{refreshLine}}</p>
+<p style="margin: 0">This dashboard is open for public review through December 2026. Which of these measures would you use in your next community health assessment, improvement plan, or Behavioral Health Services Act (BHSA) Integrated Plan, and what is missing? Tell PHIL: <a href="mailto:research@pophealthinnovationlab.org?subject=Community%20Health%20Data%20Dashboard%20feedback&body=Which%20of%20these%20measures%20would%20you%20use%20in%20your%20next%20community%20health%20assessment%2C%20improvement%20plan%2C%20or%20BHSA%20Integrated%20Plan%3F%20What%20is%20missing%3F%0A%0AYour%20county%20and%20organization%3A%20%0A%0AYour%20answer%3A%20" style="color: #496b9c; font-weight: 800">research@pophealthinnovationlab.org</a>. All data comes from public sources that update automatically. {{refreshLine}}</p>
 <p style="margin: 0">The Population Health Innovation Lab (PHIL), a program of the Public Health Institute, designs, catalyzes, and accelerates innovative approaches that advance public health, well-being, and equity. <a href="https://pophealthinnovationlab.org/">pophealthinnovationlab.org</a></p>
 </div>
 </div>
@@ -2160,7 +2162,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
       pickTitle: hasCounty ? "Your County: " + gCounty : "Choose Your County to Begin",
       counties: countyChips([], "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 800; cursor: pointer; "),
       snapshot: ovSnap,
-      goEcm: go("ecmcs"), goTopics: scrollToId("ov-topics"), goPhil: scrollToId("ov-phil"),
+      goEcm: go("ecmcs"), goPlan: scrollToId("ov-plan"), goTopics: scrollToId("ov-topics"), goPhil: scrollToId("ov-phil"),
       ecmLine: "Medi-Cal coverage and access to care, and the " + Object.keys(ecmOffered).length + " of 14 Community Supports with contracted providers in " + gCounty + " County.",
       philLine: philHere.length ? "PHIL is engaged here through " + philHere.length + (philHere.length === 1 ? " project or partnership." : " projects and partnerships.") : "PHIL stays engaged here through past projects and ongoing relationships.",
       philIntro: philHere.length ? "PHIL's engagements in the " + gCounty + " County community include funded projects, collaboratives, and communities of practice. Select a name to open its page on pophealthinnovationlab.org, or a topic to see its data." : "PHIL stays engaged with partners in the " + gCounty + " County community through past projects and ongoing relationships. PHIL's projects and partnerships across California are shown below, and every page has data for " + gCounty + " County.",
