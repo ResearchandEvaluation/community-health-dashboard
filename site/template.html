@@ -60,7 +60,16 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </div></div>
 </div>
 </nav>
+<div class="phil-noprint" style="background: #ffffff; border-bottom: 1px solid #dee3e8; padding: 12px 24px">
+<form onSubmit="{{find.submit}}" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center">
+<label for="phil-find" style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d; white-space: nowrap">Find data</label>
+<input id="phil-find" type="search" name="q" value="{{find.q}}" autocomplete="off" placeholder="Try: stroke, youth mental health, housing, foster care, BHSA" aria-label="Find data on this dashboard" style="flex: 1 1 320px; min-width: 0; min-height: 42px; padding: 8px 14px; border: 1px solid #73889e; border-radius: 999px; font-family: inherit; font-size: 15px; color: #12365b; background: #ffffff">
+<button type="submit" style="min-height: 42px; padding: 8px 18px; border-radius: 999px; border: none; background: #12365b; color: #ffffff; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Search</button>
+<button id="phil-find-clear" type="button" onClick="{{find.clear}}" style="display: none; min-height: 42px; padding: 8px 14px; border-radius: 999px; border: 1px solid #c9d3dd; background: #ffffff; color: #12365b; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Clear</button>
+</form>
+</div>
 <main style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 64px; display: flex; flex-direction: column; gap: 48px">
+<div id="phil-find-panel" class="phil-noprint" style="display: none"></div>
 
 <sc-if value="{{showOverview}}" hint-placeholder-val="{{true}}">
 <section style="display: flex; flex-direction: column; gap: 48px">
@@ -2392,12 +2401,118 @@ A card with none of these shows the county's value alone.</li>
       }).filter(function (g) { return g.items.length; });
       res = { groups: rGroups, countyLine: "Resources that focus on specific counties list those counties." };
     }
+
+    // ---- Find data: search over every measure on the dashboard
+    var SYN = [
+      ["stroke", "cerebrovascular"], ["heart", "cardiac", "cardiovascular", "coronary"], ["diabetes", "diabetic"], ["obesity", "obese", "weight", "bmi"],
+      ["smoking", "smoke", "tobacco", "cigarette"], ["alcohol", "binge", "drinking"], ["drug", "overdose", "opioid", "substance", "stimulant"],
+      ["mental", "depression", "distress"], ["suicide", "self-harm"], ["homeless", "homelessness", "housing", "unsheltered", "rent", "mortgage"],
+      ["poverty", "poor", "income", "low-income"], ["insurance", "uninsured", "coverage", "medi-cal", "medicaid", "medical"],
+      ["kids", "children", "child", "youth", "kid"], ["teen", "adolescent", "adolescents", "teens"], ["school", "students", "student", "absenteeism", "graduation", "reading", "lunch"],
+      ["food", "nutrition", "hunger", "grocery", "lunch", "snap", "calfresh", "wic", "insecurity"], ["jail", "incarceration", "justice", "prison"],
+      ["foster", "welfare"], ["dentist", "dental", "oral"], ["doctor", "physician", "provider", "shortage", "hpsa", "workforce"],
+      ["air", "pollution", "particulate", "pm2.5"], ["vaccine", "flu", "immunization", "vaccination", "influenza"], ["cancer", "screening", "mammography", "mammogram", "colorectal"],
+      ["birth", "births", "prenatal", "infant", "maternal", "pregnancy", "pregnant", "birthweight", "newborn"], ["bhsa", "behavioral health services act", "integrated plan", "prudent reserve", "mhsa"],
+      ["ecm", "enhanced care management", "calaim", "community supports"], ["unemployment", "jobs", "employment", "work"], ["broadband", "internet"],
+      ["transportation", "vehicle", "car", "transit"], ["disability", "disabled"], ["language", "english"], ["exercise", "activity", "inactivity", "physical", "park"],
+      ["violence", "homicide", "firearm", "gun", "crash", "injury", "injuries"], ["asthma", "respiratory"], ["hospital", "hospitalization", "hospitalizations", "preventable", "emergency", "ed"],
+      ["race", "ethnicity", "breakdown", "breakdowns", "disparities", "equity", "group", "groups"], ["aces", "adverse", "trauma", "resilience"], ["blood pressure", "hypertension"]
+    ];
+    var STOP = { health: 1, data: 1, the: 1, of: 1, in: 1, for: 1, on: 1, and: 1, a: 1, an: 1, county: 1, counties: 1, rate: 1, rates: 1, about: 1, info: 1, information: 1, stats: 1, statistics: 1, numbers: 1, show: 1, me: 1, find: 1, what: 1, is: 1, there: 1, any: 1, do: 1, you: 1, have: 1, with: 1, to: 1 };
+    function stem(w) { w = w.toLowerCase(); if (w.length > 4 && /ies$/.test(w)) return w.slice(0, -3) + "y"; if (w.length > 4 && /(es|ed)$/.test(w)) return w.slice(0, -2); if (w.length > 3 && /s$/.test(w) && !/ss$/.test(w)) return w.slice(0, -1); return w; }
+    function alts(tok) { var out = [tok, stem(tok)]; SYN.forEach(function (g) { if (g.some(function (s) { return s === tok || s === stem(tok) || stem(s) === stem(tok); })) g.forEach(function (s) { out.push(s); }); }); return out.filter(function (v, i, a) { return v && a.indexOf(v) === i; }); }
+    var FINDEX = (function () {
+      var idx = [];
+      Object.keys(IND).forEach(function (k) {
+        var d = INDD[k]; if (!d) return;
+        var tops = TOPIC_ORDER.filter(function (tid) { return TOPICS[tid].indicators.indexOf(k) >= 0; });
+        if (!tops.length) return;
+        var strong = [IND[k].name].concat(d.m.map(function (m) { return m.l; })).join(" | ").toLowerCase();
+        var weak = (d.m.map(function (m) { return m.n || ""; }).join(" ") + " " + IND[k].publisher + " " + IND[k].dataset + " " + tops.map(function (tid) { return TOPICS[tid].title; }).join(" ")).toLowerCase();
+        idx.push({ key: k, name: IND[k].name, labels: d.m.map(function (m) { return m.l; }), period: d.m[0].p || "", publisher: IND[k].publisher, tops: tops, strong: strong, weak: weak,
+          det: ({ hdmort: "cardio", strokemort: "cardio", acsPov: "medi", cdeAbs: "youth", cdeGrad: "youth", asthmaED: "youth", smhsYouth: "youth" })[k] || "" });
+      });
+      return idx;
+    })();
+    function findData(q) {
+      var toks = String(q || "").toLowerCase().split(/[^a-z0-9.\-]+/).filter(function (w) { return w && !STOP[w]; });
+      if (!toks.length) return [];
+      var res = [];
+      FINDEX.forEach(function (e) {
+        var score = 0, ok = true;
+        toks.forEach(function (tk) {
+          var a = alts(tk), best = 0;
+          a.forEach(function (s) { if (s.length < 2) return; var own = (s === tk || s === stem(tk)); if (e.strong.indexOf(s) >= 0) best = Math.max(best, own ? 4 : 3); else if (own && e.weak.indexOf(s) >= 0) best = Math.max(best, 1); });
+          if (!best) ok = false; score += best;
+        });
+        if (ok) res.push({ e: e, score: score });
+      });
+      res.sort(function (a, b) { return b.score - a.score || a.e.name.localeCompare(b.e.name); });
+      return res.map(function (r) { return r.e; });
+    }
+    var FS = (window.__philFindState = window.__philFindState || { q: "" });
+    var fq = FS.q || "";
+    function esc(x) { return String(x == null ? "" : x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+    var DET_OF = { hdmort: "cardio", strokemort: "cardio", acsPov: "medi", cdeAbs: "youth", cdeGrad: "youth", asthmaED: "youth", smhsYouth: "youth" };
+    function findHTML(q) {
+      q = String(q || "").trim();
+      if (!q) return "";
+      var res = findData(q);
+      var ask = "mailto:research@pophealthinnovationlab.org?subject=" + encodeURIComponent("Data request: " + q) + "&body=" + encodeURIComponent("I searched the Community Health Data Dashboard for “" + q + "” and did not find it.\n\nWhat I am looking for:\n\nCounty:\n\nOrganization:\n");
+      var summary = res.length ? res.length + (res.length === 1 ? " measure matches " : " measures match ") + "“" + q + "”" + (hasCounty ? ", shown for " + gCounty + " County" : ". Choose a county to see values.") : "No measures match “" + q + "”. Try a broader word, or ask PHIL whether this data exists.";
+      var h = '<section class="phil-noprint" style="background: #f3e9d7; border-radius: 12px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">';
+      h += '<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 24px; color: #12365b">Find Data</h2><span style="font-size: 14px; color: #3d556e">' + esc(summary) + '</span></div>';
+      if (/race|ethnic|breakdown|disparit|equity|sex|gender|age group|student group|by group|subgroup/i.test(q)) h += '<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; background: #ffffff; border-radius: 8px; padding: 14px 18px; font-size: 14px; line-height: 1.5; color: #12365b"><span>Breakdowns by race and ethnicity, sex, age group, and student group for heart disease, stroke, poverty, insurance, school measures, asthma, and youth mental health services are on Your County in Detail.</span><button type="button" data-det="all" style="min-height: 38px; padding: 6px 16px; border-radius: 999px; border: 1px solid #12365b; background: #ffffff; color: #12365b; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer">Open Your County in Detail</button></div>';
+      if (!res.length) h += '<div style="display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; background: #ffffff; border-radius: 8px; padding: 14px 18px; font-size: 14px; line-height: 1.5; color: #12365b"><span>PHIL can check whether a public, regularly updated source exists for what you need.</span><a href="' + esc(ask) + '" style="min-height: 38px; display: inline-flex; align-items: center; padding: 6px 16px; border-radius: 999px; background: #02784d; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none">Ask PHIL about this data</a></div>';
+      h += '<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px">';
+      res.slice(0, 40).forEach(function (e) {
+        var tid = e.tops[0], more = e.tops.length > 1 ? "Also on " + e.tops.slice(1).map(function (x) { return TOPICS[x].title; }).join(", ") : "";
+        h += '<div style="display: flex; flex-direction: column; gap: 4px"><button type="button" data-open="' + esc(e.key) + '" data-tab="' + esc(tid) + '" style="text-align: left; font-family: inherit; cursor: pointer; background: #ffffff; border: 1px solid #dee3e8; border-radius: 8px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; color: #12365b; flex: 1">'
+          + '<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #30718d">' + esc(TOPICS[tid].title) + '</span>'
+          + '<span style="font-size: 15px; font-weight: 600; line-height: 1.3">' + esc(e.name) + '</span>'
+          + '<span style="font-size: 13px; line-height: 1.4; color: #3d556e">' + esc(e.labels.join("; ")) + '</span>'
+          + '<span style="font-size: 12px; color: #526c87">' + esc(e.publisher + ", " + e.period + ". " + more) + '</span>'
+          + '<span style="font-size: 13px; font-weight: 600; color: #496b9c; text-decoration: underline">Open this card</span></button>';
+        if (DET_OF[e.key]) h += '<button type="button" data-det="' + esc(DET_OF[e.key]) + '" style="align-self: flex-start; padding: 2px 4px; border: none; background: transparent; color: #496b9c; font-family: inherit; font-size: 12px; font-weight: 600; cursor: pointer; text-decoration: underline">Breakdowns by race, sex, or age on Your County in Detail</button>';
+        h += '</div>';
+      });
+      h += '</div><div style="font-size: 12px; color: #526c87">Did not find it? <a href="' + esc(ask) + '" style="color: #496b9c; text-decoration: underline">Ask PHIL</a> and the request goes to the research team with your search words.</div></section>';
+      return h;
+    }
+    function fillFind() {
+      try {
+        var box = document.getElementById("phil-find-panel"); if (!box) return;
+        var q = FS.q || "";
+        var inp = document.getElementById("phil-find");
+        if (inp && !inp.__wired) { inp.__wired = true; inp.addEventListener("input", function (ev) { FS.q = (ev.target.value || "").trim(); if (findTimer) clearTimeout(findTimer); findTimer = setTimeout(fillFind, 120); }); }
+        if (inp && inp.value !== (FS.q || "") && document.activeElement !== inp) inp.value = FS.q || "";
+        box.innerHTML = findHTML(q);
+        box.style.display = q ? "" : "none";
+        var clr = document.getElementById("phil-find-clear"); if (clr) clr.style.display = q ? "" : "none";
+        if (!box.__wired) {
+          box.__wired = true;
+          box.addEventListener("click", function (ev) {
+            var b = ev.target && ev.target.closest ? ev.target.closest("button[data-open],button[data-det]") : null; if (!b) return;
+            if (b.getAttribute("data-open")) { var k = b.getAttribute("data-open"), tid = b.getAttribute("data-tab"); self.setState({ tab: tid }); setTimeout(function () { try { var el = document.getElementById("card-" + k); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) {} }, 60); }
+            else { var d = b.getAttribute("data-det"); self.setState(d === "all" ? { tab: "detail" } : { tab: "detail", detTopic: d }); toTop(); }
+          });
+        }
+      } catch (e) {}
+    }
+    var findTimer = (window.__philFindTimer = window.__philFindTimer || null);
+    var find = {
+      q: fq,
+      submit: function (ev) { try { if (ev && ev.preventDefault) ev.preventDefault(); } catch (e) {} var el = document.getElementById("phil-find"); FS.q = el ? el.value.trim() : ""; fillFind(); try { if (el) el.blur(); } catch (e) {} },
+      clear: function () { FS.q = ""; var el = document.getElementById("phil-find"); if (el) el.value = ""; fillFind(); }
+    };
+    setTimeout(fillFind, 0);
     var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "detail" || t.id === "profile"; });
     var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; });
     var tabsServices = ["bhsa", "medi", "ecmcs"].map(function (id) { return tabs.filter(function (t) { return t.id === id; })[0]; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
     return {
       hasCounty: hasCounty, noCounty: !hasCounty,
+      find: find,
       tabs: tabs, tabsHome: tabsHome, tabsTopics: tabsTopics, tabsServices: tabsServices, ov: ov, careCards: careCards, tiles: tiles, topicCards: topicCards, bridges: bridges, matrixCols: matrixCols,
       ovCounties: ovCounties, ovCountyLabel: ovPicked + " County", ovCountyTopics: (byCounty[ovPicked] || []).join("; "),
       sourceSummary: "The dashboard draws on " + dataSources.length + " public datasets from " + pubs.length + " publishers, including the Centers for Disease Control and Prevention (CDC), the California Department of Public Health (CDPH), the Department of Health Care Services (DHCS), and the U.S. Census Bureau.",
