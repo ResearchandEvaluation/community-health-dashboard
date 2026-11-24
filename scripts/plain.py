@@ -5,6 +5,8 @@ ACS="U.S. Census Bureau American Community Survey estimate for 2020 to 2024. Est
 SM="DHCS count for fiscal year 2022-23. DHCS publishes counts for this measure and does not publish rates. DHCS withholds small counts to protect privacy."
 HP="The Health Resources and Services Administration (HRSA) designates places and populations with too few providers, and scores each designation from 0 to 25. A higher score means a greater shortage. A county can hold several designations: a geographic area, a population group such as low-income residents, or a clinic that serves underserved patients. The value shown is the score of the county's highest-scoring designation. A value of 0 means the county has no designation."
 MC="U.S. Census Bureau American Community Survey estimate for 2020 to 2024. Includes Medi-Cal and other public health coverage based on income (means-tested coverage)."
+CHR="County Health Rankings & Roadmaps 2025 release. California is the statewide value published in the same file."
+PL="CDC PLACES estimate, modeled from a national survey and adjusted for age. California is the state's own value from the direct BRFSS survey, so small differences should not be read as real differences."
 P={
 "hdmort":[("Heart disease deaths per 100,000 adults ages 35 and older","CDC rate for 2022 to 2024, adjusted for age. CDC smooths county rates using data from nearby counties so small-county rates are more stable.")],
 "strokemort":[("Stroke deaths per 100,000 adults ages 35 and older","CDC rate for 2022 to 2024, adjusted for age. CDC smooths county rates using data from nearby counties so small-county rates are more stable.")],
@@ -35,6 +37,17 @@ P={
 "opioidED":[("Opioid overdose emergency department visits per 100,000 residents","DHCS age-adjusted rate for 2024, from the Behavioral Health Public County Profile. DHCS publishes no California rate."),("Opioid overdose hospitalizations per 100,000 residents","DHCS age-adjusted rate for 2024. DHCS publishes no California rate.")],
 "cdeGrad":[("Students who graduated high school in four years","CDE four-year adjusted cohort graduation rate: students who earned a regular high school diploma within four years of starting grade 9.")],
 "jailRate":[("People in jail per 100,000 residents ages 15 to 64","Vera Institute of Justice rate, from Bureau of Justice Statistics and state and local jail data. Average daily jail population.")],
+"placesActivity":[("Adults with no leisure-time physical activity",PL)],
+"placesScreen":[("Adults ages 45 to 75 screened for colorectal cancer",PL+" Data year 2022."),("Adults who visited a dentist in the past year",PL+" Data year 2022.")],
+"chrFood":[("Food environment index, 0 (worst) to 10 (best)",CHR+" Combines limited access to healthy foods and food insecurity."),("People who are low income and live far from a grocery store",CHR)],
+"chrActive":[("People who live close to a park or recreational facility",CHR)],
+"chrLunch":[("Public school students eligible for free or reduced-price lunch",CHR)],
+"chrPrevent":[("Medicare enrollees 65 and older who received a flu vaccination",CHR+" Fee-for-service Medicare enrollees only."),("Women ages 65 to 74 on Medicare who received a mammogram",CHR+" Fee-for-service Medicare enrollees only.")],
+"chrDentists":[("Residents per dentist",CHR)],
+"chrJobs":[("Unemployment rate, people ages 16 and older",CHR+" From the Bureau of Labor Statistics annual average.")],
+"chrAir":[("Average daily fine particulate matter (PM2.5), micrograms per cubic meter",CHR+" From the CDC Environmental Public Health Tracking Network.")],
+"chrReading":[("Average reading grade level, students in grades 3 to 8",CHR+" From the Stanford Education Data Archive. A value of 3.0 means third graders read at grade level on average.")],
+"chrChildMort":[("Deaths among children under 18 per 100,000 children",CHR+" Four years of deaths pooled; small counties may be unreliable.")],
 "chrProviders":[("Residents per mental health provider","County Health Rankings & Roadmaps ratio. Mental health providers include psychiatrists, psychologists, licensed clinical social workers, counselors, marriage and family therapists, and advanced practice nurses specializing in mental health care."),("Residents per primary care physician","County Health Rankings & Roadmaps ratio. Primary care physicians practice general practice, family medicine, internal medicine, or pediatrics.")],
 "acsUnins6":[("Children under 6 without health insurance","Census ACS 5-year estimate, published with a margin of error.")],
 "cdeAbs":[("Students in grades K to 12 who were chronically absent","CDE rate. A student is chronically absent after missing 10 percent or more of school days. CDE published no data for 2019-20 because of COVID-19.")],
@@ -48,18 +61,20 @@ BHP="DHCS Behavioral Health Transformation performance measure for fiscal year 2
 PLAN="From the county's Behavioral Health Services Act (BHSA) Integrated Plan for fiscal year 2026-27, as published by DHCS in the Behavioral Health Public County Profile. Counties submit these plans; DHCS publishes no statewide value."
 CHSP="CDPH County Health Status Profiles, 2021 to 2023, adjusted for age. CDPH flags rates based on a small number of deaths, which can change a lot from year to year."
 P.update({
-"chdmort":[("Coronary heart disease deaths per 100,000 residents",CHSP+" CDPH flags none of the 17 counties for this measure.")],
+"chdmort":[("Coronary heart disease deaths per 100,000 residents",CHSP+" CDPH flags none of the dashboard counties for this measure.")],
 "diabmort":[("Diabetes deaths per 100,000 residents",CHSP+" Flagged counties: Colusa and Trinity.")],
 "infmort":[("Infant deaths per 1,000 live births","CDPH County Health Status Profiles, births in 2020 to 2022. CDPH withholds rates for small counties and flags rates based on a small number of infant deaths, which can change a lot from year to year. Flagged counties: Glenn, Humboldt, Mendocino, Tehama, Marin, and Napa.")],
 "lbw":[("Babies born at low birthweight","CDPH County Health Status Profiles, 2021 to 2023. Low birthweight means under 2,500 grams (5.5 pounds).")],
 "prenatal":[("Births with prenatal care that began in the first trimester","CDPH County Health Status Profiles, 2021 to 2023.")],
 "firearm":[("Firearm deaths per 100,000 residents",CHSP+" Flagged counties: Colusa, Del Norte, Glenn, and Trinity.")],
-"homicide":[("Homicide deaths per 100,000 residents",CHSP+" CDPH flags the rate in 11 of the 17 counties.")],
+"homicide":[("Homicide deaths per 100,000 residents",CHSP+" CDPH flags the rate in 11 of the dashboard counties.")],
 "mvc":[("Motor vehicle crash deaths per 100,000 residents",CHSP+" Flagged counties: Colusa, Del Norte, Glenn, and Trinity.")],
 "bhPerfAccess":[("Emergency visits for mental illness followed by a mental health service within 7 days",BHP),("Emergency visits for substance use followed by a substance use service within 7 days",BHP),("Hospital stays for mental illness followed by a mental health service within 7 days",BHP),("New substance use disorder episodes with treatment started within 14 days",BHP)],
 "bhPerfServices":[("Medi-Cal members with significant mental health needs who received at least 1 behavioral health service",BHP),("Medi-Cal members with significant mental health needs who received at least 3 behavioral health services",BHP),("Medi-Cal members with significant behavioral health needs experiencing or at risk of homelessness who received housing services",BHP)],
 "bhPerfFoster":[("Children and youth ages 0 to 20 in foster care, per 10,000 Medi-Cal members ages 0 to 20",BHP),("Children and youth in foster care who received specialty mental health services",BHP)],
 "bhPlanServed":[("People the county plans to serve in housing services",PLAN),("People the county plans to serve in mental health services",PLAN),("People the county plans to serve in substance use disorder services",PLAN)],
+"bhPlanRevenue":[("Projected BHSA revenue",PLAN+" The trend shows the three fiscal years of the plan period.")],
+"bhPlanReserve":[("Estimated prudent reserve at the end of the plan period",PLAN),("Maximum prudent reserve allowed for the county",PLAN)],
 "bhPlanCost":[("Planned spending on housing services",PLAN),("Planned spending on mental health services",PLAN),("Planned spending on substance use disorder services",PLAN)],
 "bhPlanAlloc":[("Share of planned Behavioral Health Services Act (BHSA) funds for Behavioral Health Services and Supports",PLAN+" The three shares add to 100 percent."),("Share of planned BHSA funds for Full Service Partnerships",PLAN),("Share of planned BHSA funds for Housing Interventions",PLAN)],
 "bhPen":[("Medi-Cal members who received county mental health services","DHCS Behavioral Health Public County Profile, calendar year 2024. DHCS publishes no statewide value. Sutter shares a behavioral health system with Yuba County."),("Medi-Cal members who received substance use disorder treatment through the county","DHCS Behavioral Health Public County Profile, calendar year 2024. DHCS publishes no statewide value. Sutter shares a behavioral health system with Yuba County.")],

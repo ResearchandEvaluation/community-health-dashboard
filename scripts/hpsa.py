@@ -14,7 +14,7 @@ COUNTIES = {
     "Butte": "06007", "Colusa": "06011", "Del Norte": "06015", "Glenn": "06021", "Humboldt": "06023",
     "Lake": "06033", "Mendocino": "06045", "Shasta": "06089", "Tehama": "06103", "Trinity": "06105",
     "Siskiyou": "06093", "Los Angeles": "06037", "San Bernardino": "06071", "Sonoma": "06097",
-    "Marin": "06041", "Sutter": "06101", "Napa": "06055",
+    "Marin": "06041", "Sutter": "06101", "Napa": "06055", "Alameda": "06001",
 }
 FILES = {
     "hpsaPC": ("https://data.hrsa.gov/DataDownload/DD_Files/BCD_HPSA_FCT_DET_PC.csv", "primary care"),
@@ -51,7 +51,7 @@ def run(key, url, disc):
     if whole:
         count_note += (" Counties with a whole-county geographic or population designation: " + ", ".join(whole) + ".")
     else:
-        count_note += " None of the 17 counties has a whole-county geographic or population designation; all geographic and population designations cover parts of counties (census tracts or county subdivisions)."
+        count_note += " None of the dashboard counties has a whole-county geographic or population designation; all geographic and population designations cover parts of counties (census tracts or county subdivisions)."
     score_note = (f"Highest HPSA score among designated {disc} HPSAs in the county (scale 0 to 25 for {disc}"
                   f", higher means greater shortage). A value of 0 means the county has no designated "
                   f"{disc} HPSA. No statewide score is published.")

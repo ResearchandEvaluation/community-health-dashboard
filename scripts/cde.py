@@ -10,7 +10,7 @@ import csv, io, json, requests
 
 COUNTIES = {"Butte": "04", "Colusa": "06", "Del Norte": "08", "Glenn": "11", "Humboldt": "12", "Lake": "17",
             "Mendocino": "23", "Shasta": "45", "Tehama": "52", "Trinity": "53", "Siskiyou": "47",
-            "Los Angeles": "19", "San Bernardino": "36", "Sonoma": "49", "Marin": "21", "Sutter": "51", "Napa": "28"}
+            "Los Angeles": "19", "San Bernardino": "36", "Sonoma": "49", "Marin": "21", "Sutter": "51", "Napa": "28", "Alameda": "01"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 ABS_BASE = "https://www3.cde.ca.gov/demo-downloads/attendance/"
 HSE_BASE = "https://www3.cde.ca.gov/demo-downloads/homeless/"
