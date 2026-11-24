@@ -38,25 +38,40 @@ RES = "aeb088b1-3904-47c3-b5c4-de564ff1426c"
 SRC = f"https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/{RES}"
 base = (f'FROM "{RES}" WHERE "MEDI_CAL_DELIVERY_SYSTEM" = \'SMHS\' AND "POP_CAT" = \'Children and Youth\' '
         f'AND "DEMO_CAT" = \'Age\'')
-fy = max(r["fy"] for r in sql(f'SELECT DISTINCT "FISCAL_YEAR" AS fy {base}'))
-rows = sql(f'SELECT * {base} AND "FISCAL_YEAR" = \'{fy}\'')
+fys = sorted(r["fy"] for r in sql(f'SELECT DISTINCT "FISCAL_YEAR" AS fy {base}'))
+fy = fys[-1]
+allrows = sql(f'SELECT * {base}')
 idx = {}
-for r in rows:
-    k = (r["Health Care Delivery System"].strip(), r["DEMO_GRP"])
+for r in allrows:
+    k = (r["FISCAL_YEAR"], r["Health Care Delivery System"].strip(), r["DEMO_GRP"])
     assert k not in idx, k
     idx[k] = r
-y1, y2 = fy.split("/")
-period = f"FY {y1}-{y2}"
 
 
-def cell(geo, grp, col):
-    r = idx.get((geo, grp))
+def fiscal(f):
+    y1, y2 = f.split("/")
+    return f"FY {y1}-{y2}"
+
+
+period = fiscal(fy)
+
+
+def cell(geo, grp, col, f=None):
+    r = idx.get((f or fy, geo, grp))
     if r is None:
         return None
     if r.get(col + "_ANNOT") not in (None, ""):
         return "suppressed"
     v = r.get(col)
     return None if v in (None, "") else int(float(v))
+
+
+def trend(grp, col):
+    def num(v):
+        return v if isinstance(v, int) else None
+    return {"periods": [fiscal(f) for f in fys],
+            "values": {c: [num(cell(c, grp, col, f)) for f in fys] for c in COUNTIES},
+            "california": [num(cell("Statewide", grp, col, f)) for f in fys]}
 
 
 NOTE = ("Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, "
@@ -85,7 +100,8 @@ for key, groups in specs.items():
                 "california": cell("Statewide", grp, col),
                 "california_source": "published",
                 "higher_is_worse": None,
-                "note": NOTE.format(fy=period, extra=extra),
+                "trend": trend(grp, col),
+                "note": NOTE.format(fy=period, extra=extra) + f" DHCS publishes fiscal years {fiscal(fys[0])} through {period}, shown as the trend.",
                 "source_url": SRC,
             })
     write(key, {"key": key, "measures": measures})

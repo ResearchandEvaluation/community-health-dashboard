@@ -23,7 +23,8 @@
         "Sonoma": 38,
         "Marin": 35.47,
         "Sutter": 52.2,
-        "Napa": 47.32
+        "Napa": 47.32,
+        "Alameda": 40.36
       },
       "california": 37.07,
       "california_source": "published",
@@ -53,7 +54,8 @@
         "Sonoma": 25.53,
         "Marin": 32.12,
         "Sutter": 36.83,
-        "Napa": 27.51
+        "Napa": 27.51,
+        "Alameda": 30.22
       },
       "california": 26.91,
       "california_source": "published",
@@ -83,12 +85,13 @@
         "Sonoma": 54.87,
         "Marin": 55.56,
         "Sutter": 50,
-        "Napa": 46.88
+        "Napa": 46.88,
+        "Alameda": 62.84
       },
       "california": 44.12,
       "california_source": "published",
       "higher_is_worse": false,
-      "note": "DHCS Behavioral Health Transformation measure IN-4 under the goal 'Reduce Institutionalization', published in the Behavioral Health Public County Profile Performance file for FY 2024-25 as a percent. Sutter County value is the combined Sutter-Yuba behavioral health county value. California value is the DHCS 'State' row. DHCS suppressed 3 of the 17 counties for small numbers.",
+      "note": "DHCS Behavioral Health Transformation measure IN-4 under the goal 'Reduce Institutionalization', published in the Behavioral Health Public County Profile Performance file for FY 2024-25 as a percent. Sutter County value is the combined Sutter-Yuba behavioral health county value. California value is the DHCS 'State' row. DHCS suppressed 3 of the dashboard counties for small numbers.",
       "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/cd6336be-070d-4045-a2ed-6501f636cb80"
     },
     {
@@ -113,7 +116,8 @@
         "Sonoma": 33.65,
         "Marin": 30.45,
         "Sutter": 35.74,
-        "Napa": 34.34
+        "Napa": 34.34,
+        "Alameda": 37.08
       },
       "california": 37.67,
       "california_source": "published",
@@ -143,7 +147,8 @@
         "Sonoma": 73.41,
         "Marin": 76.72,
         "Sutter": 71.24,
-        "Napa": 74.61
+        "Napa": 74.61,
+        "Alameda": 69.67
       },
       "california": 71.43,
       "california_source": "published",
@@ -173,7 +178,8 @@
         "Sonoma": 48.35,
         "Marin": 55.01,
         "Sutter": 48.43,
-        "Napa": 47.68
+        "Napa": 47.68,
+        "Alameda": 47
       },
       "california": 50.2,
       "california_source": "published",
@@ -203,7 +209,8 @@
         "Sonoma": 19.14,
         "Marin": 19.5,
         "Sutter": 28.21,
-        "Napa": 22.63
+        "Napa": 22.63,
+        "Alameda": 20.24
       },
       "california": 27.09,
       "california_source": "published",
@@ -233,7 +240,8 @@
         "Sonoma": 96.73,
         "Marin": 74.03,
         "Sutter": 130.3,
-        "Napa": 71.87
+        "Napa": 71.87,
+        "Alameda": 91.63
       },
       "california": 116.47,
       "california_source": "published",
@@ -263,12 +271,13 @@
         "Sonoma": 26.05,
         "Marin": 47.89,
         "Sutter": 18.06,
-        "Napa": 35.79
+        "Napa": 35.79,
+        "Alameda": 28.59
       },
       "california": 41.05,
       "california_source": "published",
       "higher_is_worse": false,
-      "note": "DHCS Behavioral Health Transformation measure RC-2 under the goal 'Reduce Removal of Children From Home', published in the Behavioral Health Public County Profile Performance file for FY 2024-25 as a percent. Sutter County value is the combined Sutter-Yuba behavioral health county value. California value is the DHCS 'State' row. DHCS suppressed 1 of the 17 counties for small numbers.",
+      "note": "DHCS Behavioral Health Transformation measure RC-2 under the goal 'Reduce Removal of Children From Home', published in the Behavioral Health Public County Profile Performance file for FY 2024-25 as a percent. Sutter County value is the combined Sutter-Yuba behavioral health county value. California value is the DHCS 'State' row. DHCS suppressed 1 of the dashboard counties for small numbers.",
       "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/cd6336be-070d-4045-a2ed-6501f636cb80"
     }
   ]

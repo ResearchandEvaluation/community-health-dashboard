@@ -23,7 +23,8 @@
         "Sonoma": 202181,
         "Marin": 94862,
         "Sutter": 0,
-        "Napa": 39982
+        "Napa": 39982,
+        "Alameda": 665791
       },
       "california": 15454035,
       "california_source": "calculated",
@@ -53,7 +54,8 @@
         "Sonoma": 6,
         "Marin": 3,
         "Sutter": 0,
-        "Napa": 2
+        "Napa": 2,
+        "Alameda": 12
       },
       "california": 311,
       "california_source": "calculated",

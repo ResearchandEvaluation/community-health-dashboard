@@ -140,7 +140,7 @@ def bh_perf():
                 "Sutter County value is the combined Sutter-Yuba behavioral health county value. "
                 "California value is the DHCS 'State' row.")
         if n_sup:
-            note += f" DHCS suppressed {n_sup} of the 17 counties for small numbers."
+            note += f" DHCS suppressed {n_sup} of the dashboard counties for small numbers."
         if any(v is None for v in vals.values()):
             note += " A null value means DHCS published no value for that county."
         measures.append({
@@ -191,7 +191,7 @@ def bh_plan():
             note = (base_note + f"'Grand Total' row of the '{dtl}' projection. Sutter County value is the combined "
                     "Sutter-Yuba behavioral health county plan. DHCS publishes no statewide total in this file.")
             if n_sup:
-                note += f" DHCS suppressed {n_sup} of the 17 counties for small numbers."
+                note += f" DHCS suppressed {n_sup} of the dashboard counties for small numbers."
             measures.append({
                 "id": mid, "label": label, "unit": unit, "period": period, "values": vals,
                 "california": by.get("State"), "california_source": "published", "higher_is_worse": None,
@@ -218,7 +218,72 @@ def bh_plan():
                      "this file."),
             "source_url": src(RES_PLAN),
         })
+    # ---- projected revenue (three fiscal years) and prudent reserve
+    def dollars(s):
+        v = num((s or "").replace("$", "").replace(",", "").strip()) if s not in (None, "") else None
+        return v
+    years = sorted({r["RPT_PERIOD_YEAR"].strip() for r in recs if (r["DIMENSION"] or "").strip() == "Revenue"})
+    rev_by_year = {}
+    for y in years:
+        rows = [r for r in recs if (r["DIMENSION"] or "").strip() == "Revenue" and r["RPT_PERIOD_YEAR"].strip() == y]
+        rev_by_year[y] = {norm(r["COUNTY_NAME"]): dollars(r["VALUE"]) for r in rows}
+    y0 = years[0]
+    rev_vals = fill(rev_by_year[y0])
+    measures.append({
+        "id": "bhsa_projected_revenue", "label": "Projected Behavioral Health Services Act revenue", "unit": "dollars",
+        "period": fiscal(y0), "values": rev_vals, "california": None, "california_source": "published", "higher_is_worse": None,
+        "trend": {"periods": [fiscal(y) for y in years], "values": {c: [rev_by_year[y].get(c) if isinstance(rev_by_year[y].get(c), (int, float)) else None for y in years] for c in COUNTIES}, "california": [None for y in years]},
+        "note": (base_note + "'Total Revenue' under the Revenue dimension: the BHSA revenue the county projects for each fiscal year of "
+                 "the plan period. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide total in this file."),
+        "source_url": src(RES_PLAN),
+    })
+    pr = [r for r in recs if (r["DIMENSION"] or "").strip() == "Prudent Reserve"]
+    for dtl, mid, label in [("Estimated Ending PR Amount", "bhsa_prudent_reserve_ending", "Estimated prudent reserve at the end of the plan period"),
+                            ("Local PR Maximum", "bhsa_prudent_reserve_max", "Maximum prudent reserve allowed for the county")]:
+        rows = [r for r in pr if (r["DIMENSION_DTL"] or "").strip() == dtl]
+        assert rows, dtl
+        vals = fill({norm(r["COUNTY_NAME"]): dollars(r["VALUE"]) for r in rows})
+        measures.append({
+            "id": mid, "label": label, "unit": "dollars", "period": "FY 2026-27 to 2028-29 plan", "values": vals,
+            "california": None, "california_source": "published", "higher_is_worse": None,
+            "note": (base_note + f"'{dtl}' under the Prudent Reserve dimension. The prudent reserve is the fund counties set aside under the "
+                     "Behavioral Health Services Act to sustain services when revenue falls. Sutter County value is the combined Sutter-Yuba "
+                     "behavioral health county plan. DHCS publishes no statewide value in this file."),
+            "source_url": src(RES_PLAN),
+        })
     return {"key": "bhPlan", "measures": measures}
+
+
+def bh_plan_info():
+    """Text facts from each county's Integrated Plan: county-selected goal, plan status, approved exemptions, funding transfers."""
+    recs = records(RES_PLAN)
+    def get(c, dim, dtl=None, year=None, field="VALUE"):
+        for r in recs:
+            if norm(r["COUNTY_NAME"]) != c or (r["DIMENSION"] or "").strip() != dim: continue
+            if dtl and (r["DIMENSION_DTL"] or "").strip() != dtl: continue
+            if year and r["RPT_PERIOD_YEAR"].strip() != year: continue
+            v = r.get(field)
+            return (v or "").strip() if isinstance(v, str) else v
+        return ""
+    info = {}
+    for c in COUNTIES:
+        fsp = [d for d in ("Assertive Community Treatment", "Forensic Assertive Community Treatment", "Individual Placement and Support")
+               if get(c, "BHSA Exemptions FSP", d) == "Approved"]
+        hi = {}
+        for d, lab in [("Pct BHSF Funds HI Component", "share of funds to Housing Interventions"), ("Chronically Homeless Allocation Pct", "share for people who are chronically homeless"),
+                       ("Capital Development Allocation Pct", "share for capital development"), ("Remaining Pct Funds to BHSS", "remaining share to Behavioral Health Services and Supports"),
+                       ("Remaining Pct Funds to FSP", "remaining share to Full Service Partnerships")]:
+            v = get(c, "BHSA Exemptions HI", d)
+            if v not in ("", None): hi[lab] = v
+        tr = {}
+        for d, lab in [("Behavioral Health Services and Supports", "Behavioral Health Services and Supports"), ("Full Service Partnership", "Full Service Partnership"), ("Housing Intervention", "Housing Intervention")]:
+            v = get(c, "Funding Transfers", d, PLAN_YEAR, "FUNDING_TRANSFER_REQUEST")
+            if v not in ("", None): tr[lab] = v
+        info[c] = {"goal": get(c, "Population Health Measures", "County Selected Goal"),
+                   "approved": get(c, "Plan Status", "Approved Date"), "submitted": get(c, "Plan Status", "Submission Date"),
+                   "late": get(c, "Plan Status", "Submitted Late"), "fsp_exemptions": fsp, "hi_exemption": hi, "transfers": tr}
+    return {"key": "bhPlanInfo", "info": info, "source_url": src(RES_PLAN),
+            "goals": ["Overdoses", "Suicides", "Care experience", "Engagement in work", "Engagement in school", "Prevention and treatment of co-occurring physical health conditions", "Social connection", "Quality of life"]}
 
 
 # ---------------------------------------------------------------- bhPen
@@ -249,7 +314,7 @@ def bh_pen():
         n_sup = sum(1 for v in vals.values() if v == "suppressed")
         note = base + extra
         if n_sup:
-            note += f" DHCS suppressed {n_sup} of the 17 counties for small numbers."
+            note += f" DHCS suppressed {n_sup} of the dashboard counties for small numbers."
         note += " Medi-Cal managed care plans DHCS lists for each county: " + mcp_text + "."
         measures.append({
             "id": mid, "label": label, "unit": unit, "period": period, "values": vals,
@@ -260,6 +325,7 @@ def bh_pen():
 
 
 def main():
+    write("bhPlanInfo", bh_plan_info())
     for obj in (bh_perf(), bh_plan(), bh_pen()):
         for m in obj["measures"]:
             missing = [c for c in COUNTIES if c not in m["values"]]

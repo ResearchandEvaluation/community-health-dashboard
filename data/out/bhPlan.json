@@ -23,12 +23,13 @@
         "Sonoma": 2391,
         "Marin": 731,
         "Sutter": 681,
-        "Napa": 94
+        "Napa": 94,
+        "Alameda": 13381
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. 'Grand Total' row of the 'Housing Continuum Projected Exp All BH Funding Sources' projection. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide total in this file. DHCS suppressed 1 of the 17 counties for small numbers.",
+      "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. 'Grand Total' row of the 'Housing Continuum Projected Exp All BH Funding Sources' projection. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide total in this file. DHCS suppressed 1 of the dashboard counties for small numbers.",
       "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638"
     },
     {
@@ -53,7 +54,8 @@
         "Sonoma": 37640089,
         "Marin": 14485152,
         "Sutter": 4524598,
-        "Napa": 3306351
+        "Napa": 3306351,
+        "Alameda": 93607818
       },
       "california": null,
       "california_source": "published",
@@ -83,7 +85,8 @@
         "Sonoma": 13084,
         "Marin": 13278,
         "Sutter": 13488,
-        "Napa": 6523
+        "Napa": 6523,
+        "Alameda": 79910
       },
       "california": null,
       "california_source": "published",
@@ -113,7 +116,8 @@
         "Sonoma": 145584698,
         "Marin": 61022043,
         "Sutter": 41820701,
-        "Napa": 52620661
+        "Napa": 52620661,
+        "Alameda": 527145240
       },
       "california": null,
       "california_source": "published",
@@ -143,7 +147,8 @@
         "Sonoma": 11666,
         "Marin": 3983,
         "Sutter": 8119,
-        "Napa": 3352
+        "Napa": 3352,
+        "Alameda": 10187
       },
       "california": null,
       "california_source": "published",
@@ -173,7 +178,8 @@
         "Sonoma": 32618996,
         "Marin": 14893470,
         "Sutter": 5792891,
-        "Napa": 12340000
+        "Napa": 12340000,
+        "Alameda": 56125202
       },
       "california": null,
       "california_source": "published",
@@ -203,7 +209,8 @@
         "Sonoma": 35,
         "Marin": 35,
         "Sutter": 35,
-        "Napa": 45
+        "Napa": 45,
+        "Alameda": 35
       },
       "california": null,
       "california_source": "published",
@@ -233,7 +240,8 @@
         "Sonoma": 35,
         "Marin": 35,
         "Sutter": 35,
-        "Napa": 38
+        "Napa": 38,
+        "Alameda": 35
       },
       "california": null,
       "california_source": "published",
@@ -263,12 +271,210 @@
         "Sonoma": 30,
         "Marin": 30,
         "Sutter": 30,
-        "Napa": 17
+        "Napa": 17,
+        "Alameda": 30
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
       "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. FINAL_ADJUSTED_ALLOCATION for the 'Housing Intervention' component: the base allocation after any Housing Intervention exemption adjustment and funding transfer request. Base allocations under the Behavioral Health Services Act are 35 percent Behavioral Health Services and Supports, 35 percent Full Service Partnership and 30 percent Housing Intervention. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide value in this file.",
+      "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638"
+    },
+    {
+      "id": "bhsa_projected_revenue",
+      "label": "Projected Behavioral Health Services Act revenue",
+      "unit": "dollars",
+      "period": "FY 2026-27",
+      "values": {
+        "Butte": 24695247,
+        "Colusa": 3524924,
+        "Del Norte": 6049041,
+        "Glenn": 4359899,
+        "Humboldt": 11273841,
+        "Lake": 10905505,
+        "Mendocino": 15828166,
+        "Shasta": 23500394,
+        "Tehama": 10708900,
+        "Trinity": 4789271,
+        "Siskiyou": 4595808,
+        "Los Angeles": 879471000,
+        "San Bernardino": 205364966,
+        "Sonoma": 51965767,
+        "Marin": 19515057,
+        "Sutter": 24332123,
+        "Napa": 11000000,
+        "Alameda": 172671985
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "trend": {
+        "periods": [
+          "FY 2026-27",
+          "FY 2027-28",
+          "FY 2028-29"
+        ],
+        "values": {
+          "Butte": [
+            24695247,
+            26186986,
+            27787493
+          ],
+          "Colusa": [
+            3524924,
+            3373738,
+            3356980
+          ],
+          "Del Norte": [
+            6049041,
+            6214532,
+            5334050
+          ],
+          "Glenn": [
+            4359899,
+            3599719,
+            3576148
+          ],
+          "Humboldt": [
+            11273841,
+            11273841,
+            11273841
+          ],
+          "Lake": [
+            10905505,
+            6712116,
+            7122350
+          ],
+          "Mendocino": [
+            15828166,
+            10457905,
+            10610662
+          ],
+          "Shasta": [
+            23500394,
+            22771452,
+            24785258
+          ],
+          "Tehama": [
+            10708900,
+            10825079,
+            11140653
+          ],
+          "Trinity": [
+            4789271,
+            4609732,
+            4726610
+          ],
+          "Siskiyou": [
+            4595808,
+            4490446,
+            4473610
+          ],
+          "Los Angeles": [
+            879471000,
+            986904000,
+            1047222000
+          ],
+          "San Bernardino": [
+            205364966,
+            211525917,
+            217871694
+          ],
+          "Sonoma": [
+            51965767,
+            50496340,
+            49096340
+          ],
+          "Marin": [
+            19515057,
+            19113003,
+            18985131
+          ],
+          "Sutter": [
+            24332123,
+            20077178,
+            19017531
+          ],
+          "Napa": [
+            11000000,
+            11000000,
+            11000000
+          ],
+          "Alameda": [
+            172671985,
+            152018885,
+            155906569
+          ]
+        },
+        "california": [
+          null,
+          null,
+          null
+        ]
+      },
+      "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. 'Total Revenue' under the Revenue dimension: the BHSA revenue the county projects for each fiscal year of the plan period. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide total in this file.",
+      "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638"
+    },
+    {
+      "id": "bhsa_prudent_reserve_ending",
+      "label": "Estimated prudent reserve at the end of the plan period",
+      "unit": "dollars",
+      "period": "FY 2026-27 to 2028-29 plan",
+      "values": {
+        "Butte": 2376466,
+        "Colusa": 764926,
+        "Del Norte": 614385.72,
+        "Glenn": 206703,
+        "Humboldt": 1239391.2,
+        "Lake": 836050,
+        "Mendocino": 1100316,
+        "Shasta": 532500.15,
+        "Tehama": 550618,
+        "Trinity": 367550.12,
+        "Siskiyou": 879081,
+        "Los Angeles": 149826541.7,
+        "San Bernardino": 21655429,
+        "Sonoma": 944980.88,
+        "Marin": 2175490,
+        "Sutter": 521836,
+        "Napa": 764402,
+        "Alameda": 14593037.83
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. 'Estimated Ending PR Amount' under the Prudent Reserve dimension. The prudent reserve is the fund counties set aside under the Behavioral Health Services Act to sustain services when revenue falls. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide value in this file.",
+      "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638"
+    },
+    {
+      "id": "bhsa_prudent_reserve_max",
+      "label": "Maximum prudent reserve allowed for the county",
+      "unit": "dollars",
+      "period": "FY 2026-27 to 2028-29 plan",
+      "values": {
+        "Butte": 3372112.45,
+        "Colusa": 764925.86,
+        "Del Norte": 835465.36,
+        "Glenn": 877223,
+        "Humboldt": 2687146.34,
+        "Lake": 1435578.24,
+        "Mendocino": 1785186.66,
+        "Shasta": 3505225.08,
+        "Tehama": 1397657.11,
+        "Trinity": 536588.79,
+        "Siskiyou": 1071656.46,
+        "Los Angeles": 172412205.15,
+        "San Bernardino": 33152667.63,
+        "Sonoma": 8607473,
+        "Marin": 3787716.15,
+        "Sutter": 3548708,
+        "Napa": 2424255,
+        "Alameda": 22919660.71
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "DHCS Behavioral Health Public County Profile Integrated Plan Status file, county Behavioral Health Integrated Plans for the three year period FY 2026-27 to FY 2028-29, values shown for FY 2026-27. 'Local PR Maximum' under the Prudent Reserve dimension. The prudent reserve is the fund counties set aside under the Behavioral Health Services Act to sustain services when revenue falls. Sutter County value is the combined Sutter-Yuba behavioral health county plan. DHCS publishes no statewide value in this file.",
       "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638"
     }
   ]

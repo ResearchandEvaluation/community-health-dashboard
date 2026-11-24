@@ -7,7 +7,7 @@ import csv, io, json, os, time, requests
 RAW = "https://raw.githubusercontent.com/vera-institute/incarceration-trends/main/"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta", "Tehama", "Trinity",
-            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa"]
+            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa", "Alameda"]
 
 
 def get(name):

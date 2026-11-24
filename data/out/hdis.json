@@ -23,12 +23,13 @@
         "Sonoma": 6058,
         "Marin": 2881,
         "Sutter": 3750,
-        "Napa": 1159
+        "Napa": 1159,
+        "Alameda": 17632
       },
       "california": 426890,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The Los Angeles County row is smaller than the sum of the four Los Angeles CoC rows (135,488) because people served in more than one CoC are counted once. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The Los Angeles County row is smaller than the sum of the four Los Angeles CoC rows (135,488) because people served in more than one CoC are counted once. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC; Alameda: CA-502 Oakland, Berkeley/Alameda County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
       "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
       "trend": {
         "periods": [
@@ -175,6 +176,14 @@
             1137,
             1309,
             1159
+          ],
+          "Alameda": [
+            10623,
+            12092,
+            14116,
+            16350,
+            17638,
+            17632
           ]
         },
         "california": [
@@ -209,12 +218,13 @@
         "Sonoma": 1047,
         "Marin": 690,
         "Sutter": 613,
-        "Napa": 349
+        "Napa": 349,
+        "Alameda": 3139
       },
       "california": 70906,
       "california_source": "published",
       "higher_is_worse": false,
-      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. Measure 3 counts people who exited the homelessness response system to permanent housing plus people who moved into permanent housing within the system. Cal ICH publishes this measure as a count of people; the dataset publishes no percent of exits. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. Measure 3 counts people who exited the homelessness response system to permanent housing plus people who moved into permanent housing within the system. Cal ICH publishes this measure as a count of people; the dataset publishes no percent of exits. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC; Alameda: CA-502 Oakland, Berkeley/Alameda County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
       "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
       "trend": {
         "periods": [
@@ -361,6 +371,14 @@
             325,
             380,
             349
+          ],
+          "Alameda": [
+            2112,
+            2689,
+            2385,
+            3062,
+            2943,
+            3139
           ]
         },
         "california": [
@@ -395,12 +413,13 @@
         "Sonoma": 6.4,
         "Marin": 6.4,
         "Sutter": 7.7,
-        "Napa": 7.7
+        "Napa": 7.7,
+        "Alameda": 11.3
       },
       "california": 8.5,
       "california_source": "published",
       "higher_is_worse": true,
-      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The data dictionary defines Measure 5 as returns within 6 months of exit to permanent housing. Cal ICH stores the share as a decimal fraction (for example 0.085); the value shown is that fraction multiplied by 100 and rounded to one decimal. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
+      "note": "Published by the California Interagency Council on Homelessness (Cal ICH) from HDIS, calendar years 2020 to 2025. The data dictionary defines Measure 5 as returns within 6 months of exit to permanent housing. Cal ICH stores the share as a decimal fraction (for example 0.085); the value shown is that fraction multiplied by 100 and rounded to one decimal. Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), so counties that share a CoC show the same number. County to CoC: Butte: CA-519 Chico, Paradise/Butte County CoC; Colusa: CA-523 Colusa, Glenn, Trinity Counties CoC; Del Norte: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Glenn: CA-523 Colusa, Glenn, Trinity Counties CoC; Humboldt: CA-522 Humboldt County CoC; Lake: CA-529 Lake County CoC; Mendocino: CA-509 Mendocino County CoC; Shasta: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Tehama: CA-527 Tehama County CoC; Trinity: CA-523 Colusa, Glenn, Trinity Counties CoC; Siskiyou: CA-516 Redding/Shasta, Siskiyou, Lassen, Plumas, Del Norte, Modoc, Sierra Counties CoC; Los Angeles: Los Angeles County; San Bernardino: CA-609 San Bernardino City & County CoC; Sonoma: CA-504 Santa Rosa, Petaluma/Sonoma County CoC; Marin: CA-507 Marin County CoC; Sutter: CA-524 Yuba City & County/Sutter County CoC; Napa: CA-517 Napa City & County CoC; Alameda: CA-502 Oakland, Berkeley/Alameda County CoC. Los Angeles uses the publisher's Los Angeles County row, which covers the Los Angeles City and County, Long Beach, Pasadena, and Glendale CoCs. California value is the published statewide row.",
       "source_url": "https://data.ca.gov/dataset/ca-system-performance-measures-statewide-and-by-coc/resource/e02178d9-1d34-4798-9979-f50af9f1742e",
       "trend": {
         "periods": [
@@ -547,6 +566,14 @@
             1.8,
             10.2,
             7.7
+          ],
+          "Alameda": [
+            10.0,
+            10.4,
+            13.3,
+            12.9,
+            14.9,
+            11.3
           ]
         },
         "california": [

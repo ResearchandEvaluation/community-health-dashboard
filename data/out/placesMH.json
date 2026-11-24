@@ -23,7 +23,8 @@
         "Sonoma": 17.2,
         "Marin": 15.8,
         "Sutter": 18.7,
-        "Napa": 16.8
+        "Napa": 16.8,
+        "Alameda": 15.5
       },
       "all_ca_counties": {
         "Humboldt": 20.7,
@@ -85,10 +86,11 @@
         "Yolo": 17.3,
         "Sonoma": 17.2
       },
-      "california": null,
-      "california_source": "published",
+      "california": 15.0,
+      "california_source": "BRFSS state survey",
       "higher_is_worse": true,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only. The California value is the state's age-adjusted estimate from the direct BRFSS state survey (CDC U.S. Chronic Disease Indicators (dataset hksd-2xuw), indicator MEN05 \"Frequent mental distress among adults\", 2023, age-adjusted prevalence). The county value is modeled and the state value is a direct survey estimate, so small differences between them should not be read as real differences.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     },
     {
@@ -113,7 +115,8 @@
         "Sonoma": 23.9,
         "Marin": 22.1,
         "Sutter": 22.0,
-        "Napa": 21.8
+        "Napa": 21.8,
+        "Alameda": 18.9
       },
       "all_ca_counties": {
         "Merced": 21.3,
@@ -175,10 +178,11 @@
         "San Luis Obispo": 23.7,
         "Solano": 19.9
       },
-      "california": null,
-      "california_source": "published",
+      "california": 17.0,
+      "california_source": "BRFSS state survey",
       "higher_is_worse": true,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only. The California value is the state's age-adjusted estimate from the direct BRFSS state survey (CDC U.S. Chronic Disease Indicators (dataset hksd-2xuw), indicator MEN02 \"Depression among adults\", 2023, age-adjusted prevalence). The county value is modeled and the state value is a direct survey estimate, so small differences between them should not be read as real differences.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     }
   ]

@@ -23,7 +23,8 @@
         "Sonoma": 14.3,
         "Marin": 6.9,
         "Sutter": 24.3,
-        "Napa": 14.9
+        "Napa": 14.9,
+        "Alameda": 17.9
       },
       "california": 22.7,
       "california_source": "published",
@@ -159,6 +160,13 @@
             13.8,
             13.9,
             14.9
+          ],
+          "Alameda": [
+            17.8,
+            18.2,
+            18.5,
+            18.2,
+            17.9
           ]
         },
         "california": [

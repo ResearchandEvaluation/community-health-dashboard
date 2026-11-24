@@ -17,7 +17,7 @@ OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "ou
 
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta",
             "Tehama", "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin",
-            "Sutter", "Napa"]
+            "Sutter", "Napa", "Alameda"]
 
 
 def api(action, **params):

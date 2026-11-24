@@ -14,7 +14,7 @@ API = "https://data.chhs.ca.gov/api/3/action/datastore_search"
 RES = "39b4a109-39e0-4a39-9940-6ae0d3349444"
 SRC = "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/39b4a109-39e0-4a39-9940-6ae0d3349444"
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta", "Tehama",
-            "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa"]
+            "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa", "Alameda"]
 ALIAS = {"Sutter": "Sutter-Yuba"}
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 

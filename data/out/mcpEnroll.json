@@ -23,12 +23,13 @@
         "Sonoma": 97375,
         "Marin": 40652,
         "Sutter": 42850,
-        "Napa": 25285
+        "Napa": 25285,
+        "Alameda": null
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type County Organized Health Systems. The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Partnership HealthPlan of California serves 15 of the 17 counties: Butte, Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Shasta, Tehama, Trinity, Siskiyou, Sonoma, Marin, Sutter, Napa.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type County Organized Health Systems. The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Partnership HealthPlan of California serves 15 of the dashboard counties: Butte, Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Shasta, Tehama, Trinity, Siskiyou, Sonoma, Marin, Sutter, Napa.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     },
     {
@@ -53,12 +54,44 @@
         "Sonoma": 26140,
         "Marin": 7693,
         "Sutter": "suppressed",
-        "Napa": 8188
+        "Napa": 8188,
+        "Alameda": 78434
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan), County Organized Health Systems. The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Kaiser Permanente serves 6 of the 17 counties: Los Angeles, San Bernardino, Sonoma, Marin, Sutter, Napa. DHCS suppressed the cell for 1 of those counties.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan), County Organized Health Systems, Single. The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Kaiser Permanente serves 7 of the dashboard counties: Los Angeles, San Bernardino, Sonoma, Marin, Sutter, Napa, Alameda. DHCS suppressed the cell for 1 of those counties.",
+      "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
+    },
+    {
+      "id": "mcp_alameda_alliance_for_health",
+      "label": "Medi-Cal members enrolled in Alameda Alliance for Health",
+      "unit": "count",
+      "period": "October 2026",
+      "values": {
+        "Butte": null,
+        "Colusa": null,
+        "Del Norte": null,
+        "Glenn": null,
+        "Humboldt": null,
+        "Lake": null,
+        "Mendocino": null,
+        "Shasta": null,
+        "Tehama": null,
+        "Trinity": null,
+        "Siskiyou": null,
+        "Los Angeles": null,
+        "San Bernardino": null,
+        "Sonoma": null,
+        "Marin": null,
+        "Sutter": null,
+        "Napa": null,
+        "Alameda": 357537
+      },
+      "california": null,
+      "california_source": "published",
+      "higher_is_worse": null,
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Single. The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Alameda Alliance for Health serves 1 of the dashboard counties: Alameda.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     },
     {
@@ -83,12 +116,13 @@
         "Sonoma": null,
         "Marin": null,
         "Sutter": null,
-        "Napa": null
+        "Napa": null,
+        "Alameda": null
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Health Net Community Solutions serves 1 of the 17 counties: Los Angeles.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Health Net Community Solutions serves 1 of the dashboard counties: Los Angeles.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     },
     {
@@ -113,12 +147,13 @@
         "Sonoma": null,
         "Marin": null,
         "Sutter": null,
-        "Napa": null
+        "Napa": null,
+        "Alameda": null
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Local Initiative (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. L.A. Care Health Plan serves 1 of the 17 counties: Los Angeles.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Local Initiative (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. L.A. Care Health Plan serves 1 of the dashboard counties: Los Angeles.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     },
     {
@@ -143,12 +178,13 @@
         "Sonoma": null,
         "Marin": null,
         "Sutter": null,
-        "Napa": null
+        "Napa": null,
+        "Alameda": null
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Molina Healthcare of California serves 1 of the 17 counties: San Bernardino.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Commercial Plan (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Molina Healthcare of California serves 1 of the dashboard counties: San Bernardino.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     },
     {
@@ -173,12 +209,13 @@
         "Sonoma": null,
         "Marin": null,
         "Sutter": null,
-        "Napa": null
+        "Napa": null,
+        "Alameda": null
       },
       "california": null,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Local Initiative (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Inland Empire Health Plan serves 1 of the 17 counties: San Bernardino.",
+      "note": "Published by the Department of Health Care Services (DHCS) in the Medi-Cal Managed Care Enrollment Report for October 2026; plan type Local Initiative (2 Plan). The report publishes enrollment by plan and county only, with no county total and no statewide row, so each plan is its own measure, counties the plan does not serve are null, and California is null. Inland Empire Health Plan serves 1 of the dashboard counties: San Bernardino.",
       "source_url": "https://data.chhs.ca.gov/dataset/medi-cal-managed-care-enrollment-report/resource/95358a7a-2c9d-41c6-a0e0-405a7e5c5f18"
     }
   ],

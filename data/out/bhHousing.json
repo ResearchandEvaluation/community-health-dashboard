@@ -23,7 +23,8 @@
         "Sonoma": 349.44,
         "Marin": 336.87,
         "Sutter": 445.35,
-        "Napa": 333.94
+        "Napa": 333.94,
+        "Alameda": 282.84
       },
       "california": 263.03,
       "california_source": "published",
@@ -53,7 +54,8 @@
         "Sonoma": 967.57,
         "Marin": 1172.49,
         "Sutter": 1243.49,
-        "Napa": 1029.15
+        "Napa": 1029.15,
+        "Alameda": 1207.16
       },
       "california": 988.67,
       "california_source": "published",

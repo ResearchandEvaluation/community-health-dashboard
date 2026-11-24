@@ -23,12 +23,197 @@
         "Sonoma": 82.4,
         "Marin": 55.9,
         "Sutter": 107.1,
-        "Napa": 66.9
+        "Napa": 66.9,
+        "Alameda": 77.2
       },
       "california": 75.1,
       "california_source": "published",
       "higher_is_worse": true,
-      "note": "Age-adjusted 3-year average stroke death rate for adults ages 35 and older, all sexes and racial and ethnic groups, from the National Vital Statistics System (NVSS). County rates are spatially smoothed by CDC; the California rate is the published state rate, which is not spatially smoothed.",
+      "trend": {
+        "periods": [
+          "2015 to 2017",
+          "2016 to 2018",
+          "2017 to 2019",
+          "2018 to 2020",
+          "2019 to 2021",
+          "2021 to 2023",
+          "2022 to 2024"
+        ],
+        "values": {
+          "Butte": [
+            85.7,
+            86.0,
+            83.1,
+            83.0,
+            82.5,
+            87.4,
+            88.2
+          ],
+          "Colusa": [
+            81.0,
+            77.2,
+            77.0,
+            78.0,
+            81.7,
+            73.8,
+            70.2
+          ],
+          "Del Norte": [
+            80.7,
+            78.1,
+            88.6,
+            83.8,
+            89.3,
+            80.6,
+            76.2
+          ],
+          "Glenn": [
+            82.0,
+            93.0,
+            82.7,
+            75.9,
+            74.4,
+            84.7,
+            84.9
+          ],
+          "Humboldt": [
+            133.7,
+            148.8,
+            166.6,
+            177.5,
+            195.4,
+            161.5,
+            124.3
+          ],
+          "Lake": [
+            76.1,
+            77.5,
+            71.5,
+            66.1,
+            69.1,
+            65.2,
+            67.2
+          ],
+          "Mendocino": [
+            72.4,
+            68.3,
+            66.6,
+            68.8,
+            66.1,
+            66.9,
+            65.1
+          ],
+          "Shasta": [
+            73.9,
+            71.2,
+            69.1,
+            73.8,
+            74.6,
+            75.8,
+            73.0
+          ],
+          "Tehama": [
+            79.5,
+            71.4,
+            67.2,
+            75.6,
+            74.4,
+            78.5,
+            79.3
+          ],
+          "Trinity": [
+            77.1,
+            75.8,
+            77.8,
+            78.0,
+            61.5,
+            49.8,
+            45.4
+          ],
+          "Siskiyou": [
+            75.9,
+            77.1,
+            78.7,
+            81.0,
+            85.1,
+            84.9,
+            84.4
+          ],
+          "Los Angeles": [
+            67.7,
+            66.7,
+            65.9,
+            66.5,
+            68.2,
+            68.0,
+            64.7
+          ],
+          "San Bernardino": [
+            79.4,
+            79.8,
+            80.0,
+            81.5,
+            87.5,
+            88.1,
+            85.2
+          ],
+          "Sonoma": [
+            66.0,
+            65.9,
+            67.6,
+            68.0,
+            69.4,
+            77.8,
+            82.4
+          ],
+          "Marin": [
+            46.4,
+            43.2,
+            47.1,
+            46.4,
+            53.8,
+            60.1,
+            55.9
+          ],
+          "Sutter": [
+            92.1,
+            86.0,
+            88.6,
+            92.4,
+            99.2,
+            109.1,
+            107.1
+          ],
+          "Napa": [
+            67.6,
+            62.3,
+            63.6,
+            58.9,
+            68.3,
+            66.9,
+            66.9
+          ],
+          "Alameda": [
+            79.2,
+            78.2,
+            79.1,
+            76.0,
+            80.3,
+            79.3,
+            77.2
+          ]
+        },
+        "california": [
+          71.7,
+          72.2,
+          72.4,
+          73.4,
+          76.6,
+          78.3,
+          75.1
+        ]
+      },
+      "note": "Age-adjusted 3-year average stroke death rate for adults ages 35 and older, all sexes and racial and ethnic groups, from the National Vital Statistics System (NVSS). County rates are spatially smoothed by CDC; the California rate is the published state rate, which is not spatially smoothed. CDC publishes each 3-year window separately; the trend shows every window CDC has published, 2015 to 2017 through 2022 to 2024.",
       "source_url": "https://data.cdc.gov/resource/y5ii-knwc.json"
     }
   ]

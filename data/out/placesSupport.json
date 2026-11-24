@@ -23,7 +23,8 @@
         "Sonoma": 24.6,
         "Marin": 22.8,
         "Sutter": 29.3,
-        "Napa": 26.1
+        "Napa": 26.1,
+        "Alameda": 28.3
       },
       "all_ca_counties": {
         "Lassen": 29.0,
@@ -88,7 +89,8 @@
       "california": null,
       "california_source": "published",
       "higher_is_worse": true,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only, and the CDC U.S. Chronic Disease Indicators (CDI) dataset publishes a California value for lack of social and emotional support (10.8 percent age-adjusted, 2023), but its definition differs from PLACES (PLACES counts adults who sometimes, rarely, or never get the support they need, and California county estimates range from about 21 to 31 percent), so it is not shown.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     },
     {
@@ -113,7 +115,8 @@
         "Sonoma": 33.2,
         "Marin": 31.6,
         "Sutter": 38.2,
-        "Napa": 34.7
+        "Napa": 34.7,
+        "Alameda": 38.5
       },
       "all_ca_counties": {
         "Monterey": 35.7,
@@ -178,7 +181,8 @@
       "california": null,
       "california_source": "published",
       "higher_is_worse": true,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only, and the CDC U.S. Chronic Disease Indicators (CDI) and BRFSS prevalence datasets publish no 2023 California value for this BRFSS question.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     }
   ]

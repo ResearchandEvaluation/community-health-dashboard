@@ -95,7 +95,7 @@ def main():
                      f"Enrollment Report for {month_label}; plan type {types}. The report publishes enrollment "
                      "by plan and county only, with no county total and no statewide row, so each plan is its "
                      "own measure, counties the plan does not serve are null, and California is null. "
-                     f"{name} serves {len(served)} of the 17 counties: " + ", ".join(served) + "." +
+                     f"{name} serves {len(served)} of the dashboard counties: " + ", ".join(served) + "." +
                      (f" DHCS suppressed the cell for {n_supp} of those counties." if n_supp else "")),
             "source_url": SRC,
         })

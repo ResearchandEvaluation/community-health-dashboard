@@ -19,7 +19,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "data", "out")
 RAW = os.path.join(HERE, "..", "data", "raw")
 BASE = "https://services7.arcgis.com/7MUwsS9z05YumJRZ/arcgis/rest/services/ECM_Community_Support_Data_Tables_for_Quarterly_Implementation_report/FeatureServer"
-COUNTIES = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity","Siskiyou","Los Angeles","San Bernardino","Sonoma","Marin","Sutter","Napa"]
+COUNTIES = ["Butte","Colusa","Del Norte","Glenn","Humboldt","Lake","Mendocino","Shasta","Tehama","Trinity","Siskiyou","Los Angeles","San Bernardino","Sonoma","Marin","Sutter","Napa","Alameda"]
 LAYERS = {"cs_contracts": 55, "cs_util": 46, "ecm_pof_contracts": 33, "ecm_reach_plan": 24, "county_total": 57,
           "ecm_pof_members": 26, "cs_members_service": 48, "ecm_reach_county": 22, "cs_util_county": 44, "totals": 14}
 PLAN = {"anthem blue cross partnership plan": "Anthem Blue Cross", "blue shield of ca promise health plan": "Blue Shield of California Promise",

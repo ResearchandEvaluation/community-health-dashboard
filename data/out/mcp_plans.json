@@ -68,8 +68,8 @@
     "Neighborhood Healthcare PACE (PACE)": 126,
     "WelbeHealth Inland Empire (PACE)": "suppressed",
     "WelbeHealth San Bernardino PACE (PACE)": 247,
-    "SCAN Health Plan (SCAN)": 3372,
-    "SCAN Health Plan (SCAN) (row 2)": 433
+    "SCAN Health Plan (SCAN)": 433,
+    "SCAN Health Plan (SCAN) (row 2)": 3372
   },
   "Sonoma": {
     "Kaiser Permanente": 26140,
@@ -91,6 +91,13 @@
     "Kaiser Permanente": 8188,
     "Partnership HealthPlan of California": 25285,
     "Providence PACE (PACE)": 100
+  },
+  "Alameda": {
+    "ONLOK Senior Health Services (PACE)": 455,
+    "WelbeHealth Bay Area PACE (PACE)": 32,
+    "Alameda Alliance for Health": 357537,
+    "Kaiser Permanente": 78434,
+    "Center for Elders Independence (Special Project)": 1148
   },
   "month": "2026-10"
 }

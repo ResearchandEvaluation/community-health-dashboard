@@ -1,0 +1,254 @@
+{
+  "key": "bhPlanInfo",
+  "info": {
+    "Butte": {
+      "goal": "Suicides",
+      "approved": "20-Jul-26",
+      "submitted": "1-Jul-26",
+      "late": "TRUE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {
+        "Behavioral Health Services and Supports": "32%",
+        "Full Service Partnership": "45%",
+        "Housing Intervention": "23%"
+      }
+    },
+    "Colusa": {
+      "goal": "Care experience",
+      "approved": "27-Jul-26",
+      "submitted": "23-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {
+        "share for people who are chronically homeless": "11"
+      },
+      "transfers": {
+        "Behavioral Health Services and Supports": "42%",
+        "Full Service Partnership": "28%",
+        "Housing Intervention": "30%"
+      }
+    },
+    "Del Norte": {
+      "goal": "Overdoses",
+      "approved": "6-Jul-26",
+      "submitted": "25-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Glenn": {
+      "goal": "Overdoses",
+      "approved": "17-Jun-26",
+      "submitted": "15-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {
+        "share of funds to Housing Interventions": "1",
+        "remaining share to Behavioral Health Services and Supports": "29",
+        "remaining share to Full Service Partnerships": "0"
+      },
+      "transfers": {}
+    },
+    "Humboldt": {
+      "goal": "Suicides",
+      "approved": "10-Jul-26",
+      "submitted": "30-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Lake": {
+      "goal": "Overdoses",
+      "approved": "29-Jul-26",
+      "submitted": "30-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {
+        "Behavioral Health Services and Supports": "38%",
+        "Full Service Partnership": "32%",
+        "Housing Intervention": "27%"
+      }
+    },
+    "Mendocino": {
+      "goal": "Suicides",
+      "approved": "28-Jul-26",
+      "submitted": "29-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Shasta": {
+      "goal": "Engagement in school",
+      "approved": "24-Jul-26",
+      "submitted": "30-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {},
+      "transfers": {
+        "Behavioral Health Services and Supports": "28%",
+        "Full Service Partnership": "48%",
+        "Housing Intervention": "24%"
+      }
+    },
+    "Tehama": {
+      "goal": "Suicides",
+      "approved": "8-Jul-26",
+      "submitted": "29-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {
+        "share of funds to Housing Interventions": "10",
+        "remaining share to Behavioral Health Services and Supports": "10",
+        "remaining share to Full Service Partnerships": "10"
+      },
+      "transfers": {}
+    },
+    "Trinity": {
+      "goal": "Overdoses",
+      "approved": "24-Jul-26",
+      "submitted": "22-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {
+        "share of funds to Housing Interventions": "20",
+        "share for people who are chronically homeless": "20",
+        "remaining share to Behavioral Health Services and Supports": "10",
+        "remaining share to Full Service Partnerships": "0"
+      },
+      "transfers": {}
+    },
+    "Siskiyou": {
+      "goal": "Suicides",
+      "approved": "26-Jun-26",
+      "submitted": "17-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {},
+      "transfers": {
+        "Behavioral Health Services and Supports": "49%",
+        "Full Service Partnership": "28%",
+        "Housing Intervention": "23%"
+      }
+    },
+    "Los Angeles": {
+      "goal": "Engagement in school",
+      "approved": "6-Jul-26",
+      "submitted": "24-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "San Bernardino": {
+      "goal": "Overdoses",
+      "approved": "19-Jun-26",
+      "submitted": "18-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Sonoma": {
+      "goal": "Suicides",
+      "approved": "8-Jul-26",
+      "submitted": "28-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Marin": {
+      "goal": "Suicides",
+      "approved": "5-Jun-26",
+      "submitted": "12-May-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Sutter": {
+      "goal": "Overdoses",
+      "approved": "20-Jul-26",
+      "submitted": "30-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Assertive Community Treatment",
+        "Forensic Assertive Community Treatment",
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {},
+      "transfers": {}
+    },
+    "Napa": {
+      "goal": "Quality of life",
+      "approved": "6-Jul-26",
+      "submitted": "9-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [
+        "Individual Placement and Support"
+      ],
+      "hi_exemption": {
+        "share of funds to Housing Interventions": "17",
+        "share for people who are chronically homeless": "0",
+        "remaining share to Behavioral Health Services and Supports": "10",
+        "remaining share to Full Service Partnerships": "3"
+      },
+      "transfers": {}
+    },
+    "Alameda": {
+      "goal": "Overdoses",
+      "approved": "7-Jul-26",
+      "submitted": "24-Jun-26",
+      "late": "FALSE",
+      "fsp_exemptions": [],
+      "hi_exemption": {},
+      "transfers": {}
+    }
+  },
+  "source_url": "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/3025720c-23b6-44d4-9fc7-71add7b71638",
+  "goals": [
+    "Overdoses",
+    "Suicides",
+    "Care experience",
+    "Engagement in work",
+    "Engagement in school",
+    "Prevention and treatment of co-occurring physical health conditions",
+    "Social connection",
+    "Quality of life"
+  ]
+}

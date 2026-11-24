@@ -23,7 +23,8 @@
         "Sonoma": 554,
         "Marin": 298,
         "Sutter": 282,
-        "Napa": 186
+        "Napa": 186,
+        "Alameda": 2084
       },
       "california": 77889,
       "california_source": "published",
@@ -175,6 +176,14 @@
             152,
             144,
             186
+          ],
+          "Alameda": [
+            2491,
+            1569,
+            1768,
+            1888,
+            1980,
+            2084
           ]
         },
         "california": [
@@ -209,7 +218,8 @@
         "Sonoma": 995,
         "Marin": 477,
         "Sutter": 387,
-        "Napa": 279
+        "Napa": 279,
+        "Alameda": 3204
       },
       "california": 96337,
       "california_source": "published",
@@ -361,6 +371,14 @@
             253,
             256,
             279
+          ],
+          "Alameda": [
+            2744,
+            2674,
+            2388,
+            2975,
+            3028,
+            3204
           ]
         },
         "california": [
@@ -395,12 +413,13 @@
         "Sonoma": 228,
         "Marin": 52,
         "Sutter": 128,
-        "Napa": 60
+        "Napa": 60,
+        "Alameda": 876
       },
       "california": 41798,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Non-Breastfeeding category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH (1 of the 17 counties in this month). Trend shows December of each year from 2019 to 2024.",
+      "note": "Published by the California Department of Public Health (CDPH) Women, Infants and Children (WIC) Program for the month of December 2024; certified participants are people who completed eligibility and enrollment and were approved for benefits in that month. The dataset publishes one row per WIC category and no all-category total for a county or the state, so this measure covers the Non-Breastfeeding category only. California is the publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH (1 of the dashboard counties in this month). Trend shows December of each year from 2019 to 2024.",
       "source_url": "https://data.chhs.ca.gov/dataset/cdph-wic-participants-by-county/resource/d17babd7-815e-4bad-a1a9-55b70540e944",
       "trend": {
         "periods": [
@@ -547,6 +566,14 @@
             60,
             64,
             60
+          ],
+          "Alameda": [
+            719,
+            1002,
+            983,
+            858,
+            826,
+            876
           ]
         },
         "california": [
@@ -581,7 +608,8 @@
         "Sonoma": 1455,
         "Marin": 580,
         "Sutter": 689,
-        "Napa": 413
+        "Napa": 413,
+        "Alameda": 4954
       },
       "california": 184595,
       "california_source": "published",
@@ -733,6 +761,14 @@
             387,
             394,
             413
+          ],
+          "Alameda": [
+            5401,
+            4784,
+            4440,
+            4892,
+            4809,
+            4954
           ]
         },
         "california": [
@@ -767,7 +803,8 @@
         "Sonoma": 1374,
         "Marin": 600,
         "Sutter": 701,
-        "Napa": 381
+        "Napa": 381,
+        "Alameda": 4489
       },
       "california": 171244,
       "california_source": "published",
@@ -919,6 +956,14 @@
             277,
             349,
             381
+          ],
+          "Alameda": [
+            4028,
+            4487,
+            4237,
+            4123,
+            4583,
+            4489
           ]
         },
         "california": [
@@ -953,7 +998,8 @@
         "Sonoma": 1220,
         "Marin": 538,
         "Sutter": 588,
-        "Napa": 312
+        "Napa": 312,
+        "Alameda": 4213
       },
       "california": 160301,
       "california_source": "published",
@@ -1105,6 +1151,14 @@
             247,
             251,
             312
+          ],
+          "Alameda": [
+            3712,
+            3863,
+            3760,
+            3772,
+            3726,
+            4213
           ]
         },
         "california": [
@@ -1139,7 +1193,8 @@
         "Sonoma": 1084,
         "Marin": 492,
         "Sutter": 537,
-        "Napa": 260
+        "Napa": 260,
+        "Alameda": 3689
       },
       "california": 146696,
       "california_source": "published",
@@ -1291,6 +1346,14 @@
             254,
             236,
             260
+          ],
+          "Alameda": [
+            3604,
+            3411,
+            3511,
+            3553,
+            3719,
+            3689
           ]
         },
         "california": [
@@ -1325,7 +1388,8 @@
         "Sonoma": 1065,
         "Marin": 430,
         "Sutter": 548,
-        "Napa": 277
+        "Napa": 277,
+        "Alameda": 3790
       },
       "california": 144261,
       "california_source": "published",
@@ -1477,6 +1541,14 @@
             211,
             247,
             277
+          ],
+          "Alameda": [
+            3532,
+            3452,
+            3322,
+            3455,
+            3646,
+            3790
           ]
         },
         "california": [

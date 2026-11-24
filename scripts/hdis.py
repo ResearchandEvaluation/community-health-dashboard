@@ -29,10 +29,10 @@ COC = {
     "Del Norte": "CA-516", "Shasta": "CA-516", "Siskiyou": "CA-516",
     "Humboldt": "CA-522", "Lake": "CA-529", "Mendocino": "CA-509", "Tehama": "CA-527",
     "Los Angeles": "Los Angeles County", "San Bernardino": "CA-609", "Sonoma": "CA-504",
-    "Marin": "CA-507", "Sutter": "CA-524", "Napa": "CA-517",
+    "Marin": "CA-507", "Sutter": "CA-524", "Napa": "CA-517", "Alameda": "CA-502",
 }
 ORDER = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta", "Tehama",
-         "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa"]
+         "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa", "Alameda"]
 
 COC_NOTE = ("Values are Continuum of Care (CoC) totals from the Homelessness Data Integration System (HDIS), "
             "so counties that share a CoC show the same number. County to CoC: {maps}. Los Angeles uses the "

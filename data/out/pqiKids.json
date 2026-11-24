@@ -23,7 +23,8 @@
         "Sonoma": 64.7,
         "Marin": "suppressed",
         "Sutter": "suppressed",
-        "Napa": "suppressed"
+        "Napa": "suppressed",
+        "Alameda": 58.1
       },
       "california": 74.9,
       "california_source": "published",
@@ -54,7 +55,8 @@
         "Sonoma": 68.7,
         "Marin": 60.7,
         "Sutter": "suppressed",
-        "Napa": "suppressed"
+        "Napa": "suppressed",
+        "Alameda": 50.9
       },
       "california": 57.9,
       "california_source": "published",

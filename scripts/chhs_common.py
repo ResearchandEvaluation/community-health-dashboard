@@ -7,7 +7,7 @@ CTX = ssl.create_default_context(cafile=CA_BUNDLE)
 CKAN = "https://data.chhs.ca.gov/api/3/action"
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta",
             "Tehama", "Trinity", "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin",
-            "Sutter", "Napa"]
+            "Sutter", "Napa", "Alameda"]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 POP_RESOURCE = "88433daa-9abf-4ebc-bc26-a44c85c4031d"  # CDPH LHJ Age-Race-Sex population, Vintage 2026.2
 

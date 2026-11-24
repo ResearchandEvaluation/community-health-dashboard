@@ -19,11 +19,12 @@ rf = json.load(open(os.path.join(ROOT, "data", "out", "_refresh.json"))) if os.p
 rdate = datetime.date.fromisoformat(rf["refreshed"])
 refresh_line = "Data last refreshed " + _nice(rdate) + ". Next scheduled refresh: " + _nice(_next_refresh(datetime.date.today())) + "."
 mcp = json.load(open(os.path.join(ROOT, "data", "out", "mcp_plans.json")))
+bhinfo = json.load(open(os.path.join(ROOT, "data", "out", "bhPlanInfo.json")))
 tpl = open(os.path.join(ROOT, "site", "template.html")).read()
 J = lambda o: json.dumps(o, separators=(",", ":"))
 page = (tpl.replace("__INDD__", ind).replace("__ECM_USE__", J(tab["ECM_USE"])).replace("__ECMD_PUB__", J(tab["ECMD_PUB"]))
-        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
-for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__REFRESH_LINE__"]:
+        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BHSA_INFO__", J(bhinfo)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
+for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__BHSA_INFO__", "__REFRESH_LINE__"]:
     assert ph not in page, ph
 if "–" in page or "—" in page:
     raise SystemExit("dash character found in page")

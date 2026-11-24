@@ -13,7 +13,7 @@ COUNTIES = {
     "Butte": "007", "Colusa": "011", "Del Norte": "015", "Glenn": "021", "Humboldt": "023",
     "Lake": "033", "Mendocino": "045", "Shasta": "089", "Tehama": "103", "Trinity": "105",
     "Siskiyou": "093", "Los Angeles": "037", "San Bernardino": "071", "Sonoma": "097",
-    "Marin": "041", "Sutter": "101", "Napa": "055",
+    "Marin": "041", "Sutter": "101", "Napa": "055", "Alameda": "001",
 }
 KEY = os.environ.get("CENSUS_API_KEY", "")
 

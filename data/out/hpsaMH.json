@@ -5,7 +5,7 @@
       "id": "hpsamh_count",
       "label": "Designated mental health Health Professional Shortage Areas (HPSAs) in county",
       "unit": "count",
-      "period": "Designations as of October 31, 2026",
+      "period": "Designations as of November 19, 2026",
       "values": {
         "Butte": 7,
         "Colusa": 3,
@@ -23,9 +23,10 @@
         "Sonoma": 8,
         "Marin": 3,
         "Sutter": 3,
-        "Napa": 1
+        "Napa": 1,
+        "Alameda": 13
       },
-      "california": 582,
+      "california": 583,
       "california_source": "calculated",
       "higher_is_worse": true,
       "note": "Counts distinct Health Professional Shortage Area (HPSA) identification numbers with status Designated that have at least one component in the county, including geographic, high needs geographic, population, and facility designations (Federally Qualified Health Centers, Rural Health Clinics, Indian Health Service, Tribal, and Urban Indian health organizations, correctional and other facilities). HPSAs with status Proposed for Withdrawal are excluded. The California value is the statewide count of distinct designated mental health HPSAs. Counties with a whole-county geographic or population designation: Butte, Colusa, Del Norte, Glenn, Humboldt, Lake, Mendocino, Shasta, Siskiyou, Sutter, Tehama, Trinity.",
@@ -35,7 +36,7 @@
       "id": "hpsamh_max_score",
       "label": "Highest mental health HPSA score in county",
       "unit": "score (0 to 25, higher means greater shortage)",
-      "period": "Designations as of October 31, 2026",
+      "period": "Designations as of November 19, 2026",
       "values": {
         "Butte": 19,
         "Colusa": 17,
@@ -53,7 +54,8 @@
         "Sonoma": 21,
         "Marin": 20,
         "Sutter": 23,
-        "Napa": 14
+        "Napa": 14,
+        "Alameda": 21
       },
       "california": null,
       "california_source": "published",

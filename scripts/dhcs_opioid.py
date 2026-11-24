@@ -10,7 +10,7 @@ RES = "4b05457d-d1ae-4bd7-b2e8-d8579d218ffc"
 SRC = "https://data.chhs.ca.gov/dataset/bh-county-profile/resource/" + RES
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta", "Tehama", "Trinity",
-            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa"]
+            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa", "Alameda"]
 MEASURES = [("ED Visit", "opioid_ed_rate", "Opioid overdose emergency department visits per 100,000 residents"),
             ("Hospitalization", "opioid_hosp_rate", "Opioid overdose hospitalizations per 100,000 residents")]
 

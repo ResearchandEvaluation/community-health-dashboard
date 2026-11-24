@@ -23,7 +23,8 @@
         "Sonoma": 50.5,
         "Marin": 51.1,
         "Sutter": 51.7,
-        "Napa": 51.3
+        "Napa": 51.3,
+        "Alameda": 51.7
       },
       "all_ca_counties": {
         "Riverside": 52.0,
@@ -85,10 +86,11 @@
         "Yolo": 52.4,
         "Santa Clara": 51.9
       },
-      "california": null,
-      "california_source": "published",
+      "california": 55.5,
+      "california_source": "BRFSS state survey",
       "higher_is_worse": false,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only. The California value is the state's age-adjusted estimate from the direct BRFSS state survey (CDC U.S. Chronic Disease Indicators (dataset hksd-2xuw), indicator CVD02 \"Taking medicine to control high blood pressure among adults with high blood pressure\", 2023, age-adjusted prevalence). The county value is modeled and the state value is a direct survey estimate, so small differences between them should not be read as real differences.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     },
     {
@@ -113,7 +115,8 @@
         "Sonoma": 69.7,
         "Marin": 69.3,
         "Sutter": 69.7,
-        "Napa": 70.4
+        "Napa": 70.4,
+        "Alameda": 71.4
       },
       "all_ca_counties": {
         "Plumas": 70.2,
@@ -175,10 +178,11 @@
         "Tehama": 68.9,
         "Stanislaus": 70.3
       },
-      "california": null,
-      "california_source": "published",
+      "california": 73.6,
+      "california_source": "BRFSS state survey",
       "higher_is_worse": false,
-      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. PLACES publishes county estimates only, so no California comparison is shown. Each county is shown among all 58 California counties in the same PLACES release.",
+      "reference": null,
+      "note": "CDC PLACES model-based age-adjusted prevalence estimates from Behavioral Risk Factor Surveillance System (BRFSS) 2023 data, 2025 release. Each county is shown among all 58 California counties in the same PLACES release. PLACES publishes county estimates only. The California value is the state's age-adjusted estimate from the direct BRFSS state survey (CDC U.S. Chronic Disease Indicators (dataset hksd-2xuw), indicator NMED12 \"Routine checkup within the past year among adults\", 2023, age-adjusted prevalence). The county value is modeled and the state value is a direct survey estimate, so small differences between them should not be read as real differences.",
       "source_url": "https://data.cdc.gov/resource/swc5-untb.json"
     }
   ]

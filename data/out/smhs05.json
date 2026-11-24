@@ -23,12 +23,137 @@
         "Sonoma": 16,
         "Marin": "suppressed",
         "Sutter": "suppressed",
-        "Napa": "suppressed"
+        "Napa": "suppressed",
+        "Alameda": 136
       },
       "california": 6518,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately.",
+      "trend": {
+        "periods": [
+          "FY 2019-20",
+          "FY 2020-21",
+          "FY 2021-22",
+          "FY 2022-23"
+        ],
+        "values": {
+          "Butte": [
+            12,
+            25,
+            53,
+            56
+          ],
+          "Colusa": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "Del Norte": [
+            0,
+            0,
+            null,
+            0
+          ],
+          "Glenn": [
+            null,
+            null,
+            null,
+            0
+          ],
+          "Humboldt": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Lake": [
+            0,
+            null,
+            null,
+            0
+          ],
+          "Mendocino": [
+            null,
+            null,
+            null,
+            0
+          ],
+          "Shasta": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Tehama": [
+            null,
+            0,
+            null,
+            null
+          ],
+          "Trinity": [
+            0,
+            0,
+            0,
+            null
+          ],
+          "Siskiyou": [
+            11,
+            null,
+            15,
+            null
+          ],
+          "Los Angeles": [
+            4112,
+            3995,
+            3389,
+            3154
+          ],
+          "San Bernardino": [
+            924,
+            822,
+            770,
+            797
+          ],
+          "Sonoma": [
+            null,
+            null,
+            21,
+            16
+          ],
+          "Marin": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Sutter": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Napa": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Alameda": [
+            198,
+            210,
+            175,
+            136
+          ]
+        },
+        "california": [
+          8087,
+          7662,
+          6914,
+          6518
+        ]
+      },
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately. DHCS publishes fiscal years FY 2019-20 through FY 2022-23, shown as the trend.",
       "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
     },
     {
@@ -53,12 +178,137 @@
         "Sonoma": 56,
         "Marin": "suppressed",
         "Sutter": "suppressed",
-        "Napa": "suppressed"
+        "Napa": "suppressed",
+        "Alameda": 368
       },
       "california": 15853,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately.",
+      "trend": {
+        "periods": [
+          "FY 2019-20",
+          "FY 2020-21",
+          "FY 2021-22",
+          "FY 2022-23"
+        ],
+        "values": {
+          "Butte": [
+            125,
+            99,
+            141,
+            129
+          ],
+          "Colusa": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Del Norte": [
+            24,
+            23,
+            null,
+            12
+          ],
+          "Glenn": [
+            null,
+            null,
+            null,
+            27
+          ],
+          "Humboldt": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Lake": [
+            16,
+            null,
+            null,
+            13
+          ],
+          "Mendocino": [
+            null,
+            null,
+            null,
+            46
+          ],
+          "Shasta": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Tehama": [
+            null,
+            23,
+            null,
+            null
+          ],
+          "Trinity": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Siskiyou": [
+            24,
+            null,
+            19,
+            null
+          ],
+          "Los Angeles": [
+            8126,
+            6991,
+            6160,
+            5943
+          ],
+          "San Bernardino": [
+            1460,
+            1238,
+            1243,
+            1173
+          ],
+          "Sonoma": [
+            null,
+            null,
+            53,
+            56
+          ],
+          "Marin": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Sutter": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Napa": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Alameda": [
+            604,
+            439,
+            377,
+            368
+          ]
+        },
+        "california": [
+          19717,
+          17054,
+          16041,
+          15853
+        ]
+      },
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately. DHCS publishes fiscal years FY 2019-20 through FY 2022-23, shown as the trend.",
       "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
     },
     {
@@ -83,12 +333,137 @@
         "Sonoma": "suppressed",
         "Marin": "suppressed",
         "Sutter": 0,
-        "Napa": 0
+        "Napa": 0,
+        "Alameda": 78
       },
       "california": 3016,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately.",
+      "trend": {
+        "periods": [
+          "FY 2019-20",
+          "FY 2020-21",
+          "FY 2021-22",
+          "FY 2022-23"
+        ],
+        "values": {
+          "Butte": [
+            null,
+            12,
+            22,
+            17
+          ],
+          "Colusa": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "Del Norte": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "Glenn": [
+            0,
+            0,
+            null,
+            0
+          ],
+          "Humboldt": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Lake": [
+            0,
+            null,
+            null,
+            0
+          ],
+          "Mendocino": [
+            null,
+            null,
+            0,
+            0
+          ],
+          "Shasta": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Tehama": [
+            0,
+            0,
+            null,
+            0
+          ],
+          "Trinity": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "Siskiyou": [
+            0,
+            null,
+            0,
+            0
+          ],
+          "Los Angeles": [
+            2350,
+            2457,
+            1911,
+            1677
+          ],
+          "San Bernardino": [
+            390,
+            403,
+            307,
+            362
+          ],
+          "Sonoma": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Marin": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Sutter": [
+            null,
+            0,
+            null,
+            0
+          ],
+          "Napa": [
+            0,
+            null,
+            null,
+            0
+          ],
+          "Alameda": [
+            116,
+            133,
+            95,
+            78
+          ]
+        },
+        "california": [
+          3921,
+          4060,
+          3279,
+          3016
+        ]
+      },
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately. DHCS publishes fiscal years FY 2019-20 through FY 2022-23, shown as the trend.",
       "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
     },
     {
@@ -113,12 +488,137 @@
         "Sonoma": "suppressed",
         "Marin": "suppressed",
         "Sutter": 13,
-        "Napa": 12
+        "Napa": 12,
+        "Alameda": 294
       },
       "california": 10349,
       "california_source": "published",
       "higher_is_worse": null,
-      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately.",
+      "trend": {
+        "periods": [
+          "FY 2019-20",
+          "FY 2020-21",
+          "FY 2021-22",
+          "FY 2022-23"
+        ],
+        "values": {
+          "Butte": [
+            null,
+            63,
+            100,
+            82
+          ],
+          "Colusa": [
+            null,
+            null,
+            null,
+            0
+          ],
+          "Del Norte": [
+            15,
+            15,
+            null,
+            null
+          ],
+          "Glenn": [
+            17,
+            20,
+            null,
+            18
+          ],
+          "Humboldt": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Lake": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Mendocino": [
+            null,
+            null,
+            22,
+            30
+          ],
+          "Shasta": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Tehama": [
+            11,
+            null,
+            null,
+            null
+          ],
+          "Trinity": [
+            null,
+            null,
+            null,
+            0
+          ],
+          "Siskiyou": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Los Angeles": [
+            6103,
+            5247,
+            4382,
+            4056
+          ],
+          "San Bernardino": [
+            1009,
+            874,
+            817,
+            812
+          ],
+          "Sonoma": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Marin": [
+            null,
+            null,
+            null,
+            null
+          ],
+          "Sutter": [
+            null,
+            11,
+            null,
+            13
+          ],
+          "Napa": [
+            17,
+            null,
+            null,
+            12
+          ],
+          "Alameda": [
+            506,
+            364,
+            321,
+            294
+          ]
+        },
+        "california": [
+          13826,
+          11836,
+          10727,
+          10349
+        ]
+      },
+      "note": "Published count from the Department of Health Care Services (DHCS) Behavioral Health Program Performance Data, county Mental Health Plan rows, children and youth population, FY 2022-23. DHCS publishes counts, not rates, for this measure. Values marked suppressed were suppressed by DHCS for small numbers or as complementary cells. California value is the count published in the DHCS Statewide row. DHCS publishes ages 0 to 2 and 3 to 5 as separate groups and no combined ages 0 to 5 count, so the two groups are shown separately. DHCS publishes fiscal years FY 2019-20 through FY 2022-23, shown as the trend.",
       "source_url": "https://data.chhs.ca.gov/dataset/behavioral-health-program-performance-data/resource/aeb088b1-3904-47c3-b5c4-de564ff1426c"
     }
   ]

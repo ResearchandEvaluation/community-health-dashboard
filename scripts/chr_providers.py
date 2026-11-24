@@ -8,7 +8,7 @@ DOC = "https://www.countyhealthrankings.org/health-data/methodology-and-sources/
 SITE = "https://www.countyhealthrankings.org"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "out")
 COUNTIES = ["Butte", "Colusa", "Del Norte", "Glenn", "Humboldt", "Lake", "Mendocino", "Shasta", "Tehama", "Trinity",
-            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa"]
+            "Siskiyou", "Los Angeles", "San Bernardino", "Sonoma", "Marin", "Sutter", "Napa", "Alameda"]
 MEASURES = [("chr_mh_ratio", "Ratio of population to mental health providers.", "Residents per mental health provider",
              "Mental health providers include psychiatrists, psychologists, licensed clinical social workers, counselors, "
              "marriage and family therapists, and advanced practice nurses specializing in mental health care."),

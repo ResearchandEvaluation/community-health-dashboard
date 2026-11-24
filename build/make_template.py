@@ -14,7 +14,7 @@ def ph(name, var):
     global logic
     a = logic.index(f"    var {var} = "); b = logic.index(";\n", a)
     logic = logic[:a] + f"    var {var} = __{name}__" + logic[b:]
-for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT", "STRATA"]: ph(v, v)
+for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT", "STRATA", "BHSA_INFO"]: ph(v, v)
 # The refresh line is filled by build_site.py from data/out/_refresh.json.
 import re as _re
 logic = _re.sub(r'var REFRESH_LINE = "[^"]*"', 'var REFRESH_LINE = "__REFRESH_LINE__"', logic)
@@ -24,7 +24,7 @@ tpl = f'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Community Health Data Dashboard | Population Health Innovation Lab</title>
-<meta name="description" content="Public data on health needs and services in the 17 California counties where PHIL works, alongside PHIL's work with community partners.">
+<meta name="description" content="Public data on health needs and services in the California counties where PHIL works, alongside PHIL's work with community partners.">
 <link rel="icon" href="assets/phil-mark.png">
 <style>{style}</style>
 <style>.phil-loading{{font-family:Arial,sans-serif;padding:40px;color:#12365b}}</style>

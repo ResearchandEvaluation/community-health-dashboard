@@ -73,7 +73,7 @@ def main():
                      "dataset publishes one row per WIC category and no all-category total for a county or the "
                      "state, so this measure covers the " + cat + " category only. California is the "
                      "publisher's Statewide row. Cells with fewer than 11 participants are suppressed by CDPH" +
-                     (f" ({n_supp} of the 17 counties in this month)." if n_supp else ".") +
+                     (f" ({n_supp} of the dashboard counties in this month)." if n_supp else ".") +
                      f" Trend shows {MONTHS[int(newest[4:6]) - 1]} of each year from {trend_months[0][:4]} to "
                      f"{newest[:4]}."),
             "source_url": SRC,
