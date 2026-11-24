@@ -38,11 +38,7 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 </header>
 <nav aria-label="Dashboard sections" style="background: #f3e9d7; border-bottom: 1px solid #dee3e8; padding: 12px 24px">
 <div class="phil-nav" style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: flex-end">
-<div style="display: flex; flex-direction: column; gap: 6px"><label for="phil-county" style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">County</label><select id="phil-county" onChange="{{nav.pickCounty}}" aria-label="Choose a county. Every page shows this county." style="{{nav.selectStyle}}">
-<sc-for list="{{nav.countyOpts}}" as="o" hint-placeholder-count="19">
-<option value="{{o.value}}" selected="{{o.selected}}">{{o.label}}</option>
-</sc-for>
-</select></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><label for="phil-county" style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">County</label><select id="phil-county" onChange="{{nav.pickCounty}}" aria-label="Choose a county. Every page shows this county." style="{{nav.selectStyle}}"><option value="{{nav.cur}}">{{nav.curLabel}}</option></select></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">Start here</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{tabsHome}}" as="t" hint-placeholder-count="1">
 <button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
@@ -2504,12 +2500,23 @@ A card with none of these shows the county's value alone.</li>
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
     var SEL = "min-height: 44px; max-width: 100%; padding: 7px 38px 7px 14px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; appearance: none; -webkit-appearance: none; background-repeat: no-repeat; background-position: right 12px center; background-size: 14px; ";
     var nav = {
-      countyOpts: [{ value: "", label: "Choose a county", selected: !hasCounty }].concat(ALL17.slice().sort().map(function (c) { return { value: c, label: c + " County", selected: hasCounty && c === gCounty }; })),
+      cur: hasCounty ? gCounty : "", curLabel: hasCounty ? gCounty + " County" : "Choose a county",
       pickCounty: function (ev) { var v = ev && ev.target ? ev.target.value : ""; self.setState({ gCounty: v || null }); },
       selectStyle: SEL + (hasCounty ? "background-color: #02784d; color: #ffffff; border: 1px solid #02784d; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 6 5-6' fill='none' stroke='%23ffffff' stroke-width='2.2'/%3E%3C/svg%3E\");"
         : "background-color: #ffffff; color: #12365b; border: 1px solid #73889e; background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 7l5 6 5-6' fill='none' stroke='%2312365b' stroke-width='2.2'/%3E%3C/svg%3E\");"),
       chips: countyChips([], "min-height: 44px; padding: 8px 16px; border-radius: 999px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; ")
     };
+    // Safari and Firefox drop unknown tags inside <select>, so the option list is filled after render.
+    function fillCounty() {
+      try {
+        var el = document.getElementById("phil-county"); if (!el || el.__filled === (hasCounty ? gCounty : "")) return;
+        var opts = [{ value: "", label: "Choose a county" }].concat(ALL17.slice().sort().map(function (c) { return { value: c, label: c + " County" }; }));
+        el.innerHTML = "";
+        opts.forEach(function (o) { var op = document.createElement("option"); op.value = o.value; op.textContent = o.label; if (o.value === (hasCounty ? gCounty : "")) op.selected = true; el.appendChild(op); });
+        el.__filled = hasCounty ? gCounty : "";
+      } catch (e) {}
+    }
+    setTimeout(fillCounty, 0);
     return {
       hasCounty: hasCounty, noCounty: !hasCounty, nav: nav,
       find: find,
