@@ -19,7 +19,7 @@
     ],
     "contact": "To ask for support, download your roadmap and send it to research@pophealthinnovationlab.org, or use the Ask PHIL button.",
     "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter from the dashboard, write the limitations statement, triangulate, share the CHA, set priorities, write objectives with published baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
-    "keep": "Entries save in this browser on this device, for the county in the County menu. Download your roadmap after each working session and share it with your team."
+    "keep": "Entries save in this browser on this device, for the county shown at the top of the toolkit. Download your roadmap after each working session and share it with your team."
   },
   "phases": [
     {
@@ -1717,23 +1717,23 @@
     ]
   },
   "support": {
-    "title": "Support from PHIL",
-    "intro": "Choose how you want to work. You can change this at any time; it goes at the top of your roadmap.",
+    "title": "How you want to work with PHIL",
+    "intro": "Choose one. You can change it at any time, and it goes at the top of your roadmap.",
     "levels": [
       {
         "id": "self",
         "label": "On our own",
-        "desc": "We will use the toolkit and reach out if we get stuck."
+        "desc": "We will follow the phases, trackers, and worksheets, and reach out if we get stuck."
       },
       {
         "id": "components",
         "label": "Support on the parts we mark",
-        "desc": "PHIL supports or leads the actions we mark in each phase."
+        "desc": "PHIL supports or leads the actions we mark \"Ask PHIL to support\" or \"Ask PHIL to lead\" in each phase."
       },
       {
         "id": "full",
         "label": "Full hands-on support",
-        "desc": "PHIL works with us on the CHA, the CHIP, and BHSA integration from start to finish."
+        "desc": "PHIL works with us from start to finish: facilitating meetings, building the data chapter, writing the behavioral health and suicide prevention sections with county behavioral health, and preparing the crosswalks."
       }
     ],
     "options": [
