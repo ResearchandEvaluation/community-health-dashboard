@@ -2,6 +2,11 @@
   "_about": "Resources shown on the dashboard's Resources page. Edit this file to add, change, or remove a resource. Fields: group (one of the group names below), title, url, description, counties (optional list; leave out for statewide or all counties), status (optional: 'coming soon'). Groups appear in the order listed in 'groups'.",
   "groups": [
     {
+      "id": "data",
+      "title": "Data Tools and Sources",
+      "description": "Public data tools and the datasets behind this dashboard. Each one offers more measures, years, places, and breakdowns than the dashboard shows."
+    },
+    {
       "id": "phil",
       "title": "Resources From PHIL",
       "description": "Reports, toolkits, trainings, and convening materials from PHIL's work with communities and partners. PHIL's communications team maintains these pages on pophealthinnovationlab.org."
@@ -15,11 +20,6 @@
       "id": "calaim",
       "title": "Medi-Cal and CalAIM",
       "description": "State sources on Enhanced Care Management (ECM) and Community Supports."
-    },
-    {
-      "id": "data",
-      "title": "County Health Data Sources",
-      "description": "The public datasets behind this dashboard. Each one offers more measures, years, and breakdowns than the dashboard shows."
     },
     {
       "id": "maps",
@@ -138,6 +138,12 @@
       "title": "Community Supports Plan Elections by County",
       "url": "https://www.dhcs.ca.gov/Documents/MCQMD/Community-Supports-Elections-by-MCP-and-County.pdf",
       "description": "DHCS list of the Community Supports each Medi-Cal managed care plan offers in each county."
+    },
+    {
+      "group": "data",
+      "title": "California Healthy Places Index (HPI)",
+      "url": "https://map.healthyplacesindex.org/",
+      "description": "The Public Health Alliance of Southern California's interactive map ranks California census tracts, cities, and counties on 23 community conditions that shape health, grouped into eight policy action areas: economic, education, healthcare access, housing, neighborhood, clean environment, transportation, and social. Use it to see conditions neighborhood by neighborhood within a county."
     },
     {
       "group": "data",
