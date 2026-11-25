@@ -7,6 +7,8 @@
 <meta name="description" content="Public data on health needs and services in the California counties where PHIL works, alongside PHIL's work with community partners.">
 <link rel="icon" href="assets/phil-mark.png">
 <style>
+.phil-tool[open]{grid-column:1 / -1}.phil-tool>summary::-webkit-details-marker{display:none}.phil-tool[open]>summary .phil-tool-open{display:none}.phil-tool>summary:hover{color:#02784d}
+
 html,body{height:100%}body{margin:0;overflow:hidden;background:#ffffff;color:#12365b;font-family:"Avenir Next LT Pro","Avenir Next",Avenir,Arial,Helvetica,sans-serif}
 a{color:#496b9c}a:hover{color:#12365b}
 button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
@@ -1431,17 +1433,17 @@ A card with none of these shows the county's value alone.</li>
 <h4 style="margin: 0; font-size: 19px; color: #12365b">Meetings in this phase</h4>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
 <sc-for list="{{tk.phase.meetings}}" as="mt" hint-placeholder-count="3">
-<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Meeting {{mt.n}}</div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{mt.title}}</div><div style="font-size: 13px; color: #526c87">{{mt.who}}</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{mt.purpose}}</p><details><summary style="cursor: pointer; font-size: 14px; font-weight: 600; color: #496b9c">Agenda</summary><ol style="margin: 8px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.55; color: #24384d"><sc-for list="{{mt.agenda}}" as="ag" hint-placeholder-count="5"><li>{{ag}}</li></sc-for></ol></details></div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Meeting {{mt.n}}</div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{mt.title}}</div><div style="font-size: 13px; color: #526c87">{{mt.who}}</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{mt.purpose}}</p><details><summary style="cursor: pointer; font-size: 14px; font-weight: 600; color: #496b9c">What to cover</summary><ol style="margin: 8px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.55; color: #24384d"><sc-for list="{{mt.agenda}}" as="ag" hint-placeholder-count="5"><li>{{ag}}</li></sc-for></ol></details></div>
 </sc-for>
 </div>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 12px">
 <h4 style="margin: 0; font-size: 19px; color: #12365b">Tools for this phase</h4>
-<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Each tool has when to use it, who runs it, the steps, the questions where there are any, and a worksheet. Entries save for {{tk.trackerFor}}.</p>
-<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Open a tool for when to use it, who runs it, the steps, and a worksheet. Entries save for {{tk.trackerFor}}.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 12px; align-items: start">
 <sc-for list="{{tk.phase.tools}}" as="tl" hint-placeholder-count="6">
-<details data-tool="{{tl.id}}" style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; gap: 0"><summary style="cursor: pointer; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 17px; font-weight: 700; color: #12365b">{{tl.name}}</span><span style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.purpose}}</span><span class="phil-noprint" style="font-size: 13px; font-weight: 600; color: #496b9c; text-decoration: underline">Open this tool: steps, questions, and worksheet</span></summary>
+<details class="phil-tool" data-tool="{{tl.id}}" style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 14px 16px"><summary style="cursor: pointer; display: flex; flex-direction: column; gap: 3px; list-style: none"><span style="font-size: 15.5px; font-weight: 700; color: #12365b">{{tl.name}}</span><span style="font-size: 13.5px; line-height: 1.45; color: #526c87">{{tl.purpose}}</span><span class="phil-noprint phil-tool-open" style="font-size: 12.5px; font-weight: 600; color: #496b9c">Open</span></summary>
 <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 14px; border-top: 1px solid #dee3e8; padding-top: 14px">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px"><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Use it when</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.use_when}}</div></div><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Who runs it</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.who}}</div></div></div>
 <div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Steps</div><ol style="margin: 6px 0 0; padding-left: 20px; font-size: 14.5px; line-height: 1.6; color: #24384d"><sc-for list="{{tl.steps}}" as="st" hint-placeholder-count="6"><li>{{st}}</li></sc-for></ol></div>

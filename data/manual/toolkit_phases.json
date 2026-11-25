@@ -2,7 +2,7 @@
   "_about": "CHA and CHIP Planning Toolkit content: how to use it, phases, actions (core marks the minimum path), meetings, tools (each with use_when, who, time, steps, script or worksheet, example, done), and the community partner path. Written by PHIL in its own words; MAPP 2.0 phases are named and credited to NACCHO. Edit here; the page rebuilds from this file.",
   "howto": {
     "title": "How to Use This Toolkit",
-    "intro": "Built to plan a Community Health Assessment, a Community Health Improvement Plan, and the Behavioral Health Services Act Integrated Plan together, so the county sets one list of priorities and meets each requirement once. Work through the phases in order, or start where you are. Mark each action's status, fill in the worksheets, and download your roadmap at any point.",
+    "intro": "Built to plan a Community Health Assessment, a Community Health Improvement Plan, and the Behavioral Health Services Act Integrated Plan together, so the county sets one list of priorities and meets each requirement once. Work through the phases in order, or start where you are. Mark each action's status, fill in the worksheets, and download your roadmap at any point. Every agenda, script, and worksheet is a starting point: adapt it to your county's process.",
     "ways": [
       {
         "name": "On your own",
@@ -123,28 +123,26 @@
           "n": 1,
           "title": "Finalize the vision and approve goals",
           "who": "Large community group with the Advisory Committee",
-          "time": "2 hours",
           "purpose": "Confirm the vision through a participatory exercise and reach consensus on goals.",
           "agenda": [
-            "Welcome and the story so far: what the CHA found (15 minutes)",
-            "Visioning exercise in small groups (40 minutes)",
-            "Vote on the draft vision: keep, adjust, or replace (15 minutes)",
-            "Review proposed focus areas and goals; dot vote to confirm (30 minutes)",
-            "Next steps and how to stay involved (10 minutes)"
+            "Welcome and the story so far: what the CHA found",
+            "Visioning exercise in small groups",
+            "Vote on the draft vision: keep, adjust, or replace",
+            "Review proposed focus areas and goals; dot vote to confirm",
+            "Next steps and how to stay involved"
           ]
         },
         {
           "n": 2,
           "title": "Formalize focus area workgroups",
           "who": "Advisory Committee and workgroup volunteers",
-          "time": "90 minutes",
           "purpose": "Decide between new groups and existing ones, assign chairs, and set charter and cadence expectations.",
           "agenda": [
-            "Goals recap (10 minutes)",
-            "For each focus area: new group or existing coalition (30 minutes)",
-            "Chair and co-chair selection (20 minutes)",
-            "Charter template walk through (15 minutes)",
-            "Meeting rhythm and reporting to the Advisory Committee (15 minutes)"
+            "Goals recap",
+            "For each focus area: new group or existing coalition",
+            "Chair and co-chair selection",
+            "Charter template walk through",
+            "Meeting rhythm and reporting to the Advisory Committee"
           ]
         }
       ],
@@ -158,7 +156,7 @@
           "steps": [
             "Write the name of the person who leads the process day to day and the person who covers when they are out.",
             "Decide where the decision log lives (a shared document or folder) and who adds to it after each meeting.",
-            "Set the core team's meeting rhythm; every two weeks works for most departments during active phases.",
+            "Set the core team's meeting rhythm; set a rhythm the team can keep during active phases.",
             "Name the folder where the partner list, agendas, and drafts live, and who can edit it.",
             "Name the person who answers questions from partners and the public.",
             "Name each contracted partner (a facilitator, an evaluator, a community organization) and the deliverables it owns, so the county and the contractor hold one list.",
@@ -178,7 +176,7 @@
             {
               "id": "rhythm",
               "label": "Core team meeting rhythm",
-              "hint": "For example, every other Tuesday, 30 minutes"
+              "hint": "For example, every other week"
             },
             {
               "id": "docs",
@@ -348,8 +346,8 @@
             "List members by organization and role, including behavioral health and the managed care plan by name.",
             "Write the decision rule: consensus with a fallback vote, or majority vote, and what happens on a tie.",
             "Set the meeting rhythm and what counts as a quorum.",
-            "Say how workgroups report in (a one-page update before each meeting) and how the committee responds (written feedback within two weeks).",
-            "Set a review date one year out.",
+            "Say how workgroups report in (a one-page update before each meeting) and how the committee responds (written feedback by an agreed date).",
+            "Set a review date.",
             "Bring the draft to the committee, adopt it, and record the adoption in the decision log."
           ],
           "worksheet": [
@@ -395,8 +393,8 @@
           "who": "Facilitated by the staff lead.",
           "steps": [
             "Propose four agreements and ask the group to add, change, or remove any.",
-            "Material goes out one week ahead, and members read it before the meeting.",
-            "Decisions and action items go out within one week after the meeting.",
+            "Material goes out ahead of the meeting, and members read it before they arrive.",
+            "Decisions and action items go out soon after the meeting.",
             "One conversation at a time, and everyone speaks before anyone speaks twice.",
             "Disagreements are named in the room and resolved by the charter's decision rule.",
             "Record the final list and read it at the start of each meeting until it is habit."
@@ -463,10 +461,10 @@
           "who": "The staff lead writes once; anyone on the team sends.",
           "steps": [
             "Write three sentences on what the CHIP is and why this organization matters to it; name something specific about the organization.",
-            "Make one specific ask: a 30 minute conversation, a seat on a workgroup, or a data share.",
+            "Make one specific ask: a short conversation, a seat on a workgroup, or a data share.",
             "Say what the organization gets: a voice in county priorities, visibility, and access to county data.",
             "Sign with a named person and a reply by date, and offer to meet at the organization's location.",
-            "Send, then follow up once by phone a week later."
+            "Send, then follow up once by phone."
           ],
           "worksheet": [
             {
@@ -490,7 +488,7 @@
               "hint": "Name, role, date"
             }
           ],
-          "example": "To a school district: your attendance data and your counselors are the closest view this county has of how students are doing; we are asking for one counselor to join the youth workgroup, which meets monthly for one hour.",
+          "example": "To a school district: your attendance data and your counselors are the closest view this county has of how students are doing; we are asking for one counselor to join the youth workgroup, which meets monthly.",
           "done": "A reusable message exists and every gap on the partner map has been sent one."
         },
         {
@@ -500,8 +498,8 @@
           "use_when": "Meeting 1, after the CHA findings are presented.",
           "who": "Facilitator plus a note taker.",
           "steps": [
-            "Give each person a card and five minutes to write one sentence that describes the county in ten years if this work succeeds.",
-            "Form groups of four. Each group reads its sentences and writes one sentence that keeps what they share. Ten minutes.",
+            "Give each person a card and time to write one sentence that describes the county in ten years if this work succeeds.",
+            "Form groups of four. Each group reads its sentences and writes one sentence that keeps what they share.",
             "Each group reads its sentence aloud. The note taker lists the words that appear more than once on a visible board.",
             "Ask the room which three words matter most; mark them.",
             "A small team of two or three drafts one statement from the marked words during a short break and reads it back.",
@@ -537,7 +535,7 @@
             "Write the focus area and the approved goal it serves.",
             "Name the chair and co-chair and how long they serve.",
             "List current members and the partners still needed from the partner map.",
-            "Set the meeting rhythm; monthly for one hour fits most workgroups.",
+            "Set the meeting rhythm; monthly fits most workgroups.",
             "List the products due to the Advisory Committee and when: strategies, objectives, workplan, quarterly progress update.",
             "Record the charter in the decision log."
           ],
@@ -663,14 +661,13 @@
           "n": 3,
           "title": "Power and partner analysis session",
           "who": "Advisory Committee",
-          "time": "2 hours",
           "purpose": "Complete the influence and interest grid, identify engagement gaps, and launch the partner assessment.",
           "agenda": [
-            "Data chapter highlights (20 minutes)",
-            "Influence and interest grid as a group (40 minutes)",
-            "Required partner lists: who is missing (20 minutes)",
-            "Launch the partner survey and community power survey (20 minutes)",
-            "Assign outreach for each gap (20 minutes)"
+            "Data chapter highlights",
+            "Influence and interest grid as a group",
+            "Required partner lists: who is missing",
+            "Launch the partner survey and community power survey",
+            "Assign outreach for each gap"
           ]
         }
       ],
@@ -787,8 +784,8 @@
           "steps": [
             "Build the survey in a free form tool with the eight questions below, in English and in each language spoken by more than a few percent of residents.",
             "Open with two sentences: what the survey is for and that answers are anonymous.",
-            "Distribute through partners, at events, and in waiting rooms; ask each partner to collect at least ten responses.",
-            "Close the survey after three to four weeks, or once the response target you set is met.",
+            "Distribute through partners, at events, and in waiting rooms; ask each partner to collect responses.",
+            "Close the survey once the period or response target you set is met.",
             "Read all answers to the open questions and group them into themes; count how often each organization or person is named.",
             "Write a one page summary: who is trusted, who is named as making things happen, who is left out, and the barriers to taking part."
           ],
@@ -843,12 +840,12 @@
             "Invite through the host, not only through the health department. Offer food, childcare, and a stipend or gift card, and say so in the invitation.",
             "Open with the purpose, that notes are anonymous, and that the same conversation feeds the county's health plan and its behavioral health plan so residents are asked once.",
             "Decide whether to record. If you record, collect written consent and transcribe; if you do not, use two note takers. Offer each session in English and in the languages residents speak, with a facilitator who speaks the language.",
-            "Share the county's three strongest data findings in plain words, one minute each.",
+            "Share the county's strongest data findings in plain words, briefly.",
             "Ask the questions below in order; let silence sit; follow up with \"say more about that.\"",
             "Record themes on a visible board as the group talks; read them back before closing and ask what is missing.",
             "Close with how to stay involved and when the group will hear what came of it.",
-            "End with a two minute card: age range, town, language, and the one issue the person would fix first. The cards show who was in the room and give each session a count.",
-            "Within a week, the note taker writes a one page summary with themes and three quotes; the facilitator sends it to the host."
+            "End with a short card: age range, town, language, and the one issue the person would fix first. The cards show who was in the room and give each session a count.",
+            "Soon after, the note taker writes a one page summary with themes and three quotes; the facilitator sends it to the host."
           ],
           "script": [
             "What helps people here stay healthy?",
@@ -896,7 +893,7 @@
           "who": "The staff lead with workgroup members.",
           "steps": [
             "Use six categories: people, organizations, places, programs, funding, and relationships.",
-            "At each listening session, end with ten minutes on assets: what already works here, who runs it, and whom it reaches.",
+            "At each listening session, end with time on assets: what already works here, who runs it, and whom it reaches.",
             "Record each asset with its name, what it offers, whom it reaches, the town, and a contact.",
             "Mark every asset that serves behavioral health or prevention; these go to behavioral health for the Integrated Plan.",
             "Place assets on a simple map by town so the gaps in geography show.",
@@ -1143,79 +1140,73 @@
           "n": 4,
           "title": "Workgroup launch and strategy brainstorming",
           "who": "Each focus area workgroup",
-          "time": "2 hours",
           "purpose": "Review the data, root causes, and assets for the priority, then brainstorm strategies.",
           "agenda": [
-            "Priority data in five slides (15 minutes)",
-            "Root causes with the 5 Whys (20 minutes)",
-            "Assets already in place (10 minutes)",
-            "Three round structured conversation on strategies (50 minutes)",
-            "Name a lead for each strategy that advances (15 minutes)"
+            "Priority data in five slides",
+            "Root causes with the 5 Whys",
+            "Assets already in place",
+            "Three round structured conversation on strategies",
+            "Name a lead for each strategy that advances"
           ]
         },
         {
           "n": 5,
           "title": "Develop objectives and indicators",
-          "who": "Each workgroup, within two to three weeks of Meeting 4",
-          "time": "90 minutes",
+          "who": "Each workgroup, after Meeting 4",
           "purpose": "Choose strategies by dot vote and write one to three objectives per goal with baselines.",
           "agenda": [
-            "Dot vote on strategies (15 minutes)",
-            "SMARTIE worksheet for each strategy (45 minutes)",
-            "Find the published baseline for each objective on the dashboard or a named source (20 minutes)",
-            "Agree on indicators and who tracks them (10 minutes)"
+            "Dot vote on strategies",
+            "SMARTIE worksheet for each strategy",
+            "Find the published baseline for each objective on the dashboard or a named source",
+            "Agree on indicators and who tracks them"
           ]
         },
         {
           "n": 6,
           "title": "Implementation and accountability planning",
           "who": "Each workgroup",
-          "time": "90 minutes",
           "purpose": "Set activities, timelines, lead organizations, roles, and tracking tools.",
           "agenda": [
-            "Activities under each objective (30 minutes)",
-            "Steward organization for each activity, confirmed in writing (20 minutes)",
-            "Timeline with quarterly milestones (25 minutes)",
-            "Tracking tool and reporting rhythm (15 minutes)"
+            "Activities under each objective",
+            "Steward organization for each activity, confirmed in writing",
+            "Timeline with quarterly milestones",
+            "Tracking tool and reporting rhythm"
           ]
         },
         {
           "n": 7,
           "title": "Strategy prioritization and draft workplan review",
           "who": "Advisory Committee",
-          "time": "2 hours",
           "purpose": "Check feasibility and equity, find overlap across workgroups, and give feedback.",
           "agenda": [
-            "Each workgroup presents its workplan in ten minutes",
-            "Feasibility and equity check against the priority criteria (30 minutes)",
-            "Overlap and sequencing across workgroups (20 minutes)",
-            "Written feedback to each workgroup (assigned, due in two weeks)"
+            "Each workgroup presents its workplan",
+            "Feasibility and equity check against the priority criteria",
+            "Overlap and sequencing across workgroups",
+            "Written feedback to each workgroup (assigned, with a due date)"
           ]
         },
         {
           "n": 8,
           "title": "Final refinement with workgroups",
           "who": "Each workgroup",
-          "time": "60 minutes",
           "purpose": "Respond to Advisory Committee feedback, finalize evaluation and tracking, and prepare content for the CHIP.",
           "agenda": [
-            "Feedback responses (20 minutes)",
-            "Evaluation plan finalized (20 minutes)",
-            "Progress monitoring template adopted (10 minutes)",
-            "Content handed to the writing team (10 minutes)"
+            "Feedback responses",
+            "Evaluation plan finalized",
+            "Progress monitoring template adopted",
+            "Content handed to the writing team"
           ]
         },
         {
           "n": 9,
           "title": "CHIP review and celebration",
           "who": "Large community group",
-          "time": "90 minutes",
           "purpose": "Present the draft, take public comment, and showcase partners.",
           "agenda": [
-            "Draft CHIP walk through (30 minutes)",
-            "Public comment (30 minutes)",
-            "Partner logos and sign-ups (15 minutes)",
-            "Celebration and what happens next (15 minutes)"
+            "Draft CHIP walk through",
+            "Public comment",
+            "Partner logos and sign-ups",
+            "Celebration and what happens next"
           ]
         }
       ],
@@ -1269,12 +1260,12 @@
           "who": "A facilitator and one host per table.",
           "steps": [
             "Set tables of four to six with a host who stays at the table and a sheet of paper for notes.",
-            "Round 1, 15 minutes: what would need to change for this priority to improve here.",
-            "Everyone except the host moves to a new table. Round 2, 15 minutes: what is already working here that could grow, drawing on the asset map.",
-            "Move again. Round 3, 15 minutes: what one thing we would start in the next six months.",
+            "Round 1: what would need to change for this priority to improve here.",
+            "Everyone except the host moves to a new table. Round 2: what is already working here that could grow, drawing on the asset map.",
+            "Move again. Round 3: what one thing we would start in the next six months.",
             "Hosts read their table's top ideas; the facilitator posts them on the wall and groups duplicates.",
-            "Dot vote with three dots per person; the top five strategies go to Meeting 5.",
-            "Screen the top five with the PEARL test (propriety, economics, acceptability, resources, legality). A strategy that fails one test is set aside with a note that says why."
+            "Dot vote; the top strategies go to Meeting 5.",
+            "Screen the top strategies with the PEARL test (propriety, economics, acceptability, resources, legality). A strategy that fails one test is set aside with a note that says why."
           ],
           "script": [
             "Round 1: What would need to change for this priority to improve in our county?",
@@ -1289,7 +1280,7 @@
             },
             {
               "id": "top",
-              "label": "Top five by dot vote",
+              "label": "Top strategies by dot vote",
               "hint": "With a lead for each"
             }
           ],
@@ -1547,7 +1538,7 @@
           "who": "Each steward updates its rows; the staff lead compiles.",
           "steps": [
             "One row per objective: indicator, baseline, latest value, target, status (on track, at risk, off track), and a one line note.",
-            "Stewards update their rows one week before each Advisory Committee meeting.",
+            "Stewards update their rows before each Advisory Committee meeting.",
             "The staff lead compiles the page and highlights rows that changed status.",
             "The committee discusses at risk and off track rows first.",
             "Decisions go in the decision log and the next quarter's page."
@@ -1718,7 +1709,7 @@
   "after": {
     "title": "After the CHIP: the three year rhythm",
     "items": [
-      "Each quarter: stewards update the progress monitoring template one week before the Advisory Committee meets; the committee reviews at risk and off track rows first.",
+      "Each quarter: stewards update the progress monitoring template before the Advisory Committee meets; the committee reviews at risk and off track rows first.",
       "Each March: send the crosswalk to behavioral health before the Integrated Plan annual update draft is due on March 31.",
       "Each September: bring CHIP priorities to the managed care plan before its Community Reinvestment plan is due on September 1.",
       "Each year: revise the workplan rows that changed, publish a one page progress report, refresh the data chapter from the dashboard's latest refresh, and ask the Advisory Committee whether a parked priority should come forward.",
