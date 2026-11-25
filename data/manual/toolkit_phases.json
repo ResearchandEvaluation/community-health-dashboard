@@ -18,7 +18,7 @@
       }
     ],
     "contact": "To ask for support, download your roadmap and send it to research@pophealthinnovationlab.org, or use the Ask PHIL button.",
-    "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter, write the limitations statement, triangulate, share the CHA, set priorities, write objectives with baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
+    "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter, write the limitations statement, hear from residents, triangulate, share the CHA, set priorities, write objectives with baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
     "keep": "Entries save in this browser on this device, for the county shown at the top of the toolkit. Download your roadmap after each working session and share it with your team.",
     "steps": [
       "Choose your county above. The toolkit shows that county's plans and keeps your entries for it.",
@@ -622,7 +622,7 @@
         },
         {
           "id": "a12",
-          "core": false,
+          "core": true,
           "title": "Community Context Assessment",
           "what": "Listening sessions, pop-ups at events held outside working hours, and photovoice or asset mapping with residents. Reach the parts of the county and the groups the data cannot see, including Tribal communities, youth, seniors, veterans, and people with lived experience of behavioral health conditions.",
           "output": "Context assessment summary with quotes and themes",
@@ -645,7 +645,7 @@
           "id": "a14",
           "core": true,
           "title": "Triangulate and name the themes",
-          "what": "Lay the three assessments side by side. Where data, partners, and residents point at the same issue, you have a theme. Where they disagree, say so; the disagreement is a finding.",
+          "what": "Lay the assessments you ran side by side. Where data, partners, and residents point at the same issue, you have a theme. Where they disagree, say so; the disagreement is a finding.",
           "output": "Themes for priority setting (Meeting 3)",
           "tools": [
             "t_triangulate"
