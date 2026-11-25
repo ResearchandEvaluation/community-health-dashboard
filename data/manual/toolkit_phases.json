@@ -194,7 +194,7 @@
               "hint": "Name and role"
             }
           ],
-          "example": "A health department with two staff names the health educator as lead, the epidemiologist as backup, and keeps the decision log as a running page in the CHIP folder, updated after each Advisory Committee meeting.",
+          "example": "A health department names the health educator as lead, the epidemiologist as backup, and keeps the decision log as a running page in the CHIP folder, updated after each Advisory Committee meeting.",
           "done": "A new staff member could read this page and know whom to call and where the work lives."
         },
         {
