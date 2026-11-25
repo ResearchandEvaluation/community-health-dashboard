@@ -1,0 +1,1763 @@
+{
+  "_about": "CHA and CHIP Planning Toolkit content: how to use it, phases, actions (core marks the minimum path), meetings, tools (each with use_when, who, time, steps, script or worksheet, example, done), and the community partner path. Written by PHIL in its own words; MAPP 2.0 phases are named and credited to NACCHO. Edit here; the page rebuilds from this file.",
+  "howto": {
+    "title": "How to Use This Toolkit",
+    "intro": "Built to plan a Community Health Assessment, a Community Health Improvement Plan, and the Behavioral Health Services Act Integrated Plan together, so the county sets one list of priorities and meets each requirement once. Work through the phases in order, or start where you are. Mark each action's status, fill in the worksheets, and download your roadmap at any point.",
+    "ways": [
+      {
+        "name": "On your own",
+        "body": "Follow the phases, trackers, and worksheets. The core actions are the shortest path to a complete CHA, CHIP, and Integrated Plan."
+      },
+      {
+        "name": "PHIL supports the parts you mark",
+        "body": "Mark any action \"Ask PHIL to support\" or \"Ask PHIL to lead.\" Your roadmap lists them, and you send it to PHIL."
+      },
+      {
+        "name": "PHIL does it with you",
+        "body": "PHIL facilitates the meetings, builds the data chapter, writes the behavioral health and suicide prevention sections with county behavioral health, and prepares the crosswalks. Choose this at the top of your roadmap."
+      }
+    ],
+    "contact": "To ask for support, download your roadmap and send it to research@pophealthinnovationlab.org, or use the Ask PHIL button.",
+    "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter from the dashboard, write the limitations statement, triangulate, share the CHA, set priorities, write objectives with published baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
+    "keep": "Entries save in this browser on this device, for the county in the County menu. Download your roadmap after each working session and share it with your team."
+  },
+  "phases": [
+    {
+      "id": "p1",
+      "short": "Phase 1: Build the Foundation",
+      "title": "Phase 1: Build the Community Health Improvement Foundation",
+      "mapp": "MAPP 2.0 Phase 1, Build the Community Health Improvement Foundation (NACCHO).",
+      "intro": "Set up the people, the structure, and the vision that carry the whole process. This phase decides whether the work survives staff turnover, so it ends with written agreements, a charter, and a coalition roster.",
+      "bh": {
+        "title": "With behavioral health and your managed care plan",
+        "body": "Seat the county behavioral health department and the Medi-Cal managed care plan on the Advisory Committee by name. DHCS policy directs both to take part in CHA and CHIP governance when the local health jurisdiction asks. Build the roster so one coalition also meets the CDPH prevention program's required partner list and the Integrated Plan's stakeholder groups.",
+        "feeds": "Feeds the Integrated Plan's local health jurisdiction section (attended key CHA and CHIP meetings; served on governance structures) and the CDPH convening requirement."
+      },
+      "phil": "In this phase PHIL can facilitate the visioning meeting, draft the charter and shared agreements from your partner map, and run the partner mapping session with your team.",
+      "actions": [
+        {
+          "id": "a01",
+          "core": true,
+          "title": "Name the planning team and its administrative home",
+          "what": "Decide who leads day to day, who records decisions, how often the core team meets, and where documents live. Name any contracted partner and what it owns. This is one page, and it is the page that lets a successor pick the work up.",
+          "output": "Planning team one-pager",
+          "tools": [
+            "t_team"
+          ]
+        },
+        {
+          "id": "a02",
+          "core": false,
+          "title": "Review what the county already has",
+          "what": "Gather the most recent CHA, the current CHIP, the county's BHSA Integrated Plan, the Future of Public Health workplan, the managed care plan's Community Reinvestment plan, and any hospital Community Health Needs Assessment. List their priorities side by side. The Start here page gives you the Integrated Plan goal and measures for your county.",
+          "output": "Priority inventory across existing plans",
+          "tools": [
+            "t_inventory"
+          ]
+        },
+        {
+          "id": "a03",
+          "core": true,
+          "title": "Map partners and stakeholders",
+          "what": "Place each partner on an influence and interest grid, then check the map against two lists: the CDPH prevention program's required partners and the Integrated Plan's required stakeholder groups. The gaps on those lists are your first outreach targets.",
+          "output": "Partner map with gaps marked",
+          "tools": [
+            "t_grid",
+            "t_roster"
+          ]
+        },
+        {
+          "id": "a04",
+          "core": true,
+          "title": "Form one coalition and charter the Advisory Committee",
+          "what": "Write a short charter: purpose, membership, decision rules, meeting rhythm, and how workgroups report in. Seat behavioral health and the managed care plan by name. Adopt shared agreements for how members prepare, communicate, and review material.",
+          "output": "Advisory Committee charter and shared agreements",
+          "tools": [
+            "t_charter",
+            "t_agreements"
+          ]
+        },
+        {
+          "id": "a05",
+          "core": false,
+          "title": "Sign partners on",
+          "what": "Offer two levels of commitment: a partnership agreement for organizations that will lead or steward work, and a simple sign-up for organizations that want to stay involved. List partner logos where the community can see them.",
+          "output": "Signed partnership agreements and a partner list",
+          "tools": [
+            "t_agreement"
+          ]
+        },
+        {
+          "id": "a06",
+          "core": false,
+          "title": "Set up communications",
+          "what": "One web page or section, one email list, and one page of outreach language the health department can send to organizations it has no existing relationship with. Decide who answers questions from the public. Name the languages for materials and meetings and the accessibility standard for everything posted (Americans with Disabilities Act and Web Content Accessibility Guidelines).",
+          "output": "Communications plan and outreach language",
+          "tools": [
+            "t_outreach"
+          ]
+        },
+        {
+          "id": "a07",
+          "core": true,
+          "title": "Agree on a vision and approve goals",
+          "what": "Hold the first large group meeting. Use a visioning exercise to draft a vision statement and confirm it. If the county already has a CHA, reach consensus now on the focus areas and goals that will organize the workgroups. If the CHA is still ahead, confirm the vision and the decision rules now and set the focus areas after priority setting in Phase 3.",
+          "output": "Approved vision, with goals where a CHA exists (Meeting 1)",
+          "tools": [
+            "t_vision"
+          ]
+        },
+        {
+          "id": "a08",
+          "core": false,
+          "title": "Formalize focus area workgroups",
+          "what": "Decide whether each focus area gets a new workgroup or an existing coalition that takes it on. Name a chair, set a cadence, and give each group a one-page charter. When the CHA is still ahead, this action moves to the start of Phase 3, after priorities are set.",
+          "output": "Workgroup charters and chairs (Meeting 2)",
+          "tools": [
+            "t_wgcharter"
+          ]
+        }
+      ],
+      "meetings": [
+        {
+          "n": 1,
+          "title": "Finalize the vision and approve goals",
+          "who": "Large community group with the Advisory Committee",
+          "time": "2 hours",
+          "purpose": "Confirm the vision through a participatory exercise and reach consensus on goals.",
+          "agenda": [
+            "Welcome and the story so far: what the CHA found (15 minutes)",
+            "Visioning exercise in small groups (40 minutes)",
+            "Vote on the draft vision: keep, adjust, or replace (15 minutes)",
+            "Review proposed focus areas and goals; dot vote to confirm (30 minutes)",
+            "Next steps and how to stay involved (10 minutes)"
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Formalize focus area workgroups",
+          "who": "Advisory Committee and workgroup volunteers",
+          "time": "90 minutes",
+          "purpose": "Decide between new groups and existing ones, assign chairs, and set charter and cadence expectations.",
+          "agenda": [
+            "Goals recap (10 minutes)",
+            "For each focus area: new group or existing coalition (30 minutes)",
+            "Chair and co-chair selection (20 minutes)",
+            "Charter template walk through (15 minutes)",
+            "Meeting rhythm and reporting to the Advisory Committee (15 minutes)"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "id": "t_team",
+          "name": "Planning team one-pager",
+          "purpose": "Record who does what so the process survives turnover.",
+          "use_when": "At the start, and again whenever a person on the team changes.",
+          "who": "The staff lead, alone.",
+          "steps": [
+            "Write the name of the person who leads the process day to day and the person who covers when they are out.",
+            "Decide where the decision log lives (a shared document or folder) and who adds to it after each meeting.",
+            "Set the core team's meeting rhythm; every two weeks works for most departments during active phases.",
+            "Name the folder where the partner list, agendas, and drafts live, and who can edit it.",
+            "Name the person who answers questions from partners and the public.",
+            "Name each contracted partner (a facilitator, an evaluator, a community organization) and the deliverables it owns, so the county and the contractor hold one list.",
+            "Share the page with your director and with behavioral health so they know who to call."
+          ],
+          "worksheet": [
+            {
+              "id": "lead",
+              "label": "Lead and backup",
+              "hint": "Name, role, phone or email"
+            },
+            {
+              "id": "log",
+              "label": "Decision log location and keeper",
+              "hint": "Where it lives and who updates it"
+            },
+            {
+              "id": "rhythm",
+              "label": "Core team meeting rhythm",
+              "hint": "For example, every other Tuesday, 30 minutes"
+            },
+            {
+              "id": "docs",
+              "label": "Where documents and the partner list live",
+              "hint": "Folder or site"
+            },
+            {
+              "id": "contract",
+              "label": "Contracted partners and what they own",
+              "hint": "Organization and deliverables"
+            },
+            {
+              "id": "voice",
+              "label": "Who speaks for the process",
+              "hint": "Name and role"
+            }
+          ],
+          "example": "A health department with two staff names the health educator as lead, the epidemiologist as backup, and keeps the decision log as a running page in the CHIP folder, updated after each Advisory Committee meeting.",
+          "done": "A new staff member could read this page and know whom to call and where the work lives."
+        },
+        {
+          "id": "t_inventory",
+          "name": "Priority inventory",
+          "purpose": "See every plan the county already has in one table before adding another.",
+          "use_when": "Before any priority setting, and before meeting behavioral health or the managed care plan.",
+          "who": "The staff lead, with input from behavioral health.",
+          "steps": [
+            "Collect the most recent CHA, the current CHIP, the BHSA Integrated Plan (the Start here page shows the county's selected goal), the Future of Public Health workplan, the managed care plan's Community Reinvestment plan, any hospital Community Health Needs Assessment, and any suicide prevention plan.",
+            "For each plan, write its owner, the period it covers, its priorities in a few words, the measures it uses, and its next due date.",
+            "Mark every priority that appears in two or more plans; these are the natural shared priorities.",
+            "Mark every measure that comes from a published source, since those can be tracked without new data collection.",
+            "Bring the table to the first conversation with behavioral health and the managed care plan."
+          ],
+          "worksheet": [
+            {
+              "id": "shared",
+              "label": "Priorities that appear in two or more plans",
+              "hint": "List them"
+            },
+            {
+              "id": "measures",
+              "label": "Measures already in use across plans",
+              "hint": "Name the measure and its source"
+            },
+            {
+              "id": "dates",
+              "label": "Next due dates",
+              "hint": "Plan and date"
+            },
+            {
+              "id": "gaps",
+              "label": "Plans the county does not have yet",
+              "hint": "For example, no current CHA, no suicide prevention plan"
+            }
+          ],
+          "example": "A county finds that substance use appears in its CHIP, its Integrated Plan (goal: Overdoses), and its hospital needs assessment, and that two of the three use the same CDPH overdose death rate.",
+          "done": "One table lists every plan, and the shared priorities and shared measures are marked.",
+          "links": [
+            [
+              "bhsa",
+              "Open County Behavioral Health Plans"
+            ]
+          ]
+        },
+        {
+          "id": "t_grid",
+          "name": "Influence and interest grid",
+          "purpose": "Sort partners by how much they can move the work and how much they care about it.",
+          "use_when": "Early in Phase 1, and again before priority setting.",
+          "who": "The core team, or the Advisory Committee at Meeting 3.",
+          "steps": [
+            "Draw a square with four quadrants on a wall or whiteboard. The horizontal axis is interest in community health improvement; the vertical axis is influence over conditions in the county.",
+            "Write each partner organization on a sticky note. Include agencies, providers, schools, Tribes, community organizations, faith communities, employers, and funders.",
+            "Place each note. Ask: how much can this organization change what happens here, and how much does it care about this work.",
+            "Decide an approach for each quadrant. High influence and high interest: invite to lead. High influence and low interest: keep satisfied with short updates and a clear ask. Low influence and high interest: keep informed and involved in workgroups. Low influence and low interest: monitor.",
+            "Open the one coalition roster and circle every required partner that is not on the wall.",
+            "Assign a person and a date to each outreach gap."
+          ],
+          "worksheet": [
+            {
+              "id": "lead",
+              "label": "Invite to lead (high influence, high interest)",
+              "hint": "Organizations"
+            },
+            {
+              "id": "satisfy",
+              "label": "Keep satisfied (high influence, low interest)",
+              "hint": "Organizations and the ask for each"
+            },
+            {
+              "id": "inform",
+              "label": "Keep informed and involved (low influence, high interest)",
+              "hint": "Organizations"
+            },
+            {
+              "id": "gaps",
+              "label": "Required partners missing from the map",
+              "hint": "Who will reach out and by when"
+            }
+          ],
+          "example": "The county hospital lands in high influence and low interest; the approach becomes one quarterly briefing and a specific ask for data. The Tribal health program is missing from the wall and becomes the first outreach.",
+          "done": "Every partner has a quadrant and an approach, and every required partner is on the map or has an outreach owner."
+        },
+        {
+          "id": "t_roster",
+          "name": "One coalition roster",
+          "purpose": "Check the Advisory Committee against every list the state asks you to convene, so one group serves the CHIP, the Integrated Plan, and the CDPH prevention program.",
+          "use_when": "When forming the Advisory Committee, and before each state reporting date.",
+          "who": "The staff lead with behavioral health.",
+          "steps": [
+            "List the CDPH prevention program's required partners: county behavioral health, every Medi-Cal managed care plan serving the county, Tribes in the county, organizations funded for BHSA prevention, the Area Agency on Aging, education partners, the County Veterans Service Officer, and Regional Centers.",
+            "List the Integrated Plan's required stakeholder groups: people with lived experience, families, youth, providers, community organizations serving culturally and linguistically diverse residents, Tribal and Indian Health Program designees, continuums of care, education, public safety, local public health, and managed care plans.",
+            "List the CHIP roles you need filled: Advisory Committee members, workgroup chairs, and steward organizations.",
+            "For each row, write the organization, the named person, their role, and the date they confirmed.",
+            "Where one person covers two lists, say so; where a row is empty, it is an outreach task.",
+            "Keep the roster current; it is the attendance evidence for the Integrated Plan's local health jurisdiction section."
+          ],
+          "worksheet": [
+            {
+              "id": "bh",
+              "label": "County behavioral health representative",
+              "hint": "Name, role, date confirmed"
+            },
+            {
+              "id": "mcp",
+              "label": "Managed care plan representative(s)",
+              "hint": "Plan, name, role, date confirmed"
+            },
+            {
+              "id": "tribal",
+              "label": "Tribal and Indian Health Program representatives",
+              "hint": "Tribe or program, name, date confirmed"
+            },
+            {
+              "id": "lived",
+              "label": "People with lived experience and family members",
+              "hint": "How they are recruited and supported"
+            },
+            {
+              "id": "cbo",
+              "label": "Community organizations serving culturally and linguistically diverse residents",
+              "hint": "Organizations and contacts"
+            },
+            {
+              "id": "other",
+              "label": "Other required partners (aging, education, veterans, Regional Center, continuum of care, public safety)",
+              "hint": "Organization and contact for each"
+            },
+            {
+              "id": "empty",
+              "label": "Rows still empty",
+              "hint": "Outreach owner and date"
+            }
+          ],
+          "example": "A county seats the behavioral health BHSA coordinator, the Partnership HealthPlan community liaison, and the Tribal health program director on the Advisory Committee, and records all three on the roster with confirmation dates.",
+          "done": "Every required partner type has a named person or an outreach owner, and the roster is dated."
+        },
+        {
+          "id": "t_charter",
+          "name": "Advisory Committee charter",
+          "purpose": "Give the committee a written purpose and decision rules.",
+          "use_when": "Before the committee's first formal decision.",
+          "who": "The staff lead drafts; the committee adopts at its next meeting.",
+          "steps": [
+            "Check whether a body already convenes the required partners (a hospital collaborative, a health action council, the behavioral health board's planning group). If one does, charter it as the Advisory Committee with amended membership, so one body serves the CHIP, the Integrated Plan, and the prevention coalition.",
+            "Write the committee's purpose in one sentence: what it decides and what it does not.",
+            "List members by organization and role, including behavioral health and the managed care plan by name.",
+            "Write the decision rule: consensus with a fallback vote, or majority vote, and what happens on a tie.",
+            "Set the meeting rhythm and what counts as a quorum.",
+            "Say how workgroups report in (a one-page update before each meeting) and how the committee responds (written feedback within two weeks).",
+            "Set a review date one year out.",
+            "Bring the draft to the committee, adopt it, and record the adoption in the decision log."
+          ],
+          "worksheet": [
+            {
+              "id": "purpose",
+              "label": "Purpose in one sentence",
+              "hint": "What the committee decides"
+            },
+            {
+              "id": "members",
+              "label": "Members by organization and role",
+              "hint": "Include behavioral health and the managed care plan"
+            },
+            {
+              "id": "decide",
+              "label": "Decision rule",
+              "hint": "Consensus, vote, tie break"
+            },
+            {
+              "id": "rhythm",
+              "label": "Meeting rhythm and quorum",
+              "hint": "For example, quarterly; half of members"
+            },
+            {
+              "id": "report",
+              "label": "How workgroups report and how the committee responds",
+              "hint": "Format and timing"
+            },
+            {
+              "id": "review",
+              "label": "Review date",
+              "hint": "Date"
+            }
+          ],
+          "example": "Purpose: the Advisory Committee approves CHIP priorities, objectives, and the annual progress report, and advises workgroups; workgroups decide their own activities.",
+          "done": "The committee has adopted the charter and the adoption is in the decision log."
+        },
+        {
+          "id": "t_agreements",
+          "name": "Shared agreements",
+          "purpose": "Set norms for a group that meets a few times a year.",
+          "use_when": "At the committee's first meeting.",
+          "who": "Facilitated by the staff lead.",
+          "steps": [
+            "Propose four agreements and ask the group to add, change, or remove any.",
+            "Material goes out one week ahead, and members read it before the meeting.",
+            "Decisions and action items go out within one week after the meeting.",
+            "One conversation at a time, and everyone speaks before anyone speaks twice.",
+            "Disagreements are named in the room and resolved by the charter's decision rule.",
+            "Record the final list and read it at the start of each meeting until it is habit."
+          ],
+          "worksheet": [
+            {
+              "id": "list",
+              "label": "Our agreements",
+              "hint": "The final list the group adopted"
+            },
+            {
+              "id": "added",
+              "label": "Agreements the group added",
+              "hint": "In the group's words"
+            }
+          ],
+          "example": "A committee adds a fifth agreement: meetings end on time, and anything not finished goes to the next agenda.",
+          "done": "The agreements are written, adopted, and read at the start of meetings."
+        },
+        {
+          "id": "t_agreement",
+          "name": "Partnership agreement",
+          "purpose": "Make commitments visible without making them heavy.",
+          "use_when": "Once goals are approved and partners know what they would be joining.",
+          "who": "The staff lead sends; partners sign.",
+          "steps": [
+            "Offer three levels. Steward: leads one or more CHIP activities and reports progress quarterly. Partner: attends workgroup meetings and contributes staff time or data. Supporter: receives updates and shares them with its own network.",
+            "Write each level in two sentences so a director can choose in one reading.",
+            "Add a line for the organization's contact, level, start date, and permission to show its logo.",
+            "Where the partner list is long, send a short interest survey first (lead a workgroup, join a workgroup, receive updates) and send agreements to the organizations that choose to lead or join.",
+            "Send the agreement with the outreach language and a reply by date.",
+            "Record each signed agreement on the partner list and add the logo to the web page."
+          ],
+          "worksheet": [
+            {
+              "id": "stewards",
+              "label": "Steward organizations",
+              "hint": "Organization and the activity each will lead"
+            },
+            {
+              "id": "partners",
+              "label": "Partner organizations",
+              "hint": "Organization and workgroup"
+            },
+            {
+              "id": "supporters",
+              "label": "Supporter organizations",
+              "hint": "Organization"
+            },
+            {
+              "id": "pending",
+              "label": "Agreements sent and not yet returned",
+              "hint": "Organization and follow-up date"
+            }
+          ],
+          "example": "A food bank signs as steward for a produce access activity; the library signs as supporter and posts CHIP updates on its community board.",
+          "done": "Each organization on the partner list has a level and a signed agreement or a follow-up date."
+        },
+        {
+          "id": "t_outreach",
+          "name": "Outreach language",
+          "purpose": "Start conversations with organizations the health department has no existing relationship with.",
+          "use_when": "Whenever the partner map shows a gap.",
+          "who": "The staff lead writes once; anyone on the team sends.",
+          "steps": [
+            "Write three sentences on what the CHIP is and why this organization matters to it; name something specific about the organization.",
+            "Make one specific ask: a 30 minute conversation, a seat on a workgroup, or a data share.",
+            "Say what the organization gets: a voice in county priorities, visibility, and access to county data.",
+            "Sign with a named person and a reply by date, and offer to meet at the organization's location.",
+            "Send, then follow up once by phone a week later."
+          ],
+          "worksheet": [
+            {
+              "id": "why",
+              "label": "Why this organization matters to the CHIP",
+              "hint": "Three sentences, specific to them"
+            },
+            {
+              "id": "ask",
+              "label": "The ask",
+              "hint": "One specific request"
+            },
+            {
+              "id": "gets",
+              "label": "What they get",
+              "hint": "In their terms"
+            },
+            {
+              "id": "sender",
+              "label": "Named sender and reply by date",
+              "hint": "Name, role, date"
+            }
+          ],
+          "example": "To a school district: your attendance data and your counselors are the closest view this county has of how students are doing; we are asking for one counselor to join the youth workgroup, which meets monthly for one hour.",
+          "done": "A reusable message exists and every gap on the partner map has been sent one."
+        },
+        {
+          "id": "t_vision",
+          "name": "Visioning exercise",
+          "purpose": "Draft a vision statement the whole group can support in one meeting.",
+          "use_when": "Meeting 1, after the CHA findings are presented.",
+          "who": "Facilitator plus a note taker.",
+          "steps": [
+            "Give each person a card and five minutes to write one sentence that describes the county in ten years if this work succeeds.",
+            "Form groups of four. Each group reads its sentences and writes one sentence that keeps what they share. Ten minutes.",
+            "Each group reads its sentence aloud. The note taker lists the words that appear more than once on a visible board.",
+            "Ask the room which three words matter most; mark them.",
+            "A small team of two or three drafts one statement from the marked words during a short break and reads it back.",
+            "Vote: keep, adjust, or replace. Adjust in the room if the group is close; otherwise the small team revises and sends it within a week."
+          ],
+          "worksheet": [
+            {
+              "id": "words",
+              "label": "Words that appeared more than once",
+              "hint": "List"
+            },
+            {
+              "id": "draft",
+              "label": "Draft vision statement",
+              "hint": "One or two sentences"
+            },
+            {
+              "id": "vote",
+              "label": "Vote result and next step",
+              "hint": "Keep, adjust, or replace"
+            }
+          ],
+          "example": "Shared words: healthy, connected, every town, children, access. Draft: a county where every town is connected to the care, food, and support that let children and families thrive.",
+          "done": "A vision statement is approved or has a revision owner and date."
+        },
+        {
+          "id": "t_wgcharter",
+          "name": "Workgroup charter",
+          "purpose": "Give each focus area a chair, a scope, and a rhythm.",
+          "use_when": "Meeting 2, or whenever a new workgroup forms.",
+          "who": "The workgroup chair with the staff lead.",
+          "steps": [
+            "Write the focus area and the approved goal it serves.",
+            "Name the chair and co-chair and how long they serve.",
+            "List current members and the partners still needed from the partner map.",
+            "Set the meeting rhythm; monthly for one hour fits most workgroups.",
+            "List the products due to the Advisory Committee and when: strategies, objectives, workplan, quarterly progress update.",
+            "Record the charter in the decision log."
+          ],
+          "worksheet": [
+            {
+              "id": "area",
+              "label": "Focus area and goal",
+              "hint": "From Meeting 1"
+            },
+            {
+              "id": "chairs",
+              "label": "Chair and co-chair",
+              "hint": "Names and term"
+            },
+            {
+              "id": "members",
+              "label": "Members and partners still needed",
+              "hint": "Names and gaps"
+            },
+            {
+              "id": "rhythm",
+              "label": "Meeting rhythm",
+              "hint": "For example, first Tuesday monthly"
+            },
+            {
+              "id": "due",
+              "label": "Products due to the Advisory Committee and dates",
+              "hint": "Strategies, objectives, workplan, updates"
+            }
+          ],
+          "example": "The youth behavioral health workgroup is chaired by a school counselor and the behavioral health prevention coordinator, meets monthly, and owes strategies by month three and objectives by month four.",
+          "done": "Each workgroup has a one-page charter with a chair, rhythm, and due dates."
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "short": "Phase 2: Assess (CHA)",
+      "title": "Phase 2: Tell the Community Story (the Community Health Assessment)",
+      "mapp": "MAPP 2.0 Phase 2, Tell the Community Story (NACCHO). Its three assessments together make up the CHA.",
+      "intro": "The CHA. MAPP 2.0 builds it from three assessments: what the data say (Community Status), what partners bring and where power sits (Community Partner), and what residents say shapes their health (Community Context). This dashboard supplies most of the status assessment, so the team spends its time on the two that need people.",
+      "bh": {
+        "title": "With behavioral health and your managed care plan",
+        "body": "Share data both ways: bring the county's Integrated Plan goal and measures into the status assessment, and ask behavioral health for its stratified data. Run one round of listening sessions that serves the CHA, the Integrated Plan, and the prevention coalition, so residents are asked once. Share the draft CHA with the managed care plan before its September reinvestment submission, which must be informed by the CHA.",
+        "feeds": "Feeds the Integrated Plan data sharing items, the Community Reinvestment plan, and the CHA's limitations section."
+      },
+      "phil": "In this phase PHIL can build the data chapter from the dashboard and your local sources, run or train your team to run listening sessions, and facilitate the triangulation session.",
+      "actions": [
+        {
+          "id": "a09",
+          "core": true,
+          "title": "Community Status Assessment: pull the county's data",
+          "what": "Work through the dashboard's topic pages for your county, Your County in Detail for breakdowns by group, and Compare Counties for context. Use Print County Profile to produce the data chapter. Add local data the dashboard does not hold (hospital, school, Tribal, and county program data) and record each source.",
+          "output": "Data chapter with sources",
+          "tools": [
+            "t_status"
+          ]
+        },
+        {
+          "id": "a10",
+          "core": true,
+          "title": "Write the data limitations statement",
+          "what": "Suppressed cells, unstable rates, and multi-year windows appear wherever numbers are small: whole measures in less populous counties, and breakdowns by group in every county. Say plainly what each measure can and cannot tell you, and use the published quarter rankings and multi-year averages as the source presents them.",
+          "output": "Limitations statement",
+          "tools": [
+            "t_limits"
+          ]
+        },
+        {
+          "id": "a11",
+          "core": false,
+          "title": "Community Partner Assessment",
+          "what": "Survey partners on what they contribute, what capacity they have, and who holds power to change conditions. Run the community power survey with residents and partners together.",
+          "output": "Partner assessment summary",
+          "tools": [
+            "t_power"
+          ]
+        },
+        {
+          "id": "a12",
+          "core": false,
+          "title": "Community Context Assessment",
+          "what": "Listening sessions, pop-ups at events held outside working hours, and photovoice or asset mapping with residents. Reach the parts of the county and the groups the data cannot see, including Tribal communities, youth, seniors, veterans, and people with lived experience of behavioral health conditions.",
+          "output": "Context assessment summary with quotes and themes",
+          "tools": [
+            "t_listen",
+            "t_assets"
+          ]
+        },
+        {
+          "id": "a13",
+          "core": false,
+          "title": "Forces of change",
+          "what": "Name the political, economic, social, technological, environmental, and legal forces that will shape the county over the plan period, including the BHSA funding changes, managed care plan reinvestment, and the 2028 planning cycle.",
+          "output": "Forces of change list",
+          "tools": [
+            "t_forces"
+          ]
+        },
+        {
+          "id": "a14",
+          "core": true,
+          "title": "Triangulate and name the themes",
+          "what": "Lay the three assessments side by side. Where data, partners, and residents point at the same issue, you have a theme. Where they disagree, say so; the disagreement is a finding.",
+          "output": "Themes for priority setting (Meeting 3)",
+          "tools": [
+            "t_triangulate"
+          ]
+        },
+        {
+          "id": "a15",
+          "core": true,
+          "title": "Write and share the CHA",
+          "what": "Assemble the CHA, share it with behavioral health and the managed care plan, post it publicly, and send it to the partners who contributed. Record the date, since the CHA becomes the reference document for the Integrated Plan and the reinvestment plan.",
+          "output": "Published CHA",
+          "tools": [
+            "t_chaoutline"
+          ]
+        }
+      ],
+      "meetings": [
+        {
+          "n": 3,
+          "title": "Power and partner analysis session",
+          "who": "Advisory Committee",
+          "time": "2 hours",
+          "purpose": "Complete the influence and interest grid, identify engagement gaps, and launch the partner assessment.",
+          "agenda": [
+            "Data chapter highlights (20 minutes)",
+            "Influence and interest grid as a group (40 minutes)",
+            "Required partner lists: who is missing (20 minutes)",
+            "Launch the partner survey and community power survey (20 minutes)",
+            "Assign outreach for each gap (20 minutes)"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "id": "t_status",
+          "name": "Community Status Assessment guide",
+          "purpose": "Build the data chapter from published sources without calculating your own rates.",
+          "use_when": "At the start of Phase 2. Repeat after each quarterly dashboard refresh if the CHA is still in draft.",
+          "who": "The staff lead or epidemiologist.",
+          "steps": [
+            "Before pulling data, ask the Advisory Committee which health topics matter most: a short vote on a list of topics. The votes choose the topic pages you open first and the local sources you add.",
+            "Choose your county in the County menu at the top of this dashboard.",
+            "Open each health topic page. For each measure, note whether the county is higher or lower than California where the same source publishes both, the county's quarter among all California counties where shown, and the trend direction. Write one sentence per measure that stands out.",
+            "Open Your County in Detail. Record the breakdowns by race and ethnicity, sex, age, and student group for the measures that stood out; these are the equity findings.",
+            "Open Compare Counties and place your county next to two or three neighbors or peers for the same measures.",
+            "Use Print County Profile with the topics you need to export the dashboard measures as the base of the data chapter.",
+            "Add local sources the dashboard does not hold, in the same format: measure, value, period, source, and a note on limits. Typical sources: a local community health survey if the county runs one, hospital discharge summaries, school climate surveys, Tribal health program data, county program counts, the sheriff's office, and the 211 call log.",
+            "Link the Healthy Places Index map for neighborhood conditions and cite it; its license keeps its values on its own site.",
+            "Where the county has several cities or distinct regions, add sub-county data in the same format: Healthy Places Index by census tract, hospital Community Health Needs Assessment findings by zip code, and county vital statistics by city or region.",
+            "Where hospitals are running a Community Health Needs Assessment in the same window, agree with them on shared indicators and one resident input process, so residents are asked once and the two reports cite the same numbers.",
+            "Note the dashboard's refresh date on the chapter so later comparisons use the same vintage."
+          ],
+          "worksheet": [
+            {
+              "id": "standout",
+              "label": "Measures that stand out, with direction",
+              "hint": "Measure, higher or lower than California, trend"
+            },
+            {
+              "id": "equity",
+              "label": "Equity findings from Your County in Detail",
+              "hint": "Measure and the groups most affected"
+            },
+            {
+              "id": "peers",
+              "label": "Peer counties used for comparison",
+              "hint": "Counties and why"
+            },
+            {
+              "id": "local",
+              "label": "Local sources added",
+              "hint": "Source, measure, period, contact"
+            },
+            {
+              "id": "vintage",
+              "label": "Dashboard refresh date used",
+              "hint": "Date shown at the bottom of the dashboard"
+            }
+          ],
+          "example": "A county notes that its drug overdose death rate is above California's in the same CDPH dataset and rising over the last three windows, that Your County in Detail shows the burden concentrated among adults 25 to 44, and adds the hospital's emergency department counts for overdose as a local source.",
+          "done": "The data chapter has every measure with a value, period, source, and a note on limits, and a refresh date.",
+          "links": [
+            [
+              "profile",
+              "Open Print County Profile"
+            ],
+            [
+              "detail",
+              "Open Your County in Detail"
+            ],
+            [
+              "cardio",
+              "Open the health topics"
+            ]
+          ]
+        },
+        {
+          "id": "t_limits",
+          "name": "Data limitations statement",
+          "purpose": "Tell readers what small numbers can and cannot support.",
+          "use_when": "Right after the data chapter, before anyone sets priorities from it.",
+          "who": "The staff lead or epidemiologist.",
+          "steps": [
+            "List every measure where the county value is suppressed or missing, and say why in plain words (fewer than the publisher's minimum count, no county level estimate, survey not run locally).",
+            "List every measure that uses a multi-year average and name the years; say that a change inside the window cannot be seen.",
+            "List the survey based measures and say that they are estimates with a margin of error, as the publisher reports.",
+            "Say which comparisons with California come from the same dataset and which do not; the dashboard marks the exceptions.",
+            "Say that quarter rankings place the county among all California counties on the published value and do not by themselves show change over time.",
+            "Give the date of each dataset.",
+            "Close with what the data can support: direction, rough size, and where to look closer with local sources and listening sessions."
+          ],
+          "worksheet": [
+            {
+              "id": "suppressed",
+              "label": "Suppressed or missing measures and why",
+              "hint": "Measure and reason"
+            },
+            {
+              "id": "windows",
+              "label": "Multi-year measures and their years",
+              "hint": "Measure and window"
+            },
+            {
+              "id": "survey",
+              "label": "Survey based measures",
+              "hint": "Measure and source"
+            },
+            {
+              "id": "support",
+              "label": "What the data can support",
+              "hint": "One or two sentences"
+            }
+          ],
+          "example": "Infant mortality is suppressed for the county because fewer than the publisher's minimum number of deaths occurred; the CHA reports the three year state and regional context instead and treats maternal and infant health as a listening session topic.",
+          "done": "A reader of the CHA can tell for every measure how much weight it carries."
+        },
+        {
+          "id": "t_power",
+          "name": "Community power survey",
+          "purpose": "Learn who residents trust, who makes things happen, and who is left out.",
+          "use_when": "During the partner and context assessments; results feed Meeting 3.",
+          "who": "The staff lead builds the form; partners distribute it.",
+          "steps": [
+            "Build the survey in a free form tool with the eight questions below, in English and in each language spoken by more than a few percent of residents.",
+            "Open with two sentences: what the survey is for and that answers are anonymous.",
+            "Distribute through partners, at events, and in waiting rooms; ask each partner to collect at least ten responses.",
+            "Close the survey after three to four weeks, or once the response target you set is met.",
+            "Read all answers to the open questions and group them into themes; count how often each organization or person is named.",
+            "Write a one page summary: who is trusted, who is named as making things happen, who is left out, and the barriers to taking part."
+          ],
+          "script": [
+            "Who in our county has the most influence over decisions that affect health?",
+            "Who makes things happen when something needs to change?",
+            "Who do you trust to speak for your community?",
+            "Who is usually left out of decisions?",
+            "How comfortable are you sharing your views with county agencies? (very, somewhat, not at all)",
+            "Who should decide how new health funding is spent?",
+            "What keeps people from taking part in planning?",
+            "If you could change one thing about how decisions get made here, what would it be?"
+          ],
+          "worksheet": [
+            {
+              "id": "trusted",
+              "label": "Who residents trust",
+              "hint": "Most named people and organizations"
+            },
+            {
+              "id": "movers",
+              "label": "Who makes things happen",
+              "hint": "Most named"
+            },
+            {
+              "id": "leftout",
+              "label": "Who is left out",
+              "hint": "Groups named"
+            },
+            {
+              "id": "barriers",
+              "label": "Barriers to taking part",
+              "hint": "Themes"
+            },
+            {
+              "id": "n",
+              "label": "Responses and languages",
+              "hint": "Count and languages"
+            }
+          ],
+          "example": "Residents name the fire chief, a church, and a family resource center as the people who make things happen; county agencies are named rarely; childcare and meeting times are the top barriers.",
+          "done": "A one page summary exists and the people and organizations residents trust are on the partner map."
+        },
+        {
+          "id": "t_listen",
+          "name": "Listening session guide",
+          "purpose": "Run one round of sessions that serves the CHA, the Integrated Plan community planning process, and the prevention coalition.",
+          "use_when": "During the context assessment, after the data chapter exists.",
+          "who": "A facilitator and a note taker per session; a community host where possible.",
+          "steps": [
+            "Pick locations where people already gather: schools, senior centers, Tribal community buildings, churches, libraries, farmworker housing, and recovery meetings. Hold at least half outside working hours.",
+            "Invite through the host, not only through the health department. Offer food, childcare, and a stipend or gift card, and say so in the invitation.",
+            "Open with the purpose, that notes are anonymous, and that the same conversation feeds the county's health plan and its behavioral health plan so residents are asked once.",
+            "Decide whether to record. If you record, collect written consent and transcribe; if you do not, use two note takers. Offer each session in English and in the languages residents speak, with a facilitator who speaks the language.",
+            "Share the county's three strongest data findings in plain words, one minute each.",
+            "Ask the questions below in order; let silence sit; follow up with \"say more about that.\"",
+            "Record themes on a visible board as the group talks; read them back before closing and ask what is missing.",
+            "Close with how to stay involved and when the group will hear what came of it.",
+            "End with a two minute card: age range, town, language, and the one issue the person would fix first. The cards show who was in the room and give each session a count.",
+            "Within a week, the note taker writes a one page summary with themes and three quotes; the facilitator sends it to the host."
+          ],
+          "script": [
+            "What helps people here stay healthy?",
+            "What gets in the way?",
+            "When someone here needs help with stress, mental health, or substance use, where do they go, and what happens when they get there?",
+            "Who in this community do people turn to first?",
+            "If the county could change one thing in the next three years, what should it be?",
+            "What should we have asked that we did not?"
+          ],
+          "worksheet": [
+            {
+              "id": "plan",
+              "label": "Sessions planned",
+              "hint": "Location, host, date, language and interpretation, who it reaches"
+            },
+            {
+              "id": "themes",
+              "label": "Themes across sessions",
+              "hint": "Five to eight themes"
+            },
+            {
+              "id": "quotes",
+              "label": "Quotes to carry into the CHA",
+              "hint": "Three to six, anonymous"
+            },
+            {
+              "id": "bh",
+              "label": "What residents said about behavioral health access",
+              "hint": "Where people go and what happens"
+            },
+            {
+              "id": "missing",
+              "label": "Groups not yet heard from",
+              "hint": "And the plan to reach them"
+            }
+          ],
+          "example": "Eight sessions across three towns and two Tribal communities; residents say the nearest counselor is 45 minutes away and that the school nurse and a church are where people go first; transportation appears in every session.",
+          "done": "Themes and quotes are summarized, each host has received the summary, and the groups still unheard have a plan."
+        },
+        {
+          "id": "t_assets",
+          "name": "Asset map",
+          "purpose": "Record what the county already has before planning what it lacks.",
+          "use_when": "During the context assessment, often in the same sessions as listening.",
+          "who": "The staff lead with workgroup members.",
+          "steps": [
+            "Use six categories: people, organizations, places, programs, funding, and relationships.",
+            "At each listening session, end with ten minutes on assets: what already works here, who runs it, and whom it reaches.",
+            "Record each asset with its name, what it offers, whom it reaches, the town, and a contact.",
+            "Mark every asset that serves behavioral health or prevention; these go to behavioral health for the Integrated Plan.",
+            "Place assets on a simple map by town so the gaps in geography show.",
+            "Share the map with partners and ask what is missing."
+          ],
+          "worksheet": [
+            {
+              "id": "people",
+              "label": "People residents rely on",
+              "hint": "Role and community"
+            },
+            {
+              "id": "orgs",
+              "label": "Organizations and programs",
+              "hint": "Name, what it offers, whom it reaches"
+            },
+            {
+              "id": "places",
+              "label": "Places where people gather",
+              "hint": "By town"
+            },
+            {
+              "id": "bh",
+              "label": "Assets that serve behavioral health or prevention",
+              "hint": "Marked for the Integrated Plan"
+            },
+            {
+              "id": "gaps",
+              "label": "Towns or groups with few assets",
+              "hint": "Geography gaps"
+            }
+          ],
+          "example": "A county maps a mobile health van, two family resource centers, a peer support group that meets in a church, and a Tribal wellness program, and sees that the west end of the county has none of them.",
+          "done": "Assets are listed by category and town, and the behavioral health assets are shared with behavioral health."
+        },
+        {
+          "id": "t_forces",
+          "name": "Forces of change prompts",
+          "purpose": "Name what is coming so the plan can respond to it.",
+          "use_when": "Once, before triangulation.",
+          "who": "The Advisory Committee or core team.",
+          "steps": [
+            "Work through the six prompts below one at a time; list forces on a board.",
+            "For each force, mark it as a threat, an opportunity, or both.",
+            "Write one line on how the plan should respond.",
+            "Carry the forces that affect priorities into the triangulation session."
+          ],
+          "script": [
+            "Political: elections, Board of Supervisors priorities, state policy changes",
+            "Economic: employers, housing costs, the county budget, BHSA and reinvestment funding",
+            "Social: population change, trust in institutions, community organizations forming or closing",
+            "Technological: broadband, telehealth, data systems",
+            "Environmental: wildfire, drought, air quality, water",
+            "Legal: the 2028 CHA and CHIP cycle, Integrated Plan requirements, Medi-Cal changes"
+          ],
+          "worksheet": [
+            {
+              "id": "threats",
+              "label": "Threats and the plan's response",
+              "hint": "Force and response"
+            },
+            {
+              "id": "opps",
+              "label": "Opportunities and the plan's response",
+              "hint": "Force and response"
+            }
+          ],
+          "example": "Opportunity: the managed care plan's reinvestment plan is due each September and must be informed by the CHA; response: finish the CHA by June and brief the plan in July.",
+          "done": "Forces are listed with a response, and the ones that affect priorities are flagged."
+        },
+        {
+          "id": "t_triangulate",
+          "name": "Triangulation worksheet",
+          "purpose": "Turn three assessments into a short list of themes.",
+          "use_when": "When the data chapter, the partner summary, and the context summary all exist.",
+          "who": "The core team, then the Advisory Committee at the next meeting.",
+          "steps": [
+            "List every issue raised by any of the three assessments, one per row.",
+            "For each row, write what the data say, what partners say, and what residents say, in a few words each.",
+            "Count how many sources name each issue (committee votes, listening session themes, survey findings, published data). The count is the first cut; the side by side reading is the second.",
+            "Mark agreement where all three point the same way, and note disagreement where they do not.",
+            "Issues with agreement across all three become themes for priority setting.",
+            "Issues with disagreement get a sentence in the CHA that says so; disagreement is a finding, not a problem to hide.",
+            "Bring the themes to the Advisory Committee and ask what is missing."
+          ],
+          "worksheet": [
+            {
+              "id": "agree",
+              "label": "Themes with agreement across data, partners, and residents",
+              "hint": "List"
+            },
+            {
+              "id": "disagree",
+              "label": "Issues where the three disagree",
+              "hint": "Issue and the disagreement"
+            },
+            {
+              "id": "forces",
+              "label": "Forces of change that affect these themes",
+              "hint": "From the forces prompts"
+            }
+          ],
+          "example": "Substance use: data show an overdose rate above California, partners name it as their top concern, and residents say the nearest treatment is an hour away; agreement. Housing: data show cost burden, residents raise it constantly, partners are silent; the CHA names the gap.",
+          "done": "A short list of themes exists and the Advisory Committee has seen it."
+        },
+        {
+          "id": "t_chaoutline",
+          "name": "CHA outline",
+          "purpose": "A standard structure the county can fill.",
+          "use_when": "When writing the CHA.",
+          "who": "The staff lead.",
+          "steps": [
+            "Executive summary: the themes and three findings in one page.",
+            "How the assessment was done: the three assessments, who took part, dates, and languages.",
+            "Community profile: population, geography, and the data chapter from the dashboard and local sources.",
+            "What residents and partners said: themes, quotes, assets, and the power survey summary.",
+            "Forces of change.",
+            "Themes from triangulation, including disagreements.",
+            "Data limitations statement.",
+            "How the CHA will be used: the CHIP, the Integrated Plan, the reinvestment plan, and the prevention coalition.",
+            "Appendix: sources, the partner list, and the session schedule.",
+            "Produce and publish: a plain language summary, translations in the county's threshold languages, an accessible tagged PDF with alt text for every figure, and a web page with a data companion, so the CHA can be read, repurposed, and cited."
+          ],
+          "worksheet": [
+            {
+              "id": "date",
+              "label": "CHA completion date",
+              "hint": "The date you will cite in the Integrated Plan and reinvestment plan"
+            },
+            {
+              "id": "shared",
+              "label": "Shared with",
+              "hint": "Behavioral health, managed care plan, partners, public posting, with dates"
+            },
+            {
+              "id": "chaoutline_pub",
+              "label": "Languages, accessibility check, and web location",
+              "hint": "Languages produced; who checked accessibility; URL"
+            }
+          ],
+          "example": "A 30 page CHA with a four page data chapter exported from the dashboard, eight listening sessions summarized in six themes, and a limitations statement that explains four suppressed measures.",
+          "done": "The CHA is posted publicly, sent to behavioral health and the managed care plan, and dated."
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "short": "Phase 3: Plan and Improve (CHIP)",
+      "title": "Phase 3: Continuously Improve the Community (the Community Health Improvement Plan)",
+      "mapp": "MAPP 2.0 Phase 3, Continuously Improve the Community (NACCHO).",
+      "intro": "Turn themes into a plan with owners, objectives, and a way to know whether it is working. Every objective gets a published baseline and source, every activity gets a steward organization, and the suicide and self-harm prevention component sits inside the CHIP. Implementation then runs through the plan period.",
+      "bh": {
+        "title": "With behavioral health and your managed care plan",
+        "body": "Write the Local Suicide Prevention Plan that CDPH requires as a section of the CHIP, with behavioral health as co-lead. Tie at least one objective to the county's Integrated Plan goal so the two plans share a measure. Before each March 31, crosswalk the CHIP to the Integrated Plan annual update; before each September 1, bring it to the managed care plan's reinvestment process, where both directors sign the attestation.",
+        "feeds": "Feeds the CDPH suicide prevention plan requirement, the Integrated Plan annual update, and the Community Reinvestment attestation."
+      },
+      "phil": "In this phase PHIL can facilitate the priority setting and strategy meetings, write the suicide and self-harm prevention section with behavioral health, find the published baseline for each objective, and prepare the crosswalks before the March and September dates.",
+      "actions": [
+        {
+          "id": "a16",
+          "core": true,
+          "title": "Set priorities",
+          "what": "Score each theme on need (from the data), feasibility, equity, and alignment with the county's Integrated Plan goal and funded streams. Keep the list short; two or three priorities the county can move beat eight it cannot.",
+          "output": "Ranked priorities with rationale",
+          "tools": [
+            "t_priority"
+          ]
+        },
+        {
+          "id": "a17",
+          "core": false,
+          "title": "Develop strategies by workgroup",
+          "what": "Each workgroup reviews its priority's data, root causes, and assets, then brainstorms strategies in a structured conversation and names a lead for each strategy that survives.",
+          "output": "Strategy list per priority (Meeting 4)",
+          "tools": [
+            "t_cafe",
+            "t_whys"
+          ]
+        },
+        {
+          "id": "a18",
+          "core": true,
+          "title": "Write SMARTIE objectives with published baselines",
+          "what": "For each strategy write one to three objectives that are Specific, Measurable, Achievable, Relevant, Time bound, Inclusive, and Equitable. Every objective names a published baseline, its source, and the date, so progress can be checked without new data collection.",
+          "output": "Objectives and indicators (Meeting 5)",
+          "tools": [
+            "t_smartie"
+          ]
+        },
+        {
+          "id": "a19",
+          "core": true,
+          "title": "Build the suicide and self-harm prevention component",
+          "what": "With behavioral health as co-lead, review suicide and self-harm data, identify priority populations and existing resources, and write goals, strategies, and measures that meet the CDPH requirement as a CHIP section.",
+          "output": "Suicide and self-harm prevention section of the CHIP",
+          "tools": [
+            "t_suicide"
+          ]
+        },
+        {
+          "id": "a20",
+          "core": true,
+          "title": "Plan implementation and accountability",
+          "what": "For each activity name a steward organization in writing, a timeline, the partners involved, and the tracking tool. The Advisory Committee reviews the draft workplan for feasibility, equity, and overlap.",
+          "output": "Implementation workplan (Meetings 6 and 7)",
+          "tools": [
+            "t_workplan"
+          ]
+        },
+        {
+          "id": "a21",
+          "core": true,
+          "title": "Write the evaluation plan",
+          "what": "For each objective: data source, baseline, target, collection frequency, who tracks it, and when the Advisory Committee reviews it. Add short term, intermediate, and long term indicators.",
+          "output": "Evaluation plan and progress monitoring template (Meeting 8)",
+          "tools": [
+            "t_eval",
+            "t_monitor"
+          ]
+        },
+        {
+          "id": "a22",
+          "core": false,
+          "title": "Crosswalk to the Integrated Plan and the reinvestment plan",
+          "what": "Map each CHIP priority and objective to the Integrated Plan template's local health jurisdiction section and to the managed care plan's reinvestment priorities. Send the crosswalk to behavioral health before March 31 and to the managed care plan before September 1.",
+          "output": "Completed crosswalk",
+          "tools": [
+            "t_crosswalk"
+          ]
+        },
+        {
+          "id": "a23",
+          "core": true,
+          "title": "Write, review, and release the CHIP",
+          "what": "Weave the engagement story into the narrative, keep the balance of data and resident voice, list steward organizations, add a partner page with logos and a sign-up, and celebrate the release publicly.",
+          "output": "Published CHIP (Meeting 9)",
+          "tools": [
+            "t_chipoutline"
+          ]
+        }
+      ],
+      "meetings": [
+        {
+          "n": 4,
+          "title": "Workgroup launch and strategy brainstorming",
+          "who": "Each focus area workgroup",
+          "time": "2 hours",
+          "purpose": "Review the data, root causes, and assets for the priority, then brainstorm strategies.",
+          "agenda": [
+            "Priority data in five slides (15 minutes)",
+            "Root causes with the 5 Whys (20 minutes)",
+            "Assets already in place (10 minutes)",
+            "Three round structured conversation on strategies (50 minutes)",
+            "Name a lead for each strategy that advances (15 minutes)"
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Develop objectives and indicators",
+          "who": "Each workgroup, within two to three weeks of Meeting 4",
+          "time": "90 minutes",
+          "purpose": "Choose strategies by dot vote and write one to three objectives per goal with baselines.",
+          "agenda": [
+            "Dot vote on strategies (15 minutes)",
+            "SMARTIE worksheet for each strategy (45 minutes)",
+            "Find the published baseline for each objective on the dashboard or a named source (20 minutes)",
+            "Agree on indicators and who tracks them (10 minutes)"
+          ]
+        },
+        {
+          "n": 6,
+          "title": "Implementation and accountability planning",
+          "who": "Each workgroup",
+          "time": "90 minutes",
+          "purpose": "Set activities, timelines, lead organizations, roles, and tracking tools.",
+          "agenda": [
+            "Activities under each objective (30 minutes)",
+            "Steward organization for each activity, confirmed in writing (20 minutes)",
+            "Timeline with quarterly milestones (25 minutes)",
+            "Tracking tool and reporting rhythm (15 minutes)"
+          ]
+        },
+        {
+          "n": 7,
+          "title": "Strategy prioritization and draft workplan review",
+          "who": "Advisory Committee",
+          "time": "2 hours",
+          "purpose": "Check feasibility and equity, find overlap across workgroups, and give feedback.",
+          "agenda": [
+            "Each workgroup presents its workplan in ten minutes",
+            "Feasibility and equity check against the priority criteria (30 minutes)",
+            "Overlap and sequencing across workgroups (20 minutes)",
+            "Written feedback to each workgroup (assigned, due in two weeks)"
+          ]
+        },
+        {
+          "n": 8,
+          "title": "Final refinement with workgroups",
+          "who": "Each workgroup",
+          "time": "60 minutes",
+          "purpose": "Respond to Advisory Committee feedback, finalize evaluation and tracking, and prepare content for the CHIP.",
+          "agenda": [
+            "Feedback responses (20 minutes)",
+            "Evaluation plan finalized (20 minutes)",
+            "Progress monitoring template adopted (10 minutes)",
+            "Content handed to the writing team (10 minutes)"
+          ]
+        },
+        {
+          "n": 9,
+          "title": "CHIP review and celebration",
+          "who": "Large community group",
+          "time": "90 minutes",
+          "purpose": "Present the draft, take public comment, and showcase partners.",
+          "agenda": [
+            "Draft CHIP walk through (30 minutes)",
+            "Public comment (30 minutes)",
+            "Partner logos and sign-ups (15 minutes)",
+            "Celebration and what happens next (15 minutes)"
+          ]
+        }
+      ],
+      "tools": [
+        {
+          "id": "t_priority",
+          "name": "Priority setting criteria",
+          "purpose": "Score themes the same way so the choice is explainable.",
+          "use_when": "Once the CHA themes exist, at an Advisory Committee meeting.",
+          "who": "The Advisory Committee, facilitated by the staff lead.",
+          "steps": [
+            "Write each theme from triangulation on the board.",
+            "Score each theme 1 to 3 on need: how far the county sits from California on the published measure, and whether the trend is worsening.",
+            "Score 1 to 3 on feasibility: partners, funding, and staff time available in the next three years.",
+            "Score 1 to 3 on equity: whether Your County in Detail shows the burden falling on particular groups the plan is designed to reach.",
+            "Score 1 to 3 on alignment: whether the theme matches the county's Integrated Plan goal, the reinvestment plan, or funded prevention streams.",
+            "Total the scores and discuss the top five; disagree out loud, then choose two or three priorities.",
+            "Write one paragraph of rationale for each chosen priority and one sentence for each theme set aside; the set-aside list stays visible for the next cycle."
+          ],
+          "worksheet": [
+            {
+              "id": "scores",
+              "label": "Themes and scores (need, feasibility, equity, alignment)",
+              "hint": "One line per theme"
+            },
+            {
+              "id": "chosen",
+              "label": "Priorities chosen and rationale",
+              "hint": "Two or three"
+            },
+            {
+              "id": "parked",
+              "label": "Themes set aside and why",
+              "hint": "Kept visible for the next cycle"
+            }
+          ],
+          "example": "Substance use scores 3, 2, 3, 3 (the county's Integrated Plan goal is Overdoses); housing scores 3, 1, 3, 2; the committee chooses substance use and youth behavioral health and parks housing with a note that the reinvestment plan may fund it.",
+          "done": "Two or three priorities have a written rationale and the committee has adopted them.",
+          "links": [
+            [
+              "detail",
+              "Open Your County in Detail"
+            ]
+          ]
+        },
+        {
+          "id": "t_cafe",
+          "name": "Structured strategy conversation",
+          "purpose": "Get every voice into the strategy list in one meeting.",
+          "use_when": "Meeting 4, after the priority's data and root causes are on the wall.",
+          "who": "A facilitator and one host per table.",
+          "steps": [
+            "Set tables of four to six with a host who stays at the table and a sheet of paper for notes.",
+            "Round 1, 15 minutes: what would need to change for this priority to improve here.",
+            "Everyone except the host moves to a new table. Round 2, 15 minutes: what is already working here that could grow, drawing on the asset map.",
+            "Move again. Round 3, 15 minutes: what one thing we would start in the next six months.",
+            "Hosts read their table's top ideas; the facilitator posts them on the wall and groups duplicates.",
+            "Dot vote with three dots per person; the top five strategies go to Meeting 5.",
+            "Screen the top five with the PEARL test (propriety, economics, acceptability, resources, legality). A strategy that fails one test is set aside with a note that says why."
+          ],
+          "script": [
+            "Round 1: What would need to change for this priority to improve in our county?",
+            "Round 2: What is already working here that could grow?",
+            "Round 3: What one thing would we start in the next six months?"
+          ],
+          "worksheet": [
+            {
+              "id": "ideas",
+              "label": "Strategies on the wall after grouping",
+              "hint": "List"
+            },
+            {
+              "id": "top",
+              "label": "Top five by dot vote",
+              "hint": "With a lead for each"
+            }
+          ],
+          "example": "For youth behavioral health, the top strategies are a school-based counselor shared across two districts, a peer support program at the high school, and a transportation pilot to the nearest clinic.",
+          "done": "Five or fewer strategies each have a lead and move to the SMARTIE worksheet."
+        },
+        {
+          "id": "t_whys",
+          "name": "5 Whys",
+          "purpose": "Get from a symptom to a cause the plan can act on.",
+          "use_when": "In Meeting 4 before strategies, or whenever a strategy feels like it treats a symptom.",
+          "who": "Any workgroup.",
+          "steps": [
+            "State the problem as the data show it, in one sentence with the number.",
+            "Ask why it happens; write the first answer.",
+            "Ask why of that answer, and again, up to five times.",
+            "Stop at the cause the workgroup can change in three years.",
+            "Check the cause against what residents said in Phase 2; if residents named a different cause, add a second chain."
+          ],
+          "worksheet": [
+            {
+              "id": "problem",
+              "label": "The problem as the data show it",
+              "hint": "One sentence with the number"
+            },
+            {
+              "id": "chain",
+              "label": "The why chain",
+              "hint": "Why 1 through why 5"
+            },
+            {
+              "id": "cause",
+              "label": "The cause the workgroup will act on",
+              "hint": "One sentence"
+            }
+          ],
+          "example": "Overdose deaths are above the state rate. Why: people use alone. Why: they fear arrest or judgment. Why: the only services are in the county seat and known to everyone. Why: no low barrier services exist in outlying towns. Actionable cause: no harm reduction or treatment access outside the county seat.",
+          "done": "Each strategy traces to a cause the workgroup can change."
+        },
+        {
+          "id": "t_smartie",
+          "name": "SMARTIE objective worksheet",
+          "purpose": "Write objectives that can be checked against published data.",
+          "use_when": "Meeting 5, one worksheet per strategy.",
+          "who": "The workgroup with the staff lead or epidemiologist present.",
+          "steps": [
+            "Specific: write what will change, for whom, and where.",
+            "Measurable: name the indicator, find its published baseline on the dashboard or a named source, and write the value, the source, and the date.",
+            "Achievable: list the partners and resources that make the change possible, and set a target that those resources can reach.",
+            "Relevant: name the priority and the Integrated Plan statewide goal the objective serves.",
+            "Time bound: set the target date, usually within the CHIP's three years.",
+            "Inclusive: say who was at the table when this objective was written.",
+            "Equitable: name the group the objective is designed to reach first, from the equity findings.",
+            "Assemble it into one sentence and read it aloud; if it cannot be read in one breath, split it."
+          ],
+          "worksheet": [
+            {
+              "id": "specific",
+              "label": "What will change, for whom, where",
+              "hint": "Specific"
+            },
+            {
+              "id": "measure",
+              "label": "Indicator, published baseline, source, date",
+              "hint": "Measurable"
+            },
+            {
+              "id": "achievable",
+              "label": "Partners, resources, and target",
+              "hint": "Achievable"
+            },
+            {
+              "id": "relevant",
+              "label": "Priority and Integrated Plan goal served",
+              "hint": "Relevant"
+            },
+            {
+              "id": "time",
+              "label": "Target date",
+              "hint": "Time bound"
+            },
+            {
+              "id": "inclusive",
+              "label": "Who wrote it",
+              "hint": "Inclusive"
+            },
+            {
+              "id": "equitable",
+              "label": "Group reached first",
+              "hint": "Equitable"
+            },
+            {
+              "id": "objective",
+              "label": "The objective in one sentence",
+              "hint": "Read it aloud"
+            }
+          ],
+          "example": "By June 2029, increase the share of adults in the county who report a routine checkup in the past year from the published 2024 CDC PLACES baseline by three percentage points, starting with residents of the west end of the county, through the mobile clinic partnership led by the hospital and the Tribal health program.",
+          "done": "Every objective names a published baseline, a source, a date, a steward, and a group reached first.",
+          "links": [
+            [
+              "cardio",
+              "Open the health topics for baselines"
+            ]
+          ]
+        },
+        {
+          "id": "t_suicide",
+          "name": "Suicide and self-harm prevention component",
+          "purpose": "Meet the CDPH requirement for a Local Suicide Prevention Plan as a section of the CHIP, with behavioral health as co-lead.",
+          "use_when": "Alongside the other Phase 3 objectives; it must exist before the CDPH deadline for the plan.",
+          "who": "The staff lead and the behavioral health department's prevention or BHSA coordinator together.",
+          "steps": [
+            "Start from the suicide prevention plan the county already has, if one exists, and from the Integrated Plan's selected goal; the component updates them and connects them to the CHIP.",
+            "Data: open the county's suicide death rate on this dashboard (Youth Behavioral Health and Substance Use topic pages and Your County in Detail) and add self-harm emergency visits where published, plus any breakdowns by age or sex. Note the limitations for small numbers.",
+            "Priority populations: name them from the data and from what listening sessions said about who is struggling and who is isolated. Groups that appear often include middle aged men, veterans, Tribal communities, LGBTQ youth, and people recently discharged from care.",
+            "Existing resources: list crisis lines (988 and local), mobile crisis, school programs, firearm safe storage efforts, peer support, faith communities, and the behavioral health department's own prevention activities.",
+            "Goals and strategies: write at least one strategy each for prevention (before a crisis), intervention (during), and postvention (after a death), with a lead for each; the CDPH Office of Suicide Prevention's Striving for Zero modules offer tested options.",
+            "Measures: one outcome measure from a published source (the suicide death rate as CDPH publishes it) and two process measures the county tracks itself, such as people trained or safe storage devices distributed.",
+            "Coordination: say how the section connects to the Integrated Plan's goal, to the prevention coalition CDPH asks the county to convene, and to the managed care plan.",
+            "Write the section in the CHIP's format, have behavioral health review it, and adopt it with the CHIP."
+          ],
+          "worksheet": [
+            {
+              "id": "data",
+              "label": "Suicide and self-harm data used, with limits",
+              "hint": "Measure, value, period, source"
+            },
+            {
+              "id": "pops",
+              "label": "Priority populations",
+              "hint": "From data and listening"
+            },
+            {
+              "id": "resources",
+              "label": "Existing resources",
+              "hint": "Crisis, school, peer, faith, firearm safety"
+            },
+            {
+              "id": "prevention",
+              "label": "Prevention strategy and lead",
+              "hint": "Before a crisis"
+            },
+            {
+              "id": "intervention",
+              "label": "Intervention strategy and lead",
+              "hint": "During a crisis"
+            },
+            {
+              "id": "postvention",
+              "label": "Postvention strategy and lead",
+              "hint": "After a death"
+            },
+            {
+              "id": "measures",
+              "label": "Outcome measure and two process measures",
+              "hint": "Published source for the outcome"
+            },
+            {
+              "id": "coord",
+              "label": "Connection to the Integrated Plan and the prevention coalition",
+              "hint": "How it fits"
+            }
+          ],
+          "example": "A county with a suicide death rate above California's names middle aged men and veterans as priority populations, sets a firearm safe storage strategy led by the sheriff and a gun shop, a gatekeeper training strategy led by behavioral health, and a postvention protocol led by the coroner's office with the school district, and tracks the published death rate plus trainings and devices distributed.",
+          "done": "The section is in the CHIP, behavioral health has reviewed it, and it names prevention, intervention, and postvention strategies with leads and measures.",
+          "links": [
+            [
+              "youth",
+              "Open Youth Behavioral Health"
+            ],
+            [
+              "sub",
+              "Open Substance Use and Homelessness"
+            ],
+            [
+              "detail",
+              "Breakdowns by group"
+            ]
+          ]
+        },
+        {
+          "id": "t_workplan",
+          "name": "Implementation workplan",
+          "purpose": "Make every activity someone's job.",
+          "use_when": "Meeting 6 for each workgroup; reviewed at Meeting 7.",
+          "who": "Each workgroup chair with the staff lead.",
+          "steps": [
+            "For each objective, list the activities that will achieve it.",
+            "For each activity, name a steward organization, and confirm it in writing before the row is final; an activity without a steward does not go in the plan.",
+            "List the partners involved and what each contributes.",
+            "Set a start and end date with quarterly milestones.",
+            "Name the tracking tool (a shared sheet, a program report) and the reporting rhythm.",
+            "Mark the status at each quarterly review: on track, at risk, or off track."
+          ],
+          "worksheet": [
+            {
+              "id": "rows",
+              "label": "Activities with steward, partners, dates, and tracking tool",
+              "hint": "One line per activity"
+            },
+            {
+              "id": "unconfirmed",
+              "label": "Stewards not yet confirmed in writing",
+              "hint": "Activity and follow-up"
+            },
+            {
+              "id": "review",
+              "label": "Quarterly review dates",
+              "hint": "Dates"
+            }
+          ],
+          "example": "Activity: mobile clinic visits to the west end twice a month. Steward: the hospital. Partners: the Tribal health program and the fire district (site). Start: January 2028. Tracking: visit log, reported quarterly.",
+          "done": "Every activity has a confirmed steward and a quarterly review date."
+        },
+        {
+          "id": "t_eval",
+          "name": "Evaluation plan prompts",
+          "purpose": "Know whether the plan is working without new data collection where possible.",
+          "use_when": "Meeting 8, after objectives and the workplan exist.",
+          "who": "The staff lead or epidemiologist with each workgroup.",
+          "steps": [
+            "For each objective, write the data source, the published baseline, the target, how often the value is published or collected, who tracks it, and when the Advisory Committee reviews it.",
+            "Add short term indicators (6 to 12 months): activities completed and partners engaged.",
+            "Add intermediate indicators (1 to 2 years): practice, policy, or access changes.",
+            "Add long term indicators (3 years): the published outcome measure.",
+            "Note the dashboard refresh schedule so long term values are compared like for like.",
+            "Record the plan in the progress monitoring template."
+          ],
+          "worksheet": [
+            {
+              "id": "outcome",
+              "label": "Outcome indicators and sources",
+              "hint": "Objective, indicator, source, refresh schedule"
+            },
+            {
+              "id": "process",
+              "label": "Short term and intermediate indicators",
+              "hint": "What the county tracks itself"
+            },
+            {
+              "id": "who",
+              "label": "Who tracks and when the committee reviews",
+              "hint": "Names and dates"
+            }
+          ],
+          "example": "Long term: the CDPH overdose death rate, refreshed on the dashboard each quarter as CDPH publishes. Intermediate: naloxone available at six sites outside the county seat. Short term: two harm reduction trainings held.",
+          "done": "Each objective has indicators at three time horizons and a named tracker."
+        },
+        {
+          "id": "t_monitor",
+          "name": "Progress monitoring template",
+          "purpose": "Give the Advisory Committee one page per quarter.",
+          "use_when": "Every quarter during implementation.",
+          "who": "Each steward updates its rows; the staff lead compiles.",
+          "steps": [
+            "One row per objective: indicator, baseline, latest value, target, status (on track, at risk, off track), and a one line note.",
+            "Stewards update their rows one week before each Advisory Committee meeting.",
+            "The staff lead compiles the page and highlights rows that changed status.",
+            "The committee discusses at risk and off track rows first.",
+            "Decisions go in the decision log and the next quarter's page."
+          ],
+          "worksheet": [
+            {
+              "id": "rows",
+              "label": "This quarter's rows",
+              "hint": "Objective, indicator, baseline, latest, target, status, note"
+            },
+            {
+              "id": "changed",
+              "label": "Rows that changed status",
+              "hint": "And what the committee decided"
+            }
+          ],
+          "example": "Objective 2 moves from on track to at risk because the mobile clinic lost a driver; the committee asks the fire district to cover two visits a month until a hire is made.",
+          "done": "The committee has a dated page each quarter and decisions are logged."
+        },
+        {
+          "id": "t_crosswalk",
+          "name": "Integrated Plan and reinvestment crosswalk",
+          "purpose": "Show behavioral health and the managed care plan where the CHIP meets their requirements.",
+          "use_when": "Before March 31 (Integrated Plan annual update) and before September 1 (reinvestment plan) each year.",
+          "who": "The staff lead with behavioral health's BHSA coordinator.",
+          "steps": [
+            "List each CHIP priority and objective in a row.",
+            "For each row, name the Integrated Plan statewide goal it supports (the county's selected goal appears on the Start here page).",
+            "Name the Integrated Plan template item it informs: collaboration on the CHA and CHIP, data sharing, stakeholder coordination, or consideration of the CHIP.",
+            "Name the reinvestment priority or community advisory committee it informs, and whether the public health and behavioral health directors' attestation will cite it.",
+            "Name the CDPH prevention requirement it meets, if any (the prevention coalition, the suicide prevention plan).",
+            "Send the crosswalk to behavioral health before March 31 and to the managed care plan before September 1, and keep the sent dates."
+          ],
+          "worksheet": [
+            {
+              "id": "rows",
+              "label": "CHIP priorities and objectives mapped to the Integrated Plan goal and template items",
+              "hint": "One line per objective"
+            },
+            {
+              "id": "reinvest",
+              "label": "Objectives that inform the reinvestment plan",
+              "hint": "And the advisory committee contact"
+            },
+            {
+              "id": "sent",
+              "label": "Sent to behavioral health (date) and to the managed care plan (date)",
+              "hint": "Dates"
+            }
+          ],
+          "example": "CHIP objective on overdose access maps to the Integrated Plan goal Overdoses, informs the data sharing item, is cited in the reinvestment plan's harm reduction priority, and meets no CDPH requirement; the suicide prevention section maps to the CDPH plan requirement.",
+          "done": "Behavioral health and the managed care plan each have the crosswalk before their deadline, and the dates are recorded.",
+          "links": [
+            [
+              "bhsa",
+              "Open County Behavioral Health Plans"
+            ]
+          ]
+        },
+        {
+          "id": "t_chipoutline",
+          "name": "CHIP outline",
+          "purpose": "A standard structure the county can fill.",
+          "use_when": "When writing the CHIP.",
+          "who": "The staff lead with workgroup chairs.",
+          "steps": [
+            "Executive summary.",
+            "How the plan was built: the engagement story, who took part, and the meetings held.",
+            "What the CHA found: key findings and the limitations statement.",
+            "Vision, priorities, and goals, with the rationale from priority setting.",
+            "Strategies, objectives, and activities with steward organizations.",
+            "Suicide and self-harm prevention component.",
+            "Evaluation and progress monitoring.",
+            "How the CHIP connects to the Integrated Plan, the reinvestment plan, and the prevention coalition.",
+            "Partners and how to join, with logos and a sign-up.",
+            "Produce and publish: a plain language summary, translations in the county's threshold languages, an accessible tagged PDF with alt text for every figure, and a web page with a data companion, so the CHIP can be read, repurposed, and cited."
+          ],
+          "worksheet": [
+            {
+              "id": "date",
+              "label": "CHIP adoption date",
+              "hint": "Date the Advisory Committee or Board adopted it"
+            },
+            {
+              "id": "posted",
+              "label": "Where it is posted and who received it",
+              "hint": "Public page, behavioral health, managed care plan, partners"
+            },
+            {
+              "id": "chipoutline_pub",
+              "label": "Languages, accessibility check, and web location",
+              "hint": "Languages produced; who checked accessibility; URL"
+            }
+          ],
+          "example": "A 24 page CHIP with two priorities, seven objectives each tied to a published baseline, a four page suicide prevention section co-written with behavioral health, and a partner page with 19 logos.",
+          "done": "The CHIP is adopted, posted, and sent to behavioral health and the managed care plan."
+        }
+      ]
+    }
+  ],
+  "fit": {
+    "title": "Find Your Fit",
+    "intro": "For community-based organizations, Tribal organizations, and providers. County plans decide where behavioral health and prevention money goes for the next three years, and the plans name community organizations as required partners. This page shows where your work connects and when to show up.",
+    "components": [
+      {
+        "name": "Behavioral Health Services and Supports",
+        "what": "Outpatient and community services, early intervention, outreach and engagement, workforce, and prevention activities counties fund outside the CDPH program."
+      },
+      {
+        "name": "Full Service Partnerships",
+        "what": "Intensive, whatever it takes services for people with the most serious conditions, with a team responsible for each person."
+      },
+      {
+        "name": "Housing Interventions",
+        "what": "Rental subsidies, operating subsidies, shared and family housing, and capital for people with serious behavioral health conditions who are experiencing or at risk of homelessness."
+      }
+    ],
+    "ways": [
+      {
+        "name": "The Integrated Plan community planning process",
+        "when": "Each winter before the March 31 draft, plus a 30 day public comment period and a behavioral health board hearing before June 30.",
+        "how": "Ask county behavioral health for the stakeholder calendar. Submit written comment during the 30 day window and speak at the board hearing. Name the population you serve and the statewide goal your work supports."
+      },
+      {
+        "name": "The CHIP coalition",
+        "when": "Ongoing; workgroups meet monthly or quarterly.",
+        "how": "Ask the local health department which workgroup matches your work and whether it needs a steward organization. A steward leads an activity and reports progress."
+      },
+      {
+        "name": "Managed care plan Community Reinvestment",
+        "when": "Plans are due each September 1; community advisory committees meet before that.",
+        "how": "Ask your Medi-Cal managed care plan how community organizations take part in its reinvestment planning. Reinvestment must be informed by the CHA, so cite the CHA findings your work addresses."
+      },
+      {
+        "name": "CDPH prevention funding and the local coalition",
+        "when": "Fiscal years 2026/27 through 2028/29.",
+        "how": "CDPH funds community organizations and Tribal entities directly for population-based prevention, and requires every local health jurisdiction to convene funded organizations in a prevention coalition. Ask the local health department when the coalition meets."
+      }
+    ],
+    "profile": [
+      {
+        "id": "f_pop",
+        "label": "Who we serve and where",
+        "hint": "Population, communities, and towns"
+      },
+      {
+        "id": "f_svc",
+        "label": "What we do that supports behavioral health or prevention",
+        "hint": "Services, programs, settings"
+      },
+      {
+        "id": "f_goal",
+        "label": "Which county priority or statewide goal our work supports",
+        "hint": "Use the county's selected goal above or a CHIP priority"
+      },
+      {
+        "id": "f_ask",
+        "label": "What we would ask the county for",
+        "hint": "A seat, a contract, data, a referral pathway"
+      },
+      {
+        "id": "f_measure",
+        "label": "The published measure we would cite",
+        "hint": "From the dashboard topic pages"
+      }
+    ]
+  },
+  "after": {
+    "title": "After the CHIP: the three year rhythm",
+    "items": [
+      "Each quarter: stewards update the progress monitoring template one week before the Advisory Committee meets; the committee reviews at risk and off track rows first.",
+      "Each March: send the crosswalk to behavioral health before the Integrated Plan annual update draft is due on March 31.",
+      "Each September: bring CHIP priorities to the managed care plan before its Community Reinvestment plan is due on September 1.",
+      "Each year: revise the workplan rows that changed, publish a one page progress report, refresh the data chapter from the dashboard's latest refresh, and ask the Advisory Committee whether a parked priority should come forward.",
+      "Year three: begin the next CHA with the partner map and the roster you already have; the next synchronized CHA is due December 31, 2028 and the next CHIP June 30, 2029."
+    ]
+  },
+  "support": {
+    "title": "Support from PHIL",
+    "intro": "Choose how you want to work. You can change this at any time; it goes at the top of your roadmap.",
+    "levels": [
+      {
+        "id": "self",
+        "label": "On our own",
+        "desc": "We will use the toolkit and reach out if we get stuck."
+      },
+      {
+        "id": "components",
+        "label": "Support on the parts we mark",
+        "desc": "PHIL supports or leads the actions we mark in each phase."
+      },
+      {
+        "id": "full",
+        "label": "Full hands-on support",
+        "desc": "PHIL works with us on the CHA, the CHIP, and BHSA integration from start to finish."
+      }
+    ],
+    "options": [
+      {
+        "id": "",
+        "label": "We do this"
+      },
+      {
+        "id": "support",
+        "label": "Ask PHIL to support"
+      },
+      {
+        "id": "lead",
+        "label": "Ask PHIL to lead"
+      }
+    ]
+  }
+}

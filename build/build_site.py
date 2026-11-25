@@ -20,11 +20,15 @@ rdate = datetime.date.fromisoformat(rf["refreshed"])
 refresh_line = "Data last refreshed " + _nice(rdate) + ". Next scheduled refresh: " + _nice(_next_refresh(datetime.date.today())) + "."
 mcp = json.load(open(os.path.join(ROOT, "data", "out", "mcp_plans.json")))
 bhinfo = json.load(open(os.path.join(ROOT, "data", "out", "bhPlanInfo.json")))
+def load_tk():
+    tk = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit.json"))); ph = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit_phases.json")))
+    return {"calendar": sorted(tk["calendar"], key=lambda x: x["sort"]), "moves": tk["moves"], "phases": ph["phases"], "fit": ph["fit"], "howto": ph["howto"], "after": ph["after"], "support": ph["support"]}
+tkd = load_tk()
 tpl = open(os.path.join(ROOT, "site", "template.html")).read()
 J = lambda o: json.dumps(o, separators=(",", ":"))
 page = (tpl.replace("__INDD__", ind).replace("__ECM_USE__", J(tab["ECM_USE"])).replace("__ECMD_PUB__", J(tab["ECMD_PUB"]))
-        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BHSA_INFO__", J(bhinfo)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
-for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__BHSA_INFO__", "__REFRESH_LINE__"]:
+        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BHSA_INFO__", J(bhinfo)).replace("__TK__", J(tkd)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
+for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__BHSA_INFO__", "__TK__", "__REFRESH_LINE__"]:
     assert ph not in page, ph
 if "–" in page or "—" in page:
     raise SystemExit("dash character found in page")
@@ -32,6 +36,7 @@ pub = os.path.join(ROOT, "public")
 os.makedirs(os.path.join(pub, "assets"), exist_ok=True)
 open(os.path.join(pub, "index.html"), "w").write(page)
 shutil.copy(os.path.join(ROOT, "site", "runtime.js"), os.path.join(pub, "runtime.js"))
+shutil.copy(os.path.join(ROOT, "site", "docx.umd.js"), os.path.join(pub, "docx.umd.js"))
 for f in os.listdir(os.path.join(ROOT, "site", "assets")):
     shutil.copy(os.path.join(ROOT, "site", "assets", f), os.path.join(pub, "assets", f))
 open(os.path.join(pub, ".nojekyll"), "w").write("")

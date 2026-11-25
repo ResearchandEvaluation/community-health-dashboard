@@ -10,8 +10,10 @@ act = json.load(open(os.path.join(ROOT, "data", "manual", "actions.json"))); act
 strata = json.load(open(os.path.join(ROOT, "data", "out", "strata.json")))
 mcp = json.load(open(os.path.join(ROOT, "data", "out", "mcp_plans.json")))
 bhinfo = json.load(open(os.path.join(ROOT, "data", "out", "bhPlanInfo.json")))
+tk0 = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit.json"))); ph0 = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit_phases.json")))
+tkd = {"calendar": sorted(tk0["calendar"], key=lambda x: x["sort"]), "moves": tk0["moves"], "phases": ph0["phases"], "fit": ph0["fit"], "howto": ph0["howto"], "after": ph0["after"], "support": ph0["support"]}
 J = lambda o: json.dumps(o, separators=(",", ":"))
-blobs = {"INDD": ind, "ECM_USE": J(tab["ECM_USE"]), "MCP_PLANS": J(mcp), "ECMD_PUB": J(tab["ECMD_PUB"]), "ECMD": J(tab["ECMD"]), "RES": J(res), "ACT": J(act), "BHSA_INFO": J(bhinfo), "STRATA": J(strata)}
+blobs = {"INDD": ind, "ECM_USE": J(tab["ECM_USE"]), "MCP_PLANS": J(mcp), "ECMD_PUB": J(tab["ECMD_PUB"]), "ECMD": J(tab["ECMD"]), "RES": J(res), "ACT": J(act), "BHSA_INFO": J(bhinfo), "TK": J(tkd), "STRATA": J(strata)}
 p = sys.argv[1]; s = open(p).read()
 for var, data in blobs.items():
     a = s.index(f"    var {var} = "); b = s.index(";\n", a)

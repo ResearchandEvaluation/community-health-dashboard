@@ -55,6 +55,11 @@ button:focus-visible{outline:2px solid #12365b;outline-offset:2px}
 <button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
 </sc-for>
 </div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">Planning (pilot)</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{tabsPlanning}}" as="t" hint-placeholder-count="1">
+<button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
+</sc-for>
+</div></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #30718d; padding-left: 4px">More</span><div class="phil-navrow" style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{tabsMore}}" as="t" hint-placeholder-count="1">
 <button type="button" onClick="{{t.pick}}" aria-current="{{t.current}}" title="{{t.label}}" style="{{t.style}}">{{t.navLabel}}</button>
@@ -1282,6 +1287,204 @@ A card with none of these shows the county's value alone.</li>
 </section>
 </sc-if>
 
+
+<sc-if value="{{showToolkit}}" hint-placeholder-val="{{false}}">
+<section style="display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h2 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">CHA and CHIP Planning Toolkit</h2>
+<p style="margin: 0; max-width: 880px; font-size: 16px; line-height: 1.55">A step by step roadmap for local health departments, county behavioral health departments, and community partners planning the Community Health Assessment (CHA), the Community Health Improvement Plan (CHIP), and the Behavioral Health Services Act (BHSA) Integrated Plan together. Follows the three phases of Mobilizing for Action through Planning and Partnerships (MAPP) 2.0, a framework of the National Association of County and City Health Officials (NACCHO).</p>
+</div>
+<div class="phil-noprint" style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Toolkit sections</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{tk.subs}}" as="sb" hint-placeholder-count="5"><button type="button" onClick="{{sb.pick}}" aria-pressed="{{sb.pressed}}" style="{{sb.style}}">{{sb.label}}</button></sc-for>
+</div>
+</div>
+
+<sc-if value="{{tk.isStart}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">{{tk.howto.title}}</h3>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">{{tk.howto.intro}}</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<sc-for list="{{tk.howto.ways}}" as="hw" hint-placeholder-count="3"><div style="{{hw.style}}"><div style="font-family: Archer, Georgia, Cambria, serif; font-size: 20px; font-weight: 700">{{hw.name}}</div><div style="font-size: 14.5px; line-height: 1.55">{{hw.body}}</div></div></sc-for>
+</div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; background: #f8fafb"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">The core path</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{tk.howto.minimum}}</p><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">{{tk.howto.contact}}</p></div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid #30718d"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Keep your entries</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{tk.howto.keep}}</p></div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid #02784d"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{tk.support.title}}</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{tk.support.intro}}</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px"><sc-for list="{{tk.support.levels}}" as="lv" hint-placeholder-count="3"><button type="button" onClick="{{lv.pick}}" aria-pressed="{{lv.pressed}}" style="{{lv.style}}"><span style="font-size: 15px; font-weight: 700">{{lv.label}}</span><span style="font-size: 13px; line-height: 1.45">{{lv.desc}}</span></button></sc-for></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Your Plan at a Glance</h3>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">{{tk.plan.summary}}</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<sc-for list="{{tk.plan.phases}}" as="pp" hint-placeholder-count="3"><button type="button" onClick="{{pp.pick}}" style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; text-align: left; cursor: pointer; font-family: inherit; color: #12365b"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{pp.label}}</span><span style="font-family: Archer, Georgia, Cambria, serif; font-size: 26px; font-weight: 700; line-height: 1.1">{{pp.done}}</span><span style="display: block; height: 8px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><span style="{{pp.bar}}"></span></span><span style="font-size: 13px; line-height: 1.5; color: #526c87">{{pp.next}}</span></button></sc-for>
+</div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; background: #e6f5ec; border-color: #b5dfc6"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d; color: #02784d">Your next core action</div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{tk.plan.nextTitle}}</div><div style="font-size: 14px; color: #24384d">{{tk.plan.nextWhere}}</div><div class="phil-noprint"><button type="button" onClick="{{tk.plan.nextPick}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #12365b; color: #ffffff; border: 1px solid #12365b">Go there</button></div></div>
+<sc-if value="{{tk.plan.hasDates}}" hint-placeholder-val="{{false}}"><div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Target dates you have set</div><ol style="margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.6; color: #24384d"><sc-for list="{{tk.plan.dates}}" as="dd" hint-placeholder-count="3"><li><b>{{dd.date}}</b>: {{dd.title}} ({{dd.phase}})</li></sc-for></ol></div></sc-if>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" onClick="{{tk.plan.download}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #12365b; color: #ffffff; border: 1px solid #12365b">Download my roadmap (Word)</button>
+<button type="button" onClick="{{tk.plan.print}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Print this page</button>
+<a href="{{tk.plan.askHref}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; background: #02784d; color: #ffffff; border: 1px solid #02784d">Ask PHIL about where you are</a>
+<button type="button" onClick="{{tk.plan.clear}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: transparent; color: #8a1c13; border: 1px solid #f0a49c">{{tk.plan.clearLabel}}</button>
+</div>
+</div>
+
+<sc-if value="{{noCounty}}" hint-placeholder-val="{{false}}">
+<div style="border: 2px dashed #73889e; border-radius: 10px; padding: 24px 28px; background: #f8fafb; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 17px; font-weight: 700; color: #12365b">Choose a county to see where its plans stand.</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{nav.chips}}" as="c" hint-placeholder-count="18"><button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" aria-label="{{c.aria}}" style="{{c.style}}">{{c.name}}</button></sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Where {{countyLabel}} Stands</h3>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">The county's BHSA Integrated Plan and the measures tied to its goal, as the Department of Health Care Services (DHCS) and the California Department of Public Health (CDPH) publish them. Bring this page to the first joint meeting with behavioral health, the managed care plan, and community partners.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid #02784d"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Statewide goal the county selected</div><div style="font-family: Archer, Georgia, Cambria, serif; font-size: 28px; font-weight: 700; line-height: 1.15; color: #12365b">{{tk.snap.goal}}</div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{tk.snap.goalNote}}</div></div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">How BHSA funds are allocated</div><div style="display: flex; flex-direction: column; gap: 8px"><sc-for list="{{tk.snap.alloc}}" as="a" hint-placeholder-count="3"><div style="display: grid; grid-template-columns: 150px 1fr 64px; gap: 10px; align-items: center; font-size: 13px; color: #24384d"><span>{{a.label}}</span><span style="display: block; height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><span style="{{a.style}}"></span></span><b style="text-align: right; color: #12365b">{{a.value}}</b></div></sc-for></div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{tk.snap.allocNote}}</div></div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">People the plan expects to serve</div><div style="display: flex; flex-direction: column; gap: 8px"><sc-for list="{{tk.snap.served}}" as="a" hint-placeholder-count="3"><div style="display: grid; grid-template-columns: 150px 1fr; gap: 10px; font-size: 13px; color: #24384d"><span>{{a.label}}</span><b style="color: #12365b">{{a.value}}</b></div></sc-for></div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{tk.snap.servedNote}}</div></div>
+<sc-for list="{{tk.snap.rates}}" as="r" hint-placeholder-count="2">
+<div style="{{r.cardStyle}}"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{r.title}}</div><div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: grid; grid-template-columns: 150px 1fr 64px; gap: 10px; align-items: center; font-size: 13px; color: #24384d"><span>{{countyLabel}}</span><span style="display: block; height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><span style="{{r.cStyle}}"></span></span><b style="text-align: right; color: #12365b">{{r.cv}}</b></div>
+<div style="display: grid; grid-template-columns: 150px 1fr 64px; gap: 10px; align-items: center; font-size: 13px; color: #24384d"><span>California</span><span style="display: block; height: 12px; background: #f4f6f8; border-radius: 4px; overflow: hidden"><span style="{{r.caStyle}}"></span></span><b style="text-align: right; color: #12365b">{{r.ca}}</b></div>
+</div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{r.note}}</div></div>
+</sc-for>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Medi-Cal members reached by county services</div><div style="display: flex; flex-direction: column; gap: 8px"><sc-for list="{{tk.snap.pen}}" as="a" hint-placeholder-count="2"><div style="display: grid; grid-template-columns: 150px 1fr; gap: 10px; font-size: 13px; color: #24384d"><span>{{a.label}}</span><b style="color: #12365b">{{a.value}}</b></div></sc-for></div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{tk.snap.penNote}}</div></div>
+</div>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" onClick="{{tk.snap.goBhsa}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Open County Behavioral Health Plans</button>
+<button type="button" onClick="{{tk.snap.goDetail}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Breakdowns by group</button>
+<a href="https://map.healthyplacesindex.org/" target="_blank" rel="noopener" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; background: #ffffff; color: #12365b; border: 1px solid #73889e">Healthy Places Index map</a>
+</div>
+</div>
+</sc-if>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">What to Do Next, and When</h3>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">Where one piece of work serves more than one plan, in order.</p></div>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><sc-for list="{{tk.whoChips}}" as="w" hint-placeholder-count="5"><button type="button" onClick="{{w.pick}}" aria-pressed="{{w.pressed}}" style="{{w.style}}">{{w.label}}</button></sc-for></div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{tk.moves}}" as="mv" hint-placeholder-count="5">
+<li style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; gap: 14px; align-items: flex-start"><span aria-hidden="true" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #12365b; color: #ffffff; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center">{{mv.n}}</span><div><div style="font-size: 13px; font-weight: 600; color: #30718d">{{mv.when}}</div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{mv.title}}</div></div></div>
+<p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{mv.do}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><sc-for list="{{mv.whoList}}" as="w" hint-placeholder-count="3"><span style="display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; background: #f4f6f8; color: #12365b; border: 1px solid #dee3e8">{{w}}</span></sc-for><span style="font-size: 13px; line-height: 1.5; color: #526c87">Basis: {{mv.why}}</span></div></li>
+</sc-for>
+</ol>
+<details style="border: 1px solid #dee3e8; border-radius: 10px; padding: 14px 18px; background: #f8fafb"><summary style="cursor: pointer; font-weight: 700; font-size: 15px; color: #12365b">See every requirement and its source</summary>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 14px 0; font-size: 13px; color: #24384d"><span style="{{tk.badge.statute}}">Statute</span><span style="{{tk.badge.state}}">State policy</span><span style="{{tk.badge.contract}}">Contract policy</span><span style="{{tk.badge.guidance}}">Guidance</span><span style="font-size: 13px; line-height: 1.5; color: #526c87">State policy items can change; the 2028 CHA and CHIP cycle is pending legislation.</span></div>
+<ol style="list-style: none; margin: 0; padding: 0; border-left: 3px solid #dee3e8; display: flex; flex-direction: column">
+<sc-for list="{{tk.cal}}" as="it" hint-placeholder-count="16">
+<li style="position: relative; padding: 0 0 20px 22px"><span aria-hidden="true" style="{{it.dot}}"></span><div style="font-size: 13px; font-weight: 600; color: #30718d">{{it.date}}</div><div style="font-size: 16px; font-weight: 700; color: #12365b; margin-top: 2px">{{it.title}}</div><div style="font-size: 14px; line-height: 1.5; color: #24384d; margin-top: 4px; max-width: 820px">{{it.detail}}</div><div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: 12.5px; color: #526c87"><span style="{{it.badge}}">{{it.basis}}</span><span>{{it.basis_note}}</span><sc-for list="{{it.whoList}}" as="w" hint-placeholder-count="3"><span style="display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; background: #f4f6f8; color: #12365b; border: 1px solid #dee3e8">{{w}}</span></sc-for><a href="{{it.url}}" target="_blank" rel="noopener" style="color: #496b9c">{{it.source}}</a></div></li>
+</sc-for>
+</ol></details>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">The Three Phases</h3>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">Each phase ends in products your county can use. Behavioral health and the managed care plan are built into every phase.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<sc-for list="{{tk.phaseCards}}" as="pc" hint-placeholder-count="4">
+<button type="button" onClick="{{pc.pick}}" style="{{pc.style}}"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9">{{pc.eyebrow}}</span><span style="font-family: Archer, Georgia, Cambria, serif; font-size: 21px; font-weight: 700">{{pc.title}}</span><span style="font-size: 14.5px; line-height: 1.5">{{pc.desc}}</span></button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{tk.isPhase}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">{{tk.phase.title}}</h3>
+<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.55; color: #24384d">{{tk.phase.intro}}</p>
+<p style="margin: 0; max-width: 860px; font-size: 13px; line-height: 1.5; color: #526c87">{{tk.phase.mapp}}</p>
+</div>
+<div style="background: #12365b; color: #ffffff; border-radius: 10px; padding: 20px 24px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #b8d876">{{tk.phase.bh.title}}</div>
+<div style="font-size: 15px; line-height: 1.55">{{tk.phase.bh.body}}</div>
+<div style="font-size: 13px; line-height: 1.5; color: #f3e9d7">{{tk.phase.bh.feeds}}</div>
+</div>
+<div style="display: flex; gap: 12px; align-items: flex-start; background: #e6f5ec; border: 1px solid #b5dfc6; border-radius: 10px; padding: 14px 18px"><div style="display: flex; flex-direction: column; gap: 4px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d; color: #02784d">Where PHIL can help</div><div style="font-size: 14.5px; line-height: 1.55; color: #12365b">{{tk.phase.phil}} Write to research@pophealthinnovationlab.org.</div></div></div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between"><h4 style="margin: 0; font-size: 19px; color: #12365b">Actions and status tracker</h4><span style="font-size: 13px; line-height: 1.5; color: #526c87">{{tk.phase.progress}}</span></div>
+<div style="background: #e6f5ec; border: 1px solid #b5dfc6; border-radius: 8px; padding: 10px 14px; font-size: 14.5px; color: #12365b"><b>Your next action in this phase: </b>{{tk.phase.next}}</div>
+<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">For {{tk.trackerFor}}. Mark status, owner, target date, and whether you want PHIL's help. Core marks the shortest path to a complete CHA, CHIP, and Integrated Plan.</p>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><button type="button" onClick="{{tk.coreToggle.pick}}" aria-pressed="{{tk.coreToggle.pressed}}" style="{{tk.coreToggle.style}}">{{tk.coreToggle.label}}</button></div>
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{tk.phase.actions}}" as="ac" hint-placeholder-count="8">
+<li style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; gap: 14px; align-items: flex-start"><span aria-hidden="true" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #02784d; color: #ffffff; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center">{{ac.n}}</span><div style="display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto; min-width: 0"><div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center"><span style="font-size: 17px; font-weight: 700; color: #12365b">{{ac.title}}</span><sc-if value="{{ac.core}}" hint-placeholder-val="{{true}}"><span style="display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600; background: #d3f0df; color: #065f3d; border: 1px solid #8fd1ad">Core</span></sc-if></div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{ac.what}}</p><div style="font-size: 13px; color: #526c87; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center"><span><b style="color: #12365b">Product: </b>{{ac.output}}</span><sc-if value="{{ac.hasTools}}" hint-placeholder-val="{{true}}"><b style="color: #12365b">Tools:</b><sc-for list="{{ac.toolBtns}}" as="tb" hint-placeholder-count="2"><button type="button" onClick="{{tb.pick}}" style="padding: 2px 10px; border-radius: 999px; border: 1px solid #73889e; background: #ffffff; color: #12365b; font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer">{{tb.name}}</button></sc-for></sc-if></div></div></div>
+<div class="phil-tkrow" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #30718d">Status<select data-tk="{{ac.key}}:status" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box"><option value="">Not started</option><option value="progress">In progress</option><option value="done">Complete</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #30718d">Owner<input type="text" data-tk="{{ac.key}}:owner" placeholder="Organization or person" autocomplete="off" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #30718d">Target date<input type="date" data-tk="{{ac.key}}:due" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #30718d">PHIL's help<select data-tk="{{ac.key}}:support" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box"><sc-for list="{{tk.support.options}}" as="so" hint-placeholder-count="3"><option value="{{so.id}}">{{so.label}}</option></sc-for></select></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #30718d">Note<input type="text" data-tk="{{ac.key}}:note" placeholder="Decision, link, or next step" autocomplete="off" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box"></label>
+</div>
+</li>
+</sc-for>
+</ol>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h4 style="margin: 0; font-size: 19px; color: #12365b">Meetings in this phase</h4>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<sc-for list="{{tk.phase.meetings}}" as="mt" hint-placeholder-count="3">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Meeting {{mt.n}}</div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{mt.title}}</div><div style="font-size: 13px; color: #526c87">{{mt.who}}</div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{mt.purpose}}</p><details><summary style="cursor: pointer; font-size: 14px; font-weight: 600; color: #496b9c">Agenda</summary><ol style="margin: 8px 0 0; padding-left: 20px; font-size: 14px; line-height: 1.55; color: #24384d"><sc-for list="{{mt.agenda}}" as="ag" hint-placeholder-count="5"><li>{{ag}}</li></sc-for></ol></details></div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h4 style="margin: 0; font-size: 19px; color: #12365b">Tools for this phase</h4>
+<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Each tool has when to use it, who runs it, the steps, the questions where there are any, and a worksheet. Entries save for {{tk.trackerFor}}.</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{tk.phase.tools}}" as="tl" hint-placeholder-count="6">
+<details data-tool="{{tl.id}}" style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; gap: 0"><summary style="cursor: pointer; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 17px; font-weight: 700; color: #12365b">{{tl.name}}</span><span style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.purpose}}</span><span class="phil-noprint" style="font-size: 13px; font-weight: 600; color: #496b9c; text-decoration: underline">Open this tool: steps, questions, and worksheet</span></summary>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 14px; border-top: 1px solid #dee3e8; padding-top: 14px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px"><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Use it when</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.use_when}}</div></div><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Who runs it</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.who}}</div></div></div>
+<div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Steps</div><ol style="margin: 6px 0 0; padding-left: 20px; font-size: 14.5px; line-height: 1.6; color: #24384d"><sc-for list="{{tl.steps}}" as="st" hint-placeholder-count="6"><li>{{st}}</li></sc-for></ol></div>
+<sc-if value="{{tl.hasLinks}}" hint-placeholder-val="{{false}}"><div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><sc-for list="{{tl.links}}" as="lk" hint-placeholder-count="2"><button type="button" onClick="{{lk.pick}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">{{lk.label}}</button></sc-for></div></sc-if>
+<sc-if value="{{tl.hasScript}}" hint-placeholder-val="{{false}}"><div style="background: #f8fafb; border: 1px solid #dee3e8; border-radius: 8px; padding: 12px 16px"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">The questions, in the words to use</div><ol style="margin: 6px 0 0; padding-left: 20px; font-size: 14.5px; line-height: 1.6; color: #12365b"><sc-for list="{{tl.script}}" as="sq" hint-placeholder-count="6"><li>{{sq}}</li></sc-for></ol></div></sc-if>
+<div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Worksheet</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 6px"><sc-for list="{{tl.fields}}" as="f" hint-placeholder-count="5"><label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: #12365b">{{f.label}}<textarea data-tk="{{f.key}}" rows="2" placeholder="{{f.hint}}" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box; resize: vertical"></textarea></label></sc-for></div></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px"><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Example</div><div style="font-size: 14px; line-height: 1.5; color: #24384d; font-style: italic">{{tl.example}}</div></div><div><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Done when</div><div style="font-size: 14px; line-height: 1.5; color: #24384d">{{tl.done}}</div></div></div>
+</div></details>
+</sc-for>
+</div>
+</div>
+<sc-if value="{{tk.phase.isLast}}" hint-placeholder-val="{{false}}"><div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid #30718d"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{tk.after.title}}</div><ol style="margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.6; color: #24384d"><sc-for list="{{tk.after.items}}" as="ai" hint-placeholder-count="5"><li>{{ai}}</li></sc-for></ol></div></sc-if>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" onClick="{{tk.plan.download}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #12365b; color: #ffffff; border: 1px solid #12365b">Download my roadmap (Word)</button>
+<button type="button" onClick="{{tk.plan.print}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Print this page</button>
+<a href="{{tk.plan.askHref}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; background: #02784d; color: #ffffff; border: 1px solid #02784d">Ask PHIL about where you are</a>
+<button type="button" onClick="{{tk.plan.clear}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: transparent; color: #8a1c13; border: 1px solid #f0a49c">{{tk.plan.clearLabel}}</button>
+</div>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><sc-for list="{{tk.phase.nav}}" as="pn" hint-placeholder-count="2"><button type="button" onClick="{{pn.pick}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">{{pn.label}}</button></sc-for></div>
+</div>
+</sc-if>
+
+<sc-if value="{{tk.isFit}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">{{tk.fit.title}}</h3><p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.55; color: #24384d">{{tk.fit.intro}}</p></div>
+<sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 4px solid #02784d"><div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">{{countyLabel}}: the plan in three numbers</div><div style="font-size: 15px; line-height: 1.6; color: #24384d">{{tk.fit.countyLine}}</div><div class="phil-noprint"><button type="button" onClick="{{tk.fit.goStart}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">See the full county snapshot</button></div></div>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 12px"><h4 style="margin: 0; font-size: 19px; color: #12365b">The three BHSA funding components</h4><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px"><sc-for list="{{tk.fit.components}}" as="cp" hint-placeholder-count="3"><div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 16px; font-weight: 700; color: #12365b">{{cp.name}}</div><p style="margin: 0; font-size: 14px; line-height: 1.5; color: #24384d">{{cp.what}}</p><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{cp.share}}</div></div></sc-for></div></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><h4 style="margin: 0; font-size: 19px; color: #12365b">Four ways in</h4><ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px"><sc-for list="{{tk.fit.ways}}" as="wy" hint-placeholder-count="4"><li style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; gap: 14px; align-items: flex-start"><span aria-hidden="true" style="flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: #12365b; color: #ffffff; font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; justify-content: center">{{wy.n}}</span><div><div style="font-size: 17px; font-weight: 700; color: #12365b">{{wy.name}}</div><div style="font-size: 13px; font-weight: 600; color: #30718d">{{wy.when}}</div></div></div><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{wy.how}}</p></li></sc-for></ol></div>
+<div style="display: flex; flex-direction: column; gap: 12px"><h4 style="margin: 0; font-size: 19px; color: #12365b">Your fit profile</h4><p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Five short answers you can bring to a county meeting or paste into a proposal. Entries save in this browser only.</p><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px"><sc-for list="{{tk.fit.profile}}" as="pf" hint-placeholder-count="5"><label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: #12365b">{{pf.label}}<textarea data-tk="{{pf.key}}" rows="3" placeholder="{{pf.hint}}" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff; width: 100%; box-sizing: border-box; resize: vertical"></textarea></label></sc-for></div></div>
+<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" onClick="{{tk.plan.download}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #12365b; color: #ffffff; border: 1px solid #12365b">Download my roadmap (Word)</button>
+<button type="button" onClick="{{tk.plan.print}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Print this page</button>
+<a href="{{tk.plan.askHref}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; background: #02784d; color: #ffffff; border: 1px solid #02784d">Ask PHIL about where you are</a>
+<button type="button" onClick="{{tk.plan.clear}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: transparent; color: #8a1c13; border: 1px solid #f0a49c">{{tk.plan.clearLabel}}</button>
+</div>
+<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; background: #e6f5ec; border-color: #b5dfc6"><p style="margin: 0; font-size: 14.5px; line-height: 1.55; color: #12365b"><b>Measures to cite:</b> open the dashboard's health topic pages for your county and use the published values and sources exactly as shown. Comparisons with California are valid only where the same dataset publishes both.</p><div class="phil-noprint"><button type="button" onClick="{{tk.fit.goTopics}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Open the health topics</button></div></div>
+</div>
+</sc-if>
+</section>
+</sc-if>
+
 <sc-if value="{{showResources}}" hint-placeholder-val="{{false}}">
 <section style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 10px">
@@ -1663,11 +1866,11 @@ A card with none of these shows the county's value alone.</li>
       return Object.keys(set).sort();
     }
 
-    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "detail", label: "Your County in Detail" }, { id: "profile", label: "Print County Profile" }, { id: "resources", label: "Resources" }]);
+    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "detail", label: "Your County in Detail" }, { id: "profile", label: "Print County Profile" }, { id: "toolkit", label: "CHA and CHIP Planning Toolkit" }, { id: "resources", label: "Resources" }]);
     var tabBase = "min-height: 44px; padding: 7px 12px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; ";
     var tabs = TAB_DEFS.map(function (t) {
       var on = t.id === tab;
-      var NAVL = { overview: "Overview", cardio: "Cardiovascular Health", aces: "ACEs and Trauma", early: "Maternal and Early Childhood Behavioral Health", youth: "Youth Behavioral Health", sub: "Substance Use and Homelessness", medi: "Access to Care", bhsa: "County Behavioral Health Plans", ecmcs: "ECM and Community Supports", detail: "Your County in Detail", profile: "Print County Profile", resources: "Resources" };
+      var NAVL = { overview: "Overview", cardio: "Cardiovascular Health", aces: "ACEs and Trauma", early: "Maternal and Early Childhood Behavioral Health", youth: "Youth Behavioral Health", sub: "Substance Use and Homelessness", medi: "Access to Care", bhsa: "County Behavioral Health Plans", ecmcs: "ECM and Community Supports", detail: "Your County in Detail", profile: "Print County Profile", toolkit: "CHA and CHIP Toolkit", resources: "Resources" };
       return { id: t.id, label: t.label, navLabel: NAVL[t.id] || t.label, pick: go(t.id), current: on ? "page" : "false",
         style: tabBase + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") };
     });
@@ -1904,6 +2107,7 @@ A card with none of these shows the county's value alone.</li>
     }
 
     var BHSA_INFO = __BHSA_INFO__;
+    var TK = __TK__;
     var STRATA = __STRATA__;
     var REFRESH_LINE = "__REFRESH_LINE__";
     var STAGES = {
@@ -2512,6 +2716,263 @@ A card with none of these shows the county's value alone.</li>
     var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; });
     var tabsServices = ["bhsa", "medi", "ecmcs"].map(function (id) { return tabs.filter(function (t) { return t.id === id; })[0]; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
+    var tabsPlanning = tabs.filter(function (t) { return t.id === "toolkit"; });
+    // CHA and CHIP Planning Toolkit
+    var TKS = (window.__philTK = window.__philTK || (function () { try { return JSON.parse(localStorage.getItem("phil-toolkit") || "{}"); } catch (e) { return {}; } })());
+    function tkSave() { try { localStorage.setItem("phil-toolkit", JSON.stringify(TKS)); } catch (e) {} }
+    function fillTK() {
+      try {
+        var scope = hasCounty ? gCounty : "_";
+        var els = document.querySelectorAll("[data-tk]");
+        for (var i = 0; i < els.length; i++) (function (el) {
+          var key = scope + "|" + el.getAttribute("data-tk");
+          if (TKS[key] !== undefined && el.value !== TKS[key] && document.activeElement !== el) el.value = TKS[key];
+          if (!el.__tk) { el.__tk = true; el.addEventListener("input", function () { TKS[key] = el.value; tkSave(); }); el.addEventListener("change", function () { TKS[key] = el.value; tkSave(); if (el.tagName === "SELECT") self.setState({}); }); }
+        })(els[i]);
+        var openId = window.__philTKOpen; if (openId) { window.__philTKOpen = null; var d = document.querySelector('details[data-tool="' + openId + '"]'); if (d) { d.open = true; d.scrollIntoView({ behavior: "smooth", block: "start" }); } }
+      } catch (e) {}
+    }
+    function tkScope() { return hasCounty ? gCounty : "_"; }
+    function tkGet(k) { return TKS[tkScope() + "|" + k] || ""; }
+    function tkExport() {
+      try {
+        var rows = [["Section", "Item", "Field", "Value"]];
+        TK.phases.forEach(function (p) {
+          p.actions.forEach(function (a) { ["status", "owner", "due", "note"].forEach(function (f) { var v = tkGet(a.id + ":" + f); if (v) rows.push([p.short, a.title, f, f === "status" ? ({ progress: "In progress", done: "Complete" })[v] || v : v]); }); });
+          p.tools.forEach(function (t) { (t.worksheet || []).forEach(function (f) { var v = tkGet(t.id + ":" + f.id); if (v) rows.push([p.short + " tool", t.name, f.label, v]); }); });
+        });
+        TK.fit.profile.forEach(function (f) { var v = tkGet(f.id); if (v) rows.push(["Find your fit", "Fit profile", f.label, v]); });
+        var csv = rows.map(function (r) { return r.map(function (c) { return '"' + String(c).replace(/"/g, '""') + '"'; }).join(","); }).join("\r\n");
+        var blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" }); var url = URL.createObjectURL(blob);
+        var a = document.createElement("a"); a.href = url; a.download = "CHA-CHIP-toolkit-" + (hasCounty ? gCounty.replace(/\s+/g, "-") : "entries") + "-" + new Date().toISOString().slice(0, 10) + ".csv"; document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+      } catch (e) {}
+    }
+    function tkPrint() { try { var ds = document.querySelectorAll("details"); for (var i = 0; i < ds.length; i++) ds[i].open = true; window.print(); } catch (e) {} }
+    function tkLoadDocx(cb) {
+      if (window.docx) return cb(window.docx);
+      var sc = document.createElement("script"); sc.src = "docx.umd.js"; sc.onload = function () { cb(window.docx); }; sc.onerror = function () { cb(null); }; document.head.appendChild(sc);
+    }
+    function tkRoadmap() {
+      tkLoadDocx(function (D) {
+        if (!D) { try { window.alert("The roadmap file could not be built in this view. Use Print this page instead."); } catch (e) {} return; }
+        var get = function (u) { return fetch(u).then(function (r) { return r.ok ? r.arrayBuffer() : null; }).catch(function () { return null; }); };
+        Promise.all([get("assets/phil-logo.png"), get("assets/fox-clipboard.png")]).then(function (im) {
+          try {
+            var county = hasCounty ? gCounty + " County" : "Your county";
+            var ctx = { county: county, hasCounty: hasCounty, today: new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }), todayISO: new Date().toISOString().slice(0, 10), TK: TK, tkGet: tkGet, snap: snap, doneN: doneN, total: allActs.length, coreDone: coreDone, coreTotal: coreActs.length, logo: im[0] ? new Uint8Array(im[0]) : null, fox: im[1] ? new Uint8Array(im[1]) : null };
+            var doc = tkBuildRoadmap(D, ctx);
+            D.Packer.toBlob(doc).then(function (blob) { var url = URL.createObjectURL(blob); var a = document.createElement("a"); a.href = url; a.download = county.replace(/\s+/g, "-") + "-CHA-CHIP-Roadmap-" + new Date().toISOString().slice(0, 10) + ".docx"; document.body.appendChild(a); a.click(); document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(url); }, 2000); });
+          } catch (e) {}
+        });
+      });
+    }
+    function tkBuildRoadmap(D, c) {
+      var NAVY = "12365B", GREEN = "039862", DGREEN = "02784D", TEAL = "30718D", CREAM = "F3E9D7", LINE = "DEE3E8", SOFT = "F8FAFB", MUTED = "526C87", TEXT = "24384D", LIME = "B8D876", GOLD = "9A6A12", RED = "8A1C13";
+      var HF = "Georgia", BF = "Arial";
+      var noBorder = { style: D.BorderStyle.NONE, size: 0, color: "FFFFFF" };
+      var NB = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder, insideHorizontal: noBorder, insideVertical: noBorder };
+      var thin = { style: D.BorderStyle.SINGLE, size: 4, color: LINE };
+      var TB = { top: thin, bottom: thin, left: thin, right: thin, insideHorizontal: thin, insideVertical: thin };
+      var run = function (t, o) { o = o || {}; return new D.TextRun({ text: String(t == null ? "" : t), bold: !!o.b, italics: !!o.i, color: o.c || TEXT, size: o.s || 20, font: o.f || BF, allCaps: !!o.caps, characterSpacing: o.sp || 0 }); };
+      var para = function (runs, o) { o = o || {}; return new D.Paragraph({ children: runs, spacing: { before: o.before || 0, after: o.after === undefined ? 120 : o.after, line: o.line || 276, lineRule: D.LineRuleType.AUTO }, alignment: o.align, bullet: o.bullet ? { level: 0 } : undefined, border: o.border, keepNext: !!o.keepNext }); };
+      var text = function (t, o) { return para([run(t, o)], o); };
+      var eyebrow = function (t) { return para([run(t, { c: TEAL, s: 17, b: true, caps: true, sp: 20 })], { after: 40, before: 60 }); };
+      var h1 = function (t, eb) {
+        return [new D.Table({ width: { size: 9400, type: D.WidthType.DXA }, columnWidths: [9400], borders: NB, rows: [new D.TableRow({ cantSplit: true, children: [cell([
+          para([run(eb || "CHA and CHIP Roadmap", { c: LIME, s: 16, b: true, caps: true, sp: 25 })], { after: 40 }),
+          para([run(t, { c: "FFFFFF", s: 34, b: true, f: HF })], { after: 0, line: 280 })
+        ], { w: 9400, fill: NAVY, pad: 200 })] })] }), para([run("", { s: 8 })], { after: 120, line: 200 })];
+      };
+      var h2 = function (t) { return para([run(t, { c: NAVY, s: 26, b: true, f: HF })], { before: 240, after: 80, keepNext: true }); };
+      var cell = function (children, o) { o = o || {}; return new D.TableCell({ width: { size: o.w, type: D.WidthType.DXA }, shading: o.fill ? { fill: o.fill, type: D.ShadingType.CLEAR, color: "auto" } : undefined, borders: o.borders, margins: { top: o.pad || 80, bottom: o.pad || 80, left: 120, right: 120 }, verticalAlign: o.va, children: children }); };
+      var tcell = function (t, w, o) { o = o || {}; return cell([para([run(t, { c: o.c || TEXT, s: 18, b: !!o.b })], { after: 0 })], { w: w, fill: o.fill, borders: o.borders }); };
+      var table = function (head, rows, pct, o) {
+        o = o || {}; var widths = pct.map(function (x) { return Math.round(x * 94); });
+        var hrow = new D.TableRow({ tableHeader: true, children: head.map(function (h, i) { return tcell(h, widths[i], { b: true, c: "FFFFFF", fill: NAVY }); }) });
+        var body = rows.map(function (r, ri) { return new D.TableRow({ cantSplit: true, children: r.map(function (cv, i) { var sty = (o.style && o.style(cv, i, r)) || {}; return tcell(cv, widths[i], { fill: ri % 2 ? SOFT : "FFFFFF", c: sty.c, b: sty.b }); }) }); });
+        return new D.Table({ width: { size: 9400, type: D.WidthType.DXA }, columnWidths: widths, borders: TB, rows: [hrow].concat(body) });
+      };
+      var callout = function (children, fill, bar) {
+        return new D.Table({ width: { size: 9400, type: D.WidthType.DXA }, columnWidths: [9400], borders: { top: noBorder, bottom: noBorder, right: noBorder, insideHorizontal: noBorder, insideVertical: noBorder, left: { style: D.BorderStyle.SINGLE, size: 36, color: bar || DGREEN } }, rows: [new D.TableRow({ children: [cell(children, { w: 9400, fill: fill || "E6F5EC", pad: 140 })] })] });
+      };
+      var fmtDate = function (v) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ""); if (!m) return v || ""; var dt = new Date(+m[1], +m[2] - 1, +m[3]); return dt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); };
+      var STATUS = { "": "Not started", progress: "In progress", done: "Complete" }, SUP = { "": "We do this", support: "Ask PHIL to support", lead: "Ask PHIL to lead" };
+      var statusStyle = function (v, i, r) { if (i === 1) return v === "Complete" ? { c: DGREEN, b: true } : v === "In progress" ? { c: GOLD, b: true } : { c: MUTED }; if (i === 4 && v !== "We do this") return { c: DGREEN, b: true }; return {}; };
+      var level = c.tkGet("support:level") || "self", LV = {}; c.TK.support.levels.forEach(function (l) { LV[l.id] = l; }); var lv = LV[level] || LV.self;
+      var kids = [];
+      // Cover (its own section, zero margins, full-bleed navy)
+      var cover = [];
+      var tiles = [[c.doneN + " of " + c.total, "actions complete"], [c.coreDone + " of " + c.coreTotal, "core actions complete"], [lv.label, "how we want to work with PHIL"]];
+      var tileRow = new D.Table({ width: { size: 9000, type: D.WidthType.DXA }, columnWidths: [2900, 2900, 2900], borders: NB, rows: [new D.TableRow({ children: tiles.map(function (t, i) { return cell([para([run(t[0], { c: NAVY, s: t[0].length > 10 ? 24 : 34, b: true, f: HF })], { after: 20 }), para([run(t[1], { c: TEAL, s: 15, b: true, caps: true, sp: 15 })], { after: 0 })], { w: 2900, fill: i === 2 ? LIME : CREAM, pad: 180 }); }) })] });
+      var logoRuns = c.logo ? [new D.ImageRun({ type: "png", data: c.logo, transformation: { width: 200, height: 62 } })] : [run("Population Health Innovation Lab", { c: NAVY, s: 26, b: true, f: HF })];
+      var logoChip = new D.Table({ width: { size: 4200, type: D.WidthType.DXA }, columnWidths: [4200], borders: NB, rows: [new D.TableRow({ children: [cell([new D.Paragraph({ children: logoRuns, spacing: { after: 0 } })], { w: 4200, fill: "FFFFFF", pad: 160 })] })] });
+      var inner = [
+        para([run("", { s: 8 })], { after: 0, line: 200 }),
+        logoChip,
+        para([run("", { s: 8 })], { after: 600, line: 200 }),
+        para([run("CHA and CHIP Roadmap", { c: LIME, s: 22, b: true, caps: true, sp: 40 })], { after: 120 }),
+        para([run(c.county, { c: "FFFFFF", s: 76, b: true, f: HF })], { after: 200, line: 300 }),
+        para([run("Community Health Assessment, Community Health Improvement Plan, and Behavioral Health Services Act Integrated Plan, planned together.", { c: CREAM, s: 24 })], { after: 160, line: 300 }),
+        para([run("Prepared " + c.today + " with the PHIL CHA and CHIP Planning Toolkit at dashboard.pophealthinnovationlab.org. Follows the three phases of MAPP 2.0, a framework of NACCHO.", { c: "C9D6E3", s: 19 })], { after: 520, line: 280 }),
+        tileRow,
+        para([run("", { s: 8 })], { after: 400, line: 200 }),
+        para([run("How to read this roadmap", { c: LIME, s: 16, b: true, caps: true, sp: 25 })], { after: 60 }),
+        para([run("Support from PHIL", { b: true, s: 19, c: "FFFFFF" }), run(" says how we want to work with PHIL and which actions we have marked for help. ", { s: 19, c: "E3EBF2" }), run("Where we stand", { b: true, s: 19, c: "FFFFFF" }), run(" is our county's Integrated Plan and the measures behind it. ", { s: 19, c: "E3EBF2" }), run("Our plan", { b: true, s: 19, c: "FFFFFF" }), run(" is every action by phase with its status, owner, and target date, followed by the key state dates and the rhythm after the CHIP.", { s: 19, c: "E3EBF2" })], { after: 0, line: 300 })
+      ];
+      if (c.fox) inner.push(new D.Paragraph({ children: [new D.ImageRun({ type: "png", data: c.fox, transformation: { width: 150, height: 150 } })], alignment: D.AlignmentType.RIGHT, spacing: { before: 300, after: 0 } }));
+      inner.push(para([run("Population Health Innovation Lab, a program of the Public Health Institute", { c: "C9D6E3", s: 16 })], { after: 0, before: 200 }));
+      cover.push(new D.Table({ width: { size: 12240, type: D.WidthType.DXA }, columnWidths: [12240], borders: NB, rows: [new D.TableRow({ height: { value: 14800, rule: D.HeightRule.EXACT }, children: [new D.TableCell({ width: { size: 12240, type: D.WidthType.DXA }, shading: { fill: NAVY, type: D.ShadingType.CLEAR, color: "auto" }, borders: NB, margins: { top: 900, bottom: 600, left: 1300, right: 1300 }, verticalAlign: D.VerticalAlign.TOP, children: inner })] })] }));
+      cover.push(new D.Paragraph({ children: [run("", { s: 2 })], spacing: { before: 0, after: 0, line: 20, lineRule: D.LineRuleType.EXACT } }));
+      // Support
+      kids.push.apply(kids, h1("Support from PHIL"));
+      kids.push(text(lv.label + ". " + lv.desc, { s: 21 }));
+      var asks = []; c.TK.phases.forEach(function (p) { p.actions.forEach(function (a) { var v = c.tkGet(a.id + ":support"); if (v) asks.push([p.short, a.title, SUP[v]]); }); });
+      if (asks.length) { kids.push(eyebrow("Actions where we are asking for PHIL's help")); kids.push(table(["Phase", "Action", "Request"], asks, [28, 50, 22], { style: function (v, i) { return i === 2 ? { c: DGREEN, b: true } : {}; } })); kids.push(text("", { after: 60 })); }
+      else kids.push(text("No individual actions are marked for PHIL's help yet. Mark them in the tracker on the dashboard and download again.", { c: MUTED, s: 19 }));
+      kids.push(callout([para([run("Send this roadmap to ", { s: 20, c: NAVY }), run("research@pophealthinnovationlab.org", { s: 20, c: NAVY, b: true }), run(" to start the conversation. PHIL can facilitate meetings, build the data chapter from the dashboard, write the behavioral health and suicide prevention sections with county behavioral health, and prepare the crosswalks to the Integrated Plan and the reinvestment plan.", { s: 20, c: NAVY })], { after: 0 })]));
+      // Where we stand
+      if (c.hasCounty) {
+        kids.push.apply(kids, h1("Where " + c.county + " Stands"));
+        kids.push(text("As the Department of Health Care Services and the California Department of Public Health publish it.", { c: MUTED, s: 18 }));
+        var sn = c.snap;
+        kids.push(new D.Table({ width: { size: 9400, type: D.WidthType.DXA }, columnWidths: [4700, 4700], borders: NB, rows: [new D.TableRow({ children: [
+          cell([eyebrow("Integrated Plan goal the county selected"), para([run(sn.goal, { c: NAVY, s: 40, b: true, f: HF })], { after: 40 }), para([run(sn.goalNote, { c: MUTED, s: 17 })], { after: 0 })], { w: 4700, fill: SOFT, pad: 160 }),
+          cell([eyebrow("BHSA funds by component")].concat(sn.alloc.map(function (a) { return para([run(a.value + "  ", { c: NAVY, s: 24, b: true }), run(a.label, { c: TEXT, s: 18 })], { after: 30 }); })).concat([para([run(sn.allocNote, { c: MUTED, s: 17 })], { after: 0, before: 40 })]), { w: 4700, fill: SOFT, pad: 160 })
+        ] })] }));
+        kids.push(text("", { after: 80 }));
+        var rateRows = sn.rates.map(function (r) { return [r.title, r.cv, r.ca]; });
+        kids.push(table(["Measure, age-adjusted rate per 100,000", c.county, "California"], rateRows, [56, 22, 22]));
+        kids.push(text("CDPH County Health Status Profiles, which publishes both values. " + (sn.rates[0] ? sn.rates[0].note.split(". ")[0] : ""), { c: MUTED, s: 17, before: 60 }));
+        kids.push(text("People the plan expects to serve: " + sn.served.map(function (x) { return x.label + " " + x.value; }).join("; ") + ". " + sn.servedNote, { s: 19 }));
+      }
+      // Plan
+      kids.push(new D.Paragraph({ children: [], pageBreakBefore: true }));
+      kids.push.apply(kids, h1("Our Plan"));
+      kids.push(text(c.doneN + " of " + c.total + " actions complete, " + c.coreDone + " of " + c.coreTotal + " on the core path. Core marks the shortest path to a complete CHA, CHIP, and Integrated Plan.", { c: MUTED, s: 19 }));
+      c.TK.phases.forEach(function (p) {
+        kids.push(h2(p.title));
+        kids.push(table(["Action", "Status", "Owner", "Target date", "PHIL's help", "Note"], p.actions.map(function (a) { return [a.title + (a.core ? " (core)" : ""), STATUS[c.tkGet(a.id + ":status")] || "Not started", c.tkGet(a.id + ":owner"), fmtDate(c.tkGet(a.id + ":due")), SUP[c.tkGet(a.id + ":support")] || "We do this", c.tkGet(a.id + ":note")]; }), [30, 12, 15, 12, 15, 16], { style: statusStyle }));
+        if (p.meetings.length) { kids.push(eyebrow("Meetings in this phase")); p.meetings.forEach(function (m) { kids.push(para([run("Meeting " + m.n + ": ", { b: true, s: 19 }), run(m.title + ". " + m.who + ".", { s: 19 })], { bullet: true, after: 30 })); }); }
+        var ws = []; p.tools.forEach(function (t) { (t.worksheet || []).forEach(function (f) { var v = c.tkGet(t.id + ":" + f.id); if (v) ws.push([t.name, f.label, v]); }); });
+        if (ws.length) { kids.push(eyebrow("Worksheet entries")); kids.push(table(["Tool", "Field", "Entry"], ws, [25, 30, 45])); }
+        kids.push(callout([para([run(p.bh.title + ". ", { b: true, s: 18, c: NAVY }), run(p.bh.body, { s: 18, c: NAVY })], { after: 0 })], "EEF4F8", TEAL));
+      });
+      var fp = c.TK.fit.profile.map(function (f) { var v = c.tkGet(f.id); return v ? [f.label, v] : null; }).filter(Boolean);
+      if (fp.length) { kids.push.apply(kids, h1("Our Fit Profile")); kids.push(table(["Question", "Answer"], fp, [40, 60])); }
+      kids.push.apply(kids, h1("Key Dates Ahead"));
+      c.TK.calendar.filter(function (it) { return it.sort >= c.todayISO.slice(0, 7); }).forEach(function (it) { kids.push(para([run(it.date + ": ", { b: true, s: 19, c: NAVY }), run(it.title + " (" + it.basis + ").", { s: 19 })], { bullet: true, after: 30 })); });
+      kids.push.apply(kids, h1("After the CHIP: the Three Year Rhythm"));
+      c.TK.after.items.forEach(function (x) { kids.push(para([run(x, { s: 19 })], { bullet: true, after: 30 })); });
+      var header = new D.Header({ children: [para([run(c.county + " CHA and CHIP Roadmap", { c: TEAL, s: 16, b: true, caps: true, sp: 15 })], { after: 0, align: D.AlignmentType.RIGHT })] });
+      var footer = new D.Footer({ children: [para([run("Population Health Innovation Lab, a program of the Public Health Institute  |  dashboard.pophealthinnovationlab.org  |  Page ", { c: MUTED, s: 15 }), new D.TextRun({ children: [D.PageNumber.CURRENT], color: MUTED, size: 15, font: BF }), run(" of ", { c: MUTED, s: 15 }), new D.TextRun({ children: [D.PageNumber.TOTAL_PAGES], color: MUTED, size: 15, font: BF })], { after: 0, border: { top: { style: D.BorderStyle.SINGLE, size: 6, color: LINE, space: 6 } } })] });
+      var blankHF = { default: new D.Header({ children: [] }) }, blankFF = { default: new D.Footer({ children: [] }) };
+      return new D.Document({ creator: "Population Health Innovation Lab", title: c.county + " CHA and CHIP Roadmap", background: { color: "F7F2E8" }, styles: { default: { document: { run: { font: BF, size: 20, color: TEXT } } } },
+        sections: [
+          { properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 0, bottom: 0, left: 0, right: 0, header: 0, footer: 0 } } }, headers: blankHF, footers: blankFF, children: cover },
+          { properties: { page: { size: { width: 12240, height: 15840 }, margin: { top: 1200, bottom: 1100, left: 1300, right: 1300 } } }, headers: { default: header }, footers: { default: footer }, children: kids }
+        ] });
+    }
+
+    var tkSub = s.tkSub || "start";
+    function tkGo(id) { return function () { try { FS.q = ""; } catch (e) {} self.setState({ tab: "toolkit", tkSub: id }); toTop(); }; }
+    var TK_WHO = { LHJ: "Local health jurisdiction", BHD: "Behavioral health department", MCP: "Managed care plan", CBO: "Community partners" };
+    var tkWho = s.tkWho || "all";
+    var TK_BADGE = "display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 12px; font-weight: 600; line-height: 1.5; ";
+    var tkBadge = { statute: TK_BADGE + "background: #d3f0df; color: #065f3d; border: 1px solid #8fd1ad;", state: TK_BADGE + "background: #fbf4e6; color: #7a4f0c; border: 1px solid #ead9b8;", contract: TK_BADGE + "background: #e3eef8; color: #1f4f7a; border: 1px solid #b9d0e6;", guidance: TK_BADGE + "background: #e8edf2; color: #12365b; border: 1px solid #c9d3dd;" };
+    var TK_BK = { "Statute": "statute", "State policy": "state", "Contract policy": "contract", "Guidance": "guidance" };
+    function tkProgressText() {
+      var ph = TK.phases.filter(function (p) { return p.id === tkSub; })[0]; if (!ph) return "";
+      var scope = hasCounty ? gCounty : "_", done = 0;
+      ph.actions.forEach(function (a) { if (TKS[scope + "|" + a.id + ":status"] === "done") done++; });
+      return done + " of " + ph.actions.length + " actions complete";
+    }
+    var tk = null;
+    if (tab === "toolkit") {
+      var subChip = "min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; ";
+      var subs = [{ id: "start", label: "Start here" }].concat(TK.phases.map(function (p) { return { id: p.id, label: p.short }; })).concat([{ id: "fit", label: "Find your fit (community partners)" }]);
+      var mv = function (v) { return typeof v === "number" ? v : null; };
+      var ind = function (k, i) { var d = INDD[k]; return d && d.m[i] ? d.m[i] : null; };
+      var fmtMoney = function (v) { if (typeof v !== "number") return "Not published"; if (v >= 1e6) return "$" + (v / 1e6).toFixed(1) + " million"; if (v >= 1e3) return "$" + Math.round(v / 1e3) + " thousand"; return "$" + v; };
+      var fmtNum = function (v) { return typeof v === "number" ? v.toLocaleString("en-US") : "Not published"; };
+      var MONS = { Jan: "January", Feb: "February", Mar: "March", Apr: "April", May: "May", Jun: "June", Jul: "July", Aug: "August", Sep: "September", Oct: "October", Nov: "November", Dec: "December" };
+      var dmy = function (x) { var m = /^(\d{1,2})-(\w{3})-(\d{2})$/.exec(x || ""); return m ? MONS[m[2]] + " " + (+m[1]) + ", 20" + m[3] : (x || "not published"); };
+      var info = (BHSA_INFO.info || {})[gCounty] || {};
+      var allocM = ["bhPlanAlloc"], allocLabels = ["Behavioral Health Services and Supports", "Full Service Partnership", "Housing Interventions"], allocColors = ["#02784d", "#1f6f95", "#30718d"];
+      var alloc = [0, 1, 2].map(function (i) { var m = ind("bhPlanAlloc", i); var v = m ? mv(m.v[gCounty]) : null; return { label: allocLabels[i], value: v === null ? "Not published" : v + "%", style: "display: block; height: 100%; border-radius: 4px; width: " + (v === null ? 0 : v) + "%; background: " + allocColors[i] }; });
+      var servedLabels = ["Mental health", "Substance use disorder", "Housing"], servedIdx = [1, 2, 0];
+      var served = servedIdx.map(function (i, j) { var sm = ind("bhPlanServed", i), cm = ind("bhPlanCost", i); return { label: servedLabels[j], value: fmtNum(sm ? mv(sm.v[gCounty]) : null) + " people, " + fmtMoney(cm ? mv(cm.v[gCounty]) : null) }; });
+      var rev = ind("bhPlanRevenue", 0);
+      var rates = [["suicide", "Suicide deaths", "Suicides"], ["od", "Drug overdose deaths", "Overdoses"]].map(function (x) {
+        var m = ind(x[0], 0); if (!m) return null;
+        var cv = mv(m.v[gCounty]), ca = mv(m.ca), mx = Math.max(cv || 0, ca || 0) || 1, focus = info.goal === x[2];
+        return { title: x[1] + (focus ? " (the county's selected goal)" : ""), cv: cv === null ? "Suppressed" : cv.toFixed(1), ca: ca === null ? "Not published" : ca.toFixed(1),
+          cStyle: "display: block; height: 100%; border-radius: 4px; width: " + (cv === null ? 0 : cv / mx * 100).toFixed(1) + "%; background: #02784d", caStyle: "display: block; height: 100%; border-radius: 4px; width: " + (ca === null ? 0 : ca / mx * 100).toFixed(1) + "%; background: #1f6f95",
+          note: "Age-adjusted rate per 100,000, " + (m.p || "") + ". CDPH County Health Status Profiles, which publishes both values.",
+          cardStyle: "background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px;" + (focus ? " border-top: 4px solid #02784d;" : "") };
+      }).filter(Boolean);
+      var pen = [["Mental health", 0], ["Substance use disorder", 1]].map(function (x) { var m = ind("bhPen", x[1]); var v = m ? mv(m.v[gCounty]) : null; return { label: x[0], value: v === null ? "Not published" : v + "%" }; });
+      var snap = {
+        goal: info.goal || "Not published", goalNote: "The county chose this goal from the statewide behavioral health goals in its Integrated Plan. Plan submitted " + dmy(info.submitted) + "; approved by DHCS " + dmy(info.approved) + ".",
+        alloc: alloc, allocNote: ((ind("bhPlanAlloc", 0) || {}).p || "") + ". BHSA projected revenue: " + fmtMoney(rev ? mv(rev.v[gCounty]) : null) + ".",
+        served: served, servedNote: "All behavioral health funding sources, " + ((ind("bhPlanServed", 0) || {}).p || "") + ".",
+        rates: rates, pen: pen, penNote: "Share of Medi-Cal members who received county services, " + ((ind("bhPen", 0) || {}).p || "") + ". DHCS Behavioral Health Public County Profile.",
+        goBhsa: go("bhsa"), goDetail: go("detail")
+      };
+      var whoChips = [{ id: "all", label: "Everyone" }].concat(Object.keys(TK_WHO).map(function (k) { return { id: k, label: TK_WHO[k] }; })).map(function (w) { var on = tkWho === w.id; return { label: w.label, pressed: on ? "true" : "false", style: subChip + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: function () { self.setState({ tkWho: w.id }); } }; });
+      var today = new Date().toISOString().slice(0, 10);
+      var moves = TK.moves.filter(function (m) { return tkWho === "all" || m.who.indexOf(tkWho) >= 0; }).map(function (m, i) { return { n: i + 1, when: m.when, title: m.title, do: m.do, why: m.why, whoList: m.who.map(function (w) { return TK_WHO[w]; }) }; });
+      var cal = TK.calendar.filter(function (it) { return tkWho === "all" || it.who.indexOf(tkWho) >= 0; }).map(function (it) { var past = it.sort <= today; return { date: it.date, title: it.title, detail: it.detail, basis: it.basis, basis_note: it.basis_note, url: it.url, source: it.source, badge: tkBadge[TK_BK[it.basis] || "guidance"], whoList: it.who.map(function (w) { return TK_WHO[w]; }), dot: "position: absolute; left: -9px; top: 4px; width: 15px; height: 15px; border-radius: 50%; box-sizing: border-box; border: 3px solid " + (past ? "#30718d; background: #30718d" : "#30718d; background: #ffffff") }; });
+      var phaseStyles = ["background: #12365b; color: #ffffff;", "background: #02784d; color: #ffffff;", "background: #30718d; color: #ffffff;", "background: #ffffff; color: #12365b; border: 1px solid #73889e;"];
+      var phaseCards = TK.phases.map(function (p, i) { return { eyebrow: "Phase " + (i + 1), title: p.short.replace(/^Phase \d: /, ""), desc: p.intro.split(". ")[0] + ".", pick: tkGo(p.id), style: "text-align: left; border: none; cursor: pointer; font-family: inherit; width: 100%; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 8px; min-height: 150px; " + phaseStyles[i] }; })
+        .concat([{ eyebrow: "Community partners", title: "Find your fit", desc: "Where your services connect to the county's plans and funding, and when to take part.", pick: tkGo("fit"), style: "text-align: left; cursor: pointer; font-family: inherit; width: 100%; border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 8px; min-height: 150px; " + phaseStyles[3] }]);
+      var phase = null;
+      var tkCore = !!s.tkCore;
+      var allActs = []; TK.phases.forEach(function (p) { p.actions.forEach(function (a) { allActs.push({ p: p, a: a }); }); });
+      var doneN = allActs.filter(function (x) { return tkGet(x.a.id + ":status") === "done"; }).length;
+      var coreActs = allActs.filter(function (x) { return x.a.core; }), coreDone = coreActs.filter(function (x) { return tkGet(x.a.id + ":status") === "done"; }).length;
+      var nextCore = coreActs.filter(function (x) { return tkGet(x.a.id + ":status") !== "done"; })[0];
+      var dates = allActs.map(function (x) { var dv = tkGet(x.a.id + ":due"); return dv ? { date: dv, title: x.a.title, phase: x.p.short } : null; }).filter(Boolean).sort(function (a, b) { return a.date < b.date ? -1 : 1; }).map(function (x) { var dt = new Date(x.date + "T12:00:00"); return { date: isNaN(dt) ? x.date : dt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }), title: x.title, phase: x.phase }; });
+      var supLevel = tkGet("support:level") || "self"; var supLabel = (TK.support.levels.filter(function (l) { return l.id === supLevel; })[0] || TK.support.levels[0]).label;
+      var supAsks = []; allActs.forEach(function (x) { var v = tkGet(x.a.id + ":support"); if (v) supAsks.push((v === "lead" ? "Lead: " : "Support: ") + x.a.title + " (" + x.p.short + ")"); });
+      var askBody = "County: " + (hasCounty ? gCounty : "not chosen") + "\nWhere we are: " + doneN + " of " + allActs.length + " actions complete (" + coreDone + " of " + coreActs.length + " core)" + (nextCore ? "\nNext core action: " + nextCore.a.title + " (" + nextCore.p.short + ")" : "") + "\nHow we want to work with PHIL: " + supLabel + (supAsks.length ? "\nActions marked for PHIL:\n" + supAsks.join("\n") : "") + "\n\nWhat we need help with:\n";
+      var supportCard = { title: TK.support.title, intro: TK.support.intro, options: TK.support.options, levels: TK.support.levels.map(function (l) { var on = supLevel === l.id; return { label: l.label, desc: l.desc, pressed: on ? "true" : "false", style: "text-align: left; cursor: pointer; font-family: inherit; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; " + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: function () { TKS[tkScope() + "|support:level"] = l.id; tkSave(); self.setState({}); } }; }) };
+      var askHref = "mailto:research@pophealthinnovationlab.org?subject=" + encodeURIComponent("CHA and CHIP Toolkit: " + (hasCounty ? gCounty + " County" : "support request")) + "&body=" + encodeURIComponent(askBody);
+      var clearArm = !!s.tkClearArm;
+      var plan = {
+        summary: hasCounty ? doneN + " of " + allActs.length + " actions complete for " + gCounty + " County, " + coreDone + " of " + coreActs.length + " on the core path." : "Choose a county in the County menu to keep a plan for it. Entries for each county are kept separately.",
+        phases: TK.phases.map(function (p) { var d = p.actions.filter(function (a) { return tkGet(a.id + ":status") === "done"; }).length, nx = p.actions.filter(function (a) { return tkGet(a.id + ":status") !== "done"; })[0]; return { label: p.short, done: d + " of " + p.actions.length, bar: "display: block; height: 100%; border-radius: 4px; background: #02784d; width: " + (p.actions.length ? Math.round(d / p.actions.length * 100) : 0) + "%", next: nx ? "Next: " + nx.title : "All actions complete", pick: tkGo(p.id) }; }),
+        nextTitle: nextCore ? nextCore.a.title : "All core actions are complete.", nextWhere: nextCore ? nextCore.p.short : "Use the three year rhythm at the end of Phase 3 to keep the plan moving.", nextPick: nextCore ? tkGo(nextCore.p.id) : tkGo("p3"),
+        hasDates: dates.length > 0, dates: dates,
+        download: tkRoadmap, print: tkPrint, askHref: askHref,
+        clearLabel: clearArm ? "Yes, clear every entry for this county" : "Clear my entries for this county",
+        clear: function () { if (!clearArm) { self.setState({ tkClearArm: true }); setTimeout(function () { if (self.state.tkClearArm) self.setState({ tkClearArm: false }); }, 8000); return; } var sc = tkScope() + "|"; Object.keys(TKS).forEach(function (k) { if (k.indexOf(sc) === 0) delete TKS[k]; }); tkSave(); self.setState({ tkClearArm: false }); }
+      };
+      var LINK_TAB = { profile: "profile", detail: "detail", cardio: "cardio", bhsa: "bhsa", youth: "youth", sub: "sub" };
+      var coreToggle = { label: tkCore ? "Showing core actions only" : "Show core actions only", pressed: tkCore ? "true" : "false", style: subChip + (tkCore ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: function () { self.setState({ tkCore: !tkCore }); } };
+      var wayStyles = ["background: #12365b; color: #ffffff;", "background: #02784d; color: #ffffff;", "background: #30718d; color: #ffffff;"];
+      var howto = { title: TK.howto.title, intro: TK.howto.intro, minimum: TK.howto.minimum, contact: TK.howto.contact, keep: TK.howto.keep, ways: TK.howto.ways.map(function (w, i) { return { name: w.name, body: w.body, style: "border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; " + wayStyles[i] }; }) };
+      TK.phases.forEach(function (p, i) {
+        if (p.id !== tkSub) return;
+        var toolMap = {}; p.tools.forEach(function (t) { toolMap[t.id] = t.name; });
+        var nextInPhase = p.actions.filter(function (a) { return tkGet(a.id + ":status") !== "done"; })[0];
+        phase = { title: p.title, intro: p.intro, mapp: p.mapp, bh: p.bh, phil: p.phil, progress: tkProgressText(), isLast: i === TK.phases.length - 1,
+          next: nextInPhase ? nextInPhase.title + (nextInPhase.core ? " (core)" : "") : "Every action in this phase is marked complete.",
+          actions: p.actions.filter(function (a) { return !tkCore || a.core; }).map(function (a, j) { var names = a.tools.map(function (t) { return toolMap[t]; }).filter(Boolean); return { n: j + 1, key: a.id, core: !!a.core, title: a.title, what: a.what, output: a.output, hasTools: names.length > 0, toolNames: names.join("; "), toolBtns: a.tools.filter(function (t) { return toolMap[t]; }).map(function (t) { return { name: toolMap[t], pick: function () { window.__philTKOpen = t; self.setState({}); } }; }) }; }),
+          meetings: p.meetings, tools: p.tools.map(function (t) { return { id: t.id, name: t.name, purpose: t.purpose, use_when: t.use_when, who: t.who, steps: t.steps, hasScript: !!(t.script && t.script.length), script: t.script || [], example: t.example, done: t.done, hasLinks: !!(t.links && t.links.length), links: (t.links || []).map(function (l) { return { label: l[1], pick: go(LINK_TAB[l[0]] || "overview") }; }), fields: (t.worksheet || []).map(function (f) { return { key: t.id + ":" + f.id, label: f.label, hint: f.hint }; }) }; }),
+          nav: (i > 0 ? [{ label: "Previous: " + TK.phases[i - 1].short, pick: tkGo(TK.phases[i - 1].id) }] : [{ label: "Back to Start here", pick: tkGo("start") }]).concat(i < TK.phases.length - 1 ? [{ label: "Next: " + TK.phases[i + 1].short, pick: tkGo(TK.phases[i + 1].id) }] : [{ label: "Next: Find your fit", pick: tkGo("fit") }]) };
+      });
+      var fitCounty = hasCounty ? (gCounty + " County selected " + (info.goal ? "“" + info.goal + "”" : "its statewide goal") + " as its Integrated Plan goal. Its BHSA funds are allocated " + alloc.map(function (a) { return a.value + " to " + a.label; }).join(", ") + ". The plan expects to serve " + served[0].value.split(",")[0] + " in mental health services and " + served[1].value.split(",")[0] + " in substance use disorder services in " + ((ind("bhPlanServed", 0) || {}).p || "the plan year") + ".") : "";
+      var fit = { title: TK.fit.title, intro: TK.fit.intro, countyLine: fitCounty, goStart: tkGo("start"), goTopics: go("cardio"),
+        components: TK.fit.components.map(function (c, i) { return { name: c.name, what: c.what, share: hasCounty ? gCounty + " County allocates " + alloc[i].value + " of its BHSA funds here." : "" }; }),
+        ways: TK.fit.ways.map(function (w, i) { return { n: i + 1, name: w.name, when: w.when, how: w.how }; }),
+        profile: TK.fit.profile.map(function (p) { return { key: p.id, label: p.label, hint: p.hint }; }) };
+      if (hasCounty) countyLabel = gCounty + " County";
+      tk = { howto: howto, plan: plan, after: TK.after, support: supportCard, coreToggle: coreToggle, subs: subs.map(function (sb) { var on = tkSub === sb.id; return { label: sb.label, pressed: on ? "true" : "false", style: subChip + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: tkGo(sb.id) }; }),
+        isStart: tkSub === "start", isPhase: !!phase, isFit: tkSub === "fit", snap: snap, whoChips: whoChips, moves: moves, cal: cal, badge: tkBadge, phaseCards: phaseCards, phase: phase || { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: fit,
+        trackerFor: hasCounty ? gCounty + " County" : "your county (choose a county in the County menu to keep a separate tracker per county)" };
+      setTimeout(fillTK, 0);
+    }
+
     var SEL = "min-height: 44px; max-width: 100%; padding: 7px 38px 7px 14px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; appearance: none; -webkit-appearance: none; background-repeat: no-repeat; background-position: right 12px center; background-size: 14px; ";
     var nav = {
       cur: hasCounty ? gCounty : "", curLabel: hasCounty ? gCounty + " County" : "Choose a county",
@@ -2559,7 +3020,7 @@ A card with none of these shows the county's value alone.</li>
       yrs: yrCtl,
       topic: topic || { stageFilters: [], flow: [], stages: [], hasStages: false, noStages: true, hasRealms: false, groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, hasDet: false, goDet: function () {}, isMedi: false, showYears: false, isBhsa: false, plan: { has: false, goal: "", goalsList: "", status: "", fsp: "", hi: "", tr: "", src: "" }, onPage: [], hiddenNote: "", title: "", intro: "", population: "", workHere: "", groups: [], foxSrc: "assets/fox-wrench.png", foxAlt: "PHIL's fox mascot holding a wrench", current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { pickers: [], heads: [], rows: [], none: true, selectAll: function () {}, clearAll: function () {}, open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {} },
-      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], topics: [], noTopics: false, hasSections: false, allPressed: "false", allStyle: "", pickAll: function () {}, pickNone: function () {}, hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore,
+      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], topics: [], noTopics: false, hasSections: false, allPressed: "false", allStyle: "", pickAll: function () {}, pickNone: function () {}, hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore, tabsPlanning: tabsPlanning, showToolkit: tab === "toolkit", tk: tk || { howto: { ways: [] }, plan: { phases: [], dates: [] }, after: { items: [] }, support: { levels: [], options: [] }, coreToggle: {}, subs: [], isStart: false, isPhase: false, isFit: false, snap: {}, whoChips: [], moves: [], cal: [], badge: {}, phaseCards: [], phase: { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: { components: [], ways: [], profile: [] } },
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
     };
   }

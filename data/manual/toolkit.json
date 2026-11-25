@@ -1,0 +1,298 @@
+{
+ "_about": "Content for the Planning Toolkit page (public/toolkit/). Calendar items come from state documents cited in each row; legal basis labels say whether an item is statute, state policy, contract policy, or guidance. Review each row against its source before each release.",
+ "calendar": [
+  {
+   "date": "January 1, 2025",
+   "sort": "2025-01-01",
+   "title": "Integrated Plan stakeholder requirements take effect",
+   "detail": "County behavioral health departments must engage local stakeholders, including the local health jurisdiction and Medi-Cal managed care plans, in developing the Integrated Plan.",
+   "who": [
+    "BHD"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.03",
+   "url": "https://policy-manual.mes.dhcs.ca.gov/behavioral-health-services-act-county-policy-manual/LIVE/3-county-integrated-plan",
+   "source": "DHCS BHSA County Policy Manual, Chapter 3"
+  },
+  {
+   "date": "January 1, 2025",
+   "sort": "2025-01-01",
+   "title": "Managed care plans contribute to the CHA and CHIP",
+   "detail": "Medi-Cal managed care plans meet their Population Needs Assessment requirement by taking part in local health jurisdiction CHA and CHIP processes, and contribute funding or in-kind staff starting in 2025.",
+   "who": [
+    "MCP",
+    "LHJ"
+   ],
+   "basis": "Contract policy",
+   "basis_note": "DHCS Population Health Management policy",
+   "url": "https://www.cdph.ca.gov/Programs/RPHO/CDPH%20Document%20Library/All-Health-Jurisdiction-Letters/Memo-to-LHJ-re-Alignment-of-MCP-PNA-and-LHJ-CHA-and-CHIP.pdf",
+   "source": "CDPH memo to local health jurisdictions, December 26, 2023"
+  },
+  {
+   "date": "February 7, 2025",
+   "sort": "2025-02-07",
+   "title": "Community Reinvestment requirements issued",
+   "detail": "Managed care plan Community Reinvestment must be directly informed by the Community Health Assessment, and each plan carries signed attestations from the local public health and county behavioral health directors.",
+   "who": [
+    "MCP",
+    "LHJ",
+    "BHD",
+    "CBO"
+   ],
+   "basis": "Contract policy",
+   "basis_note": "All Plan Letter 25-004",
+   "url": "https://www.dhcs.ca.gov/hm/formsandpubs/Documents/MMCDAPLsandPolicyLetters/APL%202025/APL25-004.pdf",
+   "source": "DHCS All Plan Letter 25-004"
+  },
+  {
+   "date": "November 2025",
+   "sort": "2025-11-01",
+   "title": "DHCS Local Planning Collaboration Toolkit released",
+   "detail": "Guidance for behavioral health departments on working with local health jurisdictions and managed care plans on shared planning, data, and stakeholder engagement.",
+   "who": [
+    "BHD",
+    "LHJ",
+    "MCP"
+   ],
+   "basis": "Guidance",
+   "basis_note": "DHCS guidance",
+   "url": "https://www.dhcs.ca.gov/BHT/Documents/BHSA-Local-Planning-Process-Collaboration-Toolkit.pdf",
+   "source": "DHCS BHSA Local Planning Process Collaboration Toolkit"
+  },
+  {
+   "date": "June 30, 2026",
+   "sort": "2026-06-30",
+   "title": "First Integrated Plan final due (FY 2026 to 2029)",
+   "detail": "Counties submitted Board of Supervisors approved Integrated Plans. For this first plan, counties could rely on the most recent CHA and CHIP on record.",
+   "who": [
+    "BHD"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.02",
+   "url": "https://policy-manual.mes.dhcs.ca.gov/behavioral-health-services-act-county-policy-manual/LIVE/3-county-integrated-plan",
+   "source": "DHCS BHSA County Policy Manual, Chapter 3"
+  },
+  {
+   "date": "July 1, 2026",
+   "sort": "2026-07-01",
+   "title": "Counties must consider the local health jurisdiction's CHIP",
+   "detail": "The Integrated Plan duty to consider the community health improvement plan of the local health jurisdiction becomes operative.",
+   "who": [
+    "BHD",
+    "LHJ"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.02(b)(4)",
+   "url": "https://california.public.law/codes/welfare_and_institutions_code_section_5963.02",
+   "source": "Welfare and Institutions Code 5963.02"
+  },
+  {
+   "date": "July 1, 2026",
+   "sort": "2026-07-01",
+   "title": "CDPH population-based prevention program for local health jurisdictions begins",
+   "detail": "Local health jurisdictions act as Local Prevention Coordinators: they convene required prevention partners and develop or update a Local Suicide Prevention Plan. CDPH budgets $12.0 million per year statewide for fiscal years 2026/27 through 2028/29.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "CBO"
+   ],
+   "basis": "State policy",
+   "basis_note": "CDPH BHSA Population-Based Prevention Final Plan",
+   "url": "https://www.cdph.ca.gov/Programs/OPP/Pages/BHSA-Final-Plan-FAQs.aspx",
+   "source": "CDPH BHSA Population-Based Prevention Final Plan and FAQ"
+  },
+  {
+   "date": "September 1, 2026",
+   "sort": "2026-09-01",
+   "title": "First Community Reinvestment plans due",
+   "detail": "Managed care plans submit their first reinvestment plans, with director attestations; new plans are due each September.",
+   "who": [
+    "MCP",
+    "LHJ",
+    "BHD",
+    "CBO"
+   ],
+   "basis": "Contract policy",
+   "basis_note": "All Plan Letter 25-004",
+   "url": "https://www.dhcs.ca.gov/hm/formsandpubs/Documents/MMCDAPLsandPolicyLetters/APL%202025/APL25-004.pdf",
+   "source": "DHCS All Plan Letter 25-004"
+  },
+  {
+   "date": "March 31, 2027",
+   "sort": "2027-03-31",
+   "title": "Integrated Plan annual update draft due (FY 2027 to 2028)",
+   "detail": "The first annual update. Counties still consider the local health jurisdiction's CHIP.",
+   "who": [
+    "BHD",
+    "LHJ",
+    "CBO"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.03",
+   "url": "https://policy-manual.mes.dhcs.ca.gov/behavioral-health-services-act-county-policy-manual/LIVE/3-county-integrated-plan",
+   "source": "DHCS BHSA County Policy Manual, Chapter 3"
+  },
+  {
+   "date": "June 30, 2027",
+   "sort": "2027-06-30",
+   "title": "Integrated Plan annual update final due",
+   "detail": "Final annual update with Board of Supervisors approval.",
+   "who": [
+    "BHD"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.03",
+   "url": "https://policy-manual.mes.dhcs.ca.gov/behavioral-health-services-act-county-policy-manual/LIVE/3-county-integrated-plan",
+   "source": "DHCS BHSA County Policy Manual, Chapter 3"
+  },
+  {
+   "date": "January 1, 2028",
+   "sort": "2028-01-01",
+   "title": "Three-year CHA and CHIP cycle begins for every local health jurisdiction",
+   "detail": "CDPH proposed a statutory change requiring all local health jurisdictions to follow one three-year CHA and CHIP cycle starting in 2028. DHCS describes this as pending legislation.",
+   "who": [
+    "LHJ"
+   ],
+   "basis": "State policy",
+   "basis_note": "Proposed statute; enacted statute not located as of November 2026",
+   "url": "https://www.cdph.ca.gov/Programs/RPHO/CDPH%20Document%20Library/All-Health-Jurisdiction-Letters/Memo-to-LHJ-re-Alignment-of-MCP-PNA-and-LHJ-CHA-and-CHIP.pdf",
+   "source": "CDPH memo to local health jurisdictions, December 26, 2023"
+  },
+  {
+   "date": "March 31, 2028",
+   "sort": "2028-03-31",
+   "title": "Integrated Plan annual update draft due (FY 2028 to 2029)",
+   "detail": "Second annual update.",
+   "who": [
+    "BHD"
+   ],
+   "basis": "Statute",
+   "basis_note": "Welfare and Institutions Code 5963.03",
+   "url": "https://policy-manual.mes.dhcs.ca.gov/behavioral-health-services-act-county-policy-manual/LIVE/3-county-integrated-plan",
+   "source": "DHCS BHSA County Policy Manual, Chapter 3"
+  },
+  {
+   "date": "Fiscal year 2028/29",
+   "sort": "2028-07-01",
+   "title": "Prevention coalition folded into the CHA and CHIP",
+   "detail": "Local health jurisdictions integrate the prevention convening and coalition process into the CHA and CHIP, working with managed care plans and county behavioral health.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP",
+    "CBO"
+   ],
+   "basis": "State policy",
+   "basis_note": "CDPH BHSA Population-Based Prevention Final Plan",
+   "url": "https://www.cdph.ca.gov/Programs/OPP/CDPH%20Document%20Library/CDPH-BHSA-Population-Based-Prevention-Final-Plan.pdf",
+   "source": "CDPH BHSA Population-Based Prevention Final Plan"
+  },
+  {
+   "date": "December 31, 2028",
+   "sort": "2028-12-31",
+   "title": "Synchronized Community Health Assessment due",
+   "detail": "First CHA under the shared statewide cycle.",
+   "who": [
+    "LHJ",
+    "MCP",
+    "BHD"
+   ],
+   "basis": "State policy",
+   "basis_note": "CDPH and DHCS policy",
+   "url": "https://www.dhcs.ca.gov/CalAIM/Documents/2024-MCP-LHJ-Collaboration-Worksheet.pdf",
+   "source": "DHCS 2024 MCP and LHJ Collaboration Worksheet"
+  },
+  {
+   "date": "June 30, 2029",
+   "sort": "2029-06-30",
+   "title": "Synchronized CHIP and next Integrated Plan due",
+   "detail": "The first CHIP under the shared cycle and the FY 2029 to 2032 Integrated Plan fall on the same date. This is the first full alignment point for the two plans.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP",
+    "CBO"
+   ],
+   "basis": "State policy",
+   "basis_note": "CDPH and DHCS policy; Integrated Plan date in statute",
+   "url": "https://www.dhcs.ca.gov/CalAIM/Documents/2024-MCP-LHJ-Collaboration-Worksheet.pdf",
+   "source": "DHCS 2024 MCP and LHJ Collaboration Worksheet"
+  },
+  {
+   "date": "Calendar year 2029",
+   "sort": "2029-07-01",
+   "title": "Community Reinvestment aligned with the Integrated Plan cycle",
+   "detail": "Reinvestment planning moves onto the same cycle as the Integrated Plan.",
+   "who": [
+    "MCP",
+    "BHD",
+    "LHJ",
+    "CBO"
+   ],
+   "basis": "Contract policy",
+   "basis_note": "All Plan Letter 25-004",
+   "url": "https://www.dhcs.ca.gov/hm/formsandpubs/Documents/MMCDAPLsandPolicyLetters/APL%202025/APL25-004.pdf",
+   "source": "DHCS All Plan Letter 25-004"
+  }
+ ],
+ "moves": [
+  {
+   "when": "Now through March 2027",
+   "title": "Get your CHIP priorities into the Integrated Plan annual update",
+   "do": "County behavioral health drafts its first annual update by March 31, 2027, and state law requires it to consider your CHIP. Share your CHA findings and CHIP priorities with behavioral health this winter so the update can cite them.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "CBO"
+   ],
+   "why": "Welfare and Institutions Code 5963.02(b)(4)"
+  },
+  {
+   "when": "Fiscal year 2026/27",
+   "title": "Convene one prevention coalition and make it your CHIP coalition",
+   "do": "CDPH asks every local health jurisdiction to convene required prevention partners and develop or update a Local Suicide Prevention Plan. Use the same partners and meetings for your CHIP workgroups, so partners come to one table and the suicide prevention plan becomes part of the CHIP.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP",
+    "CBO"
+   ],
+   "why": "CDPH BHSA Population-Based Prevention Final Plan"
+  },
+  {
+   "when": "Spring and summer 2027",
+   "title": "Shape the next Community Reinvestment plan before it is signed",
+   "do": "Your managed care plan's next reinvestment plan is due September 1, 2027, and it must be informed by the CHA. The public health and behavioral health directors each sign an attestation. Bring your CHIP priorities to the plan's community advisory process before the draft is final.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP",
+    "CBO"
+   ],
+   "why": "DHCS All Plan Letter 25-004"
+  },
+  {
+   "when": "2028",
+   "title": "Run the synchronized CHA with behavioral health and your managed care plan",
+   "do": "Under state policy, the first CHA on the shared statewide cycle is due December 31, 2028. Plan the partner, status, and context assessments with behavioral health and your managed care plan from the start, so one assessment serves all three plans.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP"
+   ],
+   "why": "CDPH and DHCS policy; statute pending"
+  },
+  {
+   "when": "By June 30, 2029",
+   "title": "Finish the CHIP and the next Integrated Plan together",
+   "do": "The CHIP and the FY 2029 to 2032 Integrated Plan are due the same day. Shared priorities and one coalition built in 2027 and 2028 let both plans draw on the same work.",
+   "who": [
+    "LHJ",
+    "BHD",
+    "MCP",
+    "CBO"
+   ],
+   "why": "CDPH and DHCS policy; Welfare and Institutions Code 5963.02"
+  }
+ ]
+}

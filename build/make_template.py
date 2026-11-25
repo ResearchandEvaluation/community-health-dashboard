@@ -14,7 +14,7 @@ def ph(name, var):
     global logic
     a = logic.index(f"    var {var} = "); b = logic.index(";\n", a)
     logic = logic[:a] + f"    var {var} = __{name}__" + logic[b:]
-for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT", "STRATA", "BHSA_INFO"]: ph(v, v)
+for v in ["INDD", "ECM_USE", "MCP_PLANS", "ECMD_PUB", "ECMD", "RES", "ACT", "STRATA", "BHSA_INFO", "TK"]: ph(v, v)
 # The refresh line is filled by build_site.py from data/out/_refresh.json.
 import re as _re
 logic = _re.sub(r'var REFRESH_LINE = "[^"]*"', 'var REFRESH_LINE = "__REFRESH_LINE__"', logic)
