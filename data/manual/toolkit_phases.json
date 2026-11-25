@@ -18,7 +18,7 @@
       }
     ],
     "contact": "To ask for support, download your roadmap and send it to research@pophealthinnovationlab.org, or use the Ask PHIL button.",
-    "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter from the dashboard, write the limitations statement, triangulate, share the CHA, set priorities, write objectives with published baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
+    "minimum": "When time is short, do the core actions first: name the team, map partners against the required lists, charter one coalition, agree on goals, build the data chapter, write the limitations statement, triangulate, share the CHA, set priorities, write objectives with baselines, build the suicide and self-harm prevention component with behavioral health, name a steward for every activity, write the evaluation plan, and release the CHIP.",
     "keep": "Entries save in this browser on this device, for the county shown at the top of the toolkit. Download your roadmap after each working session and share it with your team.",
     "steps": [
       "Choose your county above. The toolkit shows that county's plans and keeps your entries for it.",
@@ -213,7 +213,7 @@
             "Collect the most recent CHA, the current CHIP, the BHSA Integrated Plan (the Start here page shows the county's selected goal), the Future of Public Health workplan, the managed care plan's Community Reinvestment plan, any hospital Community Health Needs Assessment, and any suicide prevention plan.",
             "For each plan, write its owner, the period it covers, its priorities in a few words, the measures it uses, and its next due date.",
             "Mark every priority that appears in two or more plans; these are the natural shared priorities.",
-            "Mark every measure that comes from a published source, since those can be tracked without new data collection.",
+            "Mark every measure that already has a regular source, published or county-run, since those can be tracked without new data collection.",
             "Bring the table to the first conversation with behavioral health and the managed care plan."
           ],
           "worksheet": [
@@ -582,19 +582,19 @@
       "short": "Phase 2: Assess (CHA)",
       "title": "Phase 2: Tell the Community Story (the Community Health Assessment)",
       "mapp": "MAPP 2.0 Phase 2, Tell the Community Story (NACCHO). Its three assessments together make up the CHA.",
-      "intro": "The CHA. MAPP 2.0 builds it from three assessments: what the data say (Community Status), what partners bring and where power sits (Community Partner), and what residents say shapes their health (Community Context). This dashboard supplies most of the status assessment, so the team spends its time on the two that need people.",
+      "intro": "The CHA. MAPP 2.0 builds it from three assessments: what the data say (Community Status), what partners bring and where power sits (Community Partner), and what residents say shapes their health (Community Context). The status assessment draws on the sources the county chooses: its own analyses, state and federal data, local sources, and this dashboard, which holds a ready set of published measures for the county.",
       "bh": {
         "title": "With behavioral health and your managed care plan",
         "body": "Share data both ways: bring the county's Integrated Plan goal and measures into the status assessment, and ask behavioral health for its stratified data. Run one round of listening sessions that serves the CHA, the Integrated Plan, and the prevention coalition, so residents are asked once. Share the draft CHA with the managed care plan before its September reinvestment submission, which must be informed by the CHA.",
         "feeds": "Feeds the Integrated Plan data sharing items, the Community Reinvestment plan, and the CHA's limitations section."
       },
-      "phil": "In this phase PHIL can build the data chapter from the dashboard and your local sources, run or train your team to run listening sessions, and facilitate the triangulation session.",
+      "phil": "In this phase PHIL can build the data chapter with your team from the sources you choose, run or train your team to run listening sessions, and facilitate the triangulation session.",
       "actions": [
         {
           "id": "a09",
           "core": true,
           "title": "Community Status Assessment: pull the county's data",
-          "what": "Work through the dashboard's topic pages for your county, Your County in Detail for breakdowns by group, and Compare Counties for context. Use Print County Profile to produce the data chapter. Add local data the dashboard does not hold (hospital, school, Tribal, and county program data) and record each source.",
+          "what": "Assemble the county's health data from the sources you choose: your own analyses and calculated rates, state and federal data, and hospital, school, Tribal, and county program data. This dashboard is one ready source: its topic pages, Your County in Detail, Compare Counties, and Print County Profile hold published measures for your county. Record the source, period, and method for every measure.",
           "output": "Data chapter with sources",
           "tools": [
             "t_status"
@@ -604,7 +604,7 @@
           "id": "a10",
           "core": true,
           "title": "Write the data limitations statement",
-          "what": "Suppressed cells, unstable rates, and multi-year windows appear wherever numbers are small: whole measures in less populous counties, and breakdowns by group in every county. Say plainly what each measure can and cannot tell you, and use the published quarter rankings and multi-year averages as the source presents them.",
+          "what": "Suppressed cells, unstable rates, and multi-year windows appear wherever numbers are small: whole measures in less populous counties, and breakdowns by group in every county. Say plainly what each measure can and cannot tell you. Where the county calculates its own rates, state the method, the years pooled, and the stability of the estimate. Where it uses published values, present them as the source does.",
           "output": "Limitations statement",
           "tools": [
             "t_limits"
@@ -681,21 +681,21 @@
         {
           "id": "t_status",
           "name": "Community Status Assessment guide",
-          "purpose": "Build the data chapter from published sources without calculating your own rates.",
-          "use_when": "At the start of Phase 2. Repeat after each quarterly dashboard refresh if the CHA is still in draft.",
+          "purpose": "Build the data chapter from the sources the county chooses, with every measure traceable to its source.",
+          "use_when": "At the start of Phase 2. Update it when your sources release new data while the CHA is still in draft.",
           "who": "The staff lead or epidemiologist.",
           "steps": [
-            "Before pulling data, ask the Advisory Committee which health topics matter most: a short vote on a list of topics. The votes choose the topic pages you open first and the local sources you add.",
-            "Choose your county in the County menu at the top of this dashboard.",
-            "Open each health topic page. For each measure, note whether the county is higher or lower than California where the same source publishes both, the county's quarter among all California counties where shown, and the trend direction. Write one sentence per measure that stands out.",
-            "Open Your County in Detail. Record the breakdowns by race and ethnicity, sex, age, and student group for the measures that stood out; these are the equity findings.",
-            "Open Compare Counties and place your county next to two or three neighbors or peers for the same measures.",
-            "Use Print County Profile with the topics you need to export the dashboard measures as the base of the data chapter.",
-            "Add local sources the dashboard does not hold, in the same format: measure, value, period, source, and a note on limits. Typical sources: a local community health survey if the county runs one, hospital discharge summaries, school climate surveys, Tribal health program data, county program counts, the sheriff's office, and the 211 call log.",
+            "Before pulling data, ask the Advisory Committee which health topics matter most: a short vote on a list of topics. The votes choose the topics you start with and the sources you pull.",
+            "Choose your sources. Counties draw on their own analyses and calculated rates, vital statistics, state and federal datasets, hospital and school data, Tribal health program data, and local surveys. This dashboard is one ready option for published measures.",
+            "For each measure, record the value, the period, the source, and the method: as published, or calculated by the county and how. Note how the county compares with California or a benchmark from the same source, and the direction of the trend. Write one sentence per measure that stands out.",
+            "Record breakdowns by race and ethnicity, sex, age, and other groups for the measures that stood out; these are the equity findings.",
+            "Place the county next to two or three neighbors or peers for the same measures.",
+            "If you use this dashboard: the health topic pages hold the measures, Your County in Detail holds the breakdowns by group, Compare Counties holds the peer view, and Print County Profile exports the measures you choose as a base for the chapter.",
+            "Add local sources in the same format: measure, value, period, source, method, and a note on limits. Typical sources: a local community health survey, hospital discharge summaries, school climate surveys, Tribal health program data, county program counts, the sheriff's office, and the 211 call log.",
             "Link the Healthy Places Index map for neighborhood conditions and cite it; its license keeps its values on its own site.",
             "Where the county has several cities or distinct regions, add sub-county data in the same format: Healthy Places Index by census tract, hospital Community Health Needs Assessment findings by zip code, and county vital statistics by city or region.",
             "Where hospitals are running a Community Health Needs Assessment in the same window, agree with them on shared indicators and one resident input process, so residents are asked once and the two reports cite the same numbers.",
-            "Note the dashboard's refresh date on the chapter so later comparisons use the same vintage."
+            "Note the date each source was pulled so later comparisons use the same vintage."
           ],
           "worksheet": [
             {
@@ -705,7 +705,7 @@
             },
             {
               "id": "equity",
-              "label": "Equity findings from Your County in Detail",
+              "label": "Equity findings by group",
               "hint": "Measure and the groups most affected"
             },
             {
@@ -716,16 +716,16 @@
             {
               "id": "local",
               "label": "Local sources added",
-              "hint": "Source, measure, period, contact"
+              "hint": "Source, measure, period, method, contact"
             },
             {
               "id": "vintage",
-              "label": "Dashboard refresh date used",
-              "hint": "Date shown at the bottom of the dashboard"
+              "label": "Sources used and dates pulled",
+              "hint": "Each source and the date you pulled it"
             }
           ],
-          "example": "A county notes that its drug overdose death rate is above California's in the same CDPH dataset and rising over the last three windows, that Your County in Detail shows the burden concentrated among adults 25 to 44, and adds the hospital's emergency department counts for overdose as a local source.",
-          "done": "The data chapter has every measure with a value, period, source, and a note on limits, and a refresh date.",
+          "example": "A county notes that its drug overdose death rate is above California's in the same CDPH dataset and rising over the last three windows, that the breakdown by age shows the burden concentrated among adults 25 to 44, and adds the hospital's emergency department counts for overdose as a local source.",
+          "done": "The data chapter has every measure with a value, period, source, method, and a note on limits.",
           "links": [
             [
               "profile",
@@ -750,9 +750,10 @@
           "steps": [
             "List every measure where the county value is suppressed or missing, and say why in plain words (fewer than the publisher's minimum count, no county level estimate, survey not run locally).",
             "List every measure that uses a multi-year average and name the years; say that a change inside the window cannot be seen.",
+            "For rates the county calculates itself, state the numerator, the denominator, the years pooled, and any stability rule applied.",
             "List the survey based measures and say that they are estimates with a margin of error, as the publisher reports.",
-            "Say which comparisons with California come from the same dataset and which do not; the dashboard marks the exceptions.",
-            "Say that quarter rankings place the county among all California counties on the published value and do not by themselves show change over time.",
+            "Say which comparisons with California come from the same dataset and which draw on different sources.",
+            "Where the chapter uses rankings or quarter groupings, say that they place the county among California counties at one point in time; trends come from the values over time.",
             "Give the date of each dataset.",
             "Close with what the data can support: direction, rough size, and where to look closer with local sources and listening sessions."
           ],
@@ -1014,7 +1015,7 @@
           "steps": [
             "Executive summary: the themes and three findings in one page.",
             "How the assessment was done: the three assessments, who took part, dates, and languages.",
-            "Community profile: population, geography, and the data chapter from the dashboard and local sources.",
+            "Community profile: population, geography, and the data chapter.",
             "What residents and partners said: themes, quotes, assets, and the power survey summary.",
             "Forces of change.",
             "Themes from triangulation, including disagreements.",
@@ -1040,7 +1041,7 @@
               "hint": "Languages produced; who checked accessibility; URL"
             }
           ],
-          "example": "A 30 page CHA with a four page data chapter exported from the dashboard, eight listening sessions summarized in six themes, and a limitations statement that explains four suppressed measures.",
+          "example": "A 30 page CHA with a four page data chapter, eight listening sessions summarized in six themes, and a limitations statement that explains four suppressed measures.",
           "done": "The CHA is posted publicly, sent to behavioral health and the managed care plan, and dated."
         }
       ]
@@ -1050,13 +1051,13 @@
       "short": "Phase 3: Plan and Improve (CHIP)",
       "title": "Phase 3: Continuously Improve the Community (the Community Health Improvement Plan)",
       "mapp": "MAPP 2.0 Phase 3, Continuously Improve the Community (NACCHO).",
-      "intro": "Turn themes into a plan with owners, objectives, and a way to know whether it is working. Every objective gets a published baseline and source, every activity gets a steward organization, and the suicide and self-harm prevention component sits inside the CHIP. Implementation then runs through the plan period.",
+      "intro": "Turn themes into a plan with owners, objectives, and a way to know whether it is working. Every objective gets a baseline with a named source, every activity gets a steward organization, and the suicide and self-harm prevention component sits inside the CHIP. Implementation then runs through the plan period.",
       "bh": {
         "title": "With behavioral health and your managed care plan",
         "body": "Write the Local Suicide Prevention Plan that CDPH requires as a section of the CHIP, with behavioral health as co-lead. Tie at least one objective to the county's Integrated Plan goal so the two plans share a measure. Before each March 31, crosswalk the CHIP to the Integrated Plan annual update; before each September 1, bring it to the managed care plan's reinvestment process, where both directors sign the attestation.",
         "feeds": "Feeds the CDPH suicide prevention plan requirement, the Integrated Plan annual update, and the Community Reinvestment attestation."
       },
-      "phil": "In this phase PHIL can facilitate the priority setting and strategy meetings, write the suicide and self-harm prevention section with behavioral health, find the published baseline for each objective, and prepare the crosswalks before the March and September dates.",
+      "phil": "In this phase PHIL can facilitate the priority setting and strategy meetings, write the suicide and self-harm prevention section with behavioral health, find or calculate the baseline for each objective, and prepare the crosswalks before the March and September dates.",
       "actions": [
         {
           "id": "a16",
@@ -1082,8 +1083,8 @@
         {
           "id": "a18",
           "core": true,
-          "title": "Write SMARTIE objectives with published baselines",
-          "what": "For each strategy write one to three objectives that are Specific, Measurable, Achievable, Relevant, Time bound, Inclusive, and Equitable. Every objective names a published baseline, its source, and the date, so progress can be checked without new data collection.",
+          "title": "Write SMARTIE objectives with baselines",
+          "what": "For each strategy write one to three objectives that are Specific, Measurable, Achievable, Relevant, Time bound, Inclusive, and Equitable. Every objective names a baseline, its source, and the date, so progress can be checked over time. Baselines from sources that update on a regular schedule can be tracked without new data collection.",
           "output": "Objectives and indicators (Meeting 5)",
           "tools": [
             "t_smartie"
@@ -1163,7 +1164,7 @@
           "agenda": [
             "Dot vote on strategies",
             "SMARTIE worksheet for each strategy",
-            "Find the published baseline for each objective on the dashboard or a named source",
+            "Set the baseline for each objective from a named source",
             "Agree on indicators and who tracks them"
           ]
         },
@@ -1225,9 +1226,9 @@
           "who": "The Advisory Committee, facilitated by the staff lead.",
           "steps": [
             "Write each theme from triangulation on the board.",
-            "Score each theme 1 to 3 on need: how far the county sits from California on the published measure, and whether the trend is worsening.",
+            "Score each theme 1 to 3 on need: how far the county sits from California or its benchmark on the measure, and whether the trend is worsening.",
             "Score 1 to 3 on feasibility: partners, funding, and staff time available in the next three years.",
-            "Score 1 to 3 on equity: whether Your County in Detail shows the burden falling on particular groups the plan is designed to reach.",
+            "Score 1 to 3 on equity: whether the data by group show the burden falling on particular groups the plan is designed to reach.",
             "Score 1 to 3 on alignment: whether the theme matches the county's Integrated Plan goal, the reinvestment plan, or funded prevention streams.",
             "Total the scores and discuss the top five; disagree out loud, then choose two or three priorities.",
             "Write one paragraph of rationale for each chosen priority and one sentence for each theme set aside; the set-aside list stays visible for the next cycle."
@@ -1329,12 +1330,12 @@
         {
           "id": "t_smartie",
           "name": "SMARTIE objective worksheet",
-          "purpose": "Write objectives that can be checked against published data.",
+          "purpose": "Write objectives that can be checked against data over time.",
           "use_when": "Meeting 5, one worksheet per strategy.",
           "who": "The workgroup with the staff lead or epidemiologist present.",
           "steps": [
             "Specific: write what will change, for whom, and where.",
-            "Measurable: name the indicator, find its published baseline on the dashboard or a named source, and write the value, the source, and the date.",
+            "Measurable: name the indicator, set its baseline from a named source (your own data, a state or federal dataset, or this dashboard), and write the value, the source, and the date.",
             "Achievable: list the partners and resources that make the change possible, and set a target that those resources can reach.",
             "Relevant: name the priority and the Integrated Plan statewide goal the objective serves.",
             "Time bound: set the target date, usually within the CHIP's three years.",
@@ -1350,7 +1351,7 @@
             },
             {
               "id": "measure",
-              "label": "Indicator, published baseline, source, date",
+              "label": "Indicator, baseline, source, date",
               "hint": "Measurable"
             },
             {
@@ -1384,8 +1385,8 @@
               "hint": "Read it aloud"
             }
           ],
-          "example": "By June 2029, increase the share of adults in the county who report a routine checkup in the past year from the published 2024 CDC PLACES baseline by three percentage points, starting with residents of the west end of the county, through the mobile clinic partnership led by the hospital and the Tribal health program.",
-          "done": "Every objective names a published baseline, a source, a date, a steward, and a group reached first.",
+          "example": "By June 2029, increase the share of adults in the county who report a routine checkup in the past year from the 2024 CDC PLACES baseline by three percentage points, starting with residents of the west end of the county, through the mobile clinic partnership led by the hospital and the Tribal health program.",
+          "done": "Every objective names a baseline, a source, a date, a steward, and a group reached first.",
           "links": [
             [
               "cardio",
@@ -1401,11 +1402,11 @@
           "who": "The staff lead and the behavioral health department's prevention or BHSA coordinator together.",
           "steps": [
             "Start from the suicide prevention plan the county already has, if one exists, and from the Integrated Plan's selected goal; the component updates them and connects them to the CHIP.",
-            "Data: open the county's suicide death rate on this dashboard (Youth Behavioral Health and Substance Use topic pages and Your County in Detail) and add self-harm emergency visits where published, plus any breakdowns by age or sex. Note the limitations for small numbers.",
+            "Data: review the county's suicide death rate and self-harm emergency visits from your own surveillance data or a published source, plus any breakdowns by age or sex. This dashboard holds the CDPH rate on its Youth Behavioral Health and Substance Use topic pages and in Your County in Detail. Note the limitations for small numbers.",
             "Priority populations: name them from the data and from what listening sessions said about who is struggling and who is isolated. Groups that appear often include middle aged men, veterans, Tribal communities, LGBTQ youth, and people recently discharged from care.",
             "Existing resources: list crisis lines (988 and local), mobile crisis, school programs, firearm safe storage efforts, peer support, faith communities, and the behavioral health department's own prevention activities.",
             "Goals and strategies: write at least one strategy each for prevention (before a crisis), intervention (during), and postvention (after a death), with a lead for each; the CDPH Office of Suicide Prevention's Striving for Zero modules offer tested options.",
-            "Measures: one outcome measure from a published source (the suicide death rate as CDPH publishes it) and two process measures the county tracks itself, such as people trained or safe storage devices distributed.",
+            "Measures: one outcome measure with a regular source (the suicide death rate from CDPH or the county's own vital statistics) and two process measures the county tracks itself, such as people trained or safe storage devices distributed.",
             "Coordination: say how the section connects to the Integrated Plan's goal, to the prevention coalition CDPH asks the county to convene, and to the managed care plan.",
             "Write the section in the CHIP's format, have behavioral health review it, and adopt it with the CHIP."
           ],
@@ -1443,7 +1444,7 @@
             {
               "id": "measures",
               "label": "Outcome measure and two process measures",
-              "hint": "Published source for the outcome"
+              "hint": "Source for the outcome"
             },
             {
               "id": "coord",
@@ -1451,7 +1452,7 @@
               "hint": "How it fits"
             }
           ],
-          "example": "A county with a suicide death rate above California's names middle aged men and veterans as priority populations, sets a firearm safe storage strategy led by the sheriff and a gun shop, a gatekeeper training strategy led by behavioral health, and a postvention protocol led by the coroner's office with the school district, and tracks the published death rate plus trainings and devices distributed.",
+          "example": "A county with a suicide death rate above California's names middle aged men and veterans as priority populations, sets a firearm safe storage strategy led by the sheriff and a gun shop, a gatekeeper training strategy led by behavioral health, and a postvention protocol led by the coroner's office with the school district, and tracks the suicide death rate plus trainings and devices distributed.",
           "done": "The section is in the CHIP, behavioral health has reviewed it, and it names prevention, intervention, and postvention strategies with leads and measures.",
           "links": [
             [
@@ -1509,18 +1510,18 @@
           "use_when": "Meeting 8, after objectives and the workplan exist.",
           "who": "The staff lead or epidemiologist with each workgroup.",
           "steps": [
-            "For each objective, write the data source, the published baseline, the target, how often the value is published or collected, who tracks it, and when the Advisory Committee reviews it.",
+            "For each objective, write the data source, the baseline, the target, how often the value is published or collected, who tracks it, and when the Advisory Committee reviews it.",
             "Add short term indicators (6 to 12 months): activities completed and partners engaged.",
             "Add intermediate indicators (1 to 2 years): practice, policy, or access changes.",
-            "Add long term indicators (3 years): the published outcome measure.",
-            "Note the dashboard refresh schedule so long term values are compared like for like.",
+            "Add long term indicators (3 years): the outcome measure.",
+            "Note each source's update schedule so long term values are compared like for like.",
             "Record the plan in the progress monitoring template."
           ],
           "worksheet": [
             {
               "id": "outcome",
               "label": "Outcome indicators and sources",
-              "hint": "Objective, indicator, source, refresh schedule"
+              "hint": "Objective, indicator, source, update schedule"
             },
             {
               "id": "process",
@@ -1533,7 +1534,7 @@
               "hint": "Names and dates"
             }
           ],
-          "example": "Long term: the CDPH overdose death rate, refreshed on the dashboard each quarter as CDPH publishes. Intermediate: naloxone available at six sites outside the county seat. Short term: two harm reduction trainings held.",
+          "example": "Long term: the CDPH overdose death rate, updated as CDPH publishes. Intermediate: naloxone available at six sites outside the county seat. Short term: two harm reduction trainings held.",
           "done": "Each objective has indicators at three time horizons and a named tracker."
         },
         {
@@ -1639,7 +1640,7 @@
               "hint": "Languages produced; who checked accessibility; URL"
             }
           ],
-          "example": "A 24 page CHIP with two priorities, seven objectives each tied to a published baseline, a four page suicide prevention section co-written with behavioral health, and a partner page with 19 logos.",
+          "example": "A 24 page CHIP with two priorities, seven objectives each tied to a baseline and source, a four page suicide prevention section co-written with behavioral health, and a partner page with 19 logos.",
           "done": "The CHIP is adopted, posted, and sent to behavioral health and the managed care plan."
         }
       ]
@@ -1707,8 +1708,8 @@
       },
       {
         "id": "f_measure",
-        "label": "The published measure we would cite",
-        "hint": "From the dashboard topic pages"
+        "label": "The measure we would cite",
+        "hint": "From your own data, the county's CHA, or the dashboard topic pages"
       }
     ]
   },
@@ -1718,7 +1719,7 @@
       "Each quarter: stewards update the progress monitoring template before the Advisory Committee meets; the committee reviews at risk and off track rows first.",
       "Each March: send the crosswalk to behavioral health before the Integrated Plan annual update draft is due on March 31.",
       "Each September: bring CHIP priorities to the managed care plan before its Community Reinvestment plan is due on September 1.",
-      "Each year: revise the workplan rows that changed, publish a one page progress report, refresh the data chapter from the dashboard's latest refresh, and ask the Advisory Committee whether a parked priority should come forward.",
+      "Each year: revise the workplan rows that changed, publish a one page progress report, refresh the data chapter from your sources' latest data, and ask the Advisory Committee whether a parked priority should come forward.",
       "Year three: begin the next CHA with the partner map and the roster you already have; the next synchronized CHA is due December 31, 2028 and the next CHIP June 30, 2029."
     ]
   },

@@ -90,15 +90,19 @@
     comp.__render = function () {
       var scroller = document.getElementById("phil-dash-scroll");
       var keep = scroller ? scroller.scrollTop : 0;
-      var openDetails = Array.prototype.map.call(document.querySelectorAll("details"), function (d) { return d.open; });
+      var st0 = comp.state || {};
+      var pageKey = (st0.tab || "") + "|" + (st0.tkSub || "");
+      var samePage = comp.__pageKey === pageKey;
+      comp.__pageKey = pageKey;
+      var openDetails = samePage ? Array.prototype.map.call(document.querySelectorAll("details"), function (d) { return d.open; }) : [];
       var vals = comp.renderVals();
       var frag = document.createDocumentFragment();
       renderNodes(tplRoot.childNodes, vals, frag);
       root.innerHTML = "";
       root.appendChild(frag);
       var s2 = document.getElementById("phil-dash-scroll");
-      if (s2) s2.scrollTop = keep;
       Array.prototype.forEach.call(document.querySelectorAll("details"), function (d, i) { if (openDetails[i]) d.open = true; });
+      if (s2) s2.scrollTop = keep;
     };
     comp.__render();
     window.__philComponent = comp;
