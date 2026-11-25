@@ -1332,9 +1332,8 @@ A card with none of these shows the county's value alone.</li>
 </div>
 </sc-if>
 
-<div style="display: flex; flex-direction: column; gap: 12px">
-<div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">What to Do Next, and When</h3>
-<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">The dates ahead where one piece of work serves more than one plan.</p></div>
+<details style="border: 1px solid #dee3e8; border-radius: 10px; padding: 14px 18px; background: #ffffff"><summary style="cursor: pointer; font-size: 16px; font-weight: 700; color: #12365b">{{tk.movesLabel}}</summary>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px">
 <ol style="list-style: none; margin: 0; padding: 0; border: 1px solid #dee3e8; border-radius: 10px; background: #ffffff">
 <sc-for list="{{tk.moves}}" as="mv" hint-placeholder-count="5"><li style="{{mv.rowStyle}}"><div style="flex: 0 0 190px; font-size: 14px; font-weight: 700; color: #30718d">{{mv.when}}</div><div style="flex: 1 1 320px; min-width: 0"><div style="font-size: 16px; font-weight: 700; color: #12365b">{{mv.title}}</div><p style="margin: 4px 0 0; font-size: 14.5px; line-height: 1.55; color: #24384d">{{mv.do}}</p><div style="font-size: 13px; line-height: 1.5; color: #526c87; margin-top: 4px">For: {{mv.whoText}}. Basis: {{mv.why}}.</div></div></li></sc-for>
 </ol>
@@ -1345,7 +1344,7 @@ A card with none of these shows the county's value alone.</li>
 <li style="position: relative; padding: 0 0 20px 22px"><span aria-hidden="true" style="{{it.dot}}"></span><div style="font-size: 13px; font-weight: 600; color: #30718d">{{it.date}}</div><div style="font-size: 16px; font-weight: 700; color: #12365b; margin-top: 2px">{{it.title}}</div><div style="font-size: 14px; line-height: 1.5; color: #24384d; margin-top: 4px; max-width: 820px">{{it.detail}}</div><div style="display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: 12.5px; color: #526c87"><span style="{{it.badge}}">{{it.basis}}</span><span>{{it.basis_note}}</span><sc-for list="{{it.whoList}}" as="w" hint-placeholder-count="3"><span style="display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: 11.5px; font-weight: 600; background: #f4f6f8; color: #12365b; border: 1px solid #dee3e8">{{w}}</span></sc-for><a href="{{it.url}}" target="_blank" rel="noopener" style="color: #496b9c">{{it.source}}</a></div></li>
 </sc-for>
 </ol></details>
-</div>
+</div></details>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
 <div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Your Plan</h3>
@@ -2950,7 +2949,7 @@ A card with none of these shows the county's value alone.</li>
       if (hasCounty) countyLabel = gCounty + " County";
       tk = { howto: howto, plan: plan, after: TK.after, support: supportCard, coreToggle: coreToggle, subs: subs.map(function (sb, si) { var on = tkSub === sb.id; var sp = TK.phases.filter(function (p) { return p.id === sb.id; })[0]; return { n: si + 1, progress: sp ? sp.actions.filter(function (a) { return tkGet(a.id + ":status") === "done"; }).length + " of " + sp.actions.length : "", label: sb.label, pressed: on ? "true" : "false", current: on ? "step" : "false", style: subChip + "display: inline-flex; align-items: center; gap: 8px; " + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), numStyle: "width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; " + (on ? "background: #b8d876; color: #12365b;" : "background: #e8edf2; color: #12365b;"), pick: tkGo(sb.id) }; }),
         pickOpen: !hasCounty || !!s.tkPick, pickExpanded: (!hasCounty || !!s.tkPick) ? "true" : "false", pickLabel: s.tkPick ? "Close" : "Change county", pickToggle: function () { self.setState({ tkPick: !s.tkPick }); }, countyChips: countyChips([], subChip).map(function (c) { c.pick = function () { self.setState({ gCounty: c.name, tkPick: false }); }; return c; }),
-        hasSaved: !hasCounty && tkSaved.length > 0, savedChips: tkSaved.map(function (c) { return { name: c, pick: function () { self.setState({ gCounty: c, tkPick: false }); } }; }), startNext: tkGo(TK.phases[0].id), isStart: tkSub === "start", isPhase: !!phase, isFit: tkSub === "fit", snap: snap, whoChips: whoChips, moves: moves, cal: cal, badge: tkBadge, phaseCards: phaseCards, phase: phase || { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: fit,
+        hasSaved: !hasCounty && tkSaved.length > 0, savedChips: tkSaved.map(function (c) { return { name: c, pick: function () { self.setState({ gCounty: c, tkPick: false }); } }; }), movesLabel: (["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight"][moves.length] || moves.length) + " dates ahead where one piece of work serves more than one plan", startNext: tkGo(TK.phases[0].id), isStart: tkSub === "start", isPhase: !!phase, isFit: tkSub === "fit", snap: snap, whoChips: whoChips, moves: moves, cal: cal, badge: tkBadge, phaseCards: phaseCards, phase: phase || { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: fit,
         trackerFor: hasCounty ? gCounty + " County" : "your county (choose your county at the top of the toolkit to keep a tracker for it)" };
       setTimeout(fillTK, 0);
     }
