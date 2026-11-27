@@ -8,8 +8,13 @@ Writes:
   data/out/hpi_counties.json  every HPI indicator for all California counties and the state, latest year
   data/out/hpi_tracts.json    HPI score and domains for the census tracts in the dashboard counties (2020 tracts)
   data/out/hpi_probe.json     the shape of each API response (fields and a sample row), for checking the pull
+Then shapes them for the dashboard (shape(), which also runs alone: python3 scripts/hpi.py shape):
+  data/out/hpi_page.json      county and state values for the Community Conditions page
+  data/out/hpiCardio.json, hpiEarly.json, hpiYouth.json, hpiHousing.json   topic page measures (standard format)
+  data/out/hpi_geo/<fips>.json  census tract map for each dashboard county: 2020 tract boundaries from the Census Bureau
+                                (cartographic boundary file, 1:500,000) joined to HPI tract percentiles by GEOID
 """
-import os, sys, json, re, time
+import os, sys, json, re, time, io, math, zipfile
 import requests
 
 API = "https://api.healthyplacesindex.org"
@@ -112,12 +117,185 @@ def main():
         probe["hpiscore/tracts/geojson"] = {"error": str(e)}
     json.dump(counties, open(os.path.join(OUT, "hpi_counties.json"), "w"))
     json.dump(tracts, open(os.path.join(OUT, "hpi_tracts.json"), "w"))
+    probe["_pulled"] = time.strftime("%Y-%m-%d", time.gmtime())
     json.dump(probe, open(os.path.join(OUT, "hpi_probe.json"), "w"), indent=1)
-    errors = [k for k, v in probe.items() if "error" in v]
+    errors = [k for k, v in probe.items() if isinstance(v, dict) and "error" in v]
     print(f"Indicators: {len(cat)}. Calls with errors: {len(errors)}")
     for k in errors: print("  ", k, probe[k]["error"])
     if len(errors) > len(probe) // 2: sys.exit(1)
+    shape()
+    tract_maps()
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Shaping for the dashboard. Values are shown as HPI publishes them: shares become percents (multiplied by 100 and
+# rounded to one decimal), and percentiles become whole numbers from 0 to 100. Nothing else is calculated.
+
+DOMAINS = [  # HPI policy action areas and the indicators in each (HPI 3.0)
+    ("economic", "Economic", ["abovepoverty", "employed", "percapitaincome"]),
+    ("education", "Education", ["bachelorsed", "inhighschool", "inpreschool"]),
+    ("transportation", "Transportation", ["automobile", "commute"]),
+    ("social", "Social", ["censusresponse", "voting"]),
+    ("neighborhood", "Neighborhood", ["parkaccess", "retail", "treecanopy"]),
+    ("housing", "Housing", ["homeownership", "houserepair", "ownsevere", "rentsevere", "uncrowded"]),
+    ("clean_enviro", "Clean Environment", ["dieselpm", "h20contam", "ozone", "pm25"]),
+    ("healthcareaccess", "Healthcare Access", ["insured"]),
+]
+# Topic page measures: only HPI indicators with no counterpart already on the dashboard from another source.
+TOPIC_SETS = {
+    "hpiCardio": ["commute", "treecanopy", "ozone", "dieselpm"],
+    "hpiEarly": ["inpreschool"],
+    "hpiYouth": ["inhighschool"],
+    "hpiHousing": ["houserepair", "uncrowded", "homeownership"],
+}
+LOWER_IS_HEALTHIER = {"dieselpm", "h20contam", "ozone", "pm25", "ownsevere", "rentsevere"}
+NAME_OF = {v: k for k, v in COUNTIES.items()}
+LABELS = {  # plain labels for topic page cards, in the dashboard's wording
+    "commute": "Workers ages 16 and older who commute by transit, walking, or cycling",
+    "treecanopy": "Land covered by tree canopy, weighted by the number of people per acre",
+    "ozone": "Ozone on summer days, parts per million (average of the 8 most polluted hours)",
+    "dieselpm": "Diesel particulate matter emissions, tons per year",
+    "inpreschool": "Children ages 3 and 4 enrolled in school",
+    "inhighschool": "Youth ages 15 to 17 enrolled in school",
+    "houserepair": "Households with basic kitchen facilities and plumbing",
+    "uncrowded": "Households that are not crowded",
+    "homeownership": "People who own their home",
+}
+SOURCES = {  # HPI's source names with acronyms spelled out
+    "CES 4.0": "CalEnviroScreen 4.0 (CES 4.0)",
+    "American Community Survey": "American Community Survey (ACS)",
+    "HUD CHAS": "U.S. Department of Housing and Urban Development (HUD) Comprehensive Housing Affordability Strategy (CHAS)",
+    "HCI/National Land Cover Database": "Healthy Communities Indicators (HCI) and National Land Cover Database",
+    "US EPA Smart Location Database": "U.S. Environmental Protection Agency (EPA) Smart Location Database",
+    "UC Berkeley Statewide Database": "UC Berkeley Statewide Database",
+    "2020 Decennial Census": "2020 Decennial Census",
+    "GreenInfo Network": "GreenInfo Network",
+    "Public Health Alliance": "Public Health Alliance of Southern California",
+}
+CITE = ("California Healthy Places Index (HPI) 3.0, Public Health Alliance of Southern California, "
+        "https://www.healthyplacesindex.org")
+
+
+def _num(v, unit):
+    if v is None: return None
+    if unit == "%": return round(v * 100, 1)
+    if unit == "$": return int(round(v))
+    return float(f"{v:.4g}")
+
+
+def _pct(p):
+    return None if p is None else int(round(p * 100))
+
+
+def _clean(s):
+    return (s or "").replace("\u2013", "-").replace("\u2014", ", ").strip()
+
+
+def shape():
+    cat = {i["varname"]: i for i in json.load(open(os.path.join(OUT, "hpi_catalog.json")))}
+    raw = json.load(open(os.path.join(OUT, "hpi_counties.json")))
+    pr = json.load(open(os.path.join(OUT, "hpi_probe.json")))
+    t = time.strptime(pr["_pulled"], "%Y-%m-%d") if "_pulled" in pr else time.gmtime(os.path.getmtime(os.path.join(OUT, "hpi_counties.json")))
+    pulled = time.strftime("%B ", t) + str(t.tm_mday) + time.strftime(", %Y", t)
+    ind = {}
+    for var, e in raw.items():
+        unit = (cat[var].get("unit") or "").strip()
+        rows = {r["geoid"]: r for r in e.get("counties", [])}
+        st = (e.get("state") or [{}])[0]
+        ind[var] = {
+            "title": cat[var]["title"], "unit": unit, "year": str(e.get("yearDisplay") or e.get("year")).replace(" - ", " to "),
+            "def": _clean(cat[var].get("plaindefinition")), "src": SOURCES.get(_clean(cat[var].get("source")), _clean(cat[var].get("source"))), "url": cat[var].get("url") or "",
+            "lower": var in LOWER_IS_HEALTHIER, "n": len(rows),
+            "v": {NAME_OF[g]: _num(rows[g]["value"], unit) for g in COUNTIES.values() if g in rows},
+            "p": {NAME_OF[g]: _pct(rows[g]["percentile"]) for g in COUNTIES.values() if g in rows},
+            "ca": _num(st.get("value"), unit),
+        }
+    page = {"cite": CITE, "pulled": pulled, "domains": [{"id": d, "label": l, "ind": v} for d, l, v in DOMAINS], "ind": ind}
+    json.dump(page, open(os.path.join(OUT, "hpi_page.json"), "w"), separators=(",", ":"))
+    for key, vars_ in TOPIC_SETS.items():
+        measures = []
+        for var in vars_:
+            x, e = ind[var], raw[var]
+            unit = {"%": "percent", "$": "dollars"}.get(x["unit"], x["unit"] or "index")
+            label = LABELS.get(var, x["title"])
+            measures.append({
+                "id": "hpi_" + var, "label": label, "unit": unit, "period": "HPI 3.0, " + x["src"] + " " + x["year"],
+                "values": {c: x["v"].get(c) for c in COUNTIES}, "california": x["ca"], "california_source": "published",
+                "higher_is_worse": x["lower"],
+                "note": (x["def"].rstrip(".") + ". Published by the Public Health Alliance of Southern California in the California Healthy Places Index (HPI) 3.0"
+                         + (", using data from the " + x["src"] if x["src"] else "") + ". The California value is the statewide value HPI publishes for the same indicator."),
+                "source_url": "https://map.healthyplacesindex.org/",
+                "all_ca_counties": {r["name"]: _num(r["value"], x["unit"]) for r in e.get("counties", []) if r.get("value") is not None},
+                "hpi_percentile": x["p"],
+            })
+        json.dump({"key": key, "measures": measures, "geo_note": "County values published by HPI."}, open(os.path.join(OUT, key + ".json"), "w"))
+    print("Shaped HPI page data and", len(TOPIC_SETS), "topic files.")
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Tract maps. Boundaries: US Census Bureau 2020 cartographic boundary file for California census tracts (public domain).
+TRACT_SHP = "https://www2.census.gov/geo/tiger/GENZ2020/shp/cb_2020_06_tract_500k.zip"
+MAP_W = 1000
+
+
+def _path(rings, proj):
+    """SVG path with relative moves on a whole-number grid; drops points that land on the same grid cell."""
+    out = []
+    for ring in rings:
+        pts = []
+        for lon, lat in ring:
+            x, y = proj(lon, lat)
+            if not pts or (x, y) != pts[-1]: pts.append((x, y))
+        if len(pts) < 3: continue
+        s = f"M{pts[0][0]} {pts[0][1]}"
+        px, py = pts[0]
+        for x, y in pts[1:]:
+            s += f"l{x - px} {y - py}"; px, py = x, y
+        out.append(s + "z")
+    return "".join(out)
+
+
+def tract_maps():
+    import shapefile  # pyshp
+    tr = json.load(open(os.path.join(OUT, "hpi_tracts.json")))
+    order = ["hpiscore"] + [d for d, _, _ in DOMAINS]
+    pct = {}
+    for i, var in enumerate(order):
+        for r in tr.get(var, {}).get("rows", []):
+            g = str(r["geoid"]).zfill(11)
+            rec = pct.setdefault(g, {"n": str(r.get("name") or ""), "pop": r.get("population"), "p": [None] * len(order)})
+            rec["p"][i] = _pct(r.get("percentile"))
+    z = zipfile.ZipFile(io.BytesIO(requests.get(TRACT_SHP, timeout=300).content))
+    base = [n[:-4] for n in z.namelist() if n.endswith(".shp")][0]
+    sf = shapefile.Reader(shp=io.BytesIO(z.read(base + ".shp")), dbf=io.BytesIO(z.read(base + ".dbf")))
+    fields = [f[0] for f in sf.fields[1:]]
+    by_county = {}
+    for sr in sf.iterShapeRecords():
+        rec = dict(zip(fields, sr.record))
+        g = rec["GEOID"]
+        if g[:5] not in NAME_OF: continue
+        parts = list(sr.shape.parts) + [len(sr.shape.points)]
+        rings = [sr.shape.points[parts[i]:parts[i + 1]] for i in range(len(parts) - 1)]
+        by_county.setdefault(g[:5], []).append((g, rings))
+    os.makedirs(os.path.join(OUT, "hpi_geo"), exist_ok=True)
+    for fips, tracts in by_county.items():
+        lons = [p[0] for _, rs in tracts for r in rs for p in r]; lats = [p[1] for _, rs in tracts for r in rs for p in r]
+        x0, x1, y0, y1 = min(lons), max(lons), min(lats), max(lats)
+        k = math.cos(math.radians((y0 + y1) / 2))
+        sc = MAP_W / ((x1 - x0) * k)
+        h = int(math.ceil((y1 - y0) * sc))
+        proj = lambda lon, lat: (int(round((lon - x0) * k * sc)), int(round((y1 - lat) * sc)))
+        rows = []
+        for g, rings in sorted(tracts):
+            info = pct.get(g, {"n": g[5:].lstrip("0"), "pop": None, "p": [None] * len(order)})
+            rows.append([g, info["n"], info["pop"], info["p"], _path(rings, proj)])
+        json.dump({"county": NAME_OF[fips], "w": MAP_W, "h": h, "layers": order, "tracts": rows},
+                  open(os.path.join(OUT, "hpi_geo", fips + ".json"), "w"), separators=(",", ":"))
+    sizes = {NAME_OF[f]: os.path.getsize(os.path.join(OUT, "hpi_geo", f + ".json")) // 1024 for f in by_county}
+    print("Tract maps (KB):", sizes)
 
 
 if __name__ == "__main__":
-    main()
+    if sys.argv[1:] == ["shape"]: shape()
+    elif sys.argv[1:] == ["maps"]: tract_maps()
+    else: main()
