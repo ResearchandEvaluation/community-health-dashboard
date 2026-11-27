@@ -1,0 +1,2272 @@
+{
+ "dieselpm/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.33900144963949813,
+    "percentile": 0.017857142857142856,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.01188249010123872,
+    "percentile": 0.8928571428571429,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "dieselpm/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.21867529156489768,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "h20contam/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 188.2959740272333,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 523.9627571969448,
+    "percentile": 0.25,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "h20contam/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 478.2658190116406,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "ozone/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.03464574883179233,
+    "percentile": 0.8928571428571429,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.052117302643924945,
+    "percentile": 0.30357142857142855,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "ozone/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.04903388521843874,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "pm25/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 8.794603705859235,
+    "percentile": 0.30357142857142855,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 8.16959878284099,
+    "percentile": 0.5535714285714286,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "pm25/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 10.179947899811108,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "abovepoverty/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.789292272029695,
+    "percentile": 0.875,
+    "numerator": 1277539,
+    "denominator": 1618588,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.7516699052708282,
+    "percentile": 0.7857142857142857,
+    "numerator": 24757,
+    "denominator": 32936,
+    "se": null
+   }
+  ]
+ },
+ "abovepoverty/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.6910948123409207,
+    "percentile": 1,
+    "numerator": 26375618.99999581,
+    "denominator": 38164978.999993674,
+    "se": null
+   }
+  ]
+ },
+ "employed/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.7648143050467678,
+    "percentile": 0.875,
+    "numerator": 794613,
+    "denominator": 1038962,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.6345363179534034,
+    "percentile": 0.17857142857142858,
+    "numerator": 11112,
+    "denominator": 17512,
+    "se": null
+   }
+  ]
+ },
+ "employed/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.7290903899494141,
+    "percentile": 1,
+    "numerator": 16980660.999997072,
+    "denominator": 23290199.999996196,
+    "se": null
+   }
+  ]
+ },
+ "percapitaincome/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 47314,
+    "percentile": 0.913793103,
+    "numerator": null,
+    "denominator": null,
+    "se": 209.7264438
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 36739,
+    "percentile": 0.724137931,
+    "numerator": null,
+    "denominator": null,
+    "se": 4459.574468
+   }
+  ]
+ },
+ "percapitaincome/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 37382.40266767162,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "bachelorsed/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.47355423156346743,
+    "percentile": 0.9285714285714286,
+    "numerator": 551291,
+    "denominator": 1164156,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.20824845293461966,
+    "percentile": 0.375,
+    "numerator": 5418,
+    "denominator": 26017,
+    "se": null
+   }
+  ]
+ },
+ "bachelorsed/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.3405588026612105,
+    "percentile": 1,
+    "numerator": 8875414.999998458,
+    "denominator": 26061328.999995813,
+    "se": null
+   }
+  ]
+ },
+ "inhighschool/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9773009950248757,
+    "percentile": 0.5094339622641509,
+    "numerator": 53431,
+    "denominator": 54672,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.9536842105263158,
+    "percentile": 0.07547169811320754,
+    "numerator": 906,
+    "denominator": 950,
+    "se": null
+   }
+  ]
+ },
+ "inhighschool/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.9756266733252886,
+    "percentile": 1,
+    "numerator": 1476929.9999997749,
+    "denominator": 1513826.9999997674,
+    "se": null
+   }
+  ]
+ },
+ "inpreschool/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.5735949367088607,
+    "percentile": 0.875,
+    "numerator": 22657,
+    "denominator": 39500,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.20069204152249134,
+    "percentile": 0,
+    "numerator": 116,
+    "denominator": 578,
+    "se": null
+   }
+  ]
+ },
+ "inpreschool/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.49608928962330257,
+    "percentile": 1,
+    "numerator": 503102.99999991566,
+    "denominator": 1014137.9999998364,
+    "se": null
+   }
+  ]
+ },
+ "insured/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9416356297185835,
+    "percentile": 0.9107142857142857,
+    "numerator": 989563,
+    "denominator": 1050898,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.9256718448803719,
+    "percentile": 0.7857142857142857,
+    "numerator": 16327,
+    "denominator": 17638,
+    "se": null
+   }
+  ]
+ },
+ "insured/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.8930463929839842,
+    "percentile": 1,
+    "numerator": 21027781.99999655,
+    "denominator": 23546124.99999612,
+    "se": null
+   }
+  ]
+ },
+ "homeownership/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.5382634405780367,
+    "percentile": 0.16071428571428573,
+    "numerator": 307666,
+    "denominator": 571590,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.7637417692527912,
+    "percentile": 0.9821428571428571,
+    "numerator": 10671,
+    "denominator": 13972,
+    "se": null
+   }
+  ]
+ },
+ "homeownership/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.5493921482340322,
+    "percentile": 1,
+    "numerator": 7084864.999998978,
+    "denominator": 12895824.99999789,
+    "se": null
+   }
+  ]
+ },
+ "houserepair/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9890529671660019,
+    "percentile": 0.5178571428571429,
+    "numerator": 557182,
+    "denominator": 563349,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.9867986798679867,
+    "percentile": 0.19642857142857142,
+    "numerator": 13455,
+    "denominator": 13635,
+    "se": null
+   }
+  ]
+ },
+ "houserepair/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.9870329640303321,
+    "percentile": 1,
+    "numerator": 12570914.999997936,
+    "denominator": 12736063.9999979,
+    "se": null
+   }
+  ]
+ },
+ "ownsevere/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.09018030070083662,
+    "percentile": 0.8214285714285714,
+    "numerator": 27099,
+    "denominator": 300498,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.11564299424184261,
+    "percentile": 0.21428571428571427,
+    "numerator": 1205,
+    "denominator": 10420,
+    "se": null
+   }
+  ]
+ },
+ "ownsevere/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.11086528865484227,
+    "percentile": 1,
+    "numerator": 770954.9999998882,
+    "denominator": 6953979.999998991,
+    "se": null
+   }
+  ]
+ },
+ "rentsevere/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.22871110975943554,
+    "percentile": 0.75,
+    "numerator": 60162,
+    "denominator": 263048,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.2795031055900621,
+    "percentile": 0.16071428571428573,
+    "numerator": 900,
+    "denominator": 3220,
+    "se": null
+   }
+  ]
+ },
+ "rentsevere/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.2619450933973647,
+    "percentile": 1,
+    "numerator": 1515453.9999997036,
+    "denominator": 5785387.999998895,
+    "se": null
+   }
+  ]
+ },
+ "uncrowded/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9212809881208559,
+    "percentile": 0.25,
+    "numerator": 526595,
+    "denominator": 571590,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.9740194675064414,
+    "percentile": 0.8214285714285714,
+    "numerator": 13609,
+    "denominator": 13972,
+    "se": null
+   }
+  ]
+ },
+ "uncrowded/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.9173409223527798,
+    "percentile": 1,
+    "numerator": 11829867.999998102,
+    "denominator": 12895824.999997891,
+    "se": null
+   }
+  ]
+ },
+ "parkaccess/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9318878398508247,
+    "percentile": 0.9107142857142857,
+    "numerator": 1391316,
+    "denominator": 1493008,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.3695105676422209,
+    "percentile": 0.03571428571428571,
+    "numerator": 11906,
+    "denominator": 32221,
+    "se": null
+   }
+  ]
+ },
+ "parkaccess/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.7674051799834009,
+    "percentile": 1,
+    "numerator": 28063800.999995038,
+    "denominator": 36569730.999994114,
+    "se": null
+   }
+  ]
+ },
+ "retail/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 7.299785828926223,
+    "percentile": 0.875,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.1458236643048826,
+    "percentile": 0.07142857142857142,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "retail/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 7.201027494103364,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "treecanopy/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.08331541561846569,
+    "percentile": 0.375,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.3599629456451572,
+    "percentile": 0.9285714285714286,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "treecanopy/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.07595666997157281,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "censusresponse/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.7630667563653286,
+    "percentile": 0.875,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.6427543743524806,
+    "percentile": 0.30357142857142855,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "censusresponse/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.7113802217930534,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "voting/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.8065547060379888,
+    "percentile": 0.5,
+    "numerator": 771251,
+    "denominator": 956229,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.8690033853521592,
+    "percentile": 0.9285714285714286,
+    "numerator": 21049,
+    "denominator": 24222,
+    "se": null
+   }
+  ]
+ },
+ "voting/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.7904746291465439,
+    "percentile": 1,
+    "numerator": 17314877.999997254,
+    "denominator": 21904406.999996576,
+    "se": null
+   }
+  ]
+ },
+ "commute/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.22264743279118987,
+    "percentile": 0.9642857142857143,
+    "numerator": 161274,
+    "denominator": 724347,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.025279403938265034,
+    "percentile": 0.10714285714285714,
+    "numerator": 285,
+    "denominator": 11274,
+    "se": null
+   }
+  ]
+ },
+ "commute/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.08940131327255668,
+    "percentile": 1,
+    "numerator": 1512181.9999996135,
+    "denominator": 16914538.999997046,
+    "se": null
+   }
+  ]
+ },
+ "automobile/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9086373099599363,
+    "percentile": 0.017857142857142856,
+    "numerator": 519368,
+    "denominator": 571590,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": 0.942098482679645,
+    "percentile": 0.4642857142857143,
+    "numerator": 13163,
+    "denominator": 13972,
+    "se": null
+   }
+  ]
+ },
+ "automobile/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.9295199803037085,
+    "percentile": 1,
+    "numerator": 11986926.999998115,
+    "denominator": 12895824.999997895,
+    "se": null
+   }
+  ]
+ },
+ "hpiscore/counties": {
+  "n": 57,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.4196225866498102,
+    "percentile": 0.9285714285714286,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06005",
+    "name": "Amador",
+    "population": 40474,
+    "value": -0.13205691059337843,
+    "percentile": 0.5535714285714286,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "hpiscore/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.0032616582368195273,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "hpiscore/tracts": {
+  "n": 8790,
+  "kept": 3683,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.36397504636065,
+    "percentile": 0.996473265073948,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 1.43265300647307,
+    "percentile": 0.997838452787258,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "education/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.30806655739140903,
+    "percentile": 0.9298245614035088,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.6842105263157895,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "education/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": -0.011960621451272552,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "education/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.36193075572174,
+    "percentile": 0.990671217292378,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 1.40496714723207,
+    "percentile": 0.993970420932878,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "economic/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.4756936703299716,
+    "percentile": 0.9122807017543859,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.6491228070175439,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "economic/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": -0.002606846171636859,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "economic/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.76615343946992,
+    "percentile": 0.986575654152446,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 1.75492493595119,
+    "percentile": 0.985665529010239,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "neighborhood/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.1850583765646239,
+    "percentile": 0.631578947368421,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.43859649122807015,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "neighborhood/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": -0.016767374934310346,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "neighborhood/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.21707646248197,
+    "percentile": 0.976336746302617,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 0.686820593511994,
+    "percentile": 0.932764505119454,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "social/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.3705897424209049,
+    "percentile": 0.7894736842105263,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.5614035087719298,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "social/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.03790236471283711,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "social/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.02218884311812,
+    "percentile": 0.888850967007964,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 1.21252028605418,
+    "percentile": 0.939362912400455,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "housing/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.17146483240500995,
+    "percentile": 0.40350877192982454,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.08771929824561403,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "housing/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.02545728274352826,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "housing/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.0400711935496,
+    "percentile": 0.982480091012514,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 0.955453259065759,
+    "percentile": 0.969852104664391,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "transportation/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.42256810291092695,
+    "percentile": 0.9473684210526315,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.6491228070175439,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "transportation/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": -0.0023311084505860985,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "transportation/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 0.978823479082677,
+    "percentile": 0.975995449374289,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 1.77291286199775,
+    "percentile": 0.999317406143345,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "clean_enviro/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.7235270667497345,
+    "percentile": 0.7017543859649122,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0.21052631578947367,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "clean_enviro/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": -0.005210667519949944,
+    "percentile": 1,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "clean_enviro/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 1.13252593291917,
+    "percentile": 0.985779294653015,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 0.68228126261605,
+    "percentile": 0.845620022753129,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "healthcareaccess/counties": {
+  "n": 58,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001",
+    "name": "Alameda",
+    "population": 1682353,
+    "value": 0.9416356297185835,
+    "percentile": 0.9122807017543859,
+    "numerator": 989563,
+    "denominator": 1050898,
+    "se": null
+   },
+   {
+    "geoid": "06003",
+    "name": "Alpine",
+    "population": 1204,
+    "value": 0,
+    "percentile": 0,
+    "numerator": null,
+    "denominator": null,
+    "se": null
+   }
+  ]
+ },
+ "healthcareaccess/state": {
+  "n": 1,
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06",
+    "name": "California",
+    "population": 39538223,
+    "value": 0.8930463929839838,
+    "percentile": 1,
+    "numerator": 21027781.999996543,
+    "denominator": 23546124.999996122,
+    "se": null
+   }
+  ]
+ },
+ "healthcareaccess/tracts": {
+  "n": 9104,
+  "kept": 3820,
+  "geoidField": "geoid",
+  "fields": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "sample": [
+   {
+    "geoid": "06001400100",
+    "name": "4001",
+    "population": 3038,
+    "value": 0.988432620011567,
+    "percentile": 0.970076231653203,
+    "numerator": 1709,
+    "denominator": 1729,
+    "se": null
+   },
+   {
+    "geoid": "06001400200",
+    "name": "4002",
+    "population": 2001,
+    "value": 0.975715524718127,
+    "percentile": 0.909887359198999,
+    "numerator": 1125,
+    "denominator": 1153,
+    "se": null
+   }
+  ]
+ },
+ "hpiscore/tracts/geojson": {
+  "n": 8790,
+  "kept": 3683,
+  "geoidField": "geoid",
+  "bytesKept": 4883694,
+  "properties": [
+   "geoid",
+   "name",
+   "population",
+   "value",
+   "percentile",
+   "numerator",
+   "denominator",
+   "se"
+  ],
+  "geometryType": "MultiPolygon"
+ }
+}

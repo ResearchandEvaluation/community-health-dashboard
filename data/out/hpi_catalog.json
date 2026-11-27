@@ -1,0 +1,1101 @@
+[
+ {
+  "varname": "dieselpm",
+  "title": "Diesel PM",
+  "source": "CES 4.0",
+  "unit": "tons/year",
+  "url": "https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-40",
+  "plaindefinition": "Annual amount of particulate pollution (very small particles) from diesel sources, measured in tons per year.",
+  "technicaldefinition": "Spatial distribution of gridded diesel PM emissions from on-road and non-road sources.",
+  "dates": [
+   2012,
+   2014,
+   2016
+  ],
+  "datesDisplay": [
+   "2012",
+   "2016"
+  ],
+  "year": "2016",
+  "geographies": [
+   "tracts",
+   "congressional_district",
+   "mssa",
+   "elementary_school_districts",
+   "zips",
+   "state",
+   "mpo",
+   "counties",
+   "state_senate_districts",
+   "cbsa",
+   "state_assembly_districts",
+   "unified_school_districts",
+   "secondary_school_districts",
+   "places",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "h20contam",
+  "title": "Drinking Water Contaminants",
+  "source": "CES 4.0",
+  "unit": "",
+  "url": "https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-40",
+  "plaindefinition": "Index score combining information about 13 contaminants and 2 types of water quality violations that are sometimes found when drinking water samples are tested. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "CalEnviroScreen 4.0 drinking water contaminant index for selected contaminants",
+  "dates": [
+   2013,
+   2019
+  ],
+  "datesDisplay": [
+   "2005 - 2013",
+   "2011 - 2019"
+  ],
+  "year": "2011 - 2019",
+  "geographies": [
+   "tracts",
+   "counties",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "elementary_school_districts",
+   "mssa",
+   "mpo",
+   "congressional_district",
+   "unified_school_districts",
+   "places",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "cbsa",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "ozone",
+  "title": "Ozone",
+  "source": "CES 4.0",
+  "unit": "ppm",
+  "url": "https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-40",
+  "plaindefinition": "Average amount of ozone in the air during the most polluted 8 hours of summer days, measured in parts per million.",
+  "technicaldefinition": "Mean of summer months (May-October) of the daily maximum 8-hour ozone concentration (ppm), averaged over three years.",
+  "dates": [
+   2014,
+   2018
+  ],
+  "datesDisplay": [
+   "2012 - 2014",
+   "2016 - 2018"
+  ],
+  "year": "2017 - 2019",
+  "geographies": [
+   "tracts",
+   "unified_school_districts",
+   "congressional_district",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "zips",
+   "state",
+   "state_assembly_districts",
+   "places",
+   "mpo",
+   "counties",
+   "state_senate_districts",
+   "secondary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "pm25",
+  "title": "PM 2.5",
+  "source": "CES 4.0",
+  "unit": "\u00b5g/m\u00b3",
+  "url": "https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-40",
+  "plaindefinition": "Yearly average of fine particulate matter concentration (very small particles from vehicle tailpipes, tires and brakes, powerplants, factories, burning wood, construction dust, and many other sources), measured in micrograms/meter^3.",
+  "technicaldefinition": "Annual mean concentration of PM2.5 (weighted average of measured monitor concentrations and satellite observations, microgram/m^3), over three years.",
+  "dates": [
+   2014,
+   2017
+  ],
+  "datesDisplay": [
+   "2012 - 2014",
+   "2015 - 2017"
+  ],
+  "year": "2015 - 2017",
+  "geographies": [
+   "tracts",
+   "cbsa",
+   "congressional_district",
+   "elementary_school_districts",
+   "mpo",
+   "unified_school_districts",
+   "mssa",
+   "secondary_school_districts",
+   "counties",
+   "state_assembly_districts",
+   "places",
+   "zips",
+   "state",
+   "state_senate_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "abovepoverty",
+  "title": "Above Poverty",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of people earning more than 200% of federal poverty level.",
+  "technicaldefinition": "Percentage of the population with an income exceeding 200% of federal poverty level.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "mpo",
+   "places",
+   "congressional_district",
+   "elementary_school_districts",
+   "mssa",
+   "zips",
+   "state",
+   "state_senate_districts",
+   "cbsa",
+   "state_assembly_districts",
+   "secondary_school_districts",
+   "counties",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "employed",
+  "title": "Employed",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of people aged 20-64 with a job. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of population aged 20-64 who are employed.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "places",
+   "mssa",
+   "elementary_school_districts",
+   "unified_school_districts",
+   "state_assembly_districts",
+   "cbsa",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "congressional_district",
+   "counties",
+   "state_senate_districts",
+   "mpo",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "percapitaincome",
+  "title": "Per Capita Income",
+  "source": "American Community Survey",
+  "unit": "$",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Average income computed for every person in a particular group.",
+  "technicaldefinition": "Per capita income in the past 12 months (in 2020 inflation-adjusted dollars).",
+  "dates": [
+   2019
+  ],
+  "datesDisplay": [
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "mpo",
+   "congressional_district",
+   "zips",
+   "state",
+   "elementary_school_districts",
+   "counties",
+   "places",
+   "secondary_school_districts",
+   "mssa",
+   "unified_school_districts",
+   "state_senate_districts",
+   "cbsa",
+   "state_assembly_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "bachelorsed",
+  "title": "Bachelor's Education or Higher",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of people over age 25 with a bachelor's education or higher. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of population over age 25 with a bachelor's education or higher.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "cbsa",
+   "congressional_district",
+   "mpo",
+   "state_senate_districts",
+   "mssa",
+   "state_assembly_districts",
+   "counties",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "places",
+   "unified_school_districts",
+   "elementary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "inhighschool",
+  "title": "High School Enrollment",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of 15-17 year olds in school.",
+  "technicaldefinition": "Percentage of 15-17 year olds enrolled in school.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "cbsa",
+   "state_senate_districts",
+   "congressional_district",
+   "places",
+   "mpo",
+   "elementary_school_districts",
+   "unified_school_districts",
+   "secondary_school_districts",
+   "state_assembly_districts",
+   "counties",
+   "mssa",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "inpreschool",
+  "title": "Preschool Enrollment",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percentage of 3 and 4 year olds in school.",
+  "technicaldefinition": "Percentage of 3 and 4 year olds enrolled in school.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "elementary_school_districts",
+   "cbsa",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "mssa",
+   "unified_school_districts",
+   "state_assembly_districts",
+   "congressional_district",
+   "mpo",
+   "counties",
+   "state_senate_districts",
+   "places",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "insured",
+  "title": "Insured Adults",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of adults aged 19 to 64 years with health insurance. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of adults aged 19 to 64 years currently insured.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "congressional_district",
+   "secondary_school_districts",
+   "state_assembly_districts",
+   "counties",
+   "cbsa",
+   "mpo",
+   "state_senate_districts",
+   "mssa",
+   "unified_school_districts",
+   "places",
+   "elementary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "homeownership",
+  "title": "Homeownership",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of people who own their home.",
+  "technicaldefinition": "Percentage of occupied housing units occupied by property owners.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "elementary_school_districts",
+   "cbsa",
+   "mpo",
+   "unified_school_districts",
+   "congressional_district",
+   "state_assembly_districts",
+   "counties",
+   "places",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "state_senate_districts",
+   "mssa",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "houserepair",
+  "title": "Housing Habitability",
+  "source": "HUD CHAS",
+  "unit": "%",
+  "url": "https://www.huduser.gov/portal/datasets/cp.html",
+  "plaindefinition": "Percent of households with basic kitchen facilities and plumbing. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percent of households with kitchen facilities and plumbing.",
+  "dates": [
+   2014,
+   2017
+  ],
+  "datesDisplay": [
+   "2010 - 2014",
+   "2013 - 2017"
+  ],
+  "year": "2013 - 2017",
+  "geographies": [
+   "tracts",
+   "state_senate_districts",
+   "mpo",
+   "counties",
+   "elementary_school_districts",
+   "secondary_school_districts",
+   "zips",
+   "state",
+   "places",
+   "state_assembly_districts",
+   "cbsa",
+   "mssa",
+   "congressional_district",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "ownsevere",
+  "title": "Low-Income Homeowner Severe Housing Cost Burden",
+  "source": "HUD CHAS",
+  "unit": "%",
+  "url": "https://www.huduser.gov/portal/datasets/cp.html",
+  "plaindefinition": "Percent of owner-occupied households that are low-income and have housing costs exceeding 50% of income. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percent of owner-occupied households that are low-income (household income is less than or equal to 80% of the HUD area median family income) and have housing costs exceeding 50% of income.",
+  "dates": [
+   2014,
+   2017
+  ],
+  "datesDisplay": [
+   "2010 - 2014",
+   "2013 - 2017"
+  ],
+  "year": "2013 - 2017",
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "counties",
+   "unified_school_districts",
+   "secondary_school_districts",
+   "places",
+   "congressional_district",
+   "state_assembly_districts",
+   "elementary_school_districts",
+   "mssa",
+   "mpo",
+   "state_senate_districts",
+   "cbsa",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "rentsevere",
+  "title": "Low-Income Renter Severe Housing Cost Burden",
+  "source": "HUD CHAS",
+  "unit": "%",
+  "url": "https://www.huduser.gov/portal/datasets/cp.html",
+  "plaindefinition": "Percent of renter-occupied households that are low-income and have housing costs exceeding 50% of income. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percent of renter-occupied households that are low-income (household income is less than or equal to 80% of the HUD area median family income) and have housing costs exceeding 50% of income.",
+  "dates": [
+   2014,
+   2017
+  ],
+  "datesDisplay": [
+   "2010 - 2014",
+   "2013 - 2017"
+  ],
+  "year": "2013 - 2017",
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "counties",
+   "secondary_school_districts",
+   "state_senate_districts",
+   "mpo",
+   "congressional_district",
+   "mssa",
+   "elementary_school_districts",
+   "cbsa",
+   "unified_school_districts",
+   "state_assembly_districts",
+   "places",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "uncrowded",
+  "title": "Uncrowded Housing",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of households that are not crowded. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of households with 1 or fewer occupants per room.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "secondary_school_districts",
+   "elementary_school_districts",
+   "mpo",
+   "state_senate_districts",
+   "congressional_district",
+   "unified_school_districts",
+   "counties",
+   "places",
+   "mssa",
+   "zips",
+   "state",
+   "cbsa",
+   "state_assembly_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "parkaccess",
+  "title": "Park Access",
+  "source": "GreenInfo Network",
+  "unit": "%",
+  "url": "https://www.cdph.ca.gov/Programs/OHE/Pages/HCI-Search.aspx",
+  "plaindefinition": "Percent of people living within walkable distance (half-mile) of a park, beach, or open space. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percent of the population living within a half-mile of a park, beach, or open space greater than 1 acre.",
+  "dates": [
+   2010,
+   2017
+  ],
+  "datesDisplay": [
+   "2010",
+   "2017"
+  ],
+  "year": "2017",
+  "geographies": [
+   "tracts",
+   "cbsa",
+   "zips",
+   "state",
+   "state_senate_districts",
+   "state_assembly_districts",
+   "places",
+   "mpo",
+   "unified_school_districts",
+   "counties",
+   "mssa",
+   "secondary_school_districts",
+   "congressional_district",
+   "elementary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "retail",
+  "title": "Retail Density",
+  "source": "US EPA Smart Location Database",
+  "unit": "jobs per acre",
+  "url": "https://www.epa.gov/smartgrowth/smart-location-mapping#SLD",
+  "plaindefinition": "Number of retail, entertainment, services, and education jobs per acre.",
+  "technicaldefinition": "Gross retail, entertainment, services, and education employment density (jobs/acre) on unprotected land.",
+  "dates": [
+   2010,
+   2021
+  ],
+  "datesDisplay": [
+   "2010",
+   "2021"
+  ],
+  "year": "2021",
+  "geographies": [
+   "tracts",
+   "counties",
+   "cbsa",
+   "mpo",
+   "secondary_school_districts",
+   "state_assembly_districts",
+   "unified_school_districts",
+   "congressional_district",
+   "state_senate_districts",
+   "zips",
+   "state",
+   "mssa",
+   "places",
+   "elementary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "treecanopy",
+  "title": "Tree Canopy",
+  "source": "HCI/National Land Cover Database",
+  "unit": "%",
+  "url": "https://www.cdph.ca.gov/Programs/OHE/Pages/HCI-Search.aspx",
+  "plaindefinition": "Percent of land with tree canopy (weighted by number of people per acre).",
+  "technicaldefinition": "Population-weighted percentage of the census tract area with tree canopy.",
+  "dates": [
+   2011
+  ],
+  "datesDisplay": [
+   "2011"
+  ],
+  "year": "2011",
+  "geographies": [
+   "tracts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "places",
+   "elementary_school_districts",
+   "state_senate_districts",
+   "mpo",
+   "secondary_school_districts",
+   "cbsa",
+   "mssa",
+   "zips",
+   "state",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "censusresponse",
+  "title": "Census Self-Response Rate",
+  "source": "2020 Decennial Census",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of households who completed the decennial census.",
+  "technicaldefinition": "Percent of households who completed decennial census forms online, by mail, or by phone.",
+  "dates": [
+   2020
+  ],
+  "datesDisplay": [
+   "2020"
+  ],
+  "year": "2020",
+  "geographies": [
+   "tracts",
+   "secondary_school_districts",
+   "places",
+   "mpo",
+   "counties",
+   "mssa",
+   "zips",
+   "state",
+   "state_senate_districts",
+   "unified_school_districts",
+   "cbsa",
+   "state_assembly_districts",
+   "congressional_district",
+   "elementary_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "voting",
+  "title": "Voting",
+  "source": "UC Berkeley Statewide Database",
+  "unit": "%",
+  "url": "https://statewidedatabase.org/",
+  "plaindefinition": "Percent of registered voters who voted in the general election. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percent of registered voters who voted in the general election.",
+  "dates": [
+   2012,
+   2016,
+   2020
+  ],
+  "datesDisplay": [
+   "2012",
+   "2016",
+   "2020"
+  ],
+  "year": "2022",
+  "geographies": [
+   "tracts",
+   "counties",
+   "mssa",
+   "state_senate_districts",
+   "congressional_district",
+   "state_assembly_districts",
+   "places",
+   "mpo",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "cbsa",
+   "elementary_school_districts",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "commute",
+  "title": "Active Commuting",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of workers (16 years and older) who commute to work by transit, walking, or cycling. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of workers (16 years and older) who commute to work by transit, walking, or cycling.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "places",
+   "elementary_school_districts",
+   "secondary_school_districts",
+   "counties",
+   "unified_school_districts",
+   "mssa",
+   "state_senate_districts",
+   "mpo",
+   "congressional_district",
+   "cbsa",
+   "state_assembly_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "automobile",
+  "title": "Automobile Access",
+  "source": "American Community Survey",
+  "unit": "%",
+  "url": "https://data.census.gov",
+  "plaindefinition": "Percent of households with access to an automobile. This is a Well-Being in the Nation (WIN) indicator.",
+  "technicaldefinition": "Percentage of households with access to an automobile.",
+  "dates": [
+   2015,
+   2019
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2015 - 2019"
+  ],
+  "year": "2015 - 2019",
+  "geographies": [
+   "tracts",
+   "congressional_district",
+   "zips",
+   "state",
+   "state_assembly_districts",
+   "mssa",
+   "secondary_school_districts",
+   "state_senate_districts",
+   "places",
+   "cbsa",
+   "counties",
+   "elementary_school_districts",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "hpiscore",
+  "title": "HPI Score",
+  "source": "Public Health Alliance",
+  "unit": "",
+  "url": "https://thepublichealthalliance.org/",
+  "plaindefinition": "Index measure of community conditions linked to life expectancy at birth.",
+  "technicaldefinition": "Total HPI 3.0 Score",
+  "dates": [
+   2015,
+   2022
+  ],
+  "datesDisplay": [
+   "2011 - 2015",
+   "2022"
+  ],
+  "year": "2022",
+  "geographies": [
+   "tracts",
+   "elementary_school_districts",
+   "unified_school_districts",
+   "secondary_school_districts",
+   "congressional_district",
+   "state_senate_districts",
+   "zips",
+   "state",
+   "mpo",
+   "places",
+   "counties",
+   "cbsa",
+   "mssa",
+   "state_assembly_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "education",
+  "title": "Education Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "economic",
+  "title": "Economic Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "neighborhood",
+  "title": "Neighborhood Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "social",
+  "title": "Social Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "housing",
+  "title": "Housing Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "transportation",
+  "title": "Transportation Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "clean_enviro",
+  "title": "Clean Environment Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [
+   "2021"
+  ],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ },
+ {
+  "varname": "healthcareaccess",
+  "title": "Healthcare Access Domain",
+  "source": null,
+  "unit": null,
+  "url": null,
+  "plaindefinition": null,
+  "technicaldefinition": null,
+  "dates": [
+   2021
+  ],
+  "datesDisplay": [],
+  "year": null,
+  "geographies": [
+   "tracts",
+   "zips",
+   "state",
+   "secondary_school_districts",
+   "counties",
+   "congressional_district",
+   "state_assembly_districts",
+   "state_senate_districts",
+   "places",
+   "elementary_school_districts",
+   "cbsa",
+   "mssa",
+   "mpo",
+   "unified_school_districts",
+   "unincorporated"
+  ]
+ }
+]
