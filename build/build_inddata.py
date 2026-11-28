@@ -3,7 +3,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..', 'data', 'out')
 sys.path.insert(0, os.path.join(HERE, '..', 'scripts'))
 from plain import P
-SKIP = {'ecm_tab', 'strata', '_refresh', 'bhwork', 'edVisits', 'mcp_plans', 'mcpEnroll', 'kImmun', 'bhPlanInfo'}
+SKIP = {'hpi_catalog', 'hpi_counties', 'hpi_tracts', 'hpi_probe', 'hpi_page', 'ecm_tab', 'strata', '_refresh', 'bhwork', 'edVisits', 'mcp_plans', 'mcpEnroll', 'kImmun', 'bhPlanInfo'}
 SPLIT = {'bhPerf': [('bhPerfAccess', [0,1,2,3]), ('bhPerfServices', [4,5,6]), ('bhPerfFoster', [7,8])], 'bhPlan': [('bhPlanServed', [0,2,4]), ('bhPlanCost', [1,3,5]), ('bhPlanAlloc', [6,7,8]), ('bhPlanRevenue', [9]), ('bhPlanReserve', [10,11])], 'bhPen': [('bhPen', [0,1])], 'wic': [('wic', [0,3])]}
 D={}
 for f in sorted(glob.glob(os.path.join(OUT, "*.json"))):
