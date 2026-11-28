@@ -32,6 +32,7 @@ jobs:
       - name: Pull data from every source
         env:
           CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+          HPI_API_KEY: ${{ secrets.HPI_API_KEY }}
         run: python3 scripts/run_all.py ${{ github.event.inputs.sources }}
       - name: Check the data
         run: python3 build/check_data.py
