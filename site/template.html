@@ -1285,6 +1285,17 @@ A card with none of these shows the county's value alone.</li>
 
 <sc-if value="{{showConditions}}" hint-placeholder-val="{{false}}">
 <section aria-labelledby="hpi-h" style="display: flex; flex-direction: column; gap: 32px">
+<sc-if value="{{noCounty}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 id="hpi-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Community Conditions</h2><p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.55">The California Healthy Places Index (HPI) measures 23 community conditions that shape health and life expectancy, such as income, education, housing, transportation, clean air and water, and health insurance. It gives every county and census tract a percentile: the higher the percentile, the healthier the community conditions compared with the rest of California.</p></div>
+<div style="border: 2px dashed #73889e; border-radius: 10px; padding: 24px 28px; background: #f8fafb; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 17px; font-weight: 700; color: #12365b">Choose a county to see its community conditions and a map of its census tracts.</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<sc-for list="{{nav.chips}}" as="c" hint-placeholder-count="18">
+<button type="button" onClick="{{c.pick}}" aria-pressed="{{c.pressed}}" aria-label="{{c.aria}}" style="{{c.style}}">{{c.name}}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
 <div id="phil-hpi" style="display: flex; flex-direction: column; gap: 32px"></div>
 </section>
 </sc-if>
@@ -2729,7 +2740,7 @@ A card with none of these shows the county's value alone.</li>
       var h = '<div style="display: flex; flex-direction: column; gap: 10px">'
         + '<h2 id="hpi-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Community Conditions in ' + esc(county) + ' County</h2>'
         + '<p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.55">The California Healthy Places Index (HPI), from the Public Health Alliance of Southern California, measures 23 community conditions that shape health and life expectancy, such as income, education, housing, transportation, clean air and water, and health insurance. HPI groups them into eight policy action areas and gives every county and census tract a percentile: the higher the percentile, the healthier the community conditions compared with the rest of California.</p>'
-        + '<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Values appear as HPI publishes them, with the Alliance\'s permission. Colors follow the HPI map: dark blue for the least healthy quarter of places through dark green for the healthiest.</p></div>';
+        + '<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Source: <a href="https://www.healthyplacesindex.org/" target="_blank" rel="noopener" style="' + LINK + '">California Healthy Places Index</a>, Public Health Alliance of Southern California. Questions about HPI: <a href="mailto:AskHPI@thepublichealthalliance.org" style="' + LINK + '">AskHPI@thepublichealthalliance.org</a></p></div>';
       // County summary and the eight policy action areas
       h += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">';
       h += '<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">'
@@ -2762,10 +2773,10 @@ A card with none of these shows the county's value alone.</li>
         + '<div id="hpi-map" style="flex: 2 1 420px; min-width: 0; box-sizing: border-box; background: #f8fafb; border: 1px solid #dee3e8; border-radius: 10px; padding: 10px; min-height: 260px; display: flex; align-items: center; justify-content: center; color: #526c87; font-size: 14px">Loading the tract map...</div>'
         + '<div id="hpi-info" aria-live="polite" style="flex: 1 1 260px; min-width: 0; box-sizing: border-box; background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 16px 18px; font-size: 14px; line-height: 1.5">Select or hover over a tract on the map.</div></div>'
         + '<div id="hpi-low"></div>'
-        + '<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #526c87">Tract percentiles rank each tract against every California tract, so they read differently from the county percentile above. HPI 3.0 data are available on 2010 and 2020 census tract boundaries with the same underlying data; this map uses the 2020 boundaries, and HPI publishes no value for some 2020 tracts (shown in gray). Tract boundaries: U.S. Census Bureau, 2020 cartographic boundary file.</p></section>';
+        + '<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #526c87">Tract percentiles rank each tract against every California census tract. Gray tracts have no published HPI value. 2020 tract boundaries: U.S. Census Bureau.</p></section>';
       // Indicator table
       h += '<section aria-labelledby="hpi-tab-h" style="display: flex; flex-direction: column; gap: 10px"><h3 id="hpi-tab-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">The 23 Conditions</h3>'
-        + '<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5">The county value and the California value both come from HPI. The percentile ranks the county among California counties, where a higher percentile means healthier conditions.</p>'
+        + '<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5">The percentile ranks the county among California counties; a higher percentile means healthier conditions.</p>'
         + '<div style="overflow-x: auto; border: 1px solid #dee3e8; border-radius: 10px; background: #ffffff"><table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 680px">'
         + '<thead><tr style="background: #f3e9d7; text-align: left"><th scope="col" style="padding: 10px 12px">Condition</th><th scope="col" style="padding: 10px 12px">' + esc(county) + ' County</th><th scope="col" style="padding: 10px 12px">California</th><th scope="col" style="padding: 10px 12px">County percentile</th><th scope="col" style="padding: 10px 12px">Data years and source</th></tr></thead><tbody>';
       HPIP.domains.forEach(function (d) {
@@ -2784,7 +2795,7 @@ A card with none of these shows the county's value alone.</li>
       h += '<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><a href="https://map.healthyplacesindex.org/" target="_blank" rel="noopener" style="' + PILL + '">Healthy Places Index map (opens a new tab)</a>'
         + '<a href="https://policies.healthyplacesindex.org/" target="_blank" rel="noopener" style="' + PILL + '">HPI Policy Action Guides (opens a new tab)</a>'
         + '<button type="button" data-hpi-go="toolkit" style="' + PILL + '; cursor: pointer">Use this in the CHA and CHIP Toolkit</button></div>'
-        + '<p style="margin: 0; max-width: 960px; font-size: 13px; line-height: 1.55; color: #3d556e">Source: ' + esc(HPIP.cite) + '. HPI 3.0 was published in 2022. Retrieved from the HPI API on ' + esc(HPIP.pulled) + ' and shown with the permission of the Public Health Alliance of Southern California. PHIL shows shares as percents and percentiles as whole numbers; all values are otherwise as HPI publishes them. HPI\'s indicators are its own; where this dashboard shows a similar measure from another source on a topic page, the two can differ by year and definition.</p>';
+        + '<p style="margin: 0; max-width: 960px; font-size: 13px; line-height: 1.55; color: #3d556e">Source: ' + esc(HPIP.cite) + '. HPI 3.0 published in 2022; retrieved from the HPI API on ' + esc(HPIP.pulled) + '.</p>';
       return h;
     }
     function hpiDrawMap(county) {
@@ -2836,10 +2847,7 @@ A card with none of these shows the county's value alone.</li>
         var key = (hasCounty ? gCounty : "") + "|" + HPIS.layer;
         if (box.firstChild && box.getAttribute("data-k") === key) return;
         box.setAttribute("data-k", key);
-        if (!hasCounty) {
-          box.innerHTML = '<div style="display: flex; flex-direction: column; gap: 10px"><h2 id="hpi-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; color: #039862">Community Conditions</h2><p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.55">Choose a county in the County menu at the top of the page to see its California Healthy Places Index (HPI) percentile, its eight policy action areas, and a map of its census tracts.</p></div>';
-          return;
-        }
+        if (!hasCounty) { box.innerHTML = ""; return; }
         if (HPIS.county !== gCounty) { HPIS.county = gCounty; HPIS.sel = null; }
         box.innerHTML = hpiPageHTML(gCounty);
         var sel = document.getElementById("hpi-layer");
@@ -2851,8 +2859,8 @@ A card with none of these shows the county's value alone.</li>
     }
     if (tab === "conditions") setTimeout(fillHPI, 0);
     setTimeout(fillFind, 0);
-    var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "conditions" || t.id === "detail" || t.id === "profile"; });
-    var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; });
+    var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "detail" || t.id === "profile"; });
+    var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; }).concat(tabs.filter(function (t) { return t.id === "conditions"; }));
     var tabsServices = ["bhsa", "medi", "ecmcs"].map(function (id) { return tabs.filter(function (t) { return t.id === id; })[0]; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
     var tabsPlanning = tabs.filter(function (t) { return t.id === "toolkit"; });
