@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests
+      - run: pip install requests pyshp
       - name: Pull HPI data
         env:
           HPI_API_KEY: ${{ secrets.HPI_API_KEY }}
@@ -29,6 +29,6 @@ jobs:
         run: |
           git config user.name "dashboard-refresh"
           git config user.email "dashboard-refresh@users.noreply.github.com"
-          git add data/out/hpi_*.json
+          git add data/out/hpi*.json data/out/hpi_geo
           git diff --cached --quiet || git commit -m "HPI data pull $(date -u +%Y-%m-%d)"
           git push
