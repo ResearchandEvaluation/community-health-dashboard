@@ -2860,7 +2860,7 @@ A card with none of these shows the county's value alone.</li>
     if (tab === "conditions") setTimeout(fillHPI, 0);
     setTimeout(fillFind, 0);
     var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "detail" || t.id === "profile"; });
-    var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; }).concat(tabs.filter(function (t) { return t.id === "conditions"; }));
+    var tabsTopics = tabs.filter(function (t) { return t.id === "conditions"; }).concat(tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; }));
     var tabsServices = ["bhsa", "medi", "ecmcs"].map(function (id) { return tabs.filter(function (t) { return t.id === id; })[0]; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
     var tabsPlanning = tabs.filter(function (t) { return t.id === "toolkit"; });
