@@ -1283,6 +1283,12 @@ A card with none of these shows the county's value alone.</li>
 </sc-if>
 
 
+<sc-if value="{{showConditions}}" hint-placeholder-val="{{false}}">
+<section aria-labelledby="hpi-h" style="display: flex; flex-direction: column; gap: 32px">
+<div id="phil-hpi" style="display: flex; flex-direction: column; gap: 32px"></div>
+</section>
+</sc-if>
+
 <sc-if value="{{showToolkit}}" hint-placeholder-val="{{false}}">
 <section style="display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 10px">
@@ -1312,14 +1318,14 @@ A card with none of these shows the county's value alone.</li>
 <sc-if value="{{hasCounty}}" hint-placeholder-val="{{true}}">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <div><h3 style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Where {{countyLabel}} Stands</h3>
-<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">The county's BHSA Integrated Plan and its suicide and drug overdose death rates, as the Department of Health Care Services (DHCS) and the California Department of Public Health (CDPH) publish them. Bring this to the first joint meeting with behavioral health, the managed care plan, and community partners.</p></div>
+<p style="margin: 6px 0 0; max-width: 860px; font-size: 15px; line-height: 1.5; color: #24384d">The county's BHSA Integrated Plan and its suicide and drug overdose death rates, as the Department of Health Care Services (DHCS) and the California Department of Public Health (CDPH) publish them, and its community conditions from the California Healthy Places Index (HPI). Bring this to the first joint meeting with behavioral health, the managed care plan, and community partners.</p></div>
 <div style="border: 1px solid #dee3e8; border-radius: 10px; background: #ffffff">
 <sc-for list="{{tk.snap.rows}}" as="r" hint-placeholder-count="6"><div style="{{r.rowStyle}}"><div style="flex: 0 0 250px; font-size: 14px; font-weight: 600; color: #30718d">{{r.label}}</div><div style="flex: 1 1 320px; min-width: 0"><div style="font-size: 15px; font-weight: 700; color: #12365b">{{r.value}}</div><div style="font-size: 13px; line-height: 1.5; color: #526c87">{{r.note}}</div></div></div></sc-for>
 </div>
 <div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px">
 <button type="button" onClick="{{tk.snap.goDetail}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Your County in Detail</button>
 <button type="button" onClick="{{tk.snap.goBhsa}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">County Behavioral Health Plans</button>
-<a href="https://map.healthyplacesindex.org/" target="_blank" rel="noopener" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; text-decoration: none; background: #ffffff; color: #12365b; border: 1px solid #73889e">Healthy Places Index map (opens a new tab)</a>
+<button type="button" onClick="{{tk.snap.goConditions}}" style="min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; cursor: pointer; background: #ffffff; color: #12365b; border: 1px solid #73889e">Community Conditions</button>
 </div>
 </div>
 </sc-if>
@@ -1558,6 +1564,10 @@ A card with none of these shows the county's value alone.</li>
       "Community conditions": LVL_BASE + "background: #f3e9d7; color: #12365b;"
     };
     var IND = {
+      hpiCardio: { name: "Active Commuting, Tree Canopy, and Air Pollution (Healthy Places Index)", dataset: "California Healthy Places Index (HPI) 3.0", publisher: "Public Health Alliance of Southern California", cadence: "Periodic; HPI 3.0 released in 2022", access: "API (key required)", geoType: "county", level: "Community conditions", note: "" },
+      hpiEarly: { name: "Preschool Enrollment (Healthy Places Index)", dataset: "California Healthy Places Index (HPI) 3.0", publisher: "Public Health Alliance of Southern California", cadence: "Periodic; HPI 3.0 released in 2022", access: "API (key required)", geoType: "county", level: "Community conditions", note: "" },
+      hpiYouth: { name: "High School Enrollment (Healthy Places Index)", dataset: "California Healthy Places Index (HPI) 3.0", publisher: "Public Health Alliance of Southern California", cadence: "Periodic; HPI 3.0 released in 2022", access: "API (key required)", geoType: "county", level: "Community conditions", note: "" },
+      hpiHousing: { name: "Housing Quality, Homeownership, and Renter Cost Burden (Healthy Places Index)", dataset: "California Healthy Places Index (HPI) 3.0", publisher: "Public Health Alliance of Southern California", cadence: "Periodic; HPI 3.0 released in 2022", access: "API (key required)", geoType: "county", level: "Community conditions", note: "" },
       opioidED: { name: "Opioid Overdose Emergency Visits and Hospitalizations", dataset: "Behavioral Health Public County Profile", publisher: "Department of Health Care Services (DHCS)", cadence: "Annual", access: "API", geoType: "county", level: "Hospital use", note: "" },
       cdeGrad: { name: "High School Graduation", dataset: "Adjusted Cohort Graduation Rate Data", publisher: "California Department of Education (CDE)", cadence: "Annual, by school year", access: "Stable file download (text)", geoType: "county", level: "Community conditions", note: "" },
       jailRate: { name: "Jail Population", dataset: "Incarceration Trends", publisher: "Vera Institute of Justice", cadence: "Annual", access: "Stable file download (CSV)", geoType: "county", level: "Community conditions", note: "" },
@@ -1729,7 +1739,7 @@ A card with none of these shows the county's value alone.</li>
           ["westsac", "A PHIL case study of the West Sacramento Accountable Community for Health, a California Accountable Communities for Health Initiative (CACHI) site, which engaged and convened residents to reduce high rates of heart disease."],
           ["cachi", "Supported California Accountable Communities for Health Initiative (CACHI) sites in building the cross-sector partnerships and structures needed to operate as Accountable Communities for Health."]
         ],
-        indicators: ["hdmort","chdmort","strokemort","diabmort","places","placesRisk","placesBPmed","pqiCardiac","hpsaPC","placesSocial","acsPov","placesActivity","chrFood","chrActive","chrAir","chrJobs"]
+        indicators: ["hdmort","chdmort","strokemort","diabmort","places","placesRisk","placesBPmed","pqiCardiac","hpsaPC","placesSocial","acsPov","placesActivity","chrFood","chrActive","chrAir","chrJobs","hpiCardio"]
       },
       aces: {
         title: "ACEs and Trauma",
@@ -1757,7 +1767,7 @@ A card with none of these shows the county's value alone.</li>
           ["practice", "Supported primary care clinic teams across California in screening children and families for ACEs and toxic stress and connecting them to care, as part of ACEs Aware."],
           ["lbact", "A PHIL case study of Long Beach All Children Thrive, a California Accountable Communities for Health Initiative (CACHI) site, which engaged residents in co-creating solutions to gaps in social drivers of health for children ages 0 to 8 and their families."]
         ],
-        indicators: ["births","prenatal","lbw","infmort","pqiKids","smhs05","bhPerfFoster","wic","medicalKids","acsUnins6","hpsaMH","acsYoung","chrLunch","chrChildMort"]
+        indicators: ["births","prenatal","lbw","infmort","pqiKids","smhs05","bhPerfFoster","wic","medicalKids","acsUnins6","hpsaMH","acsYoung","chrLunch","chrChildMort","hpiEarly"]
       },
       youth: {
         title: "Youth Behavioral Health",
@@ -1768,7 +1778,7 @@ A card with none of these shows the county's value alone.</li>
           ["rrih", "Runs the Youth Behavioral Health and Justice Community of Practice across 11 Northern California counties."],
           ["cybhi", "Serves as regional outreach partner for Children and Youth Behavioral Health Initiative (CYBHI) resources, including Cal-MAP, Safe Spaces, Open Doors, Soluna, BrightLife Kids, Mirror, and Live Beyond."]
         ],
-        indicators: ["suicide","smhsYouth","bhPerfFoster","asthmaED","hpsaMH","cdeAbs","cdeGrad","cdeHomeless","acsChild","chrReading"]
+        indicators: ["suicide","smhsYouth","bhPerfFoster","asthmaED","hpsaMH","cdeAbs","cdeGrad","cdeHomeless","acsChild","chrReading","hpiYouth"]
       },
       sub: {
         title: "Substance Use and Homelessness",
@@ -1780,7 +1790,7 @@ A card with none of these shows the county's value alone.</li>
           ["psp", "Includes curriculum content on stimulant-associated cardiomyopathy and reaches patients through the emergency department substance use navigator and street medicine."],
           ["threads", "Supports cross-sector systems transformation for individuals experiencing homelessness with serious mental illness (SMI) and substance use disorders (SUD) in Sonoma County."]
         ],
-        indicators: ["od","opioidED","placesAlc","bhPerfAccess","bhPen","bhHousing","bhPerfServices","hdis","placesHousing","acsHousing"]
+        indicators: ["od","opioidED","placesAlc","bhPerfAccess","bhPen","bhHousing","bhPerfServices","hdis","placesHousing","acsHousing","hpiHousing"]
       },
       medi: {
         title: "Access to Care",
@@ -1826,11 +1836,11 @@ A card with none of these shows the county's value alone.</li>
       return Object.keys(set).sort();
     }
 
-    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "detail", label: "Your County in Detail" }, { id: "profile", label: "Print County Profile" }, { id: "toolkit", label: "CHA and CHIP Planning Toolkit" }, { id: "resources", label: "Resources" }]);
+    var TAB_DEFS = [{ id: "overview", label: "Overview" }].concat(TOPIC_ORDER.map(function (tid) { return { id: tid, label: TOPICS[tid].title }; })).concat([{ id: "ecmcs", label: "ECM and Community Supports" }, { id: "conditions", label: "Community Conditions" }, { id: "detail", label: "Your County in Detail" }, { id: "profile", label: "Print County Profile" }, { id: "toolkit", label: "CHA and CHIP Planning Toolkit" }, { id: "resources", label: "Resources" }]);
     var tabBase = "min-height: 44px; padding: 7px 12px; border-radius: 999px; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; white-space: nowrap; ";
     var tabs = TAB_DEFS.map(function (t) {
       var on = t.id === tab;
-      var NAVL = { overview: "Overview", cardio: "Cardiovascular Health", aces: "ACEs and Trauma", early: "Maternal and Early Childhood Behavioral Health", youth: "Youth Behavioral Health", sub: "Substance Use and Homelessness", medi: "Access to Care", bhsa: "County Behavioral Health Plans", ecmcs: "ECM and Community Supports", detail: "Your County in Detail", profile: "Print County Profile", toolkit: "CHA and CHIP Toolkit", resources: "Resources" };
+      var NAVL = { overview: "Overview", cardio: "Cardiovascular Health", aces: "ACEs and Trauma", early: "Maternal and Early Childhood Behavioral Health", youth: "Youth Behavioral Health", sub: "Substance Use and Homelessness", medi: "Access to Care", bhsa: "County Behavioral Health Plans", ecmcs: "ECM and Community Supports", conditions: "Community Conditions", detail: "Your County in Detail", profile: "Print County Profile", toolkit: "CHA and CHIP Toolkit", resources: "Resources" };
       return { id: t.id, label: t.label, navLabel: NAVL[t.id] || t.label, pick: go(t.id), current: on ? "page" : "false",
         style: tabBase + (on ? "background: #12365b; color: #ffffff; border: 1px solid #12365b;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;") };
     });
@@ -1903,6 +1913,12 @@ A card with none of these shows the county's value alone.</li>
 
 
     var INDD = __INDD__;
+    var HPIP = __HPI__;
+    // Community Conditions: California Healthy Places Index (HPI), Public Health Alliance of Southern California.
+    // Values are shown as HPI publishes them. Colors follow HPI's quartile scheme, as its license requires.
+    var HQ = [null, { c: "#2171B5", t: "Quartile 1: least healthy conditions" }, { c: "#9ECAE1", t: "Quartile 2" }, { c: "#A6DBA0", t: "Quartile 3" }, { c: "#008837", t: "Quartile 4: healthiest conditions" }];
+    function hq(p) { return typeof p !== "number" ? 0 : p < 25 ? 1 : p < 50 ? 2 : p < 75 ? 3 : 4; }
+    var HPI_TOPIC_VARS = { hpiCardio: ["commute", "treecanopy", "ozone", "dieselpm"], hpiEarly: ["inpreschool"], hpiYouth: ["inhighschool"], hpiHousing: ["houserepair", "uncrowded", "homeownership", "rentsevere"] };
     var MISS_TEXT = {
       census: "Not yet loaded in this prototype. The U.S. Census Bureau now requires a free application programming interface (API) key for this data.",
       cde: "Not yet loaded in this prototype. The California Department of Education file server is not yet on PHIL's allowed domains list.",
@@ -1913,6 +1929,7 @@ A card with none of these shows the county's value alone.</li>
       if (u === "percent") return (Math.round(v * 10) / 10).toFixed(1) + "%";
       if (u === "count" || u.indexOf("residents per") === 0 || u.indexOf("score (") === 0) return Math.round(v).toLocaleString("en-US");
       if (u === "dollars") return "$" + Math.round(v).toLocaleString("en-US");
+      if (u === "ppm" || u === "tons/year") return v.toLocaleString("en-US", { maximumSignificantDigits: 3 });
       if (Math.abs(v) >= 1000) return Math.round(v).toLocaleString("en-US");
       return (Math.round(v * 10) / 10).toFixed(1);
     }
@@ -1962,7 +1979,8 @@ A card with none of these shows the county's value alone.</li>
     function chartsFor(key, county) {
       var d = INDD[key];
       if (!d) return [];
-      return d.m.map(function (m) {
+      return d.m.map(function (m, mi) {
+        m.__mi = mi;
         var idxs = null;
         if (m.t && m.t.p && m.t.p.length) idxs = m.t.p.map(function (p, i) { return i; }).filter(function (i) { return inRange(m.t.p[i]); });
         if (YR && !inRange(m.p)) {
@@ -1984,8 +2002,14 @@ A card with none of these shows the county's value alone.</li>
         if (b.isMissing) { b.hasHp = false; b.hpText = ""; b.grid = []; b.xt = []; b.pts = []; b.caPts = []; b.yLabel = ""; return b; }
         var jc = judgeCa(cv, m.ca, m.w);
         if (jc && b.isBars) { b.hasPill = true; b.pill = jc.text; b.pillStyle = jc.style; }
+        var hv = HPI_TOPIC_VARS[key] ? HPI_TOPIC_VARS[key][m.__mi] : null;
+        if (hv) {
+          var hpp = ((HPIP.ind[hv] || {}).p || {})[county], hqq = hq(hpp);
+          b.bars = (b.bars || []).map(function (bar, j) { return Object.assign({}, bar, { barStyle: String(bar.barStyle).replace(/background: #[0-9a-fA-F]{6}/, "background: " + (j === 0 ? (hqq ? HQ[hqq].c : "#dee3e8") : "#73889e")) }); });
+          if (typeof hpp === "number") { var hps = "display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 600; line-height: 1.4; background: #ffffff; color: #12365b; border: 2px solid " + (hqq ? HQ[hqq].c : "#dee3e8"); if (b.hasPill) { b.hasPill2 = true; b.pill2 = "HPI percentile " + hpp; b.pill2Style = hps; } else { b.hasPill = true; b.pill = "HPI percentile " + hpp; b.pillStyle = hps; } }
+        }
         b.hasHp = typeof m.hp === "number"; b.hpText = b.hasHp ? "Healthy People 2030 target" + (m.hpo ? " (" + m.hpo + ")" : "") + ": " + fmtVal(m.hp, u) + (u === "percent" ? "" : unitWord(u)) : "";
-        if (m.all && m.all.length) {
+        if (m.all && m.all.length && !hv) {
           var jr = judgeRank(cv, m.all, m.w);
           b.hasRank = true;
           b.dots = strip(cv, m.all, jr ? jr.tone : "neutral");
@@ -2079,12 +2103,12 @@ A card with none of these shows the county's value alone.</li>
       ],
       early: [
         { title: "Prenatal and Birth", desc: "The conditions babies are born into.", keys: ["prenatal", "lbw", "births", "infmort"] },
-        { title: "Ages 0 to 5", desc: "Health, coverage, and economic conditions during the years of fastest brain development.", keys: ["acsYoung", "wic", "medicalKids", "acsUnins6", "pqiKids", "smhs05", "chrLunch", "chrChildMort"] },
+        { title: "Ages 0 to 5", desc: "Health, coverage, and economic conditions during the years of fastest brain development.", keys: ["acsYoung", "wic", "medicalKids", "acsUnins6", "pqiKids", "smhs05", "chrLunch", "chrChildMort", "hpiEarly"] },
         { title: "Support Across Early Childhood", desc: "Services for children in foster care and the behavioral health workforce.", keys: ["bhPerfFoster", "hpsaMH"] }
       ],
       youth: [
         { title: "School Age", desc: "Early signs in school and at home that young people may need support.", keys: ["acsChild", "cdeAbs", "cdeHomeless", "asthmaED", "chrReading"] },
-        { title: "Adolescence", desc: "Mental health care and the transition to adulthood.", keys: ["smhsYouth", "bhPerfFoster", "cdeGrad"] },
+        { title: "Adolescence", desc: "Mental health care and the transition to adulthood.", keys: ["smhsYouth", "bhPerfFoster", "cdeGrad", "hpiYouth"] },
         { title: "All Ages", desc: "This measure covers residents of every age.", keys: ["suicide"] },
         { title: "Support Across the Life Course", desc: "The behavioral health workforce available to young people.", keys: ["hpsaMH"] }
       ]
@@ -2524,6 +2548,13 @@ A card with none of these shows the county's value alone.</li>
         isRank: !jc && !!jr, dots: (!jc && jr) ? strip(cv, m.all, jr.tone) : [], rankLow: m.all ? "Lowest: " + fv(m.all[0]) : "", rankHigh: m.all ? "Highest: " + fv(m.all[m.all.length - 1]) : "",
         pick: go(c.tab) };
     }).filter(function (x) { return x; });
+    if (hasCounty && HPIP.ind.hpiscore && typeof HPIP.ind.hpiscore.p[gCounty] === "number") {
+      var hp0 = HPIP.ind.hpiscore.p[gCounty], hq0 = hq(hp0);
+      ovSnap.push({ topic: "Community Conditions", label: "Healthy Places Index (HPI) score percentile among California counties", value: hp0 + " of 100", period: "HPI 3.0 (" + HPIP.ind.hpiscore.year + ") · Public Health Alliance of Southern California",
+        hasPill: true, pill: HQ[hq0].t, pillStyle: "display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 600; line-height: 1.4; background: #ffffff; color: #12365b; border: 2px solid " + HQ[hq0].c,
+        isBars: true, bars: [{ label: "HPI percentile", value: String(hp0), style: "display: block; height: 100%; border-radius: 0 4px 4px 0; background: " + HQ[hq0].c + "; width: " + Math.max(hp0, 1) + "%" }],
+        isRank: false, dots: [], rankLow: "", rankHigh: "", pick: go("conditions") });
+    }
     var philHere = [];
     Object.keys(WORK).forEach(function (k) {
       var w = WORK[k];
@@ -2669,8 +2700,158 @@ A card with none of these shows the county's value alone.</li>
       submit: function (ev) { try { if (ev && ev.preventDefault) ev.preventDefault(); } catch (e) {} var el = document.getElementById("phil-find"); FS.q = el ? el.value.trim() : ""; fillFind(); try { if (el) el.blur(); } catch (e) {} },
       clear: function () { FS.q = ""; var el = document.getElementById("phil-find"); if (el) el.value = ""; fillFind(); }
     };
+    function hpiPct(v) { return typeof v === "number" ? String(v) : "Not published"; }
+    function hpiVal(v, unit) {
+      if (typeof v !== "number") return "Not published";
+      if (unit === "%") return v.toFixed(1) + "%";
+      if (unit === "$") return "$" + v.toLocaleString("en-US");
+      return v.toLocaleString("en-US", { maximumSignificantDigits: 3 }) + (unit ? " " + unit : "");
+    }
+    function hpiSwatch(p) { var q = hq(p); return '<span aria-hidden="true" style="display: inline-block; width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; background: ' + (q ? HQ[q].c : "#dee3e8") + '"></span>'; }
+    function hpiSentence(county, p, n) {
+      if (typeof p !== "number") return "HPI does not publish a score for " + county + " County.";
+      if (p >= 100) return county + " County ranks highest among the " + n + " California counties HPI scores.";
+      if (p <= 0) return county + " County ranks lowest among the " + n + " California counties HPI scores.";
+      if (p < 50) return (100 - p) + " percent of California counties have healthier community conditions than " + county + " County, which places it in the " + (p < 25 ? "lowest" : "second-lowest") + " quarter of counties.";
+      return county + " County has healthier community conditions than " + p + " percent of California counties, which places it in the " + (p >= 75 ? "highest" : "second-highest") + " quarter of counties.";
+    }
+    var HPIS = (window.__philHPIS = window.__philHPIS || { layer: 0, sel: null, cache: {}, county: "" });
+    var HPI_LAYERS = [["hpiscore", "HPI score"]].concat(HPIP.domains.map(function (d) { return [d.id, d.label]; }));
+    var HPI_FIPS = { "Butte": "06007", "Colusa": "06011", "Del Norte": "06015", "Glenn": "06021", "Humboldt": "06023", "Lake": "06033", "Mendocino": "06045", "Shasta": "06089", "Tehama": "06103", "Trinity": "06105", "Siskiyou": "06093", "Los Angeles": "06037", "San Bernardino": "06071", "Sonoma": "06097", "Marin": "06041", "Sutter": "06101", "Napa": "06055", "Alameda": "06001" };
+    function hpiLowest(county) {
+      return HPIP.domains.map(function (d) { return { label: d.label, p: (HPIP.ind[d.id] || { p: {} }).p[county] }; })
+        .filter(function (x) { return typeof x.p === "number"; }).sort(function (a, b) { return a.p - b.p; }).slice(0, 2);
+    }
+    function hpiPageHTML(county) {
+      var I = HPIP.ind, sc = I.hpiscore, p = sc.p[county], q = hq(p);
+      var LINK = "color: #496b9c; text-decoration: underline";
+      var PILL = "min-height: 40px; padding: 6px 14px; border-radius: 999px; font-family: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; text-decoration: none; background: #ffffff; color: #12365b; border: 1px solid #73889e";
+      var h = '<div style="display: flex; flex-direction: column; gap: 10px">'
+        + '<h2 id="hpi-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; line-height: 1.2; color: #039862">Community Conditions in ' + esc(county) + ' County</h2>'
+        + '<p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.55">The California Healthy Places Index (HPI), from the Public Health Alliance of Southern California, measures 23 community conditions that shape health and life expectancy, such as income, education, housing, transportation, clean air and water, and health insurance. HPI groups them into eight policy action areas and gives every county and census tract a percentile: the higher the percentile, the healthier the community conditions compared with the rest of California.</p>'
+        + '<p style="margin: 0; max-width: 860px; font-size: 14px; line-height: 1.5; color: #526c87">Values appear as HPI publishes them, with the Alliance\'s permission. Colors follow the HPI map: dark blue for the least healthy quarter of places through dark green for the healthiest.</p></div>';
+      // County summary and the eight policy action areas
+      h += '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">';
+      h += '<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">'
+        + '<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">HPI score percentile</span>'
+        + '<span style="display: flex; align-items: baseline; gap: 10px"><span style="font-family: Archer, Georgia, Cambria, serif; font-size: 48px; font-weight: 700; line-height: 1; color: #12365b">' + hpiPct(p) + '</span><span style="font-size: 15px; color: #526c87">of 100</span></span>'
+        + '<span style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600">' + hpiSwatch(p) + (q ? HQ[q].t : "No score") + '</span>'
+        + '<p style="margin: 0; font-size: 15px; line-height: 1.5">' + esc(hpiSentence(county, p, sc.n)) + '</p>'
+        + '<span style="font-size: 12px; color: #526c87">HPI 3.0 (' + esc(sc.year) + '). Percentile among ' + sc.n + ' California counties.</span></div>';
+      h += '<div style="background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px">'
+        + '<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d">Eight policy action areas</span>';
+      HPIP.domains.forEach(function (d) {
+        var dp = (I[d.id] || { p: {} }).p[county], dq = hq(dp);
+        h += '<div style="display: grid; grid-template-columns: 150px 1fr 34px; align-items: center; gap: 10px; font-size: 14px"><span>' + esc(d.label) + '</span>'
+          + '<span style="display: block; height: 12px; background: #eef1f4; border-radius: 4px; overflow: hidden"><span style="display: block; height: 100%; border-radius: 0 4px 4px 0; width: ' + (typeof dp === "number" ? Math.max(dp, 1) : 0) + '%; background: ' + (dq ? HQ[dq].c : "#dee3e8") + '"></span></span>'
+          + '<span style="text-align: right; font-weight: 700">' + hpiPct(dp) + '</span></div>';
+      });
+      var dy = (I.economic || {}).year || "";
+      h += '<span style="font-size: 12px; color: #526c87; margin-top: 4px">Percentile among California counties, HPI 3.0 (' + esc(dy) + '). The table below lists the conditions in each area.</span></div></div>';
+      // Tract map
+      var L = HPI_LAYERS[HPIS.layer] || HPI_LAYERS[0];
+      h += '<section aria-labelledby="hpi-map-h" style="display: flex; flex-direction: column; gap: 12px">'
+        + '<div style="display: flex; flex-direction: column; gap: 6px"><h3 id="hpi-map-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">Census Tracts in ' + esc(county) + ' County</h3>'
+        + '<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5">Conditions differ within every county. Each tract is colored by its percentile among all California census tracts. Select a tract to see its percentiles in all eight areas.</p></div>'
+        + '<div style="display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center"><label for="hpi-layer" style="font-size: 14px; font-weight: 600; color: #30718d">Show</label>'
+        + '<select id="hpi-layer" style="min-height: 40px; padding: 6px 10px; border: 1px solid #73889e; border-radius: 8px; font-family: inherit; font-size: 14px; color: #12365b; background: #ffffff">'
+        + HPI_LAYERS.map(function (l, i) { return '<option value="' + i + '"' + (i === HPIS.layer ? " selected" : "") + '>' + esc(l[1]) + '</option>'; }).join("") + '</select>'
+        + '<span style="display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px">' + [1, 2, 3, 4].map(function (k) { return '<span style="display: inline-flex; align-items: center; gap: 6px">' + hpiSwatch(k * 25 - 1) + HQ[k].t + '</span>'; }).join("")
+        + '<span style="display: inline-flex; align-items: center; gap: 6px">' + hpiSwatch(null) + 'No HPI value published</span></span></div>'
+        + '<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">'
+        + '<div id="hpi-map" style="flex: 2 1 420px; min-width: 0; box-sizing: border-box; background: #f8fafb; border: 1px solid #dee3e8; border-radius: 10px; padding: 10px; min-height: 260px; display: flex; align-items: center; justify-content: center; color: #526c87; font-size: 14px">Loading the tract map...</div>'
+        + '<div id="hpi-info" aria-live="polite" style="flex: 1 1 260px; min-width: 0; box-sizing: border-box; background: #ffffff; border: 1px solid #dee3e8; border-radius: 10px; padding: 16px 18px; font-size: 14px; line-height: 1.5">Select or hover over a tract on the map.</div></div>'
+        + '<div id="hpi-low"></div>'
+        + '<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #526c87">Tract percentiles rank each tract against every California tract, so they read differently from the county percentile above. HPI 3.0 data are available on 2010 and 2020 census tract boundaries with the same underlying data; this map uses the 2020 boundaries, and HPI publishes no value for some 2020 tracts (shown in gray). Tract boundaries: U.S. Census Bureau, 2020 cartographic boundary file.</p></section>';
+      // Indicator table
+      h += '<section aria-labelledby="hpi-tab-h" style="display: flex; flex-direction: column; gap: 10px"><h3 id="hpi-tab-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 26px; color: #30718d">The 23 Conditions</h3>'
+        + '<p style="margin: 0; max-width: 860px; font-size: 15px; line-height: 1.5">The county value and the California value both come from HPI. The percentile ranks the county among California counties, where a higher percentile means healthier conditions.</p>'
+        + '<div style="overflow-x: auto; border: 1px solid #dee3e8; border-radius: 10px; background: #ffffff"><table style="width: 100%; border-collapse: collapse; font-size: 14px; min-width: 680px">'
+        + '<thead><tr style="background: #f3e9d7; text-align: left"><th scope="col" style="padding: 10px 12px">Condition</th><th scope="col" style="padding: 10px 12px">' + esc(county) + ' County</th><th scope="col" style="padding: 10px 12px">California</th><th scope="col" style="padding: 10px 12px">County percentile</th><th scope="col" style="padding: 10px 12px">Data years and source</th></tr></thead><tbody>';
+      HPIP.domains.forEach(function (d) {
+        h += '<tr><th scope="colgroup" colspan="5" style="padding: 10px 12px; text-align: left; background: #f8fafb; color: #30718d; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase">' + esc(d.label) + '</th></tr>';
+        d.ind.forEach(function (v) {
+          var x = I[v]; if (!x) return;
+          var cp = x.p[county];
+          h += '<tr style="border-top: 1px solid #eef1f4"><td style="padding: 10px 12px; max-width: 320px"><div style="font-weight: 600">' + esc(x.title) + '</div><div style="font-size: 12.5px; color: #526c87">' + esc(x.def.replace(/ This is a Well-Being in the Nation \(WIN\) indicator\./, "")) + '</div></td>'
+            + '<td style="padding: 10px 12px; font-weight: 700; white-space: nowrap">' + hpiVal(x.v[county], x.unit) + '</td><td style="padding: 10px 12px; white-space: nowrap">' + hpiVal(x.ca, x.unit) + '</td>'
+            + '<td style="padding: 10px 12px"><span style="display: inline-flex; align-items: center; gap: 8px">' + hpiSwatch(cp) + hpiPct(cp) + '</span></td>'
+            + '<td style="padding: 10px 12px; font-size: 12.5px; color: #3d556e">' + esc(x.year) + (x.src ? ", " + esc(x.src) : "") + '</td></tr>';
+        });
+      });
+      h += '</tbody></table></div></section>';
+      // Links and citation
+      h += '<div class="phil-noprint" style="display: flex; flex-wrap: wrap; gap: 8px"><a href="https://map.healthyplacesindex.org/" target="_blank" rel="noopener" style="' + PILL + '">Healthy Places Index map (opens a new tab)</a>'
+        + '<a href="https://policies.healthyplacesindex.org/" target="_blank" rel="noopener" style="' + PILL + '">HPI Policy Action Guides (opens a new tab)</a>'
+        + '<button type="button" data-hpi-go="toolkit" style="' + PILL + '; cursor: pointer">Use this in the CHA and CHIP Toolkit</button></div>'
+        + '<p style="margin: 0; max-width: 960px; font-size: 13px; line-height: 1.55; color: #3d556e">Source: ' + esc(HPIP.cite) + '. HPI 3.0 was published in 2022. Retrieved from the HPI API on ' + esc(HPIP.pulled) + ' and shown with the permission of the Public Health Alliance of Southern California. PHIL shows shares as percents and percentiles as whole numbers; all values are otherwise as HPI publishes them. HPI\'s indicators are its own; where this dashboard shows a similar measure from another source on a topic page, the two can differ by year and definition.</p>';
+      return h;
+    }
+    function hpiDrawMap(county) {
+      var box = document.getElementById("hpi-map"), info = document.getElementById("hpi-info"), low = document.getElementById("hpi-low");
+      if (!box) return;
+      var g = HPIS.cache[county];
+      if (!g) {
+        if (HPIS.loading === county) return;
+        HPIS.loading = county;
+        fetch("hpi/" + HPI_FIPS[county] + ".json").then(function (r) { return r.json(); }).then(function (d) { HPIS.cache[county] = d; HPIS.loading = ""; hpiDrawMap(county); })
+          .catch(function () { HPIS.loading = ""; box.textContent = "The tract map could not load. The county values above and the HPI map link below still work."; });
+        return;
+      }
+      var li = HPIS.layer, lab = (HPI_LAYERS[li] || HPI_LAYERS[0])[1];
+      var paths = g.tracts.map(function (t, i) {
+        var q = hq(t[3][li]);
+        return '<path data-i="' + i + '" d="' + t[4] + '" fill="' + (q ? HQ[q].c : "#dee3e8") + '" stroke="' + (HPIS.sel === t[0] ? "#12365b" : "#ffffff") + '" stroke-width="' + (HPIS.sel === t[0] ? 2.5 : 0.6) + '" vector-effect="non-scaling-stroke" style="cursor: pointer"></path>';
+      });
+      box.style.display = "block"; box.style.minHeight = "0";
+      box.innerHTML = '<svg viewBox="0 0 ' + g.w + ' ' + g.h + '" role="img" aria-label="Map of ' + esc(county) + ' County census tracts colored by ' + esc(lab) + ' percentile. The list below the map names the tracts with the lowest percentiles." style="width: 100%; height: auto; max-height: 640px; display: block">' + paths.join("") + '</svg>';
+      function show(i) {
+        var t = g.tracts[i]; if (!t || !info) return;
+        var rows = HPI_LAYERS.map(function (l, k) { return '<div style="display: flex; align-items: center; gap: 8px' + (k === li ? '; font-weight: 700' : '') + '">' + hpiSwatch(t[3][k]) + '<span style="flex: 1">' + esc(l[1]) + '</span><span>' + hpiPct(t[3][k]) + '</span></div>'; }).join("");
+        info.innerHTML = '<div style="font-size: 16px; font-weight: 700; color: #12365b">Census tract ' + esc(t[1]) + '</div><div style="color: #526c87; margin-bottom: 8px">' + (typeof t[2] === "number" ? t[2].toLocaleString("en-US") + " residents" : "Population not published") + '</div>'
+          + '<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #30718d; margin-bottom: 4px">Percentile among California tracts</div><div style="display: flex; flex-direction: column; gap: 4px">' + rows + '</div>';
+      }
+      if (!box.__wired) {
+        box.__wired = true;
+        box.addEventListener("mouseover", function (ev) { var p = ev.target.closest ? ev.target.closest("path[data-i]") : null; if (p && !HPIS.sel) show(+p.getAttribute("data-i")); });
+        box.addEventListener("click", function (ev) {
+          var p = ev.target.closest ? ev.target.closest("path[data-i]") : null; if (!p) return;
+          var gg = HPIS.cache[HPIS.county]; var t = gg && gg.tracts[+p.getAttribute("data-i")]; if (!t) return;
+          HPIS.sel = HPIS.sel === t[0] ? null : t[0];
+          [].forEach.call(box.querySelectorAll("path"), function (el) { var on = gg.tracts[+el.getAttribute("data-i")][0] === HPIS.sel; el.setAttribute("stroke", on ? "#12365b" : "#ffffff"); el.setAttribute("stroke-width", on ? 2.5 : 0.6); if (on) el.parentNode.appendChild(el); });
+          show(+p.getAttribute("data-i"));
+        });
+      }
+      if (HPIS.sel) { var si = -1; g.tracts.forEach(function (t, i) { if (t[0] === HPIS.sel) si = i; }); if (si >= 0) show(si); }
+      if (low) {
+        var ranked = g.tracts.filter(function (t) { return typeof t[3][li] === "number"; }).sort(function (a, b) { return a[3][li] - b[3][li]; });
+        var lowest = ranked.slice(0, 10);
+        low.innerHTML = '<details style="border: 1px solid #dee3e8; border-radius: 10px; padding: 12px 16px; background: #ffffff"><summary style="cursor: pointer; font-weight: 700; font-size: 15px; color: #12365b">Tracts with the lowest ' + esc(lab) + ' percentiles (' + lowest.length + ' of ' + ranked.length + ' scored tracts)</summary>'
+          + '<ol style="margin: 10px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.7">' + lowest.map(function (t) { return '<li>Census tract ' + esc(t[1]) + ': percentile ' + t[3][li] + (typeof t[2] === "number" ? ", " + t[2].toLocaleString("en-US") + " residents" : "") + '</li>'; }).join("") + '</ol></details>';
+      }
+    }
+    function fillHPI() {
+      try {
+        var box = document.getElementById("phil-hpi"); if (!box) return;
+        var key = (hasCounty ? gCounty : "") + "|" + HPIS.layer;
+        if (box.firstChild && box.getAttribute("data-k") === key) return;
+        box.setAttribute("data-k", key);
+        if (!hasCounty) {
+          box.innerHTML = '<div style="display: flex; flex-direction: column; gap: 10px"><h2 id="hpi-h" style="margin: 0; font-family: Archer, Georgia, Cambria, serif; font-size: 34px; color: #039862">Community Conditions</h2><p style="margin: 0; max-width: 860px; font-size: 16px; line-height: 1.55">Choose a county in the County menu at the top of the page to see its California Healthy Places Index (HPI) percentile, its eight policy action areas, and a map of its census tracts.</p></div>';
+          return;
+        }
+        if (HPIS.county !== gCounty) { HPIS.county = gCounty; HPIS.sel = null; }
+        box.innerHTML = hpiPageHTML(gCounty);
+        var sel = document.getElementById("hpi-layer");
+        if (sel) sel.addEventListener("change", function (ev) { HPIS.layer = +ev.target.value || 0; box.setAttribute("data-k", gCounty + "|" + HPIS.layer); hpiDrawMap(gCounty); });
+        var tk = box.querySelector("[data-hpi-go]");
+        if (tk) tk.addEventListener("click", function () { self.setState({ tab: "toolkit" }); toTop(); });
+        hpiDrawMap(gCounty);
+      } catch (e) {}
+    }
+    if (tab === "conditions") setTimeout(fillHPI, 0);
     setTimeout(fillFind, 0);
-    var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "detail" || t.id === "profile"; });
+    var tabsHome = tabs.filter(function (t) { return t.id === "overview" || t.id === "conditions" || t.id === "detail" || t.id === "profile"; });
     var tabsTopics = tabs.filter(function (t) { return TOPICS[t.id] && t.id !== "medi" && t.id !== "bhsa"; });
     var tabsServices = ["bhsa", "medi", "ecmcs"].map(function (id) { return tabs.filter(function (t) { return t.id === id; })[0]; });
     var tabsMore = tabs.filter(function (t) { return t.id === "resources"; });
@@ -2791,7 +2972,7 @@ A card with none of these shows the county's value alone.</li>
       // Where we stand
       if (c.hasCounty) {
         kids.push.apply(kids, h1("Where " + c.county + " Stands"));
-        kids.push(text("As the Department of Health Care Services and the California Department of Public Health publish it.", { c: MUTED, s: 18 }));
+        kids.push(text("As the Department of Health Care Services, the California Department of Public Health, and the California Healthy Places Index publish it.", { c: MUTED, s: 18 }));
         var sn = c.snap;
         kids.push(new D.Table({ width: { size: 9400, type: D.WidthType.DXA }, columnWidths: [4700, 4700], borders: NB, rows: [new D.TableRow({ children: [
           cell([eyebrow("Integrated Plan goal the county selected"), para([run(sn.goal, { c: NAVY, s: 40, b: true, f: HF })], { after: 40 }), para([run(sn.goalNote, { c: MUTED, s: 17 })], { after: 0 })], { w: 4700, fill: SOFT, pad: 160 }),
@@ -2802,6 +2983,7 @@ A card with none of these shows the county's value alone.</li>
         kids.push(table(["Measure, age-adjusted rate per 100,000", c.county, "California"], rateRows, [56, 22, 22]));
         kids.push(text("CDPH County Health Status Profiles. " + (sn.rates[0] ? sn.rates[0].note.split(". ")[0] : ""), { c: MUTED, s: 17, before: 60 }));
         kids.push(text("People the plan expects to serve: " + sn.served.map(function (x) { return x.label + " " + x.value; }).join("; ") + ". " + sn.servedNote, { s: 19 }));
+        if (sn.hpi) kids.push(text("Community conditions (Healthy Places Index): " + sn.hpi, { s: 19 }));
       }
       // Plan
       kids.push(new D.Paragraph({ children: [], pageBreakBefore: true }));
@@ -2885,6 +3067,11 @@ A card with none of these shows the county's value alone.</li>
         { label: "People the plan expects to serve", value: served.map(function (a) { return a.label + ": " + a.value; }).join("; "), note: snap.servedNote }
       ].concat(rates.map(function (r) { return { label: r.title, value: (hasCounty ? gCounty + " County " : "") + r.cv + "; California " + r.ca, note: r.note }; }))
         .concat([{ label: "Medi-Cal members reached by county services", value: pen.map(function (a) { return a.label + " " + a.value; }).join("; "), note: snap.penNote }]);
+      var hpiTk = (function () { var hs = HPIP.ind.hpiscore || { p: {} }, p = hs.p[gCounty]; if (!hasCounty || typeof p !== "number") return null; var lw = hpiLowest(gCounty);
+        return { label: "Community conditions (Healthy Places Index)", value: "Percentile " + p + " of 100 among California counties", note: hpiSentence(gCounty, p, hs.n) + (lw.length ? " Lowest policy action areas: " + lw.map(function (x) { return x.label + " (" + x.p + ")"; }).join(" and ") + "." : "") + " California Healthy Places Index (HPI) 3.0, Public Health Alliance of Southern California. Community Conditions maps every census tract." }; })();
+      if (hpiTk) snapRows.push(hpiTk);
+      snap.hpi = hpiTk ? hpiTk.value + ". " + hpiTk.note : "";
+      snap.goConditions = tkOut("conditions");
       snap.rows = snapRows.map(function (r, i) { r.rowStyle = "display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 12px 18px;" + (i ? " border-top: 1px solid #dee3e8;" : ""); return r; });
       var whoChips = [{ id: "all", label: "Everyone" }].concat(Object.keys(TK_WHO).map(function (k) { return { id: k, label: TK_WHO[k] }; })).map(function (w) { var on = tkWho === w.id; return { label: w.label, pressed: on ? "true" : "false", style: subChip + (on ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: function () { self.setState({ tkWho: w.id }); } }; });
       var today = new Date().toISOString().slice(0, 10);
@@ -2917,7 +3104,7 @@ A card with none of these shows the county's value alone.</li>
         clearLabel: clearArm ? "Yes, clear every entry for this county" : "Clear my entries for this county",
         clear: function () { if (!clearArm) { self.setState({ tkClearArm: true }); setTimeout(function () { if (self.state.tkClearArm) self.setState({ tkClearArm: false }); }, 8000); return; } var sc = tkScope() + "|"; Object.keys(TKS).forEach(function (k) { if (k.indexOf(sc) === 0) delete TKS[k]; }); tkSave(); self.setState({ tkClearArm: false }); }
       };
-      var LINK_TAB = { profile: "profile", detail: "detail", cardio: "cardio", bhsa: "bhsa", youth: "youth", sub: "sub" };
+      var LINK_TAB = { profile: "profile", detail: "detail", conditions: "conditions", cardio: "cardio", bhsa: "bhsa", youth: "youth", sub: "sub" };
       var coreToggle = { label: tkCore ? "Showing core actions only" : "Show core actions only", pressed: tkCore ? "true" : "false", style: subChip + (tkCore ? "background: #02784d; color: #ffffff; border: 1px solid #02784d;" : "background: #ffffff; color: #12365b; border: 1px solid #73889e;"), pick: function () { self.setState({ tkCore: !tkCore }); } };
       var wayStyles = ["background: #12365b; color: #ffffff;", "background: #02784d; color: #ffffff;", "background: #30718d; color: #ffffff;"];
       var howto = { steps: TK.howto.steps || [], note: TK.howto.note || "", title: TK.howto.title, intro: TK.howto.intro, minimum: TK.howto.minimum, contact: TK.howto.contact, keep: TK.howto.keep, ways: TK.howto.ways.map(function (w, i) { return { name: w.name, body: w.body, style: "border-radius: 10px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; " + wayStyles[i] }; }) };
@@ -2992,7 +3179,7 @@ A card with none of these shows the county's value alone.</li>
       yrs: yrCtl,
       topic: topic || { stageFilters: [], flow: [], stages: [], hasStages: false, noStages: true, hasRealms: false, groupsHere: [], groupsOther: [], hasHere: false, noHere: false, hasOther: false, engagedLine: "", act: { has: false, open: false, works: [], state: [], county: {}, toggle: function () {} }, hasDet: false, goDet: function () {}, isMedi: false, showYears: false, isBhsa: false, plan: { has: false, goal: "", goalsList: "", status: "", fsp: "", hi: "", tr: "", src: "" }, onPage: [], hiddenNote: "", title: "", intro: "", population: "", workHere: "", groups: [], current: [], past: [], hasPast: false, counties: [], indicators: [] },
       countyLabel: countyLabel, cmp: cmp || { pickers: [], heads: [], rows: [], none: true, selectAll: function () {}, clearAll: function () {}, open: false, openAttr: "false", toggleLabel: "", btnBg: "#ffffff", btnFg: "#12365b", toggle: function () {} },
-      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], topics: [], noTopics: false, hasSections: false, allPressed: "false", allStyle: "", pickAll: function () {}, pickNone: function () {}, hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore, tabsPlanning: tabsPlanning, showToolkit: tab === "toolkit", tkBack: tkBack, tk: tk || { savedChips: [], countyChips: [], pickOpen: false, howto: { ways: [], steps: [] }, plan: { phases: [], dates: [], asks: [] }, after: { items: [] }, support: { levels: [], options: [] }, coreToggle: {}, subs: [], isStart: false, isPhase: false, isFit: false, snap: { rows: [] }, whoChips: [], moves: [], cal: [], badge: {}, phaseCards: [], phase: { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: { components: [], ways: [], profile: [] } },
+      showEcm: tab === "ecmcs", goProfile: go("profile"), refreshLine: REFRESH_LINE, showDetail: tab === "detail", showConditions: tab === "conditions", showProfile: tab === "profile", prof: prof || { sections: [], counties: [], topics: [], noTopics: false, hasSections: false, allPressed: "false", allStyle: "", pickAll: function () {}, pickNone: function () {}, hasCounty: false, noCounty: false, countyLabel: "", doPrint: function () {} }, det: det || { sections: [], counties: [], dimPills: [], topicPills: [], cards: [], hasCards: false, noCards: false, hasCounty: false, noCounty: false, countyLabel: "" }, showResources: tab === "resources", res: res || { groups: [], countyLine: "" }, tabsMore: tabsMore, tabsPlanning: tabsPlanning, showToolkit: tab === "toolkit", tkBack: tkBack, tk: tk || { savedChips: [], countyChips: [], pickOpen: false, howto: { ways: [], steps: [] }, plan: { phases: [], dates: [], asks: [] }, after: { items: [] }, support: { levels: [], options: [] }, coreToggle: {}, subs: [], isStart: false, isPhase: false, isFit: false, snap: { rows: [] }, whoChips: [], moves: [], cal: [], badge: {}, phaseCards: [], phase: { actions: [], meetings: [], tools: [], nav: [], bh: {} }, fit: { components: [], ways: [], profile: [] } },
       ecm: ecm || { countyLabel: "", periodYear: "", enrollMonth: "", philHere: "", goMedi: function () {}, counties: [], tiles: [], plans: [], services: [], contractsAsOf: "", pofAsOf: "", hasPending: false, pendingNote: "", compare: [], pofGroups: [], planRows: [], periodLabel: "", useCharts: [], usePlans: [], useMultiPlan: false, useQuarter: "" }
     };
   }

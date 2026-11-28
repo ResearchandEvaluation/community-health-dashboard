@@ -1,5 +1,5 @@
 """Build the standalone dashboard page: public/index.html plus runtime and images.
-Reads data/out/*.json (indicators), data/out/ecm_tab.json, data/manual/resources.json, data/manual/actions.json."""
+Reads data/out/*.json (indicators), data/out/hpi_page.json and hpi_geo/ (Healthy Places Index), data/out/ecm_tab.json, data/manual/resources.json, data/manual/actions.json."""
 import os, json, shutil, subprocess, sys, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
@@ -24,11 +24,13 @@ def load_tk():
     tk = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit.json"))); ph = json.load(open(os.path.join(ROOT, "data", "manual", "toolkit_phases.json")))
     return {"calendar": sorted(tk["calendar"], key=lambda x: x["sort"]), "moves": tk["moves"], "phases": ph["phases"], "fit": ph["fit"], "howto": ph["howto"], "after": ph["after"], "support": ph["support"]}
 tkd = load_tk()
+hpi_path = os.path.join(ROOT, "data", "out", "hpi_page.json")
+hpip = json.load(open(hpi_path)) if os.path.exists(hpi_path) else {"cite": "", "pulled": "", "domains": [], "ind": {}}
 tpl = open(os.path.join(ROOT, "site", "template.html")).read()
 J = lambda o: json.dumps(o, separators=(",", ":"))
 page = (tpl.replace("__INDD__", ind).replace("__ECM_USE__", J(tab["ECM_USE"])).replace("__ECMD_PUB__", J(tab["ECMD_PUB"]))
-        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BHSA_INFO__", J(bhinfo)).replace("__TK__", J(tkd)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
-for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__BHSA_INFO__", "__TK__", "__REFRESH_LINE__"]:
+        .replace("__ECMD__", J(tab["ECMD"])).replace("__MCP_PLANS__", J(mcp)).replace("__RES__", J(res)).replace("__ACT__", J(act)).replace("__STRATA__", J(strata)).replace("__BHSA_INFO__", J(bhinfo)).replace("__TK__", J(tkd)).replace("__HPI__", J(hpip)).replace("__REFRESH_LINE__", refresh_line).replace("__BUILD_DATE__", datetime.date.today().isoformat()))
+for ph in ["__INDD__", "__ECM_USE__", "__ECMD_PUB__", "__ECMD__", "__RES__", "__ACT__", "__STRATA__", "__MCP_PLANS__", "__BHSA_INFO__", "__TK__", "__HPI__", "__REFRESH_LINE__"]:
     assert ph not in page, ph
 if "–" in page or "—" in page:
     raise SystemExit("dash character found in page")
@@ -39,6 +41,10 @@ shutil.copy(os.path.join(ROOT, "site", "runtime.js"), os.path.join(pub, "runtime
 shutil.copy(os.path.join(ROOT, "site", "docx.umd.js"), os.path.join(pub, "docx.umd.js"))
 for f in os.listdir(os.path.join(ROOT, "site", "assets")):
     shutil.copy(os.path.join(ROOT, "site", "assets", f), os.path.join(pub, "assets", f))
+geo = os.path.join(ROOT, "data", "out", "hpi_geo")
+if os.path.isdir(geo):
+    os.makedirs(os.path.join(pub, "hpi"), exist_ok=True)
+    for f in os.listdir(geo): shutil.copy(os.path.join(geo, f), os.path.join(pub, "hpi", f))
 open(os.path.join(pub, ".nojekyll"), "w").write("")
 cname = os.path.join(ROOT, "site", "CNAME")
 if os.path.exists(cname): shutil.copy(cname, os.path.join(pub, "CNAME"))

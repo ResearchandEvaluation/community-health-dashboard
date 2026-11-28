@@ -143,7 +143,7 @@
       "group": "data",
       "title": "California Healthy Places Index (HPI)",
       "url": "https://map.healthyplacesindex.org/",
-      "description": "The Public Health Alliance of Southern California's interactive map ranks California census tracts, cities, and counties on 23 community conditions that shape health, grouped into eight policy action areas: economic, education, healthcare access, housing, neighborhood, clean environment, transportation, and social. Use it to see conditions neighborhood by neighborhood within a county."
+      "description": "The Public Health Alliance of Southern California's interactive map ranks California census tracts, cities, and counties on 23 community conditions that shape health, grouped into eight policy action areas: economic, education, healthcare access, housing, neighborhood, clean environment, transportation, and social. Use it to see conditions neighborhood by neighborhood within a county. Community Conditions on this dashboard shows HPI percentiles for each dashboard county and its census tracts."
     },
     {
       "group": "data",

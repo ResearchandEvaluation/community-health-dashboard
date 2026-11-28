@@ -692,7 +692,7 @@
             "Place the county next to two or three neighbors or peers for the same measures.",
             "If you use this dashboard: the health topic pages hold the measures, Your County in Detail holds the breakdowns by group, Compare Counties holds the peer view, and Print County Profile exports the measures you choose as a base for the chapter.",
             "Add local sources in the same format: measure, value, period, source, method, and a note on limits. Typical sources: a local community health survey, hospital discharge summaries, school climate surveys, Tribal health program data, county program counts, the sheriff's office, and the 211 call log.",
-            "Link the Healthy Places Index map for neighborhood conditions and cite it; its license keeps its values on its own site.",
+            "For neighborhood conditions, use Community Conditions on this dashboard: the county's California Healthy Places Index (HPI) percentile, its eight policy action areas, and a map of its census tracts. Cite HPI 3.0 and the Public Health Alliance of Southern California as the source.",
             "Where the county has several cities or distinct regions, add sub-county data in the same format: Healthy Places Index by census tract, hospital Community Health Needs Assessment findings by zip code, and county vital statistics by city or region.",
             "Where hospitals are running a Community Health Needs Assessment in the same window, agree with them on shared indicators and one resident input process, so residents are asked once and the two reports cite the same numbers.",
             "Note the date each source was pulled so later comparisons use the same vintage."
@@ -738,6 +738,10 @@
             [
               "cardio",
               "Open the health topics"
+            ],
+            [
+              "conditions",
+              "Open Community Conditions"
             ]
           ]
         },

@@ -146,7 +146,7 @@ TOPIC_SETS = {
     "hpiCardio": ["commute", "treecanopy", "ozone", "dieselpm"],
     "hpiEarly": ["inpreschool"],
     "hpiYouth": ["inhighschool"],
-    "hpiHousing": ["houserepair", "uncrowded", "homeownership"],
+    "hpiHousing": ["houserepair", "uncrowded", "homeownership", "rentsevere"],
 }
 LOWER_IS_HEALTHIER = {"dieselpm", "h20contam", "ozone", "pm25", "ownsevere", "rentsevere"}
 NAME_OF = {v: k for k, v in COUNTIES.items()}
@@ -160,6 +160,7 @@ LABELS = {  # plain labels for topic page cards, in the dashboard's wording
     "houserepair": "Households with basic kitchen facilities and plumbing",
     "uncrowded": "Households that are not crowded",
     "homeownership": "People who own their home",
+    "rentsevere": "Renter households that are low-income and spend more than 50 percent of income on housing",
 }
 SOURCES = {  # HPI's source names with acronyms spelled out
     "CES 4.0": "CalEnviroScreen 4.0 (CES 4.0)",
